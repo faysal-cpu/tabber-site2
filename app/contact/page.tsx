@@ -59,9 +59,7 @@ export default function ContactPage() {
                     Thank you for reaching out. We will get back to you within 24 hours.
                   </p>
                   <Link href="/contact">
-                    <Button className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
-                      Send Another Message
-                    </Button>
+                    <Button className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">Send Another Message</Button>
                   </Link>
                 </div>
               ) : (
