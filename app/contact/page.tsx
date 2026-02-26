@@ -20,7 +20,6 @@ const nextSteps = [
   { num: "3", icon: FileSearch, title: "Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
 ]
 
-// These strings were HTML-escaped in your snippet. Keep them plain here:
 const serviceOptions = [
   "Bookkeeping & Payroll",
   "Financial Reporting",
@@ -59,28 +58,27 @@ export default function ContactPage() {
                   <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">
                     Thank you for reaching out. We will get back to you within 24 hours.
                   </p>
-                  <Button asChild className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
-                    /contactSend Another Message</Link>
-                  </Button>
+                  /contact
+                    <Button className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
+                      Send Another Message
+                    </Button>
+                  </Link>
                 </div>
               ) : (
-                /**
-                 * ✅ Netlify Form (server POST)
-                 * - name="contact"
-                 * - method="POST"
-                 * - data-netlify="true"
-                 * - netlify-honeypot="bot-field"
-                 * - hidden input form-name must match the form's name
-                 * - action will reload this page with ?success=1 after submit
-                 */
                 <form
                   name="contact"
-                  method="POST              <input type="hidden" name="form-name" value="contact" />
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  action="/contact?success=1"
+                  className="flex flex-col gap-4 rounded-xl bg-card p-8 shadow-sm"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
 
                   {/* Honeypot field (invisible to humans) */}
                   <div className="hidden">
                     <label>
-                      Don’t fill this out: <input name="bot-field" />
+                      Don't fill this out: <input name="bot-field" />
                     </label>
                   </div>
 
