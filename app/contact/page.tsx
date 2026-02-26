@@ -31,7 +31,7 @@ export default function ContactPage() {
     const formData = new FormData(form)
 
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
@@ -69,8 +69,6 @@ export default function ContactPage() {
               ) : (
                 <form
                   name="contact"
-                  method="POST"
-                  data-netlify="true"
                   onSubmit={handleSubmit}
                   className="flex flex-col gap-4 rounded-xl bg-card p-8 shadow-sm"
                 >
