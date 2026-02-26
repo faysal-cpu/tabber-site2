@@ -57,22 +57,17 @@ export default function ContactPage() {
                   <h2 className="font-serif text-xl font-bold text-navy">Message Sent</h2>
                   <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">
                     Thank you for reaching out. We will get back to you within 24 hours.
-                 {isSuccess ? (
-  <div className="flex flex-col items-center justify-center rounded-xl bg-card p-12 text-center shadow-sm">
-    <div className="mb-3 flex size-14 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-      <Send className="size-6" style={{ color: '#2B4C7E' }} />
-    </div>
-    <h2 className="font-serif text-xl font-bold text-navy">Message Sent</h2>
-    <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">
-      Thank you for reaching out. We will get back to you within 24 hours.
-    </p>
-    <Link href="/contact">
-      <Button className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
-        Send Another Message
-      </Button>
-    </Link>
-  </div>
-) : (
+                  </p>
+                  <Link href="/contact">
+                    <Button className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
+                      Send Another Message
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                <form
+                  name="contact"
+                  method="POST"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                   action="/contact?success=1"
@@ -80,7 +75,6 @@ export default function ContactPage() {
                 >
                   <input type="hidden" name="form-name" value="contact" />
 
-                  {/* Honeypot field (invisible to humans) */}
                   <div className="hidden">
                     <label>
                       Don't fill this out: <input name="bot-field" />
@@ -223,7 +217,6 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
 
-      {/* 👇 Invisible backup form so Netlify detects fields at build time */}
       <form name="contact" method="POST" data-netlify="true" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
