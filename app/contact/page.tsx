@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send } from "lucide-react"
-import { useState } from "react"
+import { useMemo } from "react"
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
@@ -19,10 +20,19 @@ const nextSteps = [
   { num: "3", icon: FileSearch, title: "Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
 ]
 
-const serviceOptions = ["Bookkeeping & Payroll", "Financial Reporting", "FMHC Bookkeeping", "Risk & Compliance", "Setup & Consulting", "Other"]
+// These strings were HTML-escaped in your snippet. Keep them plain here:
+const serviceOptions = [
+  "Bookkeeping & Payroll",
+  "Financial Reporting",
+  "FMHC Bookkeeping",
+  "Risk & Compliance",
+  "Setup & Consulting",
+  "Other",
+]
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false)
+  const searchParams = useSearchParams()
+  const isSuccess = useMemo(() => searchParams?.get("success") === "1", [searchParams])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -31,53 +41,122 @@ export default function ContactPage() {
         <section className="bg-card py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Get in Touch</h1>
-            <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">{"We're here to help. Reach out and we'll get back to you within 24 hours."}</p>
+            <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">
+              {"We're here to help. Reach out and we'll get back to you within 24 hours."}
+            </p>
           </div>
         </section>
 
         <section className="bg-secondary py-12 md:py-16">
           <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-6 md:flex-row md:gap-12">
             <div className="md:flex-[0.6]">
-              {submitted ? (
+              {isSuccess ? (
                 <div className="flex flex-col items-center justify-center rounded-xl bg-card p-12 text-center shadow-sm">
                   <div className="mb-3 flex size-14 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                     <Send className="size-6" style={{ color: '#2B4C7E' }} />
                   </div>
                   <h2 className="font-serif text-xl font-bold text-navy">Message Sent</h2>
-                  <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">Thank you for reaching out. We will get back to you within 24 hours.</p>
-                  <Button onClick={() => setSubmitted(false)} className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">Send Another Message</Button>
+                  <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">
+                    Thank you for reaching out. We will get back to you within 24 hours.
+                  </p>
+                  <Button asChild className="mt-5 rounded-lg bg-navy text-white hover:bg-navy-light">
+                    /contactSend Another Message</Link>
+                  </Button>
                 </div>
               ) : (
+                /**
+                 * ✅ Netlify Form (server POST)
+                 * - name="contact"
+                 * - method="POST"
+                 * - data-netlify="true"
+                 * - netlify-honeypot="bot-field"
+                 * - hidden input form-name must match the form's name
+                 * - action will reload this page with ?success=1 after submit
+                 */
                 <form
-                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }}
-                  className="flex flex-col gap-4 rounded-xl bg-card p-8 shadow-sm"
-                >
+                  name="contact"
+                  method="POST              <input type="hidden" name="form-name" value="contact" />
+
+                  {/* Honeypot field (invisible to humans) */}
+                  <div className="hidden">
+                    <label>
+                      Don’t fill this out: <input name="bot-field" />
+                    </label>
+                  </div>
+
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="name" className="text-sm font-medium text-navy">Name</label>
-                      <input id="name" type="text" required placeholder="Your full name" className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand" />
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="Your full name"
+                        className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                      />
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="email" className="text-sm font-medium text-navy">Email</label>
-                      <input id="email" type="email" required placeholder="you@example.com" className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand" />
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="you@example.com"
+                        className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                      />
                     </div>
                   </div>
+
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="phone" className="text-sm font-medium text-navy">Phone <span className="text-sm font-normal text-muted-foreground">(optional)</span></label>
-                    <input id="phone" type="tel" placeholder="(555) 000-0000" className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand" />
+                    <label htmlFor="phone" className="text-sm font-medium text-navy">
+                      Phone <span className="text-sm font-normal text-muted-foreground">(optional)</span>
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="(555) 000-0000"
+                      className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                    />
                   </div>
+
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="service" className="text-sm font-medium text-navy">Service Interest</label>
-                    <select id="service" required defaultValue="" className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand">
+                    <select
+                      id="service"
+                      name="service"
+                      required
+                      defaultValue=""
+                      className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                    >
                       <option value="" disabled>Select a service</option>
-                      {serviceOptions.map((opt) => (<option key={opt} value={opt}>{opt}</option>))}
+                      {serviceOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
                     </select>
                   </div>
+
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="message" className="text-sm font-medium text-navy">Message</label>
-                    <textarea id="message" rows={4} required placeholder="Tell us about your bookkeeping needs..." className="resize-none rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand" />
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      required
+                      placeholder="Tell us about your bookkeeping needs..."
+                      className="resize-none rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-navy placeholder:text-muted-foreground/50 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                    />
                   </div>
-                  <Button type="submit" className="mt-1 w-full rounded-lg py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>Send Message</Button>
+
+                  <Button
+                    type="submit"
+                    className="mt-1 w-full rounded-lg py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg"
+                    style={{ backgroundColor: '#2B4C7E' }}
+                  >
+                    Send Message
+                  </Button>
                 </form>
               )}
             </div>
@@ -93,7 +172,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-serif text-[15px] font-semibold text-navy">{method.title}</h3>
                       {method.href ? (
-                        <a href={method.href} className="text-sm hover:underline" style={{ color: '#2B4C7E' }}>{method.description}</a>
+                        <a href={method.href} className="text-sm hover:underline" style={{ color: '#2B4C7E' }}>
+                          {method.description}
+                        </a>
                       ) : (
                         <p className="text-sm text-muted-foreground">{method.description}</p>
                       )}
@@ -120,7 +201,9 @@ export default function ContactPage() {
                 const Icon = step.icon
                 return (
                   <div key={step.num} className="relative rounded-xl bg-secondary p-6 text-center">
-                    <span className="absolute left-5 top-3 font-serif text-[36px] font-bold" style={{ color: 'rgba(43,76,126,0.1)' }}>{step.num}</span>
+                    <span className="absolute left-5 top-3 font-serif text-[36px] font-bold" style={{ color: 'rgba(43,76,126,0.1)' }}>
+                      {step.num}
+                    </span>
                     <div className="relative">
                       <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                         <Icon className="size-5" style={{ color: '#2B4C7E' }} />
@@ -136,6 +219,15 @@ export default function ContactPage() {
         </section>
       </main>
       <SiteFooter />
+
+      {/* 👇 Invisible backup form so Netlify detects fields at build time */}
+      <form name="contact" method="POST" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="service" />
+        <textarea name="message" />
+      </form>
     </div>
   )
 }
