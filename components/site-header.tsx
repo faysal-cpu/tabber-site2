@@ -44,7 +44,7 @@ export function SiteHeader() {
             width={440}
             height={59}
             priority
-            =className="h-auto w-auto"
+            className="h-auto w-auto"
           />
         </Link>
 
