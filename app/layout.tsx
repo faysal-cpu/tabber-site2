@@ -20,14 +20,14 @@ const _geistMono = Geist_Mono({
 })
 
 const siteUrl = 'https://tabber.ca'
-const ogImage = '/tabber-og.png'   // <-- your image in /public
+const ogImage = '/tabber-og2.png'   // <-- your image in /public
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: 'Tabber | Professional Bookkeeping & Compliance',
   description:
-    'Professional bookkeeping, payroll, and financial reporting for small businesses and family-managed care programs across Ontario.',
+    'Professional bookkeeping, compliance, and financial reporting for small businesses and family-managed care programs across Ontario.',
   
   icons: {
     icon: '/tabber-icon.ico',
