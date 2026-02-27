@@ -41,8 +41,8 @@ export function SiteHeader() {
           <Image
             src="/tabber-logo-full.svg"
             alt="Tabber - Bookkeeping, Compliance, Advisory"
-            width={440}
-            height={59}
+            width={360}
+            height={48}
             priority
             className="h-auto w-auto"
           />
