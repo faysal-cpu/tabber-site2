@@ -76,7 +76,7 @@ export function SiteHeader() {
               <Menu className="size-5 text-navy" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-72 bg-card">
+          <SheetContent side="right" className="w-[280px] bg-card">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="mb-6 mt-4">
               <Image
