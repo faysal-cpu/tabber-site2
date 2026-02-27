@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, MapPin } from "lucide-react"
 
 const quickLinks = [
@@ -20,22 +21,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1200px] px-6 py-14">
         <div className="grid gap-12 md:grid-cols-3 md:gap-16">
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2.5">
-              {/* Footer Refined Ledger Columns - white on dark */}
-              <div className="flex items-end" style={{ gap: '2px' }}>
-                <div style={{ height: '24px', width: '5px', backgroundColor: 'white', borderRadius: '5px' }} />
-                <div style={{ height: '20px', width: '5px', backgroundColor: 'white', borderRadius: '5px' }} />
-                <div style={{ height: '16px', width: '5px', backgroundColor: 'white', borderRadius: '5px' }} />
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="font-serif text-2xl font-bold text-white leading-none">
-                  tabber
-                </span>
-                <p className="text-[10px] tracking-[0.08em] text-white/70 mt-0.5">
-                  Bookkeeping | Compliance | Advisory
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/tabber-logo-full-white.svg"
+              alt="Tabber - Bookkeeping, Compliance, Advisory"
+              width={140}
+              height={19}
+            />
             <p className="mt-2 max-w-[280px] text-sm leading-[1.7] text-white/50">
               Professional bookkeeping, payroll, and financial reporting for
               small businesses and family-managed care programs across Ontario.
