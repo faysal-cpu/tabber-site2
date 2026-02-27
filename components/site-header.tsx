@@ -41,8 +41,8 @@ export function SiteHeader() {
           <Image
             src="/tabber-logo-full.svg"
             alt="Tabber - Bookkeeping, Compliance, Advisory"
-            width={360}
-            height={48}
+            width={480}
+            height={64}
             priority
           />
         </Link>
@@ -81,8 +81,8 @@ export function SiteHeader() {
               <Image
                 src="/tabber-logo-full.svg"
                 alt="Tabber - Bookkeeping, Compliance, Advisory"
-                width={300}
-                height={40}
+                width={400}
+                height={53}
               />
             </div>
             <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
