@@ -24,8 +24,8 @@ export function SiteFooter() {
             <Image
               src="/tabber-logo-full-white.svg"
               alt="Tabber - Bookkeeping, Compliance, Advisory"
-              width={440}
-              height={59}
+              width={570}
+              height={76}
             />
             <p className="mt-2 max-w-[280px] text-sm leading-[1.7] text-white/50">
               Professional bookkeeping, payroll, and financial reporting for
