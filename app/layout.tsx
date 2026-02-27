@@ -25,9 +25,9 @@ const ogImage = '/tabber-og2.png'   // <-- your image in /public
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: 'Tabber | Professional Bookkeeping & Compliance',
+  title: 'Tabber | Financial Management & Compliance',
   description:
-    'Professional bookkeeping, compliance, and financial reporting for small businesses and family-managed care programs across Ontario.',
+    'Financial support for Family-Managed Care programs and small businesses, delivering structured reporting, reliable bookkeeping, and regulatory alignment.',
   
   icons: {
     icon: '/tabber-icon.ico',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Tabber | Professional Bookkeeping & Compliance',
+    title: 'Tabber | Financial Management & Compliance',
     description:
-      'Professional bookkeeping, compliance, and financial reporting for small businesses and family-managed care programs across Ontario.',
+      'Financial support for Family-Managed Care programs and small businesses, delivering structured reporting, reliable bookkeeping, and regulatory alignment.',
     siteName: 'Tabber',
     images: [
       {
