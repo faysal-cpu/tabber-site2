@@ -25,23 +25,22 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-}
-
-export const viewport: Viewport = {
-  themeColor: '#1A2A44',
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  )
+  openGraph: {
+    title: 'Tabber | CPA-Qualified Bookkeeping Services',
+    description: 'Professional bookkeeping, payroll, and financial reporting for small businesses and family-managed care programs across Ontario.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tabber - CPA-Qualified Bookkeeping Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tabber | CPA-Qualified Bookkeeping Services',
+    description: 'Professional bookkeeping, payroll, and financial reporting for small businesses and family-managed care programs across Ontario.',
+    images: ['/og-image.png'],
+  },
 }
