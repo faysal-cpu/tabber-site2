@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
   title: 'Tabber | Financial Management & Compliance',
   description:
-    'Financial support for Family-Managed Care programs and small businesses, delivering structured reporting, reliable bookkeeping, and regulatory alignment.',
+    'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
   
   icons: {
     icon: '/tabber-icon.ico',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Tabber | Financial Management & Compliance',
     description:
-      'Financial support for Family-Managed Care programs and small businesses, delivering structured reporting, reliable bookkeeping, and regulatory alignment.',
+      'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
     siteName: 'Tabber',
     images: [
       {
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   // Twitter / X
   twitter: {
     card: 'summary_large_image',
-    title: 'Tabber | Professional Bookkeeping & Compliance',
+    title: 'Tabber | Financial Management & Compliance',
     description:
-      'Professional bookkeeping, compliance, and financial reporting for small businesses.',
+      'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
     images: [ogImage],
   },
 }
