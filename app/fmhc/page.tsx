@@ -36,7 +36,7 @@ const fmhcTestimonials = [
 
 const faqs = [
   { q: "What is Family-Managed Home Care (FMHC)?", a: "FMHC is a program through Ontario Health atHome that provides funding for families to directly manage and hire care workers for a loved one at home, rather than receiving services through an agency." },
-  { q: "Will I ever have to pay out-of-pocket for FMHC bookkeeping?", a: "No. I tailor the service to fit fully within your approved FMHC funding allocation. You will never be charged beyond what your program covers." },
+  { q: "Will I ever have to pay out-of-pocket for FMHC bookkeeping?", a: "No. We tailor the service to fit fully within your approved FMHC funding allocation. You will never be charged beyond what your program covers." },
   { q: "What do I need to get started?", a: "Typically, we need access to your accounting software or bank statements, existing records, and your funding confirmation letter. We guide you step-by-step to make onboarding smooth and stress-free." },
   { q: "How often will I receive reports?", a: "Monthly at minimum, with quarterly summaries. We also prepare all required Ontario Health atHome compliance reports on your behalf." },
   { q: "Do you work directly with Ontario Health atHome?", a: "We collaborate with care coordinators and ensure all reporting is submitted in the format required by Ontario Health atHome. We handle the paperwork so you don't have to." },
