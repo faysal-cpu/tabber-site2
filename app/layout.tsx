@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Tabber | Professional Bookkeeping & Compliance',
     description:
-      'Professional bookkeeping, payroll, and financial reporting for small businesses and family-managed care programs across Ontario.',
+      'Professional bookkeeping, compliance, and financial reporting for small businesses and family-managed care programs across Ontario.',
     siteName: 'Tabber',
     images: [
       {
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   // Twitter / X
   twitter: {
     card: 'summary_large_image',
-    title: 'Tabber | CPA-Qualified Bookkeeping Services',
+    title: 'Tabber | Professional Bookkeeping & Compliance',
     description:
-      'Professional bookkeeping, payroll, and financial reporting for small businesses.',
+      'Professional bookkeeping, compliance, and financial reporting for small businesses.',
     images: [ogImage],
   },
 }
