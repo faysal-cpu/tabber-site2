@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -36,21 +37,14 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2.5">
-          {/* Refined Ledger Columns - 100%, 85%, 65% height ratios */}
-          <div className="flex items-end" style={{ gap: '2px' }}>
-            <div style={{ height: '24px', width: '5px', backgroundColor: '#2B4C7E', borderRadius: '5px' }} />
-            <div style={{ height: '20px', width: '5px', backgroundColor: '#2B4C7E', borderRadius: '5px' }} />
-            <div style={{ height: '16px', width: '5px', backgroundColor: '#2B4C7E', borderRadius: '5px' }} />
-          </div>
-          <div className="flex flex-col justify-center">
-            <span className="font-serif text-[24px] font-bold tracking-tight text-navy leading-none">
-              tabber
-            </span>
-            <span className="text-[10px] tracking-[0.08em] text-muted-foreground mt-0.5">
-              Bookkeeping | Compliance | Advisory
-            </span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/tabber-logo-full.svg"
+            alt="Tabber - Bookkeeping, Compliance, Advisory"
+            width={140}
+            height={19}
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
@@ -83,19 +77,13 @@ export function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72 bg-card">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <div className="mb-6 mt-4 flex items-center gap-2">
-              {/* Mobile Refined Ledger Columns */}
-              <div className="flex items-end" style={{ gap: '2px' }}>
-                <div style={{ height: '20px', width: '4px', backgroundColor: '#2B4C7E', borderRadius: '4px' }} />
-                <div style={{ height: '17px', width: '4px', backgroundColor: '#2B4C7E', borderRadius: '4px' }} />
-                <div style={{ height: '13px', width: '4px', backgroundColor: '#2B4C7E', borderRadius: '4px' }} />
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="font-serif text-xl font-bold text-navy leading-none">tabber</span>
-                <p className="text-[9px] tracking-[0.08em] text-muted-foreground mt-0.5">
-                  Bookkeeping | Compliance | Advisory
-                </p>
-              </div>
+            <div className="mb-6 mt-4">
+              <Image
+                src="/tabber-logo-full.svg"
+                alt="Tabber - Bookkeeping, Compliance, Advisory"
+                width={120}
+                height={16}
+              />
             </div>
             <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
               {navLinks.map((link) => (
