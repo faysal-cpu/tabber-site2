@@ -3,6 +3,12 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Home, FileText, Mail } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '404 - Page Not Found | Tabber',
+  description: 'The page you are looking for does not exist.',
+}
 
 const helpLinks = [
   { href: "/", label: "Home", icon: Home },
