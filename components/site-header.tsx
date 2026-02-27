@@ -44,7 +44,7 @@ export function SiteHeader() {
             width={440}
             height={59}
             priority
-            className="object-contain w-[180px] md:w-auto"
+            className="object-contain w-[240px] md:w-[360px] lg:w-[440px]"
           />
         </Link>
 
