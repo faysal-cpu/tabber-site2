@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: 'Tabber | CPA-Qualified Bookkeeping Services',
   description: 'Professional bookkeeping, payroll, and financial reporting for small businesses and family-managed care programs across Ontario.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/tabber-icon.ico',
   },
 }
 
