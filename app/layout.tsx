@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
+import { GoogleAnalytics } from '@/components/google-analytics'
 const _inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -75,6 +75,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )
