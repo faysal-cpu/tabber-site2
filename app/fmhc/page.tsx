@@ -187,7 +187,7 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* What Happens After You Book */}
+        {/* What Happens After You Reach Out */}
         <section className="bg-card py-14 md:py-20">
           <div className="mx-auto max-w-[900px] px-6">
             <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Book</h2>
