@@ -4,18 +4,18 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send, Phone, MessageCircle } from "lucide-react"
+import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send, Phone, MessageCircle, Users } from "lucide-react"
 import { useState } from "react"
 
 const contactMethods = [
-  { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" }, 
+  { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
   { icon: Phone, title: "Give Us A Call", description: "(780) 965-9694", href: "tel:+17809659694", cta: null },
   { icon: Clock, title: "Response Time", description: "Within 24 hours", href: null, cta: null },
 ]
 
 const nextSteps = [
   { num: "1", icon: MessageSquare, title: "We Review Your Inquiry", description: "We read through your message and gather any additional information needed." },
-  { num: "2", icon: MessageCircle, title: "We Discuss Your Needs", description: "We'll have a conversation to understand your business and how we can help." },
+  { num: "2", icon: Users, title: "We Discuss Your Needs", description: "We'll have a conversation to understand your business and how we can help." },
   { num: "3", icon: FileSearch, title: "Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
 ]
 
