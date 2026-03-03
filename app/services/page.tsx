@@ -253,27 +253,6 @@ export default function ServicesPage() {
             </Button>
           </div>
         </section>
-
-        {/* Bottom CTA */}
-        <section className="py-14 md:py-20" style={{ backgroundColor: '#1A2A44' }}>
-          <div className="mx-auto max-w-[700px] px-6 text-center">
-            <h2 className="font-serif text-[28px] font-bold text-white md:text-[34px]">
-              Ready to Streamline Your Finances?
-            </h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-white/70">
-              Let us handle the numbers so you can focus on what you do best.
-            </p>
-            <Button
-              asChild
-              className="mt-8 rounded-lg bg-white px-8 py-3 text-[15px] font-semibold text-navy hover:shadow-lg"
-            >
-              <Link href="/contact">Book Free Consultation</Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* Extra spacing before footer */}
-        <div className="h-4" style={{ backgroundColor: '#1A2A44' }} />
       </main>
       <SiteFooter />
     </div>
