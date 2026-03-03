@@ -9,7 +9,7 @@ export function CtaSection() {
           Ready to Get Started?
         </h2>
         <p className="mx-auto mt-4 max-w-[560px] text-[16px] leading-relaxed text-white/80">
-          Get in touch to discuss your bookkeeping needs - no obligation.
+         Reach out anytime to discuss your bookkeeping needs and tell us what you’re looking for! We’re here to answer questions, offer guidance, and help you explore your options — with no obligation.
         </p>
         <div className="mt-10">
           <Button
