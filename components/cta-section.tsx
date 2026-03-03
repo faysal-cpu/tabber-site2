@@ -9,8 +9,7 @@ export function CtaSection() {
           Ready to Get Started?
         </h2>
         <p className="mx-auto mt-4 max-w-[560px] text-[16px] leading-relaxed text-white/80">
-          Book a free 15-minute consultation to discuss your bookkeeping needs
-          -- no obligation.
+          Get in touch to discuss your bookkeeping needs - no obligation.
         </p>
         <div className="mt-10">
           <Button
@@ -18,7 +17,7 @@ export function CtaSection() {
             className="rounded-lg px-10 py-4 text-[16px] font-bold text-navy shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             style={{ backgroundColor: '#FFFFFF' }}
           >
-            <Link href="/contact">Schedule Your Free Consultation</Link>
+            <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
       </div>
