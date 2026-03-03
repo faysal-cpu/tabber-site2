@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, Star, Quote, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, Star, Quote, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FMHC Bookkeeping | Tabber",
@@ -43,7 +43,7 @@ const faqs = [
 ]
 
 const onboardingSteps = [
-  { icon: Phone, title: "15-minute intro call", description: "A quick, pressure-free conversation to understand your needs." },
+  { icon: Mail, title: "We review your inquiry", description: "We'll respond to your email within 24 hours to understand your needs." },
   { icon: FileText, title: "Review your funding & documents", description: "We assess your FMHC allocation and gather what we need." },
   { icon: Sparkles, title: "Start within 7 days", description: "We begin handling payroll and reporting right away." },
 ]
@@ -67,7 +67,7 @@ export default function FmhcPage() {
                 <p className="mt-3 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                    <Link href="/contact">Book Free Consultation</Link>
+                    <Link href="/contact">Get in Touch</Link>
                   </Button>
                   <Button asChild variant="outline" className="rounded-lg border-2 px-8 py-3 text-[15px] font-semibold hover:bg-navy/5" style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}>
                     <Link href="#how-we-help">See How We Help</Link>
@@ -248,17 +248,14 @@ export default function FmhcPage() {
         </section>
 
         {/* Final CTA - with secondary option */}
-        <section className="py-14 md:py-20" style={{ backgroundColor: '#1A2A44' }}>
+        <section className="py-14 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
-            <h2 className="font-serif text-[28px] font-bold text-white md:text-[34px]">Let Us Handle the Bookkeeping</h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-white/70">You focus on your {"family's"} care. We focus on keeping your finances compliant and organized.</p>
-            <p className="mt-2 text-sm text-white/50">Friendly, pressure-free consultations.</p>
+            <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Let Us Handle the Bookkeeping</h2>
+            <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">You focus on your {"family's"} care. We focus on keeping your finances compliant and organized.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Friendly, pressure-free support.</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild className="rounded-lg bg-white px-8 py-3 text-[15px] font-semibold text-navy hover:bg-white/90 hover:shadow-lg">
-                <Link href="/contact">Book Free Consultation</Link>
-              </Button>
-              <Button asChild className="rounded-lg border-2 border-white bg-transparent px-8 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-navy">
-                <Link href="/contact?type=question">Ask a Question</Link>
+              <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                <Link href="/contact">Get in Touch</Link>
               </Button>
             </div>
           </div>
