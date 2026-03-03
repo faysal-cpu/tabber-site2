@@ -190,7 +190,7 @@ export default function FmhcPage() {
         {/* What Happens After You Reach Out */}
         <section className="bg-card py-14 md:py-20">
           <div className="mx-auto max-w-[900px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Book</h2>
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {onboardingSteps.map((step, i) => {
                 const Icon = step.icon
