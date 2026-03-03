@@ -8,7 +8,7 @@ import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send, Phone, MessageC
 import { useState } from "react"
 
 const contactMethods = [
-  { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
+  { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" }, 
   { icon: Phone, title: "Give Us A Call", description: "(780) 965-9694", href: "tel:+17809659694", cta: null },
   { icon: Clock, title: "Response Time", description: "Within 24 hours", href: null, cta: null },
 ]
