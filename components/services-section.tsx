@@ -52,7 +52,7 @@ export function ServicesSection() {
         <p className="mx-auto mt-3 mb-14 max-w-[620px] text-center text-[15px] text-muted-foreground">
           Full-service bookkeeping support for your business or care program
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*:nth-last-child(-n+2):nth-child(n+4)]:col-start-auto lg:[&>*:nth-child(4)]:col-start-2">
           {services.map((service) => {
             const Icon = service.icon
             return (
