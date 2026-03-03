@@ -52,13 +52,13 @@ export function ServicesSection() {
         <p className="mx-auto mt-3 mb-14 max-w-[620px] text-center text-[15px] text-muted-foreground">
           Full-service bookkeeping support for your business or care program
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
               <div
                 key={service.title}
-                className={`group rounded-xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${index === 3 ? 'lg:col-start-2' : ''}`}
+                className="group w-full rounded-xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
                 <div className="mb-4 flex size-12 items-center justify-center rounded-lg" style={{ backgroundColor: '#E8EDF5' }}>
                   <Icon className="size-6" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
