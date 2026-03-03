@@ -17,7 +17,6 @@ const navLinks = [
   { href: "/fmhc", label: "FMHC" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
 ]
 
 export function SiteHeader() {
@@ -66,7 +65,7 @@ export function SiteHeader() {
             className="rounded-lg px-5 py-2.5 text-[14px] font-bold text-white shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
             style={{ backgroundColor: '#2B4C7E' }}
           >
-            <Link href="/contact">Book a Call</Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
 
@@ -104,7 +103,7 @@ export function SiteHeader() {
                   style={{ backgroundColor: '#2B4C7E' }}
                 >
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    Book a Call
+                    Contact Us
                   </Link>
                 </Button>
               </div>
