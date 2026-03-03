@@ -52,13 +52,13 @@ export function ServicesSection() {
         <p className="mx-auto mt-3 mb-14 max-w-[620px] text-center text-[15px] text-muted-foreground">
           Full-service bookkeeping support for your business or care program
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*:nth-last-child(-n+2):nth-child(n+4)]:col-start-auto lg:[&>*:nth-child(4)]:col-start-2">
-          {services.map((service) => {
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
             const Icon = service.icon
             return (
               <div
                 key={service.title}
-                className="group rounded-xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className={`group rounded-xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${index === 3 ? 'lg:col-start-2' : ''}`}
               >
                 <div className="mb-4 flex size-12 items-center justify-center rounded-lg" style={{ backgroundColor: '#E8EDF5' }}>
                   <Icon className="size-6" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
@@ -89,4 +89,3 @@ export function ServicesSection() {
     </section>
   )
 }
- 
