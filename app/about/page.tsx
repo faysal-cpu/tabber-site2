@@ -38,8 +38,8 @@ export default function AboutPage() {
         <section className="bg-secondary py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6">
             <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
-              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management -- without the complexity or cost of a large accounting firm.</p>
-              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered -- caring for their loved ones."`}</p>
+              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management - without the complexity or cost of a large accounting firm.</p>
+              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered - caring for their loved ones."`}</p>
               <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
               <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
             </div>
@@ -82,12 +82,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#1A2A44' }}>
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
-            <h2 className="font-serif text-[28px] font-bold text-white md:text-[34px]">Ready to Work Together?</h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-white/85">Book a free consultation and see how Tabber can simplify your financial management.</p>
-            <Button asChild className="mt-6 rounded-lg bg-white px-8 py-3 text-[15px] font-semibold text-navy hover:shadow-lg">
-              <Link href="/contact">Book Free Consultation</Link>
+            <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Ready to Work Together?</h2>
+            <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">Reach out to our team and see how Tabber can simplify your financial management.</p>
+            <Button asChild className="mt-6 rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
+              <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
         </section>
