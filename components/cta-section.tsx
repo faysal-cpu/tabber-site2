@@ -8,9 +8,13 @@ export function CtaSection() {
         <h2 className="font-serif text-[28px] font-bold text-white md:text-[36px]">
           Ready to Get Started?
         </h2>
-        <p className="mx-auto mt-4 max-w-[560px] text-[16px] leading-relaxed text-white/80">
-         Reach out anytime to discuss your bookkeeping needs and tell us what you’re looking for! We’re here to answer questions, offer guidance, and help you explore your options — with no obligation.
-        </p>
+       <p className="mx-auto mt-4 max-w-[560px] text-[16px] leading-relaxed text-white/80">
+  Reach out anytime to discuss your bookkeeping needs and tell us what you’re looking for!
+</p>
+
+<p className="mx-auto mt-3 max-w-[560px] text-[16px] leading-relaxed text-white/80">
+  We’re here to answer questions, offer guidance, and help you explore your options — with no obligation.
+</p>
         <div className="mt-10">
           <Button
             asChild
