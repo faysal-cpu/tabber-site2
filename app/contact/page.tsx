@@ -9,14 +9,14 @@ import { useState } from "react"
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
-  { icon: Phone, title: "Give Us A Call", description: "(780) 965-9694", href: "tel:+17809659694", cta: null },
+  { icon: Phone, title: "Give Us A Call", description: "(819) 809-7326", href: "tel:+18198097326", cta: null },
   { icon: Clock, title: "Response Time", description: "Within 24 hours", href: null, cta: null },
 ]
 
 const nextSteps = [
   { num: "1", icon: MessageSquare, title: "We Review Your Inquiry", description: "We read through your message and gather any additional information needed." },
   { num: "2", icon: Users, title: "We Discuss Your Needs", description: "We'll have a conversation to understand your business and how we can help." },
-  { num: "3", icon: FileSearch, title: "Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
+  { num: "3", icon: FileSearch, title: "We Build a Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
 ]
 
 const serviceOptions = ["Bookkeeping & Payroll", "Financial Reporting", "FMHC Bookkeeping", "Risk & Compliance", "Setup & Consulting", "Other"]
