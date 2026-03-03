@@ -4,12 +4,12 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send } from "lucide-react"
+import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send, Phone } from "lucide-react"
 import { useState } from "react"
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
-  { icon: Calendar, title: "Book a Call", description: "Free 15-minute consultation", href: "mailto:hello@tabber.ca?subject=Booking%20a%20Call", cta: "Schedule Now" },
+  { icon: Phone, title: "Give us a call", description: "(780) 965-9694", href: "tel:+17809659694", cta: null },
   { icon: Clock, title: "Response Time", description: "Within 24 hours", href: null, cta: null },
 ]
 
