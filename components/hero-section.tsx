@@ -31,7 +31,7 @@ export function HeroSection() {
               className="rounded-lg px-8 py-3.5 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
               style={{ backgroundColor: '#2B4C7E' }}
             >
-              <Link href="/contact">Book Free Consultation</Link>
+              <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
