@@ -32,11 +32,11 @@ export function SiteFooter() {
               small businesses and family-managed care programs across Ontario.
             </p>
           </div>
-          <div>
+          <div className="text-center">
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
               Quick Links
             </h3>
-            <nav className="flex flex-col gap-2.5" aria-label="Footer navigation">
+            <nav className="flex flex-col items-center gap-2.5" aria-label="Footer navigation">
               {quickLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -48,11 +48,11 @@ export function SiteFooter() {
               ))}
             </nav>
           </div>
-          <div>
+          <div className="text-right">
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
               Get in Touch
             </h3>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-end gap-3">
               <a
                 href="mailto:hello@tabber.ca"
                 className="flex items-center gap-2 text-[14px] text-white/60 transition-colors hover:text-brand"
