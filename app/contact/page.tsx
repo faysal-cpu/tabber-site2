@@ -1,5 +1,6 @@
 "use client"
 
+import Script from "next/script"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -44,6 +45,21 @@ export default function ContactPage() {
   }
 
   return (
+    <>
+      {/* Google Ads Conversion Tracking */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18012176449"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18012176449');
+        `}
+      </Script>
+
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
@@ -158,5 +174,6 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
     </div>
+    </>
   )
 }
