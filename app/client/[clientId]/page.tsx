@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { ClientHeader } from '@/components/client-portal/client-header';
+import { ClientFooter } from '@/components/client-portal/client-footer';
 import { UploadSection } from '@/components/client-portal/upload-section';
 import { UploadHistory } from '@/components/client-portal/upload-history';
 import { Card, CardContent } from '@/components/ui/card';
@@ -119,7 +120,7 @@ export default function ClientPortalPage() {
 
   // Main portal interface
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#ffffff' }}>
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
       {/* Page Title Section */}
@@ -133,7 +134,7 @@ export default function ClientPortalPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-12" style={{ backgroundColor: '#FAF9F7' }}>
+      <div className="flex-1 container mx-auto px-6 py-12" style={{ backgroundColor: '#FAF9F7' }}>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left column: Upload History */}
           <div className="lg:col-span-2">
@@ -146,6 +147,8 @@ export default function ClientPortalPage() {
           </div>
         </div>
       </div>
+
+      <ClientFooter />
     </div>
   );
 }
