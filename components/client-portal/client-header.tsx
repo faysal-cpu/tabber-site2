@@ -18,19 +18,19 @@ export function ClientHeader({ clientName, clientEmail }: ClientHeaderProps) {
             <Image
               src="/tabber-logo-full.svg"
               alt="Tabber"
-              width={420}
-              height={140}
+              width={500}
+              height={167}
               priority
             />
           </Link>
 
           {/* Client Info */}
           <div className="text-right">
-            <h1 className="text-3xl font-bold" style={{ color: '#2B4C7E' }}>
+            <h1 className="text-xl font-bold" style={{ color: '#2B4C7E' }}>
               {clientName}
             </h1>
             {clientEmail && (
-              <p className="text-lg" style={{ color: '#6B7280' }}>{clientEmail}</p>
+              <p className="text-sm" style={{ color: '#6B7280' }}>{clientEmail}</p>
             )}
           </div>
         </div>

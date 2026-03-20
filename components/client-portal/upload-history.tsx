@@ -81,13 +81,21 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
 
       const data = await response.json();
 
-      // Create a temporary link and trigger download
+      // Fetch the file as a blob to force download
+      const fileResponse = await fetch(data.downloadUrl);
+      const blob = await fileResponse.blob();
+
+      // Create blob URL and trigger download
+      const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = data.downloadUrl;
+      link.href = blobUrl;
       link.download = filename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+
+      // Clean up blob URL
+      window.URL.revokeObjectURL(blobUrl);
 
       toast.success('Download started!', {
         description: filename,
