@@ -4,8 +4,7 @@ import { Resend } from 'resend';
 export const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Email configuration
-// Using Resend's test address until tabber.ca domain is verified
 export const EMAIL_CONFIG = {
-  from: 'Tabber Portal <onboarding@resend.dev>',
-  replyTo: 'info@tabber.ca',
+  from: 'Tabber Portal <hello@tabber.ca>',
+  replyTo: 'hello@tabber.ca',
 };
