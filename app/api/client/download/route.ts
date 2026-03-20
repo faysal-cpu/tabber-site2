@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Generate download URL with SAS token (valid for 1 hour)
-    const downloadUrl = generateDownloadUrl(upload.onedrive_path);
+    const downloadUrl = generateDownloadUrl(upload.onedrive_path, upload.original_name);
 
     return NextResponse.json({
       success: true,

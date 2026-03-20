@@ -81,8 +81,16 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
 
       const data = await response.json();
 
-      // Fetch the file as a blob to force download
-      const fileResponse = await fetch(data.downloadUrl);
+      // Fetch the file with no-cors to avoid CORS issues, then download
+      const fileResponse = await fetch(data.downloadUrl, {
+        method: 'GET',
+        mode: 'cors',
+      });
+
+      if (!fileResponse.ok) {
+        throw new Error('Failed to fetch file from storage');
+      }
+
       const blob = await fileResponse.blob();
 
       // Create blob URL and trigger download
@@ -90,20 +98,23 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
       const link = document.createElement('a');
       link.href = blobUrl;
       link.download = filename;
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
 
-      // Clean up blob URL
-      window.URL.revokeObjectURL(blobUrl);
+      // Clean up after a short delay
+      setTimeout(() => {
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+      }, 100);
 
-      toast.success('Download started!', {
+      toast.success('Download complete!', {
         description: filename,
       });
     } catch (error) {
       console.error('Download error:', error);
       toast.error('Download failed', {
-        description: error instanceof Error ? error.message : 'Unknown error',
+        description: error instanceof Error ? error.message : 'Please try again',
       });
     } finally {
       setDownloading(null);

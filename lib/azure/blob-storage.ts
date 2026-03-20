@@ -65,8 +65,11 @@ export function getBlobUrl(blobName: string): string {
 /**
  * Generate a SAS URL for downloading a blob (valid for 1 hour)
  */
-export function generateDownloadUrl(blobName: string): string {
+export function generateDownloadUrl(blobName: string, filename: string): string {
   const blobClient = containerClient.getBlobClient(blobName);
+
+  const startsOn = new Date();
+  startsOn.setMinutes(startsOn.getMinutes() - 5); // Start 5 minutes ago to account for clock skew
 
   const expiresOn = new Date();
   expiresOn.setHours(expiresOn.getHours() + 1); // Valid for 1 hour
@@ -76,7 +79,9 @@ export function generateDownloadUrl(blobName: string): string {
       containerName,
       blobName,
       permissions: BlobSASPermissions.parse('r'), // Read only
+      startsOn,
       expiresOn,
+      contentDisposition: `attachment; filename="${filename}"`,
     },
     sharedKeyCredential
   ).toString();
