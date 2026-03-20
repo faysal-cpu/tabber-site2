@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateClientToken } from '@/lib/validation/token-validator';
 import { validateFile } from '@/lib/validation/file-validator';
-import { uploadFileToOneDrive } from '@/lib/onedrive/upload';
+import { uploadFileToBlobStorage } from '@/lib/azure/upload';
 import { createUpload } from '@/lib/db/uploads';
 import { sendUploadConfirmation } from '@/lib/email/send-upload-confirmation';
 
@@ -55,8 +55,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Upload file to OneDrive (client root folder)
-    const uploadResult = await uploadFileToOneDrive(client, file);
+    // Upload file to Azure Blob Storage
+    const uploadResult = await uploadFileToBlobStorage(client, file);
 
     if (!uploadResult.success || !uploadResult.filename) {
       return NextResponse.json(
@@ -72,9 +72,9 @@ export async function POST(request: NextRequest) {
       originalName: file.name,
       fileSize: file.size,
       mimeType: file.type,
-      fileUrl: uploadResult.fileUrl || uploadResult.onedrivePath || '',
+      fileUrl: uploadResult.fileUrl || '',
       notes: notes || undefined,
-      onedrivePath: uploadResult.onedrivePath,
+      onedrivePath: uploadResult.blobPath,
     });
 
     if (!uploadRecord) {
