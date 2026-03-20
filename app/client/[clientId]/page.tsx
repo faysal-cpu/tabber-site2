@@ -1,0 +1,135 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useParams, useSearchParams } from 'next/navigation';
+import { ClientHeader } from '@/components/client-portal/client-header';
+import { ChecklistSection } from '@/components/client-portal/checklist-section';
+import { UploadSection } from '@/components/client-portal/upload-section';
+import { UploadHistory } from '@/components/client-portal/upload-history';
+import { Card, CardContent } from '@/components/ui/card';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Loader2, AlertTriangle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+interface ClientInfo {
+  id: string;
+  name: string;
+  email: string;
+  clientType: string;
+}
+
+export default function ClientPortalPage() {
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const clientId = params.clientId as string;
+  const token = searchParams.get('token');
+
+  const [clientInfo, setClientInfo] = useState<ClientInfo | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  useEffect(() => {
+    if (!token) {
+      setError('Access token is missing. Please use the link provided in your email.');
+      setLoading(false);
+      return;
+    }
+
+    authenticateClient();
+  }, [token]);
+
+  const authenticateClient = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`/api/client/auth?token=${token}`);
+
+      if (!response.ok) {
+        throw new Error('Invalid or expired access token');
+      }
+
+      const data = await response.json();
+      setClientInfo(data);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Failed to authenticate. Please contact support.'
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUploadComplete = () => {
+    // Increment trigger to refresh upload history
+    // Note: Checklist is now admin-controlled and doesn't auto-update
+    setRefreshTrigger((prev) => prev + 1);
+  };
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Card className="w-full max-w-md">
+          <CardContent className="flex flex-col items-center justify-center py-12">
+            <Loader2 className="h-12 w-12 animate-spin text-purple-600 mb-4" />
+            <p className="text-gray-600">Authenticating...</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error || !clientInfo) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-2xl">
+          <CardContent className="py-12">
+            <Alert variant="destructive">
+              <AlertTriangle className="h-5 w-5" />
+              <AlertTitle>Access Denied</AlertTitle>
+              <AlertDescription className="mt-2">
+                {error || 'Unable to access portal'}
+              </AlertDescription>
+            </Alert>
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-600 mb-4">
+                If you believe this is an error, please contact us:
+              </p>
+              <Button
+                variant="outline"
+                onClick={() => (window.location.href = '/contact')}
+              >
+                Contact Support
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Main portal interface
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left column: Checklist and Upload History */}
+          <div className="lg:col-span-2 space-y-6">
+            <ChecklistSection token={token!} />
+            <UploadHistory token={token!} refreshTrigger={refreshTrigger} />
+          </div>
+
+          {/* Right column: Upload Section */}
+          <div className="lg:col-span-1">
+            <UploadSection token={token!} onUploadComplete={handleUploadComplete} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
