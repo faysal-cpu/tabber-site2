@@ -51,6 +51,26 @@ export async function createUpload(data: CreateUploadData): Promise<UploadRow | 
 }
 
 /**
+ * Get a single upload by ID
+ */
+export async function getUploadById(uploadId: string): Promise<UploadRow | null> {
+  const supabase = createClient();
+
+  const { data, error } = await supabase
+    .from('uploads')
+    .select('*')
+    .eq('id', uploadId)
+    .single();
+
+  if (error) {
+    console.error('Error fetching upload:', error);
+    return null;
+  }
+
+  return data;
+}
+
+/**
  * Get uploads for a specific client
  */
 export async function getClientUploads(

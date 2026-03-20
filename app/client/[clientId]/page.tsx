@@ -74,13 +74,13 @@ export default function ClientPortalPage() {
           <Image
             src="/tabber-logo-full.svg"
             alt="Tabber"
-            width={350}
-            height={117}
+            width={550}
+            height={183}
             priority
             className="mb-12"
           />
           <Loader2 className="h-16 w-16 animate-spin mb-6" style={{ color: '#2B4C7E' }} />
-          <p className="text-xl font-semibold" style={{ color: '#2B4C7E' }}>Authenticating...</p>
+          <p className="text-2xl font-semibold" style={{ color: '#2B4C7E' }}>Authenticating...</p>
         </div>
       </div>
     );

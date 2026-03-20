@@ -1,4 +1,4 @@
-import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
+import { BlobServiceClient, StorageSharedKeyCredential, BlobSASPermissions, generateBlobSASQueryParameters } from '@azure/storage-blob';
 
 /**
  * Azure Blob Storage client for file uploads
@@ -60,4 +60,26 @@ export async function uploadToBlob(
  */
 export function getBlobUrl(blobName: string): string {
   return `https://${accountName}.blob.core.windows.net/${containerName}/${blobName}`;
+}
+
+/**
+ * Generate a SAS URL for downloading a blob (valid for 1 hour)
+ */
+export function generateDownloadUrl(blobName: string): string {
+  const blobClient = containerClient.getBlobClient(blobName);
+
+  const expiresOn = new Date();
+  expiresOn.setHours(expiresOn.getHours() + 1); // Valid for 1 hour
+
+  const sasToken = generateBlobSASQueryParameters(
+    {
+      containerName,
+      blobName,
+      permissions: BlobSASPermissions.parse('r'), // Read only
+      expiresOn,
+    },
+    sharedKeyCredential
+  ).toString();
+
+  return `${blobClient.url}?${sasToken}`;
 }
