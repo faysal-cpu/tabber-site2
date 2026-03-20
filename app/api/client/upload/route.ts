@@ -4,6 +4,7 @@ import { validateFile } from '@/lib/validation/file-validator';
 import { uploadFileToBlobStorage } from '@/lib/azure/upload';
 import { createUpload } from '@/lib/db/uploads';
 import { sendUploadConfirmation } from '@/lib/email/send-upload-confirmation';
+import { sendAdminNotification } from '@/lib/email/send-admin-notification';
 
 /**
  * POST /api/client/upload
@@ -84,7 +85,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email confirmation (non-blocking)
+    // Send email confirmation to client (non-blocking)
     sendUploadConfirmation({
       clientEmail: client.email,
       clientName: client.name,
@@ -93,6 +94,18 @@ export async function POST(request: NextRequest) {
       notes: notes || undefined,
     }).catch((error) => {
       console.error('Failed to send upload confirmation email:', error);
+      // Don't fail the upload if email fails
+    });
+
+    // Send notification to admin (non-blocking)
+    sendAdminNotification({
+      clientEmail: client.email,
+      clientName: client.name,
+      filename: uploadResult.filename,
+      fileSize: file.size,
+      notes: notes || undefined,
+    }).catch((error) => {
+      console.error('Failed to send admin notification email:', error);
       // Don't fail the upload if email fails
     });
 
