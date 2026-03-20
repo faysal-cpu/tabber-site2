@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm install && pnpm run build --verbose"
+  command = "pnpm run build"
   publish = ".next"
 
 [build.environment]
