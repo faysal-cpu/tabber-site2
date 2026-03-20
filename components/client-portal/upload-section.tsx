@@ -128,13 +128,13 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
   };
 
   return (
-    <Card className="sticky top-4">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <CloudUpload className="h-5 w-5" />
+    <Card className="sticky top-4 shadow-lg" style={{ borderTop: '4px solid #2B4C7E' }}>
+      <CardHeader style={{ backgroundColor: '#F0EDE8' }}>
+        <CardTitle className="flex items-center gap-2" style={{ color: '#2B4C7E' }}>
+          <CloudUpload className="h-6 w-6" />
           Upload Documents
         </CardTitle>
-        <CardDescription>
+        <CardDescription style={{ color: '#6B7280' }}>
           Drag and drop files or click to browse
         </CardDescription>
       </CardHeader>
@@ -148,10 +148,11 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
           className={cn(
             'border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all',
             isDragging
-              ? 'border-purple-500 bg-purple-50'
-              : 'border-gray-300 hover:border-gray-400 hover:bg-gray-50',
+              ? 'bg-blue-50'
+              : 'border-gray-300 hover:bg-gray-50',
             uploading && 'opacity-50 cursor-not-allowed'
           )}
+          style={isDragging ? { borderColor: '#2B4C7E', backgroundColor: '#E8EDF5' } : {}}
         >
           <input
             ref={fileInputRef}
@@ -176,7 +177,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
             </div>
           ) : (
             <div className="space-y-3">
-              <FileIcon className="mx-auto h-12 w-12 text-purple-600" />
+              <FileIcon className="mx-auto h-12 w-12" style={{ color: '#2B4C7E' }} />
               <div>
                 <p className="text-sm font-medium text-gray-900 truncate">
                   {selectedFile.name}
@@ -235,17 +236,21 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
         <Button
           onClick={handleUpload}
           disabled={!selectedFile || uploading}
-          className="w-full"
+          className="w-full font-semibold text-base transition-all hover:shadow-lg"
           size="lg"
+          style={{
+            backgroundColor: '#2B4C7E',
+            color: 'white'
+          }}
         >
           {uploading ? (
             <>
-              <Upload className="mr-2 h-4 w-4 animate-pulse" />
+              <Upload className="mr-2 h-5 w-5 animate-pulse" />
               Uploading...
             </>
           ) : (
             <>
-              <Upload className="mr-2 h-4 w-4" />
+              <Upload className="mr-2 h-5 w-5" />
               Upload File
             </>
           )}

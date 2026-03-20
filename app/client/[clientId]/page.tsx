@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import { ClientHeader } from '@/components/client-portal/client-header';
 import { UploadSection } from '@/components/client-portal/upload-section';
 import { UploadHistory } from '@/components/client-portal/upload-history';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, AlertTriangle } from 'lucide-react';
+import { Loader2, AlertTriangle, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ClientInfo {
@@ -69,10 +70,18 @@ export default function ClientPortalPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F7' }}>
-        <Card className="w-full max-w-md">
-          <CardContent className="flex flex-col items-center justify-center py-12">
+        <Card className="w-full max-w-md shadow-xl">
+          <CardContent className="flex flex-col items-center justify-center py-16">
+            <Image
+              src="/tabber-logo-full.svg"
+              alt="Tabber"
+              width={200}
+              height={67}
+              priority
+              className="mb-8"
+            />
             <Loader2 className="h-12 w-12 animate-spin mb-4" style={{ color: '#2B4C7E' }} />
-            <p className="text-gray-600">Authenticating...</p>
+            <p className="text-lg font-medium" style={{ color: '#2B4C7E' }}>Authenticating...</p>
           </CardContent>
         </Card>
       </div>
@@ -115,7 +124,18 @@ export default function ClientPortalPage() {
     <div className="min-h-screen" style={{ backgroundColor: '#FAF9F7' }}>
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
-      <div className="container mx-auto px-4 py-8">
+      {/* Page Title Section */}
+      <div className="py-8" style={{ backgroundColor: '#2B4C7E' }}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center gap-3">
+            <Shield className="h-8 w-8 text-white" />
+            <h2 className="text-3xl font-bold text-white">Secure Document Upload</h2>
+          </div>
+          <p className="text-center text-white/90 mt-2">Upload your documents securely. All files are encrypted and stored safely.</p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left column: Upload History */}
           <div className="lg:col-span-2">

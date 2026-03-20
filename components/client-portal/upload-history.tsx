@@ -86,10 +86,10 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Upload History</CardTitle>
-        <CardDescription>
+    <Card className="shadow-lg" style={{ borderTop: '4px solid #2B4C7E' }}>
+      <CardHeader style={{ backgroundColor: '#F0EDE8' }}>
+        <CardTitle style={{ color: '#2B4C7E' }}>Upload History</CardTitle>
+        <CardDescription style={{ color: '#6B7280' }}>
           {uploads.length} {uploads.length === 1 ? 'upload' : 'uploads'}
         </CardDescription>
       </CardHeader>
@@ -105,16 +105,20 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
             {uploads.map((upload) => (
               <div
                 key={upload.id}
-                className="rounded-lg border border-gray-200 p-4 hover:bg-gray-50 transition-colors"
+                className="rounded-lg p-4 transition-all hover:shadow-md"
+                style={{
+                  border: '1px solid #D8D4CC',
+                  backgroundColor: 'white'
+                }}
               >
                 <div className="flex items-start gap-3">
-                  <FileText className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                  <FileText className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: '#2B4C7E' }} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
-                      <p className="font-medium text-gray-900 truncate">
+                      <p className="font-semibold truncate" style={{ color: '#1A2A44' }}>
                         {upload.original_name}
                       </p>
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 flex-shrink-0" style={{ color: '#10B981' }} />
                     </div>
                     {upload.notes && (
                       <p className="text-sm text-gray-600 mt-1 italic">
