@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export function ClientFooter() {
   return (
-    <footer className="mt-auto py-10" style={{ backgroundColor: '#1A2A44', color: 'white' }}>
+    <footer className="mt-auto py-10" style={{ backgroundColor: '#2B4C7E', color: 'white' }}>
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
@@ -12,8 +12,8 @@ export function ClientFooter() {
             <Image
               src="/tabber-logo-full-white.svg"
               alt="Tabber"
-              width={400}
-              height={133}
+              width={600}
+              height={200}
               priority
             />
           </div>

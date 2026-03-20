@@ -120,21 +120,20 @@ export default function ClientPortalPage() {
 
   // Main portal interface
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#ffffff' }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F9FAFB' }}>
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
-      {/* Page Title Section */}
-      <div className="py-12" style={{ backgroundColor: '#2B4C7E' }}>
+      {/* Page Title */}
+      <div className="py-8 border-b-2" style={{ backgroundColor: 'white', borderColor: '#2B4C7E' }}>
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center gap-4">
-            <Shield className="h-10 w-10 text-white" />
-            <h2 className="text-4xl font-bold text-white">Secure Document Upload</h2>
+            <Shield className="h-8 w-8" style={{ color: '#2B4C7E' }} />
+            <h2 className="text-3xl font-bold" style={{ color: '#2B4C7E' }}>Secure Document Upload</h2>
           </div>
-          <p className="text-center text-white text-lg mt-3">Upload your documents securely. All files are encrypted and stored safely.</p>
         </div>
       </div>
 
-      <div className="flex-1 container mx-auto px-6 py-12" style={{ backgroundColor: '#FAF9F7' }}>
+      <div className="flex-1 container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left column: Upload History */}
           <div className="lg:col-span-2">
