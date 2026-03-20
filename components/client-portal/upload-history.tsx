@@ -72,43 +72,22 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
     try {
       setDownloading(uploadId);
 
+      // Get the download URL from our API
       const response = await fetch(`/api/client/download?token=${token}&uploadId=${uploadId}`);
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || 'Failed to download file');
+        throw new Error(data.error || 'Failed to get download URL');
       }
 
       const data = await response.json();
 
-      // Fetch the file with no-cors to avoid CORS issues, then download
-      const fileResponse = await fetch(data.downloadUrl, {
-        method: 'GET',
-        mode: 'cors',
-      });
+      console.log('Download URL received:', data.downloadUrl);
 
-      if (!fileResponse.ok) {
-        throw new Error('Failed to fetch file from storage');
-      }
+      // Simply redirect to the URL - the content-disposition header will force download
+      window.location.href = data.downloadUrl;
 
-      const blob = await fileResponse.blob();
-
-      // Create blob URL and trigger download
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = filename;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-
-      // Clean up after a short delay
-      setTimeout(() => {
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(blobUrl);
-      }, 100);
-
-      toast.success('Download complete!', {
+      toast.success('Download started!', {
         description: filename,
       });
     } catch (error) {
@@ -117,7 +96,8 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
         description: error instanceof Error ? error.message : 'Please try again',
       });
     } finally {
-      setDownloading(null);
+      // Keep downloading state for a bit to show feedback
+      setTimeout(() => setDownloading(null), 2000);
     }
   };
 
