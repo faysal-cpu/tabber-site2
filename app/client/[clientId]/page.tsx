@@ -69,21 +69,19 @@ export default function ClientPortalPage() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F7' }}>
-        <Card className="w-full max-w-md shadow-xl">
-          <CardContent className="flex flex-col items-center justify-center py-16">
-            <Image
-              src="/tabber-logo-full.svg"
-              alt="Tabber"
-              width={200}
-              height={67}
-              priority
-              className="mb-8"
-            />
-            <Loader2 className="h-12 w-12 animate-spin mb-4" style={{ color: '#2B4C7E' }} />
-            <p className="text-lg font-medium" style={{ color: '#2B4C7E' }}>Authenticating...</p>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#ffffff' }}>
+        <div className="flex flex-col items-center justify-center">
+          <Image
+            src="/tabber-logo-full.svg"
+            alt="Tabber"
+            width={350}
+            height={117}
+            priority
+            className="mb-12"
+          />
+          <Loader2 className="h-16 w-16 animate-spin mb-6" style={{ color: '#2B4C7E' }} />
+          <p className="text-xl font-semibold" style={{ color: '#2B4C7E' }}>Authenticating...</p>
+        </div>
       </div>
     );
   }
@@ -121,22 +119,22 @@ export default function ClientPortalPage() {
 
   // Main portal interface
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F7' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
       {/* Page Title Section */}
-      <div className="py-8" style={{ backgroundColor: '#2B4C7E' }}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-3">
-            <Shield className="h-8 w-8 text-white" />
-            <h2 className="text-3xl font-bold text-white">Secure Document Upload</h2>
+      <div className="py-12" style={{ backgroundColor: '#2B4C7E' }}>
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-center gap-4">
+            <Shield className="h-10 w-10 text-white" />
+            <h2 className="text-4xl font-bold text-white">Secure Document Upload</h2>
           </div>
-          <p className="text-center text-white/90 mt-2">Upload your documents securely. All files are encrypted and stored safely.</p>
+          <p className="text-center text-white text-lg mt-3">Upload your documents securely. All files are encrypted and stored safely.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-6 py-12" style={{ backgroundColor: '#FAF9F7' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left column: Upload History */}
           <div className="lg:col-span-2">
             <UploadHistory token={token!} refreshTrigger={refreshTrigger} />

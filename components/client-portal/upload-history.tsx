@@ -86,10 +86,10 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
   }
 
   return (
-    <Card className="shadow-lg" style={{ borderTop: '4px solid #2B4C7E' }}>
-      <CardHeader style={{ backgroundColor: '#F0EDE8' }}>
-        <CardTitle style={{ color: '#2B4C7E' }}>Upload History</CardTitle>
-        <CardDescription style={{ color: '#6B7280' }}>
+    <Card className="shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
+      <CardHeader className="pb-4">
+        <CardTitle className="text-2xl" style={{ color: '#2B4C7E' }}>Upload History</CardTitle>
+        <CardDescription className="text-base" style={{ color: '#6B7280' }}>
           {uploads.length} {uploads.length === 1 ? 'upload' : 'uploads'}
         </CardDescription>
       </CardHeader>
@@ -105,9 +105,9 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
             {uploads.map((upload) => (
               <div
                 key={upload.id}
-                className="rounded-lg p-4 transition-all hover:shadow-md"
+                className="rounded-lg p-5 transition-all hover:shadow-md"
                 style={{
-                  border: '1px solid #D8D4CC',
+                  border: '2px solid #E8EDF5',
                   backgroundColor: 'white'
                 }}
               >

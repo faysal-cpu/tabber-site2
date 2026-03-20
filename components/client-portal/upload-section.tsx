@@ -128,13 +128,13 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
   };
 
   return (
-    <Card className="sticky top-4 shadow-lg" style={{ borderTop: '4px solid #2B4C7E' }}>
-      <CardHeader style={{ backgroundColor: '#F0EDE8' }}>
-        <CardTitle className="flex items-center gap-2" style={{ color: '#2B4C7E' }}>
-          <CloudUpload className="h-6 w-6" />
+    <Card className="sticky top-4 shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
+      <CardHeader className="pb-4">
+        <CardTitle className="flex items-center gap-3 text-2xl" style={{ color: '#2B4C7E' }}>
+          <CloudUpload className="h-7 w-7" />
           Upload Documents
         </CardTitle>
-        <CardDescription style={{ color: '#6B7280' }}>
+        <CardDescription className="text-base" style={{ color: '#6B7280' }}>
           Drag and drop files or click to browse
         </CardDescription>
       </CardHeader>
