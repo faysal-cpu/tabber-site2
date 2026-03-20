@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FileText, Loader2 } from 'lucide-react';
+import { FileText, Loader2, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -110,9 +110,12 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
                 <div className="flex items-start gap-3">
                   <FileText className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-gray-900 truncate">
-                      {upload.original_name}
-                    </p>
+                    <div className="flex items-start justify-between gap-2">
+                      <p className="font-medium text-gray-900 truncate">
+                        {upload.original_name}
+                      </p>
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    </div>
                     {upload.notes && (
                       <p className="text-sm text-gray-600 mt-1 italic">
                         "{upload.notes}"

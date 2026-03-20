@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { ClientHeader } from '@/components/client-portal/client-header';
-import { ChecklistSection } from '@/components/client-portal/checklist-section';
 import { UploadSection } from '@/components/client-portal/upload-section';
 import { UploadHistory } from '@/components/client-portal/upload-history';
 import { Card, CardContent } from '@/components/ui/card';
@@ -63,17 +62,16 @@ export default function ClientPortalPage() {
 
   const handleUploadComplete = () => {
     // Increment trigger to refresh upload history
-    // Note: Checklist is now admin-controlled and doesn't auto-update
     setRefreshTrigger((prev) => prev + 1);
   };
 
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAF9F7' }}>
         <Card className="w-full max-w-md">
           <CardContent className="flex flex-col items-center justify-center py-12">
-            <Loader2 className="h-12 w-12 animate-spin text-purple-600 mb-4" />
+            <Loader2 className="h-12 w-12 animate-spin mb-4" style={{ color: '#2B4C7E' }} />
             <p className="text-gray-600">Authenticating...</p>
           </CardContent>
         </Card>
@@ -84,7 +82,7 @@ export default function ClientPortalPage() {
   // Error state
   if (error || !clientInfo) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: '#FAF9F7' }}>
         <Card className="w-full max-w-2xl">
           <CardContent className="py-12">
             <Alert variant="destructive">
@@ -101,6 +99,7 @@ export default function ClientPortalPage() {
               <Button
                 variant="outline"
                 onClick={() => (window.location.href = '/contact')}
+                style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}
               >
                 Contact Support
               </Button>
@@ -113,14 +112,13 @@ export default function ClientPortalPage() {
 
   // Main portal interface
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ backgroundColor: '#FAF9F7' }}>
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left column: Checklist and Upload History */}
-          <div className="lg:col-span-2 space-y-6">
-            <ChecklistSection token={token!} />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left column: Upload History */}
+          <div className="lg:col-span-2">
             <UploadHistory token={token!} refreshTrigger={refreshTrigger} />
           </div>
 

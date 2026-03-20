@@ -95,7 +95,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
       setProgress(100);
 
-      toast.success('✓ File uploaded successfully!', {
+      toast.success('Thank you, your file has been uploaded successfully!', {
         description: selectedFile.name,
       });
 

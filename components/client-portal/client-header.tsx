@@ -1,6 +1,7 @@
 'use client';
 
-import { Building2 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ClientHeaderProps {
   clientName: string;
@@ -9,20 +10,31 @@ interface ClientHeaderProps {
 
 export function ClientHeader({ clientName, clientEmail }: ClientHeaderProps) {
   return (
-    <div className="border-b bg-white">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-indigo-600">
-            <Building2 className="h-6 w-6 text-white" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">{clientName}</h1>
+    <header className="border-b bg-white shadow-sm">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="https://tabber.ca" className="flex items-center">
+            <Image
+              src="/tabber-logo-full.svg"
+              alt="Tabber"
+              width={120}
+              height={40}
+              priority
+            />
+          </Link>
+
+          {/* Client Info */}
+          <div className="text-right">
+            <h1 className="text-lg font-semibold" style={{ color: '#2B4C7E' }}>
+              {clientName}
+            </h1>
             {clientEmail && (
-              <p className="text-sm text-gray-500">{clientEmail}</p>
+              <p className="text-sm text-gray-600">{clientEmail}</p>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
