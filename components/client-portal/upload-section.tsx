@@ -178,7 +178,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
   return (
     <>
-      <Card className="sticky top-4 shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
+      <Card className="shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-2xl" style={{ color: '#2B4C7E' }}>
             <CloudUpload className="h-7 w-7" />

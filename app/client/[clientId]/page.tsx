@@ -135,16 +135,12 @@ export default function ClientPortalPage() {
       </div>
 
       <div className="flex-1 container mx-auto px-6 py-12" style={{ backgroundColor: '#FAF9F7' }}>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* Left column: Upload History */}
-          <div className="lg:col-span-2">
-            <UploadHistory token={token!} refreshTrigger={refreshTrigger} />
-          </div>
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Upload Section - Top */}
+          <UploadSection token={token!} onUploadComplete={handleUploadComplete} />
 
-          {/* Right column: Upload Section */}
-          <div className="lg:col-span-1">
-            <UploadSection token={token!} onUploadComplete={handleUploadComplete} />
-          </div>
+          {/* Upload History - Bottom */}
+          <UploadHistory token={token!} refreshTrigger={refreshTrigger} />
         </div>
       </div>
 
