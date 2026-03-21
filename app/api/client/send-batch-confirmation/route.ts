@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateClientToken } from '@/lib/validation/token-validator';
 import { sendBatchUploadConfirmation } from '@/lib/email/send-upload-confirmation';
+import { sendBatchAdminNotification } from '@/lib/email/send-batch-admin-notification';
 
 export interface BatchConfirmationRequest {
   token: string;
@@ -46,16 +47,26 @@ export async function POST(request: NextRequest) {
 
     const client = tokenResult.client;
 
-    // Send batch confirmation email
+    // Send batch confirmation email to client
     await sendBatchUploadConfirmation({
       clientEmail: client.email,
       clientName: client.name,
       files,
     });
 
+    // Send batch notification to admin (non-blocking)
+    sendBatchAdminNotification({
+      clientEmail: client.email,
+      clientName: client.name,
+      files,
+    }).catch((error) => {
+      console.error('Failed to send batch admin notification email:', error);
+      // Don't fail the request if admin email fails
+    });
+
     return NextResponse.json({
       success: true,
-      message: 'Confirmation email sent',
+      message: 'Confirmation emails sent',
     });
   } catch (error) {
     console.error('Batch confirmation API error:', error);

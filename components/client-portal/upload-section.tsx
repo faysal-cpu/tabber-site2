@@ -24,7 +24,7 @@ interface UploadSectionProps {
 
 export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
-  const [notes, setNotes] = useState<string>('');
+  const [fileNotes, setFileNotes] = useState<Record<number, string>>({});
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -46,6 +46,19 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
   const handleRemoveFile = (index: number) => {
     setSelectedFiles(prev => prev.filter((_, i) => i !== index));
+    // Rebuild notes object with updated indexes
+    setFileNotes(prev => {
+      const newNotes: Record<number, string> = {};
+      Object.entries(prev).forEach(([key, value]) => {
+        const oldIndex = parseInt(key);
+        if (oldIndex < index) {
+          newNotes[oldIndex] = value;
+        } else if (oldIndex > index) {
+          newNotes[oldIndex - 1] = value;
+        }
+      });
+      return newNotes;
+    });
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -82,11 +95,12 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
       for (let i = 0; i < selectedFiles.length; i++) {
         const file = selectedFiles[i];
+        const fileNote = fileNotes[i]?.trim();
         const formData = new FormData();
         formData.append('token', token);
         formData.append('file', file);
-        if (notes.trim()) {
-          formData.append('notes', notes.trim());
+        if (fileNote) {
+          formData.append('notes', fileNote);
         }
 
         // Animate progress smoothly (90% for uploads, 10% for email)
@@ -112,7 +126,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
         uploaded++;
         uploadedFiles.push({
           filename: data.upload.filename,
-          notes: notes.trim() || undefined,
+          notes: fileNote || undefined,
         });
         setProgress(nextProgress);
       }
@@ -136,7 +150,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
       // Reset form
       setSelectedFiles([]);
-      setNotes('');
+      setFileNotes({});
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
@@ -239,52 +253,42 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
           {/* Selected Files List */}
           {selectedFiles.length > 0 && (
-            <div className="max-h-60 overflow-y-auto space-y-2 border rounded-lg p-3" style={{ backgroundColor: '#F9FAFB' }}>
+            <div className="max-h-96 overflow-y-auto space-y-3 border rounded-lg p-3" style={{ backgroundColor: '#F9FAFB' }}>
               {selectedFiles.map((file, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-2 bg-white rounded border"
+                  className="bg-white rounded border p-3 space-y-2"
                 >
-                  <div className="flex items-center gap-2 flex-1 min-w-0">
-                    <FileIcon className="h-4 w-4 flex-shrink-0" style={{ color: '#2B4C7E' }} />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium truncate">{file.name}</p>
-                      <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <FileIcon className="h-4 w-4 flex-shrink-0" style={{ color: '#2B4C7E' }} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-medium truncate">{file.name}</p>
+                        <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
+                      </div>
                     </div>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleRemoveFile(index)}
+                      disabled={uploading}
+                      className="flex-shrink-0"
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
                   </div>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleRemoveFile(index)}
+                  <Input
+                    type="text"
+                    placeholder="Add a note (optional)"
+                    value={fileNotes[index] || ''}
+                    onChange={(e) => setFileNotes(prev => ({ ...prev, [index]: e.target.value }))}
                     disabled={uploading}
-                    className="flex-shrink-0"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
+                    maxLength={200}
+                    className="text-sm"
+                  />
                 </div>
               ))}
-            </div>
-          )}
-
-          {/* Optional Notes */}
-          {selectedFiles.length > 0 && (
-            <div className="space-y-2">
-              <Label htmlFor="notes" className="text-sm text-gray-600">
-                Notes about these files (optional)
-              </Label>
-              <Input
-                id="notes"
-                type="text"
-                placeholder="e.g., January documents"
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                disabled={uploading}
-                maxLength={200}
-              />
-              <p className="text-xs text-gray-500">
-                This note will apply to all uploaded files
-              </p>
             </div>
           )}
 
