@@ -125,7 +125,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
 
         uploaded++;
         uploadedFiles.push({
-          filename: data.upload.filename,
+          filename: data.upload.originalName,
           notes: fileNote || undefined,
         });
         setProgress(nextProgress);
