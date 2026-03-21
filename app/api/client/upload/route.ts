@@ -85,18 +85,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email confirmation to client (non-blocking)
-    sendUploadConfirmation({
-      clientEmail: client.email,
-      clientName: client.name,
-      filename: uploadResult.filename,
-      fileSize: file.size,
-      notes: notes || undefined,
-    }).catch((error) => {
-      console.error('Failed to send upload confirmation email:', error);
-      // Don't fail the upload if email fails
-    });
-
     // Send notification to admin (non-blocking)
     sendAdminNotification({
       clientEmail: client.email,

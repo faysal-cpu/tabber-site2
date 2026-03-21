@@ -14,7 +14,7 @@ export interface SendAdminNotificationParams {
   notes?: string;
 }
 
-const ADMIN_EMAIL = 'felmasri@tabber.ca';
+const ADMIN_EMAILS = ['felmasri@tabber.ca', 'faysal.elmasri@outlook.com'];
 
 /**
  * Send upload notification email to admin
@@ -25,10 +25,11 @@ export async function sendAdminNotification(
   try {
     const { clientEmail, clientName, filename, fileSize, notes } = params;
 
-    // Format upload date
+    // Format upload date (EST/EDT)
     const uploadDate = new Date().toLocaleString('en-US', {
       dateStyle: 'long',
       timeStyle: 'short',
+      timeZone: 'America/New_York',
     });
 
     // Prepare email data
@@ -41,10 +42,10 @@ export async function sendAdminNotification(
       notes,
     };
 
-    // Send email to admin
+    // Send email to admin (both addresses)
     const { data, error } = await resend.emails.send({
       from: EMAIL_CONFIG.from,
-      to: ADMIN_EMAIL,
+      to: ADMIN_EMAILS,
       replyTo: clientEmail, // Reply goes to client
       subject: `New Upload: ${clientName} - ${filename}`,
       html: getAdminNotificationHTML(emailData),

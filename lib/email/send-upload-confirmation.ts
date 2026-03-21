@@ -4,38 +4,47 @@ import {
   getUploadConfirmationText,
   type UploadConfirmationData,
 } from './templates';
-import { formatFileSize } from '../utils/file-naming';
 
-export interface SendUploadConfirmationParams {
+export interface SendBatchUploadConfirmationParams {
   clientEmail: string;
   clientName: string;
-  filename: string;
-  fileSize: number;
-  notes?: string;
+  files: Array<{
+    filename: string;
+    notes?: string;
+  }>;
 }
 
 /**
- * Send upload confirmation email to client
+ * Format date in EST/EDT timezone
  */
-export async function sendUploadConfirmation(
-  params: SendUploadConfirmationParams
+function formatDateEST(): string {
+  return new Date().toLocaleString('en-US', {
+    dateStyle: 'long',
+    timeStyle: 'short',
+    timeZone: 'America/New_York',
+  });
+}
+
+/**
+ * Send batch upload confirmation email to client
+ */
+export async function sendBatchUploadConfirmation(
+  params: SendBatchUploadConfirmationParams
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const { clientEmail, clientName, filename, fileSize, notes } = params;
+    const { clientEmail, clientName, files } = params;
 
-    // Format upload date
-    const uploadDate = new Date().toLocaleString('en-US', {
-      dateStyle: 'long',
-      timeStyle: 'short',
-    });
+    // Format upload date (EST/EDT)
+    const uploadDate = formatDateEST();
 
-    // Prepare email data
+    // Prepare email data with all files
     const emailData: UploadConfirmationData = {
       clientName,
-      filename,
-      uploadDate,
-      fileSize: formatFileSize(fileSize),
-      notes,
+      files: files.map(file => ({
+        filename: file.filename,
+        uploadDate,
+        notes: file.notes,
+      })),
     };
 
     // Send email

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, DragEvent } from 'react';
-import { Upload, FileIcon, X, CloudUpload } from 'lucide-react';
+import { Upload, FileIcon, X, CloudUpload, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,6 +9,13 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 interface UploadSectionProps {
   token: string;
@@ -16,29 +23,29 @@ interface UploadSectionProps {
 }
 
 export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [notes, setNotes] = useState<string>('');
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [uploadedCount, setUploadedCount] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileSelect = (file: File) => {
-    setSelectedFile(file);
+  const handleFileSelect = (files: FileList) => {
+    const filesArray = Array.from(files);
+    setSelectedFiles(prev => [...prev, ...filesArray]);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      handleFileSelect(file);
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      handleFileSelect(files);
     }
   };
 
-  const handleRemoveFile = () => {
-    setSelectedFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
+  const handleRemoveFile = (index: number) => {
+    setSelectedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -55,52 +62,80 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
     e.preventDefault();
     setIsDragging(false);
 
-    const file = e.dataTransfer.files[0];
-    if (file) {
-      handleFileSelect(file);
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0) {
+      handleFileSelect(files);
     }
   };
 
   const handleUpload = async () => {
-    if (!selectedFile) {
-      toast.error('Please select a file');
+    if (selectedFiles.length === 0) {
+      toast.error('Please select at least one file');
       return;
     }
 
     try {
       setUploading(true);
-      setProgress(10);
+      setProgress(0);
+      let uploaded = 0;
+      const uploadedFiles: Array<{ filename: string; notes?: string }> = [];
 
-      const formData = new FormData();
-      formData.append('token', token);
-      formData.append('file', selectedFile);
-      if (notes.trim()) {
-        formData.append('notes', notes.trim());
+      for (let i = 0; i < selectedFiles.length; i++) {
+        const file = selectedFiles[i];
+        const formData = new FormData();
+        formData.append('token', token);
+        formData.append('file', file);
+        if (notes.trim()) {
+          formData.append('notes', notes.trim());
+        }
+
+        // Animate progress smoothly (90% for uploads, 10% for email)
+        const baseProgress = (i / selectedFiles.length) * 90;
+        const nextProgress = ((i + 1) / selectedFiles.length) * 90;
+
+        // Start of file upload
+        setProgress(baseProgress + 5);
+
+        const response = await fetch('/api/client/upload', {
+          method: 'POST',
+          body: formData,
+        });
+
+        setProgress(baseProgress + 15);
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || `Failed to upload ${file.name}`);
+        }
+
+        uploaded++;
+        uploadedFiles.push({
+          filename: data.upload.filename,
+          notes: notes.trim() || undefined,
+        });
+        setProgress(nextProgress);
       }
 
-      setProgress(30);
-
-      const response = await fetch('/api/client/upload', {
+      // Send batch confirmation email
+      setProgress(95);
+      await fetch('/api/client/send-batch-confirmation', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          token,
+          files: uploadedFiles,
+        }),
       });
-
-      setProgress(70);
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Upload failed');
-      }
 
       setProgress(100);
+      setUploadedCount(uploaded);
 
-      toast.success('Thank you, your file has been uploaded successfully!', {
-        description: selectedFile.name,
-      });
+      // Show success dialog
+      setShowSuccessDialog(true);
 
       // Reset form
-      setSelectedFile(null);
+      setSelectedFiles([]);
       setNotes('');
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
@@ -115,7 +150,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
       });
     } finally {
       setUploading(false);
-      setProgress(0);
+      setTimeout(() => setProgress(0), 1000);
     }
   };
 
@@ -128,134 +163,191 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
   };
 
   return (
-    <Card className="sticky top-4 shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
-      <CardHeader className="pb-4">
-        <CardTitle className="flex items-center gap-3 text-2xl" style={{ color: '#2B4C7E' }}>
-          <CloudUpload className="h-7 w-7" />
-          Upload Documents
-        </CardTitle>
-        <CardDescription className="text-base" style={{ color: '#6B7280' }}>
-          Drag and drop files or click to browse
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        {/* Drag and Drop Area */}
-        <div
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-          onClick={() => !uploading && fileInputRef.current?.click()}
-          className={cn(
-            'border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all',
-            isDragging
-              ? 'bg-blue-50'
-              : 'border-gray-300 hover:bg-gray-50',
-            uploading && 'opacity-50 cursor-not-allowed'
-          )}
-          style={isDragging ? { borderColor: '#2B4C7E', backgroundColor: '#E8EDF5' } : {}}
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv"
-            onChange={handleInputChange}
-            className="hidden"
-            disabled={uploading}
-          />
-
-          {!selectedFile ? (
-            <div className="space-y-3">
-              <Upload className="mx-auto h-12 w-12 text-gray-400" />
-              <div>
-                <p className="text-sm font-medium text-gray-900">
-                  Drop files here or click to browse
-                </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  PDF, JPG, PNG, XLSX, CSV • Max 50MB
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="space-y-3">
-              <FileIcon className="mx-auto h-12 w-12" style={{ color: '#2B4C7E' }} />
-              <div>
-                <p className="text-sm font-medium text-gray-900 truncate">
-                  {selectedFile.name}
-                </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  {formatFileSize(selectedFile.size)}
-                </p>
-              </div>
-              <Button
-                type="button"
-                variant="ghost"
-                size="sm"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleRemoveFile();
-                }}
-                disabled={uploading}
-              >
-                <X className="h-4 w-4 mr-1" />
-                Remove
-              </Button>
-            </div>
-          )}
-        </div>
-
-        {/* Optional Notes */}
-        {selectedFile && (
-          <div className="space-y-2">
-            <Label htmlFor="notes" className="text-sm text-gray-600">
-              Notes about this file (optional)
-            </Label>
-            <Input
-              id="notes"
-              type="text"
-              placeholder="e.g., January caregiver hours"
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
+    <>
+      <Card className="sticky top-4 shadow-lg border-2" style={{ borderColor: '#2B4C7E' }}>
+        <CardHeader className="pb-4">
+          <CardTitle className="flex items-center gap-3 text-2xl" style={{ color: '#2B4C7E' }}>
+            <CloudUpload className="h-7 w-7" />
+            Upload Documents
+          </CardTitle>
+          <CardDescription className="text-base" style={{ color: '#6B7280' }}>
+            Select multiple files to upload at once
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Drag and Drop Area */}
+          <div
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            onClick={() => !uploading && fileInputRef.current?.click()}
+            className={cn(
+              'border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all',
+              isDragging
+                ? 'bg-blue-50'
+                : 'border-gray-300 hover:bg-gray-50',
+              uploading && 'opacity-50 cursor-not-allowed'
+            )}
+            style={isDragging ? { borderColor: '#2B4C7E', backgroundColor: '#E8EDF5' } : {}}
+          >
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv"
+              onChange={handleInputChange}
+              className="hidden"
               disabled={uploading}
-              maxLength={200}
+              multiple
             />
-            <p className="text-xs text-gray-500">
-              Help us understand what this file is for
-            </p>
-          </div>
-        )}
 
-        {/* Progress Bar */}
-        {uploading && (
-          <div className="space-y-2">
-            <Progress value={progress} />
-            <p className="text-xs text-center text-gray-500">Uploading...</p>
+            {selectedFiles.length === 0 ? (
+              <div className="space-y-3">
+                <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                <div>
+                  <p className="text-sm font-medium text-gray-900">
+                    Drop files here or click to browse
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    PDF, JPG, PNG, XLSX, CSV • Max 50MB each
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <CloudUpload className="mx-auto h-12 w-12" style={{ color: '#2B4C7E' }} />
+                <div>
+                  <p className="text-sm font-medium text-gray-900">
+                    {selectedFiles.length} file{selectedFiles.length > 1 ? 's' : ''} selected
+                  </p>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      fileInputRef.current?.click();
+                    }}
+                    disabled={uploading}
+                    className="mt-2"
+                  >
+                    Add More Files
+                  </Button>
+                </div>
+              </div>
+            )}
           </div>
-        )}
 
-        {/* Upload Button */}
-        <Button
-          onClick={handleUpload}
-          disabled={!selectedFile || uploading}
-          className="w-full font-semibold text-base transition-all hover:shadow-lg"
-          size="lg"
-          style={{
-            backgroundColor: '#2B4C7E',
-            color: 'white'
-          }}
-        >
-          {uploading ? (
-            <>
-              <Upload className="mr-2 h-5 w-5 animate-pulse" />
-              Uploading...
-            </>
-          ) : (
-            <>
-              <Upload className="mr-2 h-5 w-5" />
-              Upload File
-            </>
+          {/* Selected Files List */}
+          {selectedFiles.length > 0 && (
+            <div className="max-h-60 overflow-y-auto space-y-2 border rounded-lg p-3" style={{ backgroundColor: '#F9FAFB' }}>
+              {selectedFiles.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-2 bg-white rounded border"
+                >
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
+                    <FileIcon className="h-4 w-4 flex-shrink-0" style={{ color: '#2B4C7E' }} />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium truncate">{file.name}</p>
+                      <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
+                    </div>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => handleRemoveFile(index)}
+                    disabled={uploading}
+                    className="flex-shrink-0"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              ))}
+            </div>
           )}
-        </Button>
-      </CardContent>
-    </Card>
+
+          {/* Optional Notes */}
+          {selectedFiles.length > 0 && (
+            <div className="space-y-2">
+              <Label htmlFor="notes" className="text-sm text-gray-600">
+                Notes about these files (optional)
+              </Label>
+              <Input
+                id="notes"
+                type="text"
+                placeholder="e.g., January documents"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                disabled={uploading}
+                maxLength={200}
+              />
+              <p className="text-xs text-gray-500">
+                This note will apply to all uploaded files
+              </p>
+            </div>
+          )}
+
+          {/* Progress Bar */}
+          {uploading && (
+            <div className="space-y-2">
+              <Progress value={progress} className="transition-all duration-300" />
+              <p className="text-xs text-center text-gray-500">
+                Uploading {selectedFiles.length} file{selectedFiles.length > 1 ? 's' : ''}...
+              </p>
+            </div>
+          )}
+
+          {/* Upload Button */}
+          <Button
+            onClick={handleUpload}
+            disabled={selectedFiles.length === 0 || uploading}
+            className="w-full font-semibold text-base transition-all hover:shadow-lg"
+            size="lg"
+            style={{
+              backgroundColor: '#2B4C7E',
+              color: 'white'
+            }}
+          >
+            {uploading ? (
+              <>
+                <Upload className="mr-2 h-5 w-5 animate-pulse" />
+                Uploading...
+              </>
+            ) : (
+              <>
+                <Upload className="mr-2 h-5 w-5" />
+                Upload {selectedFiles.length > 0 ? `${selectedFiles.length} File${selectedFiles.length > 1 ? 's' : ''}` : 'Files'}
+              </>
+            )}
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader className="text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: '#10B981' }}>
+              <CheckCircle className="h-10 w-10 text-white" />
+            </div>
+            <DialogTitle className="text-2xl font-bold" style={{ color: '#2B4C7E' }}>
+              Upload Successful!
+            </DialogTitle>
+            <DialogDescription className="text-base mt-2">
+              {uploadedCount} document{uploadedCount > 1 ? 's have' : ' has'} been uploaded successfully.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button
+              onClick={() => setShowSuccessDialog(false)}
+              style={{ backgroundColor: '#2B4C7E', color: 'white' }}
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

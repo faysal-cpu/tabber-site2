@@ -12,8 +12,8 @@ export function ClientFooter() {
             <Image
               src="/tabber-logo-full-white.svg"
               alt="Tabber"
-              width={600}
-              height={200}
+              width={450}
+              height={150}
               priority
             />
           </div>
