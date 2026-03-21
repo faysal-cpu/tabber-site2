@@ -175,7 +175,7 @@ export function getUploadConfirmationHTML(data: UploadConfirmationData): string 
       <div class="signature">
         <p style="margin-bottom: 5px;">Best regards,<br><strong>The Tabber Team</strong></p>
         <div class="logo-section">
-          <img src="https://tabber.ca/tabber-logo-full.svg" alt="Tabber" width="405" height="135" style="display: block; margin-top: 10px;">
+          <img src="https://tabber.ca/tabber-logo-full.svg" alt="Tabber" width="405" height="135" style="display: block; margin-top: 10px; max-width: 100%; height: auto;">
         </div>
       </div>
     </div>
@@ -539,7 +539,7 @@ export function getBatchAdminNotificationHTML(data: BatchAdminNotificationData):
       <div class="signature">
         <p style="margin-bottom: 5px; font-size: 14px; color: #6B7280;">Tabber Client Portal</p>
         <div class="logo-section">
-          <img src="https://tabber.ca/tabber-logo-full.svg" alt="Tabber" width="405" height="135" style="display: block; margin-top: 10px;">
+          <img src="https://tabber.ca/tabber-logo-full.svg" alt="Tabber" width="405" height="135" style="display: block; margin-top: 10px; max-width: 100%; height: auto;">
         </div>
       </div>
     </div>
