@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, Star, Quote, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, Star, Quote, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Heart, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FMHC Bookkeeping | Tabber",
@@ -59,9 +59,19 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
-                    <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                    <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
+                  <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
+                      <GraduationCap className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
+                      <Heart className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
+                      <Shield className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                    </div>
                   </div>
                   <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
                   <div className="mt-4">
@@ -93,10 +103,10 @@ export default function FmhcPage() {
         </section>
 
         {/* What is FMHC - improved readability */}
-        <section className="bg-card py-14 md:py-20">
-          <div className="mx-auto max-w-[800px] px-6">
-            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
-            <div className="space-y-5 text-[15px] leading-[1.8] text-muted-foreground">
+        <section className="bg-card py-10 md:py-14">
+          <div className="mx-auto max-w-[1000px] px-6">
+            <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
+            <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>Family-Managed Home Care (FMHC) is a program administered by Ontario Health atHome that empowers families to directly manage the care of a loved one at home. Instead of receiving care through an agency, families receive funding to hire, schedule, and pay their own care workers.</p>
               <p>This gives families control and flexibility — but also adds administrative responsibilities like payroll, remittances, compliance reporting, and financial recordkeeping.</p>
               <p className="font-medium text-navy">{"That's where Tabber comes in. Our CPA qualified team handle the numbers so you can focus on care."}</p>
@@ -105,7 +115,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Downloadable Checklist CTA */}
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 border-r-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E', borderRightColor: '#2B4C7E' }}>
               <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
@@ -126,9 +136,9 @@ export default function FmhcPage() {
         </section>
 
         {/* How We Help - more spacing, taglines */}
-        <section id="how-we-help" className="scroll-mt-20 bg-secondary py-14 md:py-20">
+        <section id="how-we-help" className="scroll-mt-20 bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-12 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">How We Help</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">How We Help</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {steps.map((step) => {
                 const Icon = step.icon
@@ -149,7 +159,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Compliance & Reporting - two column bullets */}
-        <section className="bg-card py-14 md:py-20">
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
@@ -171,7 +181,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Pricing Example */}
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
             <h2 className="font-serif text-[24px] font-bold text-navy md:text-[28px]">You will never be charged out-of-pocket.</h2>
@@ -181,9 +191,9 @@ export default function FmhcPage() {
         </section>
 
         {/* From FMHC Families - enhanced testimonials */}
-        <section className="bg-secondary py-16 md:py-24">
+        <section className="bg-secondary py-10 md:py-16">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-12 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">From FMHC Families</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">From FMHC Families</h2>
             <div className="grid gap-8 md:grid-cols-2">
               {fmhcTestimonials.map((t) => (
                 <div key={t.name} className="relative rounded-2xl border border-border bg-card p-10 shadow-sm">
@@ -213,9 +223,9 @@ export default function FmhcPage() {
         </section>
 
         {/* What Happens After You Reach Out */}
-        <section className="bg-card py-14 md:py-20">
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[900px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {onboardingSteps.map((step, i) => {
                 const Icon = step.icon
@@ -235,9 +245,9 @@ export default function FmhcPage() {
         </section>
 
         {/* FAQ Section - with borders and icons */}
-        <section className="bg-secondary py-14 md:py-20">
+        <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[800px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Questions</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Questions</h2>
             <div className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
               {faqs.map((faq) => (
                 <details key={faq.q} className="group">
@@ -256,7 +266,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Final CTA - with secondary option */}
-        <section className="py-14 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
             <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Let Us Handle the Bookkeeping</h2>
             <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">You focus on your {"family's"} care. We focus on keeping your finances compliant and organized.</p>
