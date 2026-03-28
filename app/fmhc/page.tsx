@@ -59,18 +59,18 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-2">
-                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
-                      <GraduationCap className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                  <div className="mb-3 flex items-center justify-center md:justify-start gap-1.5 md:gap-2">
+                    <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
+                      <GraduationCap className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
                     </div>
-                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
-                      <Heart className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                    <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
+                      <Heart className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
                     </div>
-                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-sm">
-                      <Shield className="size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                    <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
+                      <Shield className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>Fully Insured</span>
                     </div>
                   </div>
                   <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
