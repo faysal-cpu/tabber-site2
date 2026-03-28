@@ -30,7 +30,7 @@ const complianceItems = [
 ]
 
 const fmhcTestimonials = [
-  { headline: "Dependable Bookkeeping", quote: "I used to dread sorting through our FMHC expenses every month. Tabber took that whole task off my hands without having to pay anything out of pocket. Everything's clear and handled properly now.", name: "Sarah M.", role: "Substitute Decision-Maker" },
+  { headline: "Dependable Bookkeeping", quote: "Tabber does an excellent job handling our caregiver payroll and FMHC reporting. Everything is organized and submitted on time.", name: "Sarah M.", role: "Substitute Decision-Maker" },
   { headline: "Reliable FMHC Support", quote: "It's been helpful working with someone who understands FMHC requirements. Our reporting and records stay organized, and everything gets done properly.", name: "Jennifer K.", role: "Primary Caregiver" },
 ]
 
@@ -63,7 +63,7 @@ export default function FmhcPage() {
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
                 <h1 className="font-serif text-[32px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
-                <p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Let us handle the paperwork, so you can focus entirely on your loved one — fully covered through your program funding.</p>
+<p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Covered by program funding - at no cost to families.</p>
                 <p className="mt-3 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -102,7 +102,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Downloadable Checklist CTA */}
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-card py-12 md:py-16">
           <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center md:flex-row md:text-left">
             <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
               <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
