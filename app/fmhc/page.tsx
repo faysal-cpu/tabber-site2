@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Heart, Shield } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FMHC Bookkeeping | Tabber",
@@ -60,7 +60,7 @@ export default function FmhcPage() {
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
                     </div>
                     <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
-                      <Heart className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <Award className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
                     </div>
                     <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
