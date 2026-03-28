@@ -54,28 +54,30 @@ export default function FmhcPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero - warmer tone with supportive image */}
-        <section className="py-14 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
-              <div className="flex-1 text-center md:text-left">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
-                  <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
+            <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
+              <div className="flex-1 text-center md:text-left flex flex-col justify-between">
+                <div>
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
+                    <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
+                  </div>
+                  <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
+                  <div className="mt-4">
+                    <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
+                    <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
+                  </div>
+                  <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
                 </div>
-                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
-                <div className="mt-5">
-                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
-                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
-                </div>
-                <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
                     <Link href="/contact">Get Started — It's Free</Link>
                   </Button>
                 </div>
               </div>
-              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%]">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%] md:max-w-none">
+                <div className="relative aspect-[4/5] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
