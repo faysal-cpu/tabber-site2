@@ -54,22 +54,23 @@ export default function FmhcPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero - warmer tone with supportive image */}
-        <section className="relative min-h-[600px] md:min-h-0 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="relative min-h-[500px] md:min-h-0 md:relative" style={{ backgroundColor: '#E8EDF5' }}>
           {/* Mobile: Background image with gradient overlay */}
           <div className="absolute inset-0 md:hidden">
             <Image
               src="/images/fmhc-hero.png"
               alt="Warm, comfortable home environment"
               fill
-              className="object-cover object-right"
+              className="object-cover"
+              style={{ objectPosition: '70% center' }}
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
           </div>
 
-          <div className="relative mx-auto max-w-[1200px] px-6 py-14 md:py-0">
-            <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
-              <div className="flex-1 text-center md:text-left z-10">
+          <div className="relative mx-auto max-w-[1200px] md:pl-6 py-14 md:py-20">
+            <div className="flex flex-col md:flex-row">
+              <div className="flex-1 text-center md:text-left z-10 px-6 md:px-0 md:pr-12">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
                   <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
@@ -86,14 +87,15 @@ export default function FmhcPage() {
                   </Button>
                 </div>
               </div>
-              {/* Desktop: Side image */}
-              <div className="hidden md:block w-full max-w-[400px] flex-shrink-0 md:w-[45%]">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+              {/* Desktop: Full-height flush right image */}
+              <div className="hidden md:block md:absolute md:right-0 md:top-0 md:bottom-0 md:w-[45%]">
+                <div className="relative h-full w-full">
                   <Image
                     src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
                     fill
-                    className="object-cover object-right"
+                    className="object-cover"
+                    style={{ objectPosition: '70% center' }}
                     priority
                   />
                 </div>
