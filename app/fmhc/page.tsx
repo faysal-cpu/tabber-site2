@@ -63,8 +63,11 @@ export default function FmhcPage() {
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
                 <h1 className="font-serif text-[32px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
-<p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Covered by program funding - at no cost to families.</p>
-                <p className="mt-3 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
+                <div className="mt-6 inline-flex items-center gap-3 rounded-xl px-6 py-4 shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <Check className="size-6 shrink-0" style={{ color: '#FFFFFF' }} strokeWidth={3} />
+                  <p className="text-[18px] md:text-[20px] font-bold leading-tight text-white">Covered by program funding - at no cost to families</p>
+                </div>
+                <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
                     <Link href="/contact">Get in Touch</Link>
