@@ -88,7 +88,7 @@ export default function FmhcPage() {
                     alt="Warm, comfortable home environment"
                     fill
                     className="object-cover"
-                    style={{ objectPosition: '70% center' }}
+                    style={{ objectPosition: '70% center', transform: 'scale(1.15)' }}
                     priority
                   />
                 </div>
