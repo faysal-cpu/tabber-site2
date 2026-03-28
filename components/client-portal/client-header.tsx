@@ -26,12 +26,12 @@ export function ClientHeader({ clientName, clientEmail }: ClientHeaderProps) {
           </Link>
 
           {/* Client Info */}
-          <div className="text-right flex flex-col justify-center flex-shrink min-w-0">
+          <div className="text-right flex flex-col justify-center flex-shrink-0">
             <h1 className="text-sm md:text-2xl font-bold leading-tight whitespace-nowrap" style={{ color: '#2B4C7E' }}>
               {clientName}
             </h1>
             {clientEmail && (
-              <p className="text-xs md:text-base mt-0.5 md:mt-1 truncate" style={{ color: '#6B7280' }}>{clientEmail}</p>
+              <p className="text-xs md:text-base mt-0.5 md:mt-1 break-all" style={{ color: '#6B7280' }}>{clientEmail}</p>
             )}
           </div>
         </div>
