@@ -67,7 +67,7 @@ export default function FmhcPage() {
                   <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
                   <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
                 </div>
-                <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
+                <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
                     <Link href="/contact">Get Started — It's Free</Link>
@@ -77,10 +77,10 @@ export default function FmhcPage() {
               <div className="w-full max-w-[400px] flex-shrink-0 md:w-[45%]">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
                   <Image
-                    src="/images/fmhc-hero.jpg"
+                    src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
                     fill
-                    className="object-cover"
+                    className="object-cover object-right"
                     priority
                   />
                 </div>
