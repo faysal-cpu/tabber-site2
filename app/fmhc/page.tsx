@@ -82,7 +82,7 @@ export default function FmhcPage() {
                 </div>
               </div>
               <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%] md:max-w-none">
-                <div className="relative aspect-[4/5] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
+                <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
