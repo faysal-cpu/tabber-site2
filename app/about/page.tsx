@@ -38,8 +38,8 @@ export default function AboutPage() {
         <section className="bg-secondary py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6">
             <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
-              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management - without the complexity or cost of a large accounting firm.</p>
-              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered - caring for their loved ones."`}</p>
+              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management — without the complexity or cost of a large accounting firm.</p>
+              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered — caring for their loved ones."`}</p>
               <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
               <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
             </div>
