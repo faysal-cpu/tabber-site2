@@ -62,18 +62,15 @@ export default function FmhcPage() {
                   <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
-                <h1 className="font-serif text-[32px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
-                <div className="mt-6 inline-flex items-center gap-3 rounded-xl px-6 py-4 shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                  <Check className="size-6 shrink-0" style={{ color: '#FFFFFF' }} strokeWidth={3} />
-                  <p className="text-[18px] md:text-[20px] font-bold leading-tight text-white">Covered by program funding — at no cost to families</p>
+                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
+                <div className="mt-5">
+                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
+                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
                 </div>
                 <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                    <Link href="/contact">Get in Touch</Link>
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-lg border-2 px-8 py-3 text-[15px] font-semibold hover:bg-navy/5" style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}>
-                    <Link href="#how-we-help">See How We Help</Link>
+                    <Link href="/contact">Get Started — It's Free</Link>
                   </Button>
                 </div>
               </div>
@@ -107,13 +104,13 @@ export default function FmhcPage() {
         {/* Downloadable Checklist CTA */}
         <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
-            <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E' }}>
+            <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 border-r-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E', borderRightColor: '#2B4C7E' }}>
               <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                 <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
               </div>
               <div className="flex-1">
                 <h3 className="font-serif text-[20px] font-bold text-navy">Free FMHC Bookkeeping Checklist</h3>
-                <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome. Download our quick-reference PDF.</p>
+                <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome.<br />Download our quick-reference PDF.</p>
               </div>
               <Link href="/downloads/FMHC_Bookkeeping_Checklist.pdf" download target="_blank">
                 <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
