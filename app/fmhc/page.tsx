@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, Star, Quote, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Heart, Shield } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Heart, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FMHC Bookkeeping | Tabber",
@@ -27,11 +27,6 @@ const complianceItems = [
   "Monthly reconciliation accuracy",
   "Record retention compliance",
   "Audit-ready documentation",
-]
-
-const fmhcTestimonials = [
-  { headline: "Dependable Bookkeeping", quote: "Tabber does an excellent job handling our caregiver payroll and FMHC reporting. Everything is organized and submitted on time.", name: "Sarah M.", role: "Substitute Decision-Maker" },
-  { headline: "Reliable FMHC Support", quote: "It's been helpful working with someone who understands FMHC requirements. Our reporting and records stay organized, and everything gets done properly.", name: "Jennifer K.", role: "Primary Caregiver" },
 ]
 
 const faqs = [
@@ -187,38 +182,6 @@ export default function FmhcPage() {
             <h2 className="font-serif text-[24px] font-bold text-navy md:text-[28px]">You will never be charged out-of-pocket.</h2>
             <p className="mt-3 text-[15px] text-muted-foreground">Many families don't realize bookkeeping can be covered through their funding allocation.</p>
             <p className="mt-2 text-[15px] font-medium text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
-          </div>
-        </section>
-
-        {/* From FMHC Families - enhanced testimonials */}
-        <section className="bg-secondary py-10 md:py-16">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">From FMHC Families</h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              {fmhcTestimonials.map((t) => (
-                <div key={t.name} className="relative rounded-2xl border border-border bg-card p-10 shadow-sm">
-                  <Quote className="absolute right-8 top-8 size-12" style={{ color: 'rgba(43,76,126,0.1)' }} />
-                  <div className="relative flex flex-col gap-4">
-                    <p className="font-serif text-[15px] font-semibold" style={{ color: '#2B4C7E' }}>{t.headline}</p>
-                    <div className="flex gap-1" aria-label="5 out of 5 stars">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="size-5" style={{ fill: '#2B4C7E', color: '#2B4C7E' }} />
-                      ))}
-                    </div>
-                    <blockquote className="text-[16px] italic leading-[1.75] text-navy">{`"${t.quote}"`}</blockquote>
-                    <div className="mt-2 flex items-center gap-3 border-t border-border pt-4">
-                      <div className="flex size-10 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: '#2B4C7E' }}>
-                        {t.name.split(" ").map(n => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="text-[14px] font-semibold text-navy">{t.name}</p>
-                        <p className="text-xs text-muted-foreground">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
