@@ -63,7 +63,7 @@ export default function FmhcPage() {
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
                 <h1 className="font-serif text-[32px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
-                <p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Let us handle the paperwork, so you can focus entirely on your loved one — with no extra cost to your family.</p>
+                <p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Let us handle the paperwork, so you can focus entirely on your loved one — fully covered through your program funding.</p>
                 <p className="mt-3 text-[15px] leading-[1.6] text-muted-foreground">Dedicated bookkeeping, payroll, and compliance support tailored to Ontario FMHC funding requirements.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -96,8 +96,27 @@ export default function FmhcPage() {
             <div className="space-y-5 text-[15px] leading-[1.8] text-muted-foreground">
               <p>Family-Managed Home Care (FMHC) is a program administered by Ontario Health atHome that empowers families to directly manage the care of a loved one at home. Instead of receiving care through an agency, families receive funding to hire, schedule, and pay their own care workers.</p>
               <p>This gives families control and flexibility — but also adds administrative responsibilities like payroll, remittances, compliance reporting, and financial recordkeeping.</p>
-              <p className="font-medium text-navy">{"That's where Tabber comes in. We handle the numbers so you can focus on care."}</p>
+              <p className="font-medium text-navy">{"That's where Tabber comes in. Our CPA qualified team handle the numbers so you can focus on care."}</p>
             </div>
+          </div>
+        </section>
+
+        {/* Downloadable Checklist CTA */}
+        <section className="bg-secondary py-12 md:py-16">
+          <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center md:flex-row md:text-left">
+            <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+              <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-serif text-[20px] font-bold text-navy">Free FMHC Bookkeeping Checklist</h3>
+              <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome. Download our quick-reference PDF.</p>
+            </div>
+            <Link href="/downloads/FMHC_Bookkeeping_Checklist.pdf" download target="_blank">
+              <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
+                <Download className="size-4" />
+                Download PDF
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -151,7 +170,8 @@ export default function FmhcPage() {
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
             <h2 className="font-serif text-[24px] font-bold text-navy md:text-[28px]">You will never be charged out-of-pocket.</h2>
-            <p className="mt-3 text-[15px] text-muted-foreground">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
+            <p className="mt-3 text-[15px] text-muted-foreground">Many families don't realize bookkeeping can be covered through their funding allocation.</p>
+            <p className="mt-2 text-[15px] font-medium text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
           </div>
         </section>
 
@@ -227,25 +247,6 @@ export default function FmhcPage() {
                 </details>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Downloadable Checklist CTA */}
-        <section className="bg-card py-12 md:py-16">
-          <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center md:flex-row md:text-left">
-            <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-              <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-serif text-[20px] font-bold text-navy">Free FMHC Bookkeeping Checklist</h3>
-              <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome. Download our quick-reference PDF.</p>
-            </div>
-            <Link href="/downloads/FMHC_Bookkeeping_Checklist.pdf" download target="_blank">
-              <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
-                <Download className="size-4" />
-                Download PDF
-              </Button>
-            </Link>
           </div>
         </section>
 

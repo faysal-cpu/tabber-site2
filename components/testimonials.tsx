@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react"
 const testimonials = [
   {
     quote:
-      "I used to dread sorting through our FMHC expenses every month. Tabber took that whole task off my hands without having to pay anything out of pocket. Everything's clear and handled properly now.",
+      "Tabber does an excellent job handling our caregiver payroll and FMHC reporting. Everything is organized and submitted on time.",
     name: "Sarah M.",
     role: "Substitute Decision-Maker",
     initials: "SM",

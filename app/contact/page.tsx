@@ -10,7 +10,7 @@ import { useState } from "react"
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", description: "hello@tabber.ca", href: "mailto:hello@tabber.ca", cta: "Send Email" },
-  { icon: Phone, title: "Give Us A Call", description: "(819) 809-7326", href: "tel:+18198097326", cta: null },
+  { icon: Phone, title: "Give Us A Call", description: "(647) 872-0394", href: "tel:+16478720394", cta: null },
   { icon: Clock, title: "Response Time", description: "Within 24 hours", href: null, cta: null },
 ]
 
