@@ -62,7 +62,7 @@ export default function FmhcPage() {
                   <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
-                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping, Handled.</h1>
+                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
                 <div className="mt-5">
                   <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
                   <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
