@@ -54,42 +54,28 @@ export default function FmhcPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero - warmer tone with supportive image */}
-        <section className="relative min-h-[500px] md:min-h-0 md:relative" style={{ backgroundColor: '#E8EDF5' }}>
-          {/* Mobile: Background image with gradient overlay */}
-          <div className="absolute inset-0 md:hidden">
-            <Image
-              src="/images/fmhc-hero.png"
-              alt="Warm, comfortable home environment"
-              fill
-              className="object-cover"
-              style={{ objectPosition: '70% center' }}
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-          </div>
-
-          <div className="relative mx-auto max-w-[1200px] md:pl-6 py-14 md:py-20">
-            <div className="flex flex-col md:flex-row">
-              <div className="flex-1 text-center md:text-left z-10 px-6 md:px-0 md:pr-12">
+        <section className="py-14 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[1200px] px-6">
+            <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
+              <div className="flex-1 text-center md:text-left">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
                   <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
                 </div>
-                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-white md:text-navy md:text-[44px]">FMHC Bookkeeping, Handled.</h1>
+                <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping, Handled.</h1>
                 <div className="mt-5">
-                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed text-white md:text-[#2B4C7E]">Covered by Program Funding.</p>
-                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed text-white md:text-[#2B4C7E]">No Cost to Families.</p>
+                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
+                  <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
                 </div>
-                <p className="mt-5 text-[15px] leading-[1.6] text-white/90 md:text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
+                <p className="mt-5 text-[15px] leading-[1.6] text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
                     <Link href="/contact">Get Started — It's Free</Link>
                   </Button>
                 </div>
               </div>
-              {/* Desktop: Full-height flush right image */}
-              <div className="hidden md:block md:absolute md:right-0 md:top-0 md:bottom-0 md:w-[45%]">
-                <div className="relative h-full w-full">
+              <div className="w-full max-w-[480px] flex-shrink-0 md:w-[50%]">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
