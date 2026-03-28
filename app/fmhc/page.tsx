@@ -74,8 +74,8 @@ export default function FmhcPage() {
                   </Button>
                 </div>
               </div>
-              <div className="w-full max-w-[480px] flex-shrink-0 md:w-[50%]">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
+              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%]">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-hero.png"
                     alt="Warm, comfortable home environment"
