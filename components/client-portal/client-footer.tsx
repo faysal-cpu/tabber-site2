@@ -31,6 +31,14 @@ export function ClientFooter() {
                 hello@tabber.ca
               </a>
             </p>
+            <p className="text-xl font-semibold mt-2">
+              <a
+                href="tel:+16478720394"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                (647) 872-0394
+              </a>
+            </p>
           </div>
         </div>
 

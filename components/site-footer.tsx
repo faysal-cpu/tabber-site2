@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MapPin } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 const quickLinks = [
   { href: "/services", label: "Services" },
@@ -59,6 +59,13 @@ export function SiteFooter() {
               >
                 <Mail className="size-4 shrink-0" />
                 hello@tabber.ca
+              </a>
+              <a
+                href="tel:+16478720394"
+                className="flex items-center gap-2 text-[14px] text-white/60 transition-colors hover:text-brand"
+              >
+                <Phone className="size-4 shrink-0" />
+                (647) 872-0394
               </a>
               <div className="flex items-start gap-2 text-[14px] text-white/60">
                 <MapPin className="mt-0.5 size-4 shrink-0" />
