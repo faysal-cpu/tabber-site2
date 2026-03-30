@@ -76,7 +76,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/40">
-            2026 Tabber Professional Services. All rights reserved.
+            2026 Tabber. Professional services through Tabber are provided by Faysal El Masri, CPA. All rights reserved.
           </p>
           <nav className="flex gap-6" aria-label="Legal">
             {legalLinks.map((link) => (
