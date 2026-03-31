@@ -1,4 +1,4 @@
-import { createClient } from './supabase';
+import { createServiceClient } from './supabase';
 import type { Database } from './supabase';
 
 type UploadRow = Database['public']['Tables']['uploads']['Row'];
@@ -21,7 +21,7 @@ export interface CreateUploadData {
  * Create a new upload record
  */
 export async function createUpload(data: CreateUploadData): Promise<UploadRow | null> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const uploadData: UploadInsert = {
     client_id: data.clientId,
@@ -54,7 +54,7 @@ export async function createUpload(data: CreateUploadData): Promise<UploadRow | 
  * Get a single upload by ID
  */
 export async function getUploadById(uploadId: string): Promise<UploadRow | null> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('uploads')
@@ -78,7 +78,7 @@ export async function getClientUploads(
   limit: number = 50,
   offset: number = 0
 ): Promise<UploadRow[]> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('uploads')
@@ -99,7 +99,7 @@ export async function getClientUploads(
  * Get unprocessed uploads for a client (for admin review)
  */
 export async function getUnprocessedUploads(clientId: string): Promise<UploadRow[]> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('uploads')
@@ -120,7 +120,7 @@ export async function getUnprocessedUploads(clientId: string): Promise<UploadRow
  * Mark an upload as processed (admin function)
  */
 export async function markUploadAsProcessed(uploadId: string): Promise<boolean> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { error } = await supabase
     .from('uploads')
@@ -139,7 +139,7 @@ export async function markUploadAsProcessed(uploadId: string): Promise<boolean> 
  * Get total upload count for a client
  */
 export async function getClientUploadCount(clientId: string): Promise<number> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { count, error } = await supabase
     .from('uploads')

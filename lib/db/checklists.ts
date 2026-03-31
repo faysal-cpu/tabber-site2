@@ -1,4 +1,4 @@
-import { createClient } from './supabase';
+import { createServiceClient } from './supabase';
 import type { Database } from './supabase';
 
 type ChecklistRow = Database['public']['Tables']['checklists']['Row'];
@@ -16,7 +16,7 @@ export async function getClientChecklist(
   clientId: string,
   clientType: string = 'FMHC'
 ): Promise<ChecklistItemWithStatus[]> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   // Get all checklist items for the client type
   const { data: checklistItems, error: checklistError } = await supabase
@@ -75,7 +75,7 @@ export async function assignUploadToChecklistItem(
   uploadId: string,
   adminNotes?: string
 ): Promise<boolean> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   try {
     const { error } = await supabase
@@ -114,7 +114,7 @@ export async function completeChecklistItem(
   checklistItemId: string,
   adminNotes?: string
 ): Promise<boolean> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   try {
     const { error } = await supabase
@@ -146,7 +146,7 @@ export async function initializeClientChecklist(
   clientId: string,
   clientType: string = 'FMHC'
 ): Promise<boolean> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   try {
     // Get all checklist items for the client type

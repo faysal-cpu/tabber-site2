@@ -1,4 +1,4 @@
-import { createClient } from '../db/supabase';
+import { createServiceClient } from '../db/supabase';
 import type { Database } from '../db/supabase';
 
 type ClientRow = Database['public']['Tables']['clients']['Row'];
@@ -11,6 +11,7 @@ export interface TokenValidationResult {
 
 /**
  * Validate a client access token
+ * SECURITY: Uses service role key to bypass RLS and securely query tokens server-side
  */
 export async function validateClientToken(token: string): Promise<TokenValidationResult> {
   if (!token || token.trim() === '') {
@@ -21,7 +22,8 @@ export async function validateClientToken(token: string): Promise<TokenValidatio
   }
 
   try {
-    const supabase = createClient();
+    // Use service role key for server-side validation (bypasses RLS)
+    const supabase = createServiceClient();
 
     const { data: client, error } = await supabase
       .from('clients')
