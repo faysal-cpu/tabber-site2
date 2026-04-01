@@ -39,7 +39,7 @@ export default function AboutPage() {
         <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
           <div className="mx-auto max-w-[1100px] px-6">
             <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-start">
-              <div className="mx-auto md:mx-0 text-center">
+              <div className="mx-auto md:mx-0">
                 <Image
                   src="/images/profile-photo.jpg"
                   alt="Faysal El Masri, Founder & CPA"
@@ -48,10 +48,6 @@ export default function AboutPage() {
                   className="rounded-2xl shadow-lg"
                   priority
                 />
-                <div className="mt-4">
-                  <p className="text-[15px] font-semibold text-navy">Faysal El Masri, CPA</p>
-                  <p className="text-[14px] text-muted-foreground">Founder of Tabber</p>
-                </div>
               </div>
               <div className="flex flex-col gap-8">
                 <blockquote className="border-l-4 pl-6 py-2 italic text-[17px] md:text-[19px] leading-[1.5]" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
