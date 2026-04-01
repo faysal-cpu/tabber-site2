@@ -36,7 +36,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-secondary py-12 md:py-16 border-b border-border/40">
           <div className="mx-auto max-w-[1000px] px-6">
             <div className="grid gap-8 md:grid-cols-[300px_1fr] md:gap-12 items-start">
               <div className="mx-auto md:mx-0">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                   alt="Faysal El Masri, Founder & CPA"
                   width={300}
                   height={300}
-                  className="rounded-lg shadow-lg"
+                  className="rounded-2xl shadow-lg"
                   priority
                 />
                 <p className="mt-3 text-center text-sm font-medium text-navy">Faysal El Masri | Founder, CPA</p>
