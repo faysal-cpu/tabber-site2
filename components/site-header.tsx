@@ -35,7 +35,7 @@ export function SiteHeader() {
         scrolled ? "shadow-md" : ""
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/tabber-logo-full.svg"
@@ -43,7 +43,7 @@ export function SiteHeader() {
             width={440}
             height={59}
             priority
-            className="object-contain w-[350px] md:w-[360px] lg:w-[440px]"
+            className="object-contain w-[280px] sm:w-[350px] md:w-[360px] lg:w-[440px]"
           />
         </Link>
 
