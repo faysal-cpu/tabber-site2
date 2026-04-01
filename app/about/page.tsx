@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
@@ -36,12 +37,25 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-secondary py-12 md:py-16">
-          <div className="mx-auto max-w-[800px] px-6">
-            <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
-              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management — without the complexity or cost of a large accounting firm.</p>
-              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered — caring for their loved ones."`}</p>
-              <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
-              <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
+          <div className="mx-auto max-w-[1000px] px-6">
+            <div className="grid gap-8 md:grid-cols-[300px_1fr] md:gap-12 items-start">
+              <div className="mx-auto md:mx-0">
+                <Image
+                  src="/images/profile-photo.jpg"
+                  alt="Faysal El Masri, Founder & CPA"
+                  width={300}
+                  height={300}
+                  className="rounded-lg shadow-lg"
+                  priority
+                />
+                <p className="mt-3 text-center text-sm font-medium text-navy">Faysal El Masri | Founder, CPA</p>
+              </div>
+              <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
+                <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management — without the complexity or cost of a large accounting firm.</p>
+                <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered — caring for their loved ones."`}</p>
+                <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
+                <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
+              </div>
             </div>
           </div>
         </section>
