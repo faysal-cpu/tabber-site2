@@ -29,12 +29,12 @@ const reasons = [
 
 export function WhyChoose() {
   return (
-    <section className="py-14 md:py-20 bg-white">
+    <section className="py-10 md:py-14 bg-white">
       <div className="mx-auto max-w-[1200px] px-6">
         <h2 className="text-center font-serif text-[28px] font-bold tracking-tight text-navy md:text-[36px]">
           Why Choose Tabber
         </h2>
-        <p className="mx-auto mt-3 mb-12 text-center text-[15px] text-muted-foreground">
+        <p className="mx-auto mt-3 mb-8 text-center text-[15px] text-muted-foreground">
           Expert credentials. Personal attention.
         </p>
         <div className="grid gap-6 sm:grid-cols-2">

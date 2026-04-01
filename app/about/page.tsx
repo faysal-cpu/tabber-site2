@@ -29,17 +29,17 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="bg-card py-12 md:py-16">
+        <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">About Tabber</h1>
             <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">CPA-qualified financial management built on accuracy, transparency, and personalized service.</p>
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16 border-b border-border/40">
+        <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
           <div className="mx-auto max-w-[1100px] px-6">
             <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-start">
-              <div className="mx-auto md:mx-0">
+              <div className="mx-auto md:mx-0 text-center">
                 <Image
                   src="/images/profile-photo.jpg"
                   alt="Faysal El Masri, Founder & CPA"
@@ -48,6 +48,10 @@ export default function AboutPage() {
                   className="rounded-2xl shadow-lg"
                   priority
                 />
+                <div className="mt-4">
+                  <p className="text-[15px] font-semibold text-navy">Faysal El Masri, CPA</p>
+                  <p className="text-[14px] text-muted-foreground">Founder of Tabber</p>
+                </div>
               </div>
               <div className="flex flex-col gap-8">
                 <blockquote className="border-l-4 pl-6 py-2 italic text-[17px] md:text-[19px] leading-[1.5]" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
@@ -65,9 +69,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-card py-12 md:py-16">
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Credentials & Qualifications</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Credentials & Qualifications</h2>
             <div className="grid gap-5 sm:grid-cols-2">
               {credentials.map((cred) => {
                 const Icon = cred.icon
@@ -87,9 +91,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {values.map((value) => (
                 <div key={value.title} className="text-center">
@@ -101,7 +105,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
             <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Ready to Work Together?</h2>
             <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">Reach out to our team and see how Tabber can simplify your financial management.</p>
