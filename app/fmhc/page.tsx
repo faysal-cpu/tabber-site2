@@ -7,8 +7,15 @@ import { Button } from "@/components/ui/button"
 import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FMHC Bookkeeping | Tabber",
-  description: "Specialized Family-Managed Home Care bookkeeping for Ontario families. Ontario Health atHome compliant payroll, reporting, and compliance services.",
+  title: "FMHC Bookkeeping Ontario | Family-Managed Home Care Bookkeeping Services | Tabber",
+  description: "Expert FMHC bookkeeping services for Ontario families. CPA-qualified Family-Managed Home Care bookkeeping, payroll, and Ontario Health atHome compliance reporting. Covered by your funding allocation. Serving Ontario families managing home care.",
+  keywords: "FMHC bookkeeping, FMHC bookkeeping Ontario, Family-Managed Home Care bookkeeping, Ontario Health atHome bookkeeping, FMHC payroll, FMHC compliance, family managed care bookkeeping Ontario, home care bookkeeping services",
+  openGraph: {
+    title: "FMHC Bookkeeping Ontario | Family-Managed Home Care Services",
+    description: "CPA-qualified FMHC bookkeeping for Ontario families. Specialized Family-Managed Home Care bookkeeping, payroll & compliance. Covered by program funding.",
+    type: "website",
+    url: "https://tabber.ca/fmhc",
+  },
 }
 
 const steps = [
@@ -44,8 +51,29 @@ const onboardingSteps = [
 ]
 
 export default function FmhcPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tabber FMHC Bookkeeping Services",
+    "description": "Expert FMHC bookkeeping services for Ontario families managing home care programs. CPA-qualified Family-Managed Home Care bookkeeping, payroll, and Ontario Health atHome compliance reporting.",
+    "areaServed": {
+      "@type": "State",
+      "name": "Ontario"
+    },
+    "serviceType": ["FMHC Bookkeeping", "Family-Managed Home Care Bookkeeping", "Payroll Services", "Compliance Reporting"],
+    "provider": {
+      "@type": "AccountingService",
+      "name": "Tabber",
+      "url": "https://tabber.ca"
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <SiteHeader />
       <main className="flex-1">
         {/* Hero - warmer tone with supportive image */}
