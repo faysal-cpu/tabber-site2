@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Linkedin } from "lucide-react"
 
 const quickLinks = [
   { href: "/services", label: "Services" },
@@ -70,6 +70,26 @@ export function SiteFooter() {
               <div className="flex items-start gap-2 text-[14px] text-white/60">
                 <MapPin className="mt-0.5 size-4 shrink-0" />
                 <span>Serving Ontario</span>
+              </div>
+              <div className="mt-4 flex md:justify-end gap-4">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61582161815813"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/60 transition-all hover:bg-brand hover:text-white"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="size-4" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/tabberbookkeeping"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/60 transition-all hover:bg-brand hover:text-white"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  <Linkedin className="size-4" />
+                </a>
               </div>
             </div>
           </div>
