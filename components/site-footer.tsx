@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MapPin, Phone, Facebook, Linkedin } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Linkedin, MessageCircle } from "lucide-react"
 
 const quickLinks = [
   { href: "/services", label: "Services" },
@@ -89,6 +89,15 @@ export function SiteFooter() {
                   aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="size-4" />
+                </a>
+                <a
+                  href="https://wa.me/16478720394"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/60 transition-all hover:bg-brand hover:text-white"
+                  aria-label="Chat with us on WhatsApp"
+                >
+                  <MessageCircle className="size-4" />
                 </a>
               </div>
             </div>
