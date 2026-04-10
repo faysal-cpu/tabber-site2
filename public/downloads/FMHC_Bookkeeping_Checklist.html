@@ -415,6 +415,10 @@
             margin-left: 0;
             margin-right: 0;
             border-radius: 0;
+            width: 100%;
+            max-width: 8.5in;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .cta-banner {
@@ -426,6 +430,8 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(43, 76, 126, 0.4);
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .cta-banner:before {
@@ -437,6 +443,7 @@
             height: 200pt;
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
+            pointer-events: none;
         }
 
         .cta-header {
@@ -511,6 +518,8 @@
             padding: 5px 35px 0;
             text-align: center;
             margin-top: 4px;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .disclaimer p {
@@ -542,6 +551,8 @@
                 background: #FFFFFF;
                 margin: 0;
                 padding: 0;
+                width: 8.5in;
+                max-width: 8.5in;
             }
 
             .header,
@@ -575,6 +586,24 @@
             .bubble-3 {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+
+            .footer-zone {
+                width: 100%;
+                max-width: 8.5in;
+                margin-left: 0;
+                margin-right: 0;
+                overflow: hidden;
+            }
+
+            .cta-banner {
+                max-width: calc(100% - 70px);
+                margin-left: 35px;
+                margin-right: 35px;
+            }
+
+            .disclaimer {
+                max-width: 100%;
             }
         }
     </style>
