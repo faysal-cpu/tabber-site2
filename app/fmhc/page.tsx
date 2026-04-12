@@ -1,9 +1,12 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send } from "lucide-react"
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for independent contractor arrangements." },
@@ -40,6 +43,27 @@ const onboardingSteps = [
 ]
 
 export default function FmhcPage() {
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+      setSubmitted(true)
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert("There was an error submitting the form. Please try again.")
+    }
+  }
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -191,7 +215,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Compliance & Reporting - two column bullets */}
-        <section className="bg-card py-10 md:py-14">
+        <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
@@ -213,7 +237,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Pricing Example - MORE PROMINENT */}
-        <section className="py-10 md:py-14 bg-card">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
@@ -227,20 +251,20 @@ export default function FmhcPage() {
         </section>
 
         {/* What Happens After You Reach Out */}
-        <section className="bg-card py-10 md:py-14">
-          <div className="mx-auto max-w-[900px] px-6">
-            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
+        <section className="bg-card py-12 md:py-16">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {onboardingSteps.map((step, i) => {
                 const Icon = step.icon
                 return (
-                  <div key={step.title} className="relative text-center">
-                    <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Icon className="size-6" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+                  <div key={step.title} className="relative rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/30 p-6 text-center shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
+                    <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-[#2B4C7E] shadow-md">
+                      <Icon className="size-7 text-white" strokeWidth={2} />
                     </div>
-                    <span className="mb-2 block text-xs font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Step {i + 1}</span>
-                    <h3 className="mb-2 font-serif text-[16px] font-semibold text-navy">{step.title}</h3>
-                    <p className="text-sm leading-[1.6] text-muted-foreground">{step.description}</p>
+                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Step {i + 1}</span>
+                    <h3 className="mb-3 font-serif text-[17px] font-bold text-navy">{step.title}</h3>
+                    <p className="text-[14px] leading-[1.7] text-muted-foreground">{step.description}</p>
                   </div>
                 )
               })}
@@ -272,17 +296,27 @@ export default function FmhcPage() {
         {/* Contact Form Section */}
         <section id="contact-form" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6">
-            <div className="text-center mb-8">
-              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — It's Free</h2>
-              <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details below and we'll reach out within 1 business day to confirm your funding covers bookkeeping and get you set up.</p>
-            </div>
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center rounded-xl bg-card p-12 text-center shadow-sm">
+                <div className="mb-3 flex size-14 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <Send className="size-6" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h2 className="font-serif text-xl font-bold text-navy">Message Sent</h2>
+                <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">Thank you for reaching out. We will get back to you within 24 hours.</p>
+                <Button onClick={() => setSubmitted(false)} className="mt-5 rounded-lg text-white hover:bg-navy-light" style={{ backgroundColor: '#2B4C7E' }}>Send Another Message</Button>
+              </div>
+            ) : (
+              <>
+                <div className="text-center mb-8">
+                  <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — It's Free</h2>
+                  <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details below and we'll reach out within 1 business day to confirm your funding covers bookkeeping and get you set up.</p>
+                </div>
 
-            <form
-              name="fmhc-contact"
-              method="POST"
-              data-netlify="true"
-              className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-lg"
-            >
+                <form
+                  name="fmhc-contact"
+                  onSubmit={handleSubmit}
+                  className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-lg"
+                >
               <input type="hidden" name="form-name" value="fmhc-contact" />
               <div className="space-y-5">
                 <div>
@@ -358,20 +392,8 @@ export default function FmhcPage() {
                 </p>
               </div>
             </form>
-          </div>
-        </section>
-
-        {/* Final CTA - with secondary option */}
-        <section className="py-10 md:py-14 bg-secondary">
-          <div className="mx-auto max-w-[700px] px-6 text-center">
-            <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get Started — Covered by Your Funding</h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">You focus on your {"family's"} care. We focus on keeping your finances compliant and organized.</p>
-            <p className="mt-2 text-sm text-muted-foreground">Friendly, pressure-free support.</p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                <Link href="#contact-form">Get in Touch</Link>
-              </Button>
-            </div>
+              </>
+            )}
           </div>
         </section>
       </main>
