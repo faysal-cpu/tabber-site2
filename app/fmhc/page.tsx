@@ -216,7 +216,7 @@ export default function FmhcPage() {
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[30px]">What We Handle For You</h2>
-                <p className="mt-4 max-w-[420px] text-[15px] leading-[1.7] text-muted-foreground">From payroll processing to compliance reporting to financial tracking, we manage every aspect of your FMHC bookkeeping so you never miss a deadline or risk your funding.</p>
+                <p className="mt-4 max-w-[420px] text-[15px] leading-[1.7] text-muted-foreground">We handle your FMHC bookkeeping end-to-end — so you never miss a deadline or risk your funding.</p>
               </div>
               <div className="md:flex-[0.6]">
                 <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
