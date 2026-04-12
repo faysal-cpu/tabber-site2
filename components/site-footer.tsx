@@ -23,7 +23,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3">
             <Image
               src="/tabber-logo-full-white.svg"
-              alt="Tabber - Bookkeeping, Compliance, Advisory"
+              alt="Tabber CPA bookkeeping services Ontario - FMHC specialist and small business accountant"
               width={570}
               height={76}
             />

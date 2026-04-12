@@ -39,7 +39,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center shrink-0 min-w-0">
           <Image
             src="/tabber-logo-full.svg"
-            alt="Tabber - Bookkeeping, Compliance, Advisory"
+            alt="Tabber CPA bookkeeping and compliance services for Ontario families and businesses"
             width={440}
             height={59}
             priority
@@ -80,7 +80,7 @@ export function SiteHeader() {
             <div className="mb-6 mt-4">
               <Image
                 src="/tabber-logo-full.svg"
-                alt="Tabber - Bookkeeping, Compliance, Advisory"
+                alt="Tabber CPA bookkeeping and compliance services for Ontario families and businesses"
                 width={352}
                 height={47}
               />

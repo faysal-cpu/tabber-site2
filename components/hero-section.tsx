@@ -47,7 +47,7 @@ export function HeroSection() {
           <div className="overflow-hidden rounded-2xl shadow-xl">
             <Image
               src="/images/hero.jpg"
-              alt="Warm workspace representing Tabber bookkeeping services"
+              alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
               width={560}
               height={560}
               className="size-full object-cover"

@@ -130,7 +130,7 @@ export default function FmhcPage() {
                 <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-hero.png"
-                    alt="Warm, comfortable home environment"
+                    alt="FMHC bookkeeping services for Ontario families - Family-Managed Home Care financial management"
                     fill
                     className="object-cover"
                     style={{ objectPosition: '70% center', transform: 'scale(1.15)' }}

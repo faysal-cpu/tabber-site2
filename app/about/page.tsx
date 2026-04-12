@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="mx-auto md:mx-0">
                 <Image
                   src="/images/profile-photo.jpg"
-                  alt="Faysal El Masri, Founder & CPA"
+                  alt="Faysal El Masri CPA, Founder of Tabber Bookkeeping - Ontario FMHC specialist and certified accountant"
                   width={350}
                   height={350}
                   className="rounded-2xl shadow-lg"

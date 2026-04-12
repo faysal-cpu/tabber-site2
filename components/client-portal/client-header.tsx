@@ -17,7 +17,7 @@ export function ClientHeader({ clientName, clientEmail }: ClientHeaderProps) {
           <Link href="https://tabber.ca" className="flex items-center transition-opacity hover:opacity-80 flex-shrink-0">
             <Image
               src="/tabber-logo-full.svg"
-              alt="Tabber"
+              alt="Tabber CPA bookkeeping services - Client portal"
               width={500}
               height={167}
               priority

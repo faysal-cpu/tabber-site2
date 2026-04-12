@@ -11,7 +11,7 @@ export function ClientFooter() {
           <div className="flex items-center">
             <Image
               src="/tabber-logo-full-white.svg"
-              alt="Tabber"
+              alt="Tabber CPA bookkeeping services - Client portal"
               width={450}
               height={150}
               priority
