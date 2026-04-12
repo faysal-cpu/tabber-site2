@@ -78,7 +78,23 @@ export default function FmhcPage() {
       "@type": "AccountingService",
       "name": "Tabber",
       "url": "https://tabber.ca"
-    }
+    },
+    "telephone": "+1-647-872-0394",
+    "email": "hello@tabber.ca",
+    "priceRange": "Covered by FMHC Funding"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
   };
 
   return (
@@ -86,6 +102,10 @@ export default function FmhcPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <SiteHeader />
       <main className="flex-1">
@@ -129,7 +149,7 @@ export default function FmhcPage() {
               <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%] md:max-w-none">
                 <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
-                    src="/images/fmhc-hero.png"
+                    src="/images/fmhc-hero.jpg"
                     alt="FMHC bookkeeping services for Ontario families - Family-Managed Home Care financial management"
                     fill
                     className="object-cover"
@@ -150,7 +170,7 @@ export default function FmhcPage() {
                 <Shield className="size-6 text-white" strokeWidth={2} />
               </div>
               <div>
-                <h3 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
+                <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h2>
                 <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
               </div>
             </div>
