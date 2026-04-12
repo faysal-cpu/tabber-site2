@@ -38,7 +38,7 @@ const faqs = [
 
 const onboardingSteps = [
   { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to understand your needs and confirm your funding covers bookkeeping — no surprises, no out-of-pocket cost." },
-  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and prepare your onboarding package. We use a secure document portal so your sensitive information is never sent over email." },
+  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and prepare your onboarding package using a secure document portal." },
   { icon: Sparkles, title: "Start within 7 days", description: "We take over your bookkeeping and reporting. You focus on care." },
 ]
 
@@ -145,16 +145,12 @@ export default function FmhcPage() {
         {/* Schedule O Credentials Callout */}
         <section className="bg-card py-8 md:py-10">
           <div className="mx-auto max-w-[900px] px-6">
-            <div className="rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
-                  <Shield className="size-6 text-white" strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 className="mb-3 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
-                  <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
-                </div>
+            <div className="rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm text-center">
+              <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-lg bg-[#2B4C7E]">
+                <Shield className="size-6 text-white" strokeWidth={2} />
               </div>
+              <h3 className="mb-3 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
+              <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
             </div>
           </div>
         </section>
@@ -214,13 +210,13 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Compliance & Reporting - two column bullets */}
-        <section className="bg-secondary py-10 md:py-14">
+        {/* What We Handle For You */}
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[30px]">Compliance & Reporting</h2>
-                <p className="mt-4 max-w-[420px] text-[15px] leading-[1.7] text-muted-foreground">Stay compliant with confidence. We handle all reporting requirements so you never miss a deadline or risk your funding.</p>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[30px]">What We Handle For You</h2>
+                <p className="mt-4 max-w-[420px] text-[15px] leading-[1.7] text-muted-foreground">From payroll processing to compliance reporting to financial tracking, we manage every aspect of your FMHC bookkeeping so you never miss a deadline or risk your funding.</p>
               </div>
               <div className="md:flex-[0.6]">
                 <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -242,8 +238,7 @@ export default function FmhcPage() {
             <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
               <h2 className="font-serif text-[32px] font-bold text-navy md:text-[40px] leading-tight">You will never be charged out-of-pocket.</h2>
-              <div className="mx-auto mt-6 max-w-[600px] space-y-3">
-                <p className="text-[15px] text-muted-foreground">Many families don't realize bookkeeping can be covered through their funding allocation.</p>
+              <div className="mx-auto mt-6 max-w-[600px]">
                 <p className="text-[16px] font-semibold text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
               </div>
             </div>
