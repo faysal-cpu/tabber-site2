@@ -41,12 +41,12 @@ const faqs = [
   { q: "Will I ever have to pay out-of-pocket for FMHC bookkeeping?", a: "No. We tailor the service to fit fully within your approved FMHC funding allocation. You will never be charged beyond what your program covers." },
   { q: "What do I need to get started?", a: "Typically, we need access to your accounting software or bank statements, existing records, and your funding confirmation letter. We guide you step-by-step to make onboarding smooth and stress-free." },
   { q: "How often will I receive reports?", a: "Monthly at minimum, with quarterly summaries. We also prepare all required Ontario Health atHome compliance reports on your behalf." },
-  { q: "Do you work directly with Ontario Health atHome?", a: "We collaborate with care coordinators and ensure all reporting is submitted in the format required by Ontario Health atHome. We handle the paperwork so you don't have to." },
+  { q: "Do you work directly with Ontario Health atHome?", a: "We prepare all required reports and documentation in the format Ontario Health atHome requires. The submission is completed by you as the SDM, but we have everything ready ahead of your monthly deadline." },
 ]
 
 const onboardingSteps = [
   { icon: Mail, title: "We review your inquiry", description: "We'll respond to your email within 24 hours to understand your needs." },
-  { icon: FileText, title: "Review your funding & documents", description: "We assess your FMHC allocation and gather what we need." },
+  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and prepare your onboarding package. We use a secure document portal so your sensitive information is never sent over email." },
   { icon: Sparkles, title: "Start within 7 days", description: "We begin handling payroll and reporting right away." },
 ]
 
