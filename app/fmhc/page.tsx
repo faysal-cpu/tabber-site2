@@ -360,7 +360,8 @@ export default function FmhcPage() {
                   >
                     <option value="">Select an option</option>
                     <option value="agency">Through a registered agency</option>
-                    <option value="direct">Directly hiring my own care worker</option>
+                    <option value="independent-contractor">Through independent contracting</option>
+                    <option value="direct">Directly hiring</option>
                     <option value="unsure">Not sure yet</option>
                   </select>
                 </div>
