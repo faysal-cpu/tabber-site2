@@ -381,7 +381,7 @@ export default function FmhcPage() {
                   className="w-full rounded-lg px-8 py-3.5 text-[15px] font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200"
                   style={{ backgroundColor: '#2B4C7E' }}
                 >
-                  Send My Information — It's Free
+                  Send Message
                 </button>
 
                 <p className="text-center text-xs text-muted-foreground mt-3">
