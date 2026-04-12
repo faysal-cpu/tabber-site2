@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FMHC Bookkeeping Ontario | Family-Managed Home Care Bookkeeping Services | Tabber",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Complete payroll for your care workers including T4s, RP remittances, and CRA filings. Processed accurately and on time, every pay period." },
-  { num: "02", icon: FileText, title: "Monthly Reconciliation", tagline: "Clear, organized records every month.", description: "Bank and credit card reconciliation, expense tracking against your FMHC funding allocation, and clear categorization of all transactions." },
-  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Monthly and quarterly compliance reports formatted to Ontario Health atHome requirements. Timely submissions that protect your funding." },
-  { num: "04", icon: BarChart3, title: "Financial Statements", tagline: "Understand your funding at a glance.", description: "Clear internal financial statements showing budget vs. actuals, remaining funds, and spending trends. Always know where you stand." },
+  { num: "02", icon: FileText, title: "Monthly Reconciliation", tagline: "Clear, organized records every month.", description: "Expense tracking against your FMHC funding allocation, clear categorization of all transactions, and organized records for every submission." },
+  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Monthly compliance reports formatted to Ontario Health atHome requirements. Timely submissions that protect your funding." },
+  { num: "04", icon: BarChart3, title: "Monthly Funding Reports", tagline: "Understand your funding at a glance.", description: "Clear monthly summaries showing budget vs. actuals, remaining funds, and spending trends — always know where you stand against your approved allocation." },
 ]
 
 const complianceItems = [
@@ -39,15 +39,17 @@ const complianceItems = [
 const faqs = [
   { q: "What is Family-Managed Home Care (FMHC)?", a: "FMHC is a program through Ontario Health atHome that provides funding for families to directly manage and hire care workers for a loved one at home, rather than receiving services through an agency." },
   { q: "Will I ever have to pay out-of-pocket for FMHC bookkeeping?", a: "No. We tailor the service to fit fully within your approved FMHC funding allocation. You will never be charged beyond what your program covers." },
-  { q: "What do I need to get started?", a: "Typically, we need access to your accounting software or bank statements, existing records, and your funding confirmation letter. We guide you step-by-step to make onboarding smooth and stress-free." },
-  { q: "How often will I receive reports?", a: "Monthly at minimum, with quarterly summaries. We also prepare all required Ontario Health atHome compliance reports on your behalf." },
+  { q: "What do I need to get started?", a: "We set everything up for you from scratch. You do not need any prior software or bookkeeping experience. We guide you step-by-step — just bring your funding confirmation letter and we take it from there." },
+  { q: "How often will I receive reports?", a: "Monthly. We prepare your complete report package ahead of the Ontario Health atHome submission deadline each month. We also prepare all required compliance documents on your behalf." },
+  { q: "Will my bookkeeper be accepted by Ontario Health atHome?", a: "Yes. Tabber meets all Schedule O qualification requirements under the FMHC program agreement. We provide the required credential letter and documentation directly to Ontario Health atHome as part of onboarding." },
+  { q: "Do I need to handle payroll myself?", a: "No. For families who hire care workers directly, we handle all payroll calculations, CRA remittances, and year-end T4 preparation. You make the payments — we give you the exact amounts and instructions every pay period." },
   { q: "Do you work directly with Ontario Health atHome?", a: "We prepare all required reports and documentation in the format Ontario Health atHome requires. The submission is completed by you as the SDM, but we have everything ready ahead of your monthly deadline." },
 ]
 
 const onboardingSteps = [
-  { icon: Mail, title: "We review your inquiry", description: "We'll respond to your email within 24 hours to understand your needs." },
+  { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to understand your needs and confirm your funding covers bookkeeping — no surprises, no out-of-pocket cost." },
   { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and prepare your onboarding package. We use a secure document portal so your sensitive information is never sent over email." },
-  { icon: Sparkles, title: "Start within 7 days", description: "We begin handling payroll and reporting right away." },
+  { icon: Sparkles, title: "Start within 7 days", description: "We take over your bookkeeping and reporting. You focus on care." },
 ]
 
 export default function FmhcPage() {
@@ -82,7 +84,7 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 flex items-center justify-center md:justify-start gap-1.5 md:gap-2">
+                  <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-2">
                     <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
                       <GraduationCap className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
@@ -95,6 +97,10 @@ export default function FmhcPage() {
                       <Shield className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>Fully Insured</span>
                     </div>
+                    <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
+                      <BookOpen className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>NPI Member</span>
+                    </div>
                   </div>
                   <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
                   <div className="mt-4">
@@ -105,7 +111,7 @@ export default function FmhcPage() {
                 </div>
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                    <Link href="/contact">Get Started — It's Free</Link>
+                    <Link href="#contact-form">Get Started — It's Free</Link>
                   </Button>
                 </div>
               </div>
@@ -125,14 +131,30 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* What is FMHC - improved readability */}
-        <section className="bg-card py-10 md:py-14">
+        {/* Schedule O Credentials Callout */}
+        <section className="bg-card py-8 md:py-10">
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
+                  <Shield className="size-6 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                  <h3 className="mb-3 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
+                  <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation directly to Ontario Health atHome on your behalf.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What is FMHC - SHORTENED */}
+        <section className="bg-secondary py-10 md:py-12">
           <div className="mx-auto max-w-[1000px] px-6">
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
-              <p>Family-Managed Home Care (FMHC) is a program administered by Ontario Health atHome that empowers families to directly manage the care of a loved one at home. Instead of receiving care through an agency, families receive funding to hire, schedule, and pay their own care workers.</p>
-              <p>This gives families control and flexibility — but also adds administrative responsibilities like payroll, remittances, compliance reporting, and financial recordkeeping.</p>
-              <p className="font-medium text-navy">{"That's where Tabber comes in. Our CPA qualified team handle the numbers so you can focus on care."}</p>
+              <p>Family-Managed Home Care (FMHC) is a program through Ontario Health atHome that empowers families to receive funding and hire their own care workers, rather than receiving care through an agency. This gives families control and flexibility — but also creates administrative responsibilities like payroll, compliance reporting, and financial recordkeeping.</p>
+              <p className="font-medium text-navy">{"That's where Tabber comes in. Our CPA-qualified bookkeeper handles the numbers so you can focus on care."}</p>
             </div>
           </div>
         </section>
@@ -203,13 +225,17 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Pricing Example */}
-        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[800px] px-6 text-center">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
-            <h2 className="font-serif text-[24px] font-bold text-navy md:text-[28px]">You will never be charged out-of-pocket.</h2>
-            <p className="mt-3 text-[15px] text-muted-foreground">Many families don't realize bookkeeping can be covered through their funding allocation.</p>
-            <p className="mt-2 text-[15px] font-medium text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
+        {/* Pricing Example - MORE PROMINENT */}
+        <section className="py-10 md:py-14 bg-card">
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
+              <h2 className="font-serif text-[32px] font-bold text-navy md:text-[40px] leading-tight">You will never be charged out-of-pocket.</h2>
+              <div className="mx-auto mt-6 max-w-[600px] space-y-3">
+                <p className="text-[15px] text-muted-foreground">Many families don't realize bookkeeping can be covered through their funding allocation.</p>
+                <p className="text-[16px] font-semibold text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -256,15 +282,105 @@ export default function FmhcPage() {
           </div>
         </section>
 
+        {/* Contact Form Section */}
+        <section id="contact-form" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[700px] px-6">
+            <div className="text-center mb-8">
+              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — It's Free</h2>
+              <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details below and we'll reach out within 1 business day to confirm your funding covers bookkeeping and get you set up.</p>
+            </div>
+
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-lg"
+            >
+              <div className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">Full Name <span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2">Email Address <span className="text-red-500">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-navy mb-2">Phone Number <span className="text-gray-400 text-xs font-normal">(optional)</span></label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="(555) 123-4567"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="care-type" className="block text-sm font-semibold text-navy mb-2">How are you receiving care?</label>
+                  <select
+                    id="care-type"
+                    name="care-type"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                  >
+                    <option value="">Select an option</option>
+                    <option value="agency">Through a registered agency</option>
+                    <option value="direct">Directly hiring my own care worker</option>
+                    <option value="unsure">Not sure yet</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">Anything you'd like us to know? <span className="text-gray-400 text-xs font-normal">(optional)</span></label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={3}
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 resize-none"
+                    placeholder="Tell us a bit about your situation..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full rounded-lg px-8 py-3.5 text-[15px] font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200"
+                  style={{ backgroundColor: '#2B4C7E' }}
+                >
+                  Send My Information — It's Free
+                </button>
+
+                <p className="text-center text-xs text-muted-foreground mt-3">
+                  We'll respond within 1 business day. No commitment required.
+                </p>
+              </div>
+            </form>
+          </div>
+        </section>
+
         {/* Final CTA - with secondary option */}
-        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-14 bg-secondary">
           <div className="mx-auto max-w-[700px] px-6 text-center">
-            <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Let Us Handle the Bookkeeping</h2>
+            <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get Started — Covered by Your Funding</h2>
             <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">You focus on your {"family's"} care. We focus on keeping your finances compliant and organized.</p>
             <p className="mt-2 text-sm text-muted-foreground">Friendly, pressure-free support.</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                <Link href="/contact">Get in Touch</Link>
+                <Link href="#contact-form">Get in Touch</Link>
               </Button>
             </div>
           </div>
