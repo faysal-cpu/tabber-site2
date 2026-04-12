@@ -1,22 +1,9 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "FMHC Bookkeeping Ontario | Family-Managed Home Care Bookkeeping Services | Tabber",
-  description: "Expert FMHC bookkeeping services for Ontario families. CPA-qualified Family-Managed Home Care bookkeeping, payroll, and Ontario Health atHome compliance reporting. Covered by your funding allocation. Serving Ontario families managing home care.",
-  keywords: "FMHC bookkeeping, FMHC bookkeeping Ontario, Family-Managed Home Care bookkeeping, Ontario Health atHome bookkeeping, FMHC payroll, FMHC compliance, family managed care bookkeeping Ontario, home care bookkeeping services",
-  openGraph: {
-    title: "FMHC Bookkeeping Ontario | Family-Managed Home Care Services",
-    description: "CPA-qualified FMHC bookkeeping for Ontario families. Specialized Family-Managed Home Care bookkeeping, payroll & compliance. Covered by program funding.",
-    type: "website",
-    url: "https://tabber.ca/fmhc",
-  },
-}
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Complete payroll for your care workers including T4s, RP remittances, and CRA filings. Processed accurately and on time, every pay period." },
