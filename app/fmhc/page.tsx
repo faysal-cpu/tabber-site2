@@ -291,10 +291,12 @@ export default function FmhcPage() {
             </div>
 
             <form
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              name="fmhc-contact"
               method="POST"
+              data-netlify="true"
               className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-lg"
             >
+              <input type="hidden" name="form-name" value="fmhc-contact" />
               <div className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">Full Name <span className="text-red-500">*</span></label>
