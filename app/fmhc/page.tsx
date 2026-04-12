@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen } from "lucide-react"
 
 const steps = [
-  { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Complete payroll for your care workers including T4s, RP remittances, and CRA filings. Processed accurately and on time, every pay period." },
+  { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for independent contractor arrangements." },
   { num: "02", icon: FileText, title: "Monthly Reconciliation", tagline: "Clear, organized records every month.", description: "Expense tracking against your FMHC funding allocation, clear categorization of all transactions, and organized records for every submission." },
   { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Monthly compliance reports formatted to Ontario Health atHome requirements. Timely submissions that protect your funding." },
   { num: "04", icon: BarChart3, title: "Monthly Funding Reports", tagline: "Understand your funding at a glance.", description: "Clear monthly summaries showing budget vs. actuals, remaining funds, and spending trends — always know where you stand against your approved allocation." },
@@ -29,7 +29,7 @@ const faqs = [
   { q: "What do I need to get started?", a: "We set everything up for you from scratch. You do not need any prior software or bookkeeping experience. We guide you step-by-step — just bring your funding confirmation letter and we take it from there." },
   { q: "How often will I receive reports?", a: "Monthly. We prepare your complete report package ahead of the Ontario Health atHome submission deadline each month. We also prepare all required compliance documents on your behalf." },
   { q: "Will my bookkeeper be accepted by Ontario Health atHome?", a: "Yes. Tabber meets all Schedule O qualification requirements under the FMHC program agreement. We provide the required credential letter and documentation directly to Ontario Health atHome as part of onboarding." },
-  { q: "Do I need to handle payroll myself?", a: "No. For families who hire care workers directly, we handle all payroll calculations, CRA remittances, and year-end T4 preparation. You make the payments — we give you the exact amounts and instructions every pay period." },
+  { q: "Do I need to handle payroll myself?", a: "No. For families who directly employ care workers, we handle payroll calculations, source deduction remittances, and year-end T4 preparation. For independent contractor arrangements, we track invoices and payments. You make the payments — we handle the recordkeeping and reporting." },
   { q: "Do you work directly with Ontario Health atHome?", a: "We prepare all required reports and documentation in the format Ontario Health atHome requires. The submission is completed by you as the SDM, but we have everything ready ahead of your monthly deadline." },
 ]
 
@@ -128,7 +128,7 @@ export default function FmhcPage() {
                 </div>
                 <div>
                   <h3 className="mb-3 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
-                  <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation directly to Ontario Health atHome on your behalf.</p>
+                  <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
                 </div>
               </div>
             </div>
