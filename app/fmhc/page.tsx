@@ -144,13 +144,15 @@ export default function FmhcPage() {
 
         {/* Schedule O Credentials Callout */}
         <section className="bg-card py-8 md:py-10">
-          <div className="mx-auto max-w-[900px] px-6">
-            <div className="rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm text-center">
-              <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-lg bg-[#2B4C7E]">
+          <div className="mx-auto max-w-[1200px] px-6">
+            <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
                 <Shield className="size-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="mb-3 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
-              <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
+              <div>
+                <h3 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified Under the FMHC Program</h3>
+                <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
+              </div>
             </div>
           </div>
         </section>
