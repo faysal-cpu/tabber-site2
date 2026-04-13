@@ -63,6 +63,18 @@ export function getBlobUrl(blobName: string): string {
 }
 
 /**
+ * Sanitize filename for Content-Disposition header
+ * Replaces characters that can break SAS signatures
+ */
+function sanitizeFilename(filename: string): string {
+  return filename
+    .replace(/&/g, 'and')      // Replace & with 'and'
+    .replace(/[<>:"\/\\|?*]/g, '-')  // Replace other invalid chars with dash
+    .replace(/\s+/g, ' ')      // Normalize whitespace
+    .trim();
+}
+
+/**
  * Generate a SAS URL for downloading a blob (valid for 1 hour)
  */
 export function generateDownloadUrl(blobName: string, filename: string): string {
@@ -74,6 +86,9 @@ export function generateDownloadUrl(blobName: string, filename: string): string 
   const expiresOn = new Date();
   expiresOn.setHours(expiresOn.getHours() + 1); // Valid for 1 hour
 
+  // Sanitize filename to prevent SAS signature errors
+  const safeFilename = sanitizeFilename(filename);
+
   const sasToken = generateBlobSASQueryParameters(
     {
       containerName,
@@ -81,7 +96,7 @@ export function generateDownloadUrl(blobName: string, filename: string): string 
       permissions: BlobSASPermissions.parse('r'), // Read only
       startsOn,
       expiresOn,
-      contentDisposition: `attachment; filename="${filename}"`,
+      contentDisposition: `attachment; filename="${safeFilename}"`,
     },
     sharedKeyCredential
   ).toString();
