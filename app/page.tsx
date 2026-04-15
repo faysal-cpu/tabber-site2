@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { HeroSection } from "@/components/hero-section"
+import { WaveDivider } from "@/components/wave-divider"
 import { WhoWeServe } from "@/components/who-we-serve"
 import { ServicesSection } from "@/components/services-section"
 import { WhyChoose } from "@/components/why-choose"
@@ -12,6 +13,7 @@ export default function HomePage() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+        <WaveDivider />
         <WhoWeServe />
         <ServicesSection />
         <WhyChoose />

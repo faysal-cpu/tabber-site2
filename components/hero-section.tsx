@@ -4,57 +4,60 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
 const trustBadges = [
-  "CPA-Qualified",
-  "Fully Insured",
+  "CPA‑Qualified",
   "FMHC Specialist",
-  "Ontario-Based",
+  "Fully Insured",
+  "Ontario‑Based",
 ]
 
 export function HeroSection() {
   return (
-    <section style={{ backgroundColor: '#E8EDF5' }}>
-      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-3 px-6 py-4 md:flex-row md:gap-6 md:py-6">
-        <div className="flex-[0.65]">
-          <div className="max-w-[640px]">
-            <h1 className="font-serif leading-[1.15] tracking-tight text-navy">
-              <span className="block text-[28px] font-bold md:text-[42px]">Professional Bookkeeping</span>
-              <span className="block mt-1 text-[17px] font-normal md:text-[30px]">for Families & Small Businesses in Ontario</span>
-            </h1>
-          </div>
-          <p className="mt-3 max-w-[480px] text-[15px] leading-[1.6] text-navy/80">
-            CPA-led financial management specializing in Family-Managed Home Care (FMHC) and small business bookkeeping.
-          </p>
-          <div className="mt-5">
-            <Button
-              asChild
-              className="rounded-lg px-6 py-2.5 text-[15px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: '#2B4C7E' }}
-            >
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-          </div>
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-            {trustBadges.map((badge) => (
-              <span key={badge} className="flex items-center gap-1.5">
-                <Check className="size-4 text-brand" strokeWidth={2.5} />
-                <span className="text-sm font-medium text-navy/70">{badge}</span>
-              </span>
-            ))}
-          </div>
+    <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 relative" style={{ backgroundColor: '#E8EDF5' }}>
+      {/* Left Column - Vertically Centered */}
+      <div className="flex flex-col justify-center px-6 py-12 md:px-20 md:pl-[max(60px,calc((100vw-1400px)/2))]">
+        <h1 className="font-serif tracking-tight text-navy">
+          <span className="block text-[40px] md:text-[64px] font-bold leading-[1.1]">
+            Professional Bookkeeping
+          </span>
+          <span className="block mt-3 md:mt-5 text-[24px] md:text-[32px] font-normal leading-[1.3] whitespace-nowrap">
+            for Families & Small Businesses in Ontario
+          </span>
+        </h1>
+
+        <p className="mt-7 text-[16px] leading-[1.6] text-navy/80 max-w-[500px]">
+          CPA‑led financial management with specialized expertise in Family‑Managed Home Care (FMHC) and small business bookkeeping.
+        </p>
+
+        <div className="mt-12">
+          <Button
+            asChild
+            className="rounded-lg px-9 py-4 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+            style={{ backgroundColor: '#2B4C7E' }}
+          >
+            <Link href="/contact">Let&rsquo;s Talk About Your Needs</Link>
+          </Button>
         </div>
-        <div className="flex-[0.35]">
-          <div className="overflow-hidden rounded-2xl shadow-xl max-h-[280px] md:max-h-[320px]">
-            <Image
-              src="/images/hero.jpg"
-              alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
-              width={560}
-              height={560}
-              className="size-full object-cover"
-              style={{ objectPosition: 'center 70%' }}
-              priority
-            />
-          </div>
+
+        <div className="mt-9 inline-flex flex-wrap gap-3 bg-white px-6 py-4 rounded-full shadow-md max-w-fit" style={{ gap: '12px' }}>
+          {trustBadges.map((badge) => (
+            <span key={badge} className="flex items-center gap-1.5 whitespace-nowrap">
+              <Check className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+              <span className="text-sm font-medium text-navy/70">{badge}</span>
+            </span>
+          ))}
         </div>
+      </div>
+
+      {/* Right Column - Image Flush to Edge */}
+      <div className="relative h-[60vh] md:h-screen">
+        <Image
+          src="/images/hero-office.jpg"
+          alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center 70%' }}
+          priority
+        />
       </div>
     </section>
   )
