@@ -13,7 +13,7 @@ const trustBadges = [
 export function HeroSection() {
   return (
     <section className="bg-card">
-      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-8 px-6 py-8 md:flex-row md:gap-12 md:py-10">
+      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-6 px-6 py-6 md:flex-row md:gap-10 md:py-8">
         <div className="flex-[0.6]">
           <h1 className="max-w-[540px] font-serif text-[32px] font-bold leading-[1.2] tracking-tight text-navy text-balance md:text-[48px]">
             Professional Bookkeeping for Families & Businesses in Ontario
