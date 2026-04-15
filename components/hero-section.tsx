@@ -51,9 +51,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Right Column - Taller, Wider Image */}
-      <div className="relative h-[50vh] md:h-screen flex items-center justify-start py-8 md:py-8 px-5 md:pr-8 md:pl-4">
-        <div className="relative w-full md:w-[120%] h-[85%] rounded-3xl overflow-hidden shadow-xl">
+      {/* Right Column - Wider, Shorter Image */}
+      <div className="relative h-[50vh] md:h-screen flex items-center justify-start py-8 md:py-8 px-5 md:pr-6 md:pl-3">
+        <div className="relative w-full md:w-[135%] h-[70%] rounded-3xl overflow-hidden shadow-xl">
           <Image
             src="/images/hero-office.jpg"
             alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
