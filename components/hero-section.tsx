@@ -12,7 +12,7 @@ const trustBadges = [
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 relative" style={{ backgroundColor: '#E8EDF5' }}>
+    <section className="min-h-screen grid grid-cols-1 md:grid-cols-[1.6fr_0.4fr] relative" style={{ backgroundColor: '#E8EDF5' }}>
       {/* Left Column - Vertically Centered */}
       <div className="flex flex-col justify-center px-6 py-12 md:px-20 md:pl-[max(60px,calc((100vw-1400px)/2))]">
         <h1 className="font-serif tracking-tight text-navy">
@@ -48,16 +48,18 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Right Column - Image Flush to Edge */}
-      <div className="relative h-[60vh] md:h-screen">
-        <Image
-          src="/images/hero-office.jpg"
-          alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
-          fill
-          className="object-cover"
-          style={{ objectPosition: 'center 70%' }}
-          priority
-        />
+      {/* Right Column - Smaller Image with Rounded Edges */}
+      <div className="relative h-[50vh] md:h-screen flex items-center justify-start md:py-20 md:pl-4">
+        <div className="relative w-[85%] max-w-[320px] h-[55%] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src="/images/hero-office.jpg"
+            alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center 55%' }}
+            priority
+          />
+        </div>
       </div>
     </section>
   )
