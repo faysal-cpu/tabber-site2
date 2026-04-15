@@ -43,13 +43,13 @@ export function HeroSection() {
           </div>
         </div>
         <div className="flex-[0.35]">
-          <div className="overflow-hidden rounded-2xl shadow-xl max-h-[320px] md:max-h-[380px]">
+          <div className="overflow-hidden rounded-2xl shadow-xl max-h-[280px] md:max-h-[320px]">
             <Image
               src="/images/hero.jpg"
               alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
               width={560}
               height={560}
-              className="size-full object-cover"
+              className="size-full object-cover object-bottom"
               priority
             />
           </div>
