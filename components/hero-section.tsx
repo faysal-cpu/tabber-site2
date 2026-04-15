@@ -12,7 +12,7 @@ const trustBadges = [
 
 export function HeroSection() {
   return (
-    <section className="bg-card">
+    <section style={{ backgroundColor: '#E8EDF5' }}>
       <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-3 px-6 py-4 md:flex-row md:gap-6 md:py-6">
         <div className="flex-[0.65]">
           <div className="max-w-[640px]">
