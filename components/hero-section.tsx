@@ -14,7 +14,7 @@ export function HeroSection() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-[55fr_45fr] relative" style={{ backgroundColor: '#E8EDF5' }}>
       {/* Left Column - Text constrained to 600px */}
-      <div className="flex flex-col justify-center px-6 py-10 md:px-16 md:py-10 md:pl-[max(60px,calc((100vw-1400px)/2))]">
+      <div className="flex flex-col justify-center px-6 pt-10 pb-6 md:px-16 md:py-10 md:pl-[max(60px,calc((100vw-1400px)/2))]">
         <div className="max-w-[600px]">
           <h1 className="font-serif tracking-tight text-navy">
             <span className="block text-[40px] md:text-[64px] font-bold leading-[1.1]">
@@ -54,7 +54,7 @@ export function HeroSection() {
       </div>
 
       {/* Right Column - Substantial Image with Aspect Ratio Control */}
-      <div className="relative flex items-center justify-center py-10 md:py-10 px-6 md:pr-[max(60px,calc((100vw-1400px)/2))] md:pl-12">
+      <div className="relative flex items-center justify-center pt-0 pb-10 md:py-10 px-6 md:pr-[max(60px,calc((100vw-1400px)/2))] md:pl-12">
         <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
           <Image
             src="/images/hero-office.jpg"
