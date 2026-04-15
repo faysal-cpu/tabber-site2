@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
+import { Award, Home, Shield, MapPin } from "lucide-react"
 
 const trustBadges = [
-  "CPA‑Qualified",
-  "FMHC Specialist",
-  "Fully Insured",
-  "Ontario‑Based",
+  { icon: Award, label: "CPA‑Qualified" },
+  { icon: Home, label: "FMHC Specialist" },
+  { icon: Shield, label: "Fully Insured" },
+  { icon: MapPin, label: "Ontario‑Based" },
 ]
 
 export function HeroSection() {
@@ -39,12 +39,15 @@ export function HeroSection() {
         </div>
 
         <div className="mt-9 inline-flex flex-wrap gap-3 bg-white px-6 py-4 rounded-full shadow-md max-w-fit" style={{ gap: '12px' }}>
-          {trustBadges.map((badge) => (
-            <span key={badge} className="flex items-center gap-1.5 whitespace-nowrap">
-              <Check className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-              <span className="text-sm font-medium text-navy/70">{badge}</span>
-            </span>
-          ))}
+          {trustBadges.map((badge) => {
+            const Icon = badge.icon
+            return (
+              <span key={badge.label} className="flex items-center gap-1.5 whitespace-nowrap">
+                <Icon className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                <span className="text-sm font-medium text-navy/70">{badge.label}</span>
+              </span>
+            )
+          })}
         </div>
       </div>
 

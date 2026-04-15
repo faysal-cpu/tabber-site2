@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
 import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send } from "lucide-react"
 
@@ -161,6 +162,8 @@ export default function FmhcPage() {
             </div>
           </div>
         </section>
+
+        <WaveDivider />
 
         {/* Schedule O Credentials Callout */}
         <section className="bg-card py-8 md:py-10">
