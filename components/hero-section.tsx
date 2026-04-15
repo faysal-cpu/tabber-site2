@@ -18,11 +18,11 @@ export function HeroSection() {
           <div className="max-w-[640px]">
             <h1 className="font-serif leading-[1.15] tracking-tight text-navy">
               <span className="block text-[28px] font-bold md:text-[42px]">Professional Bookkeeping</span>
-              <span className="block text-[20px] font-normal md:text-[30px]">for Families & Small Businesses in Ontario</span>
+              <span className="block text-[17px] font-normal md:text-[30px]">for Families & Small Businesses in Ontario</span>
             </h1>
           </div>
           <p className="mt-3 max-w-[480px] text-[15px] leading-[1.6] text-navy/80">
-            CPA-led financial management specializing in Family-Managed Home Care and small business bookkeeping.
+            CPA-led financial management specializing in Family-Managed Home Care (FMHC) and small business bookkeeping.
           </p>
           <div className="mt-5">
             <Button

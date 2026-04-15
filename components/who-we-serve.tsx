@@ -4,7 +4,7 @@ import { Home, Briefcase, ArrowRight } from "lucide-react"
 const audiences = [
   {
     icon: Home,
-    title: "Family-Managed Home Care (FMHC)",
+    title: "FMHC Families",
     description:
       "Expert FMHC bookkeeping, payroll, and compliance reporting for Ontario families managing home care programs through Ontario Health atHome. Specialized Family-Managed Home Care bookkeeping services.",
     href: "/fmhc",

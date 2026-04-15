@@ -56,7 +56,7 @@ export default function AboutPage() {
                 </div>
 
                 <blockquote className="border-l-4 pl-6 py-2 italic text-[17px] md:text-[19px] leading-[1.5]" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
-                  "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments. Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
+                  "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.<br /><br />Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
                   <footer className="mt-3 text-sm font-medium text-navy not-italic">— Faysal El Masri, CPA | Founder of Tabber</footer>
                 </blockquote>
               </div>
