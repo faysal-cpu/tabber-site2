@@ -13,7 +13,7 @@ export default function HomePage() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
-        <WaveDivider />
+        <WaveDivider backgroundColor="#FAF9F7" />
         <WhoWeServe />
         <ServicesSection />
         <WhyChoose />

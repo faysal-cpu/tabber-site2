@@ -20,7 +20,7 @@ export function HeroSection() {
             <span className="block text-[40px] md:text-[64px] font-bold leading-[1.1]">
               Professional Bookkeeping
             </span>
-            <span className="block mt-3 md:mt-5 text-[24px] md:text-[32px] font-normal leading-[1.3] whitespace-nowrap">
+            <span className="block mt-3 md:mt-5 text-[24px] md:text-[32px] font-normal leading-[1.3] md:whitespace-nowrap">
               for Families & Small Businesses in Ontario
             </span>
           </h1>
@@ -29,7 +29,7 @@ export function HeroSection() {
             CPA‑led financial management with specialized expertise in Family‑Managed Home Care (FMHC) and small business bookkeeping.
           </p>
 
-          <div className="mt-12">
+          <div className="mt-8 md:mt-8">
             <Button
               asChild
               className="rounded-lg px-9 py-4 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
@@ -39,7 +39,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-9 inline-flex flex-wrap gap-3 bg-white px-6 py-4 rounded-full shadow-md max-w-fit" style={{ gap: '12px' }}>
+          <div className="mt-6 md:mt-8 flex md:inline-flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 bg-white px-4 md:px-6 py-3 md:py-4 rounded-full shadow-md md:max-w-fit" style={{ gap: '12px' }}>
             {trustBadges.map((badge) => {
               const Icon = badge.icon
               return (
@@ -61,7 +61,7 @@ export function HeroSection() {
             alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
             fill
             className="object-cover"
-            style={{ objectPosition: 'center 55%' }}
+            style={{ objectPosition: '65% 40%' }}
             priority
           />
         </div>

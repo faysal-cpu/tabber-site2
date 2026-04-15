@@ -163,7 +163,7 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#F0EDE8" />
+        <WaveDivider backgroundColor="#FFFFFF" />
 
         {/* Schedule O Credentials Callout */}
         <section className="bg-card py-8 md:py-10">
