@@ -61,7 +61,7 @@ export function HeroSection() {
             alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
             fill
             className="object-cover"
-            style={{ objectPosition: '65% 40%' }}
+            style={{ objectPosition: '70% 35%' }}
             priority
           />
         </div>
