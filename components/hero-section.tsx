@@ -12,9 +12,9 @@ const trustBadges = [
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] relative" style={{ backgroundColor: '#E8EDF5' }}>
+    <section className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] relative" style={{ backgroundColor: '#E8EDF5' }}>
       {/* Left Column - Vertically Centered */}
-      <div className="flex flex-col justify-center px-6 py-12 md:px-20 md:pt-8 md:pb-16 md:pl-[max(60px,calc((100vw-1400px)/2))]">
+      <div className="flex flex-col justify-center px-6 py-12 md:px-20 md:py-12 md:pl-[max(60px,calc((100vw-1400px)/2))]">
         <h1 className="font-serif tracking-tight text-navy">
           <span className="block text-[40px] md:text-[64px] font-bold leading-[1.1]">
             Professional Bookkeeping
@@ -51,9 +51,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Right Column - Wider, Shorter Image */}
-      <div className="relative h-[50vh] md:h-screen flex items-center justify-start py-8 md:py-8 px-5 md:pr-6 md:pl-3">
-        <div className="relative w-full md:w-[135%] h-[70%] rounded-3xl overflow-hidden shadow-xl">
+      {/* Right Column - Constrained Aspect Ratio Image */}
+      <div className="relative flex items-center justify-center py-12 md:py-12 px-6 md:pr-12 md:pl-8">
+        <div className="relative w-full max-w-[480px] aspect-[3/2] rounded-3xl overflow-hidden shadow-xl">
           <Image
             src="/images/hero-office.jpg"
             alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"

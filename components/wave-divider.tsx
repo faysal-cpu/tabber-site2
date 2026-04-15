@@ -1,10 +1,14 @@
 interface WaveDividerProps {
   fillColor?: string
+  backgroundColor?: string
 }
 
-export function WaveDivider({ fillColor = "#E8EDF5" }: WaveDividerProps) {
+export function WaveDivider({ fillColor = "#E8EDF5", backgroundColor }: WaveDividerProps) {
   return (
-    <div className="relative w-full overflow-hidden leading-[0]">
+    <div
+      className="relative w-full overflow-hidden leading-[0]"
+      style={backgroundColor ? { backgroundColor } : undefined}
+    >
       <svg
         viewBox="0 0 1200 120"
         preserveAspectRatio="none"
