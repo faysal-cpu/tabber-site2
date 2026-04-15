@@ -60,7 +60,7 @@ export default function FmhcPage() {
               <div className="flex-1 text-center md:text-left">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
                   <Check className="size-4" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Ontario Health atHome Specialist</span>
+                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
                 </div>
                 <h1 className="font-serif text-[32px] font-bold leading-[1.15] text-navy md:text-[44px]">Family-Managed Home Care Bookkeeping</h1>
                 <p className="mt-5 text-[17px] leading-[1.7] text-navy/80">Let us handle the paperwork, so you can focus entirely on your loved one — with no extra cost to your family.</p>

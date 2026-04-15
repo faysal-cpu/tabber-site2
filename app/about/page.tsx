@@ -7,20 +7,20 @@ import { Award, Shield, FileCheck, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About | Tabber",
-  description: "CPA-qualified bookkeeping professional serving Ontario families and small businesses with accuracy, transparency, and personalized service.",
+  description: "CPA-led bookkeeping practice specializing in Family-Managed Home Care (FMHC) and serving Ontario families and small businesses with accurate, organized financial support.",
 }
 
 const credentials = [
-  { icon: Award, title: "CPA Designation", description: "Chartered Professional Accountant qualification ensuring the highest standards of financial accuracy and ethics." },
-  { icon: Shield, title: "Professional Insurance", description: "Full professional liability coverage protecting your financial operations and giving you peace of mind." },
-  { icon: FileCheck, title: "FMHC Certified", description: "Specialized training and ongoing education in Ontario Health atHome FMHC program requirements and compliance." },
-  { icon: Users, title: "CPA Ontario Member", description: "Active member of CPA Ontario with continuing professional development and adherence to professional standards." },
+  { icon: Award, title: "CPA Designation", description: "Chartered Professional Accountant designation, reflecting adherence to professional accounting standards, ethical guidelines, and financial accuracy." },
+  { icon: FileCheck, title: "FMHC Expertise", description: "Focused experience supporting families under Ontario Health atHome's Family-Managed Home Care (FMHC) program, with practical expertise in payroll, reporting, and funding compliance." },
+  { icon: Users, title: "National Payroll Institute (NPI) Member", description: "Professional membership reflecting specialized knowledge of Canadian payroll requirements, deductions, and remittance obligations relevant to FMHC arrangements." },
+  { icon: Shield, title: "Professional Insurance", description: "Comprehensive professional liability coverage providing protection and peace of mind for clients and financial operations." },
 ]
 
 const values = [
-  { title: "Accuracy", description: "Every transaction is recorded correctly. Every report is verified. Your financial data is reliable." },
-  { title: "Transparency", description: "Clear communication, straightforward pricing, and no surprises. You always know where things stand." },
-  { title: "Personalized Service", description: "Your business is unique. We tailor our approach to fit your specific needs and goals." },
+  { title: "Accuracy", description: "Transactions are recorded carefully, reports are reviewed, and records are kept consistent over time. Your financial information is dependable and ready when it's needed." },
+  { title: "Transparency", description: "Clear communication and straightforward pricing at every step. You know what's being handled, why it matters, and where things stand." },
+  { title: "Tailored Support", description: "Support shaped around how you actually operate — whether managing care funding or running a business — without unnecessary complexity or one-size-fits-all processes." },
 ]
 
 export default function AboutPage() {
@@ -31,17 +31,21 @@ export default function AboutPage() {
         <section className="bg-card py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">About Tabber</h1>
-            <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">CPA-qualified financial management built on accuracy, transparency, and personalized service.</p>
+            <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">CPA-led bookkeeping specializing in Family-Managed Home Care, with support for Ontario small businesses.</p>
           </div>
         </section>
 
         <section className="bg-secondary py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6">
             <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
-              <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management - without the complexity or cost of a large accounting firm.</p>
-              <p className="text-[18px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>{`"I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered - caring for their loved ones."`}</p>
-              <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
-              <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
+              <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
+              <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
+              <div className="rounded-lg border-l-4 bg-card p-6 my-6" style={{ borderColor: '#2B4C7E' }}>
+                <p className="text-[16px] italic leading-[1.6] text-navy">"I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.</p>
+                <p className="text-[16px] italic leading-[1.6] text-navy mt-3">Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."</p>
+                <p className="mt-4 text-sm font-semibold text-navy">— Faysal El Masri, CPA</p>
+                <p className="text-xs text-muted-foreground">Founder, Tabber</p>
+              </div>
             </div>
           </div>
         </section>
@@ -85,7 +89,7 @@ export default function AboutPage() {
         <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
             <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Ready to Work Together?</h2>
-            <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">Reach out to our team and see how Tabber can simplify your financial management.</p>
+            <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">Get in touch to see how Tabber can support your financial management.</p>
             <Button asChild className="mt-6 rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
               <Link href="/contact">Get in Touch</Link>
             </Button>

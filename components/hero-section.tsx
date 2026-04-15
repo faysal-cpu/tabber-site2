@@ -15,15 +15,11 @@ export function HeroSection() {
     <section className="bg-card">
       <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-10 px-6 py-12 md:flex-row md:gap-14 md:py-16">
         <div className="flex-[0.6]">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
-            Expert Support for Care Programs & Small Businesses
-          </p>
           <h1 className="max-w-[540px] font-serif text-[32px] font-bold leading-[1.2] tracking-tight text-navy text-balance md:text-[48px]">
-            Professional Bookkeeping for Businesses & Families
+            Professional Bookkeeping for Families & Businesses in Ontario
           </h1>
           <p className="mt-4 max-w-[480px] text-[16px] leading-[1.65] text-navy/80">
-            CPA-qualified bookkeeping that keeps you compliant, organized, and
-            free to focus on what matters most.
+            CPA-led financial management specializing in Family-Managed Home Care and small business bookkeeping.
           </p>
           <div className="mt-8">
             <Button

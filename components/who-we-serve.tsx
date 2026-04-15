@@ -26,7 +26,7 @@ export function WhoWeServe() {
           Who We Serve
         </h2>
         <p className="mx-auto mt-3 mb-10 max-w-[600px] text-center text-[15px] text-navy/70">
-          Specialized bookkeeping for Ontario families and small businesses.
+          Two distinct needs. One professional standard.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {audiences.map((item) => {

@@ -47,10 +47,10 @@ export function ServicesSection() {
     <section id="services" className="py-16 md:py-24" style={{ backgroundColor: '#F0EDE8' }}>
       <div className="mx-auto max-w-[1200px] px-6">
         <h2 className="text-center font-serif text-[28px] font-bold tracking-tight text-navy md:text-[36px]">
-          What We Do
+          How We Support Clients
         </h2>
         <p className="mx-auto mt-3 mb-14 max-w-[620px] text-center text-[15px] text-muted-foreground">
-          Full-service bookkeeping support for your business or care program
+          Practical bookkeeping and reporting support, delivered with professional oversight.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
           {services.map((service, index) => {
