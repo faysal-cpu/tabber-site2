@@ -13,11 +13,14 @@ const trustBadges = [
 export function HeroSection() {
   return (
     <section className="bg-card">
-      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-4 px-6 py-4 md:flex-row md:gap-8 md:py-6">
-        <div className="flex-[0.6]">
-          <h1 className="max-w-[540px] font-serif text-[28px] font-bold leading-[1.15] tracking-tight text-navy text-balance md:text-[42px]">
-            Professional Bookkeeping for Families & Businesses in Ontario
-          </h1>
+      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-3 px-6 py-4 md:flex-row md:gap-6 md:py-6">
+        <div className="flex-[0.65]">
+          <div className="max-w-[640px]">
+            <h1 className="font-serif leading-[1.15] tracking-tight text-navy">
+              <span className="block text-[28px] font-bold md:text-[42px]">Professional Bookkeeping</span>
+              <span className="block text-[20px] font-normal md:text-[30px]">for Families & Small Businesses in Ontario</span>
+            </h1>
+          </div>
           <p className="mt-3 max-w-[480px] text-[15px] leading-[1.6] text-navy/80">
             CPA-led financial management specializing in Family-Managed Home Care and small business bookkeeping.
           </p>
