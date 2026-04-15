@@ -166,7 +166,7 @@ export default function FmhcPage() {
         <WaveDivider />
 
         {/* Schedule O Credentials Callout */}
-        <section className="bg-card py-8 md:py-10">
+        <section className="bg-secondary py-8 md:py-10">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
@@ -181,7 +181,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What is FMHC - SHORTENED */}
-        <section className="bg-secondary py-10 md:py-12">
+        <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[1000px] px-6">
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
