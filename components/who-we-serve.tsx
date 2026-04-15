@@ -4,9 +4,9 @@ import { Home, Briefcase, ArrowRight } from "lucide-react"
 const audiences = [
   {
     icon: Home,
-    title: "Family-Managed Home Care",
+    title: "Family-Managed Home Care (FMHC)",
     description:
-      "Complete FMHC bookkeeping, payroll, and compliance reporting for families managing home care programs through Ontario Health atHome.",
+      "Expert FMHC bookkeeping, payroll, and compliance reporting for Ontario families managing home care programs through Ontario Health atHome. Specialized Family-Managed Home Care bookkeeping services.",
     href: "/fmhc",
   },
   {
@@ -20,12 +20,12 @@ const audiences = [
 
 export function WhoWeServe() {
   return (
-    <section className="py-14 md:py-20" style={{ backgroundColor: '#FAF9F7' }}>
+    <section className="py-10 md:py-14" style={{ backgroundColor: '#FAF9F7' }}>
       <div className="mx-auto max-w-[1200px] px-6">
         <h2 className="text-center font-serif text-[28px] font-bold tracking-tight text-navy md:text-[36px]">
           Who We Serve
         </h2>
-        <p className="mx-auto mt-3 mb-10 max-w-[600px] text-center text-[15px] text-navy/70">
+        <p className="mx-auto mt-3 mb-8 max-w-[600px] text-center text-[15px] text-navy/70">
           Two distinct needs. One professional standard.
         </p>
         <div className="grid gap-6 md:grid-cols-2">

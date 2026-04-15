@@ -63,6 +63,21 @@ export function getBlobUrl(blobName: string): string {
 }
 
 /**
+ * Sanitize filename for Content-Disposition header
+ * Replaces characters that can break SAS signatures
+ * Uses only ASCII-safe characters
+ */
+function sanitizeFilename(filename: string): string {
+  return filename
+    .replace(/&/g, ' and ')    // Replace & with ' and ' (with spaces)
+    .replace(/[<>:"\/\\|?*#%]/g, '-')  // Replace invalid chars with dash
+    .replace(/[^\x20-\x7E]/g, '')  // Remove non-ASCII characters
+    .replace(/\s+/g, ' ')      // Normalize whitespace
+    .replace(/\s*-\s*/g, ' - ') // Normalize dashes with spaces
+    .trim();
+}
+
+/**
  * Generate a SAS URL for downloading a blob (valid for 1 hour)
  */
 export function generateDownloadUrl(blobName: string, filename: string): string {
@@ -81,7 +96,8 @@ export function generateDownloadUrl(blobName: string, filename: string): string 
       permissions: BlobSASPermissions.parse('r'), // Read only
       startsOn,
       expiresOn,
-      contentDisposition: `attachment; filename="${filename}"`,
+      // Removed contentDisposition from SAS to avoid signature issues
+      // File will download with the blob name instead
     },
     sharedKeyCredential
   ).toString();

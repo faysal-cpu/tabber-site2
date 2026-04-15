@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
@@ -28,31 +29,44 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="bg-card py-12 md:py-16">
+        <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">About Tabber</h1>
             <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">CPA-led bookkeeping specializing in Family-Managed Home Care, with support for Ontario small businesses.</p>
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16">
-          <div className="mx-auto max-w-[800px] px-6">
-            <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
-              <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
-              <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
-              <div className="rounded-lg border-l-4 bg-card p-6 my-6" style={{ borderColor: '#2B4C7E' }}>
-                <p className="text-[16px] italic leading-[1.6] text-navy">"I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.</p>
-                <p className="text-[16px] italic leading-[1.6] text-navy mt-3">Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."</p>
-                <p className="mt-4 text-sm font-semibold text-navy">— Faysal El Masri, CPA</p>
-                <p className="text-xs text-muted-foreground">Founder, Tabber</p>
+        <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-start">
+              <div className="mx-auto md:mx-0">
+                <Image
+                  src="/images/profile-photo.jpg"
+                  alt="Faysal El Masri CPA, Founder of Tabber Bookkeeping - Ontario FMHC specialist and certified accountant"
+                  width={350}
+                  height={350}
+                  className="rounded-2xl shadow-lg"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-8">
+                <blockquote className="border-l-4 pl-6 py-2 italic text-[17px] md:text-[19px] leading-[1.5]" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
+                  "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments. Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
+                  <footer className="mt-3 text-sm font-medium text-navy not-italic">— Faysal El Masri, CPA | Founder of Tabber</footer>
+                </blockquote>
+
+                <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
+                  <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
+                  <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-card py-12 md:py-16">
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Credentials & Qualifications</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Credentials & Qualifications</h2>
             <div className="grid gap-5 sm:grid-cols-2">
               {credentials.map((cred) => {
                 const Icon = cred.icon
@@ -72,9 +86,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
+            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {values.map((value) => (
                 <div key={value.title} className="text-center">
@@ -86,7 +100,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[700px] px-6 text-center">
             <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Ready to Work Together?</h2>
             <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">Get in touch to see how Tabber can support your financial management.</p>

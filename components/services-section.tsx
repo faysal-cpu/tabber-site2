@@ -44,12 +44,12 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-16 md:py-24" style={{ backgroundColor: '#F0EDE8' }}>
+    <section id="services" className="py-10 md:py-14" style={{ backgroundColor: '#F0EDE8' }}>
       <div className="mx-auto max-w-[1200px] px-6">
         <h2 className="text-center font-serif text-[28px] font-bold tracking-tight text-navy md:text-[36px]">
           How We Support Clients
         </h2>
-        <p className="mx-auto mt-3 mb-14 max-w-[620px] text-center text-[15px] text-muted-foreground">
+        <p className="mx-auto mt-3 mb-8 max-w-[620px] text-center text-[15px] text-muted-foreground">
           Practical bookkeeping and reporting support, delivered with professional oversight.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
@@ -73,7 +73,7 @@ export function ServicesSection() {
             )
           })}
         </div>
-        <div className="mt-14 text-center">
+        <div className="mt-10 text-center">
           <Button
             asChild
             className="rounded-lg px-8 py-3 text-[14px] font-bold text-white shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"

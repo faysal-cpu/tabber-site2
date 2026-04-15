@@ -13,7 +13,7 @@ const trustBadges = [
 export function HeroSection() {
   return (
     <section className="bg-card">
-      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-10 px-6 py-12 md:flex-row md:gap-14 md:py-16">
+      <div className="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-10 px-6 py-10 md:flex-row md:gap-14 md:py-14">
         <div className="flex-[0.6]">
           <h1 className="max-w-[540px] font-serif text-[32px] font-bold leading-[1.2] tracking-tight text-navy text-balance md:text-[48px]">
             Professional Bookkeeping for Families & Businesses in Ontario
@@ -43,7 +43,7 @@ export function HeroSection() {
           <div className="overflow-hidden rounded-2xl shadow-xl">
             <Image
               src="/images/hero.jpg"
-              alt="Warm workspace representing Tabber bookkeeping services"
+              alt="Professional bookkeeping services in Ontario - CPA-qualified financial management for businesses and FMHC families"
               width={560}
               height={560}
               className="size-full object-cover"

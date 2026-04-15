@@ -11,7 +11,7 @@ export function ClientFooter() {
           <div className="flex items-center">
             <Image
               src="/tabber-logo-full-white.svg"
-              alt="Tabber"
+              alt="Tabber CPA bookkeeping services - Client portal"
               width={450}
               height={150}
               priority
@@ -31,12 +31,20 @@ export function ClientFooter() {
                 hello@tabber.ca
               </a>
             </p>
+            <p className="text-xl font-semibold mt-2">
+              <a
+                href="tel:+16478720394"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                (647) 872-0394
+              </a>
+            </p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-white/20 text-center text-sm text-white/70">
-          <p>&copy; {new Date().getFullYear()} Tabber Bookkeeping Services. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tabber. Professional services through Tabber are provided by Faysal El Masri, CPA. All rights reserved.</p>
         </div>
       </div>
     </footer>

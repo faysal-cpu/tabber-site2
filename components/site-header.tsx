@@ -35,15 +35,15 @@ export function SiteHeader() {
         scrolled ? "shadow-md" : ""
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
-        <Link href="/" className="flex items-center shrink-0">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-2 px-3 sm:px-6">
+        <Link href="/" className="flex items-center shrink-0 min-w-0">
           <Image
             src="/tabber-logo-full.svg"
-            alt="Tabber - Bookkeeping, Compliance, Advisory"
+            alt="Tabber CPA bookkeeping and compliance services for Ontario families and businesses"
             width={440}
             height={59}
             priority
-            className="object-contain w-[350px] md:w-[360px] lg:w-[440px]"
+            className="object-contain w-[320px] sm:w-[350px] md:w-[360px] lg:w-[440px]"
           />
         </Link>
 
@@ -80,7 +80,7 @@ export function SiteHeader() {
             <div className="mb-6 mt-4">
               <Image
                 src="/tabber-logo-full.svg"
-                alt="Tabber - Bookkeeping, Compliance, Advisory"
+                alt="Tabber CPA bookkeeping and compliance services for Ontario families and businesses"
                 width={352}
                 height={47}
               />

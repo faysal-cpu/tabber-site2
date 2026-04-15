@@ -124,13 +124,13 @@ export default function ClientPortalPage() {
       <ClientHeader clientName={clientInfo.name} clientEmail={clientInfo.email} />
 
       {/* Page Title Section */}
-      <div className="py-12" style={{ backgroundColor: '#2B4C7E' }}>
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-center gap-4">
-            <Shield className="h-10 w-10 text-white" />
-            <h2 className="text-4xl font-bold text-white">Secure Document Upload</h2>
+      <div className="py-8 md:py-12" style={{ backgroundColor: '#2B4C7E' }}>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-center gap-2 md:gap-4">
+            <Shield className="h-6 w-6 md:h-10 md:w-10 text-white flex-shrink-0" />
+            <h2 className="text-xl md:text-4xl font-bold text-white whitespace-nowrap">Secure Document Upload</h2>
           </div>
-          <p className="text-center text-white text-lg mt-3">Upload your documents securely. All files are encrypted and stored safely.</p>
+          <p className="text-center text-white text-sm md:text-lg mt-2 md:mt-3">Upload your documents securely. All files are encrypted and stored safely.</p>
         </div>
       </div>
 

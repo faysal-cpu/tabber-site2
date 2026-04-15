@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function CtaSection() {
   return (
-    <section className="py-14 md:py-20" style={{ backgroundColor: '#E8EDF5' }}>
+    <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
       <div className="mx-auto max-w-[800px] px-6 text-center">
         <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">
           Ready to Get Started?

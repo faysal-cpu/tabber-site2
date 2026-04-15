@@ -1,4 +1,4 @@
-import { createClient } from './supabase';
+import { createServiceClient } from './supabase';
 import type { Database } from './supabase';
 
 type ClientRow = Database['public']['Tables']['clients']['Row'];
@@ -7,7 +7,7 @@ type ClientRow = Database['public']['Tables']['clients']['Row'];
  * Get client by access token
  */
 export async function getClientByToken(token: string): Promise<ClientRow | null> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('clients')
@@ -28,7 +28,7 @@ export async function getClientByToken(token: string): Promise<ClientRow | null>
  * Get client by ID
  */
 export async function getClientById(id: string): Promise<ClientRow | null> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('clients')
@@ -49,7 +49,7 @@ export async function getClientById(id: string): Promise<ClientRow | null> {
  * Get all active clients
  */
 export async function getAllClients(): Promise<ClientRow[]> {
-  const supabase = createClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from('clients')

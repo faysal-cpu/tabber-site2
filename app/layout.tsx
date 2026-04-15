@@ -30,8 +30,14 @@ export const metadata: Metadata = {
     'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
   
   icons: {
-    icon: '/tabber-icon.ico',
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/apple-icon.png',
   },
+  manifest: '/site.webmanifest',
 
   // Open Graph (WhatsApp, FB, LinkedIn, Slack, iMessage)
   openGraph: {
@@ -62,7 +68,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#1A2A44',
+  themeColor: '#2B4C7E',
 }
 
 export default function RootLayout({
