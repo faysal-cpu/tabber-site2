@@ -25,11 +25,11 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="mt-7 text-[16px] leading-[1.6] text-navy/80 max-w-[500px]">
+          <p className="mt-6 md:mt-7 text-[16px] leading-[1.6] text-navy/80 max-w-[500px]">
             CPA‑led financial management with specialized expertise in Family‑Managed Home Care (FMHC) and small business bookkeeping.
           </p>
 
-          <div className="mt-8 md:mt-8">
+          <div className="mt-6 md:mt-8">
             <Button
               asChild
               className="rounded-lg px-9 py-4 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
