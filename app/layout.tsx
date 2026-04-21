@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
   title: 'Tabber | Financial Management & Compliance',
   description:
-    'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
+    'CPA‑led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome's Family‑Managed Home Care (FMHC) program.',
   
   icons: {
     icon: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.ico', sizes: 'any' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
 
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Tabber | Financial Management & Compliance',
     description:
-      'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
+      'CPA‑led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome's Family‑Managed Home Care (FMHC) program.',
     siteName: 'Tabber',
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tabber | Financial Management & Compliance',
     description:
-      'Financial support for Family-Managed Care programs and small businesses, providing reliable bookkeeping and regulatory alignment.',
+      'CPA‑led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome's Family‑Managed Home Care (FMHC) program.',
     images: [ogImage],
   },
 }
