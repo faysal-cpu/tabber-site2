@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button"
 import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send } from "lucide-react"
 
 const steps = [
-  { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for independent contractor arrangements." },
+  { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for agency or independent contractor arrangements." },
   { num: "02", icon: FileText, title: "Monthly Reconciliation", tagline: "Clear, organized records every month.", description: "Expense tracking against your FMHC funding allocation, clear categorization of all transactions, and organized records for every submission." },
-  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Monthly compliance reports formatted to Ontario Health atHome requirements. Timely submissions that protect your funding." },
+  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Organized records and monthly reports prepared to Ontario Health atHome requirements. Submissions completed accurately, on time, every time." },
   { num: "04", icon: BarChart3, title: "Monthly Funding Reports", tagline: "Understand your funding at a glance.", description: "Clear monthly summaries showing budget vs. actuals, remaining funds, and spending trends — always know where you stand against your approved allocation." },
 ]
 
@@ -30,16 +30,16 @@ const complianceItems = [
 const faqs = [
   { q: "What is Family-Managed Home Care (FMHC)?", a: "FMHC is a program through Ontario Health atHome that provides funding for families to directly manage and hire care workers for a loved one at home, rather than receiving services through an agency." },
   { q: "Will I ever have to pay out-of-pocket for FMHC bookkeeping?", a: "No. We tailor the service to fit fully within your approved FMHC funding allocation. You will never be charged beyond what your program covers." },
-  { q: "What do I need to get started?", a: "We set everything up for you from scratch. You do not need any prior software or bookkeeping experience. We guide you step-by-step — just bring your funding confirmation letter and we take it from there." },
+  { q: "What do I need to get started?", a: "Getting started is simple. Send us your Ontario Health atHome funding confirmation and any related FMHC documents. From there, forward your invoices and monthly bank statements as they become available — and we'll handle the rest." },
   { q: "How often will I receive reports?", a: "Monthly. We prepare your complete report package ahead of the Ontario Health atHome submission deadline each month. We also prepare all required compliance documents on your behalf." },
   { q: "Will my bookkeeper be accepted by Ontario Health atHome?", a: "Yes. Tabber meets all Schedule O qualification requirements under the FMHC program agreement. We provide the required credential letter and documentation directly to Ontario Health atHome as part of onboarding." },
   { q: "Do I need to handle payroll myself?", a: "No. For families who directly employ care workers, we handle payroll calculations, source deduction remittances, and year-end T4 preparation. For independent contractor arrangements, we track invoices and payments. You make the payments — we handle the recordkeeping and reporting." },
-  { q: "Do you work directly with Ontario Health atHome?", a: "We prepare all required reports and documentation in the format Ontario Health atHome requires. The submission is completed by you as the SDM, but we have everything ready ahead of your monthly deadline." },
+  { q: "Do you work directly with Ontario Health atHome?", a: "We complete your monthly reporting directly inside your Ontario Health atHome Sync folder and upload all supporting documents ahead of the deadline. The only things you need to send us each month are your invoices and any eligible expense receipts, along with your bank statement PDF — we handle everything else." },
 ]
 
 const onboardingSteps = [
   { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to understand your needs and confirm your funding covers bookkeeping — no surprises, no out-of-pocket cost." },
-  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and prepare your onboarding package using a secure document portal." },
+  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and send you your onboarding guide." },
   { icon: Sparkles, title: "Start within 7 days", description: "We take over your bookkeeping and reporting. You focus on care." },
 ]
 
