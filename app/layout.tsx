@@ -25,7 +25,7 @@ const ogImage = '/tabber-og2.png'   // <-- your image in /public
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: 'Tabber | Financial Management & Compliance',
+  title: 'Tabber | Financial Management & Bookkeeping',
   description:
     'CPA-led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome\'s Family-Managed Home Care (FMHC) program.',
   
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Tabber | Financial Management & Compliance',
+    title: 'Tabber | Financial Management & Bookkeeping',
     description:
       'CPA-led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome\'s Family-Managed Home Care (FMHC) program.',
     siteName: 'Tabber',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   // Twitter / X
   twitter: {
     card: 'summary_large_image',
-    title: 'Tabber | Financial Management & Compliance',
+    title: 'Tabber | Financial Management & Bookkeeping',
     description:
       'CPA-led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome\'s Family-Managed Home Care (FMHC) program.',
     images: [ogImage],
