@@ -41,7 +41,7 @@ export default function AboutPage() {
             <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-center">
               <div className="mx-auto md:mx-0">
                 <Image
-                  src="/images/profile-photo.jpg"
+                  src="/images/profile-photo-new.png"
                   alt="Faysal El Masri CPA, Founder of Tabber Bookkeeping - Ontario FMHC specialist and certified accountant"
                   width={350}
                   height={350}
