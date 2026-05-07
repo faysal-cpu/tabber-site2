@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description: "CPA-led bookkeeping practice specializing in Family-Managed Home Care (FMHC) and serving Ontario families and small businesses with accurate, organized financial support.",
 }
 
+
 const credentials = [
   { icon: Award, title: "CPA Designation", description: "Chartered Professional Accountant designation, reflecting adherence to professional accounting standards, ethical guidelines, and financial accuracy." },
   { icon: FileCheck, title: "FMHC Expertise", description: "Focused experience supporting families under Ontario Health atHome's Family-Managed Home Care (FMHC) program, with practical expertise in payroll, reporting, and funding compliance." },
