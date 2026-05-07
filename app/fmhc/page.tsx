@@ -117,25 +117,6 @@ export default function FmhcPage() {
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
                   <div className="my-3">
-                    {/* Mobile & Desktop: One line */}
-                    <div className="flex md:hidden flex-wrap justify-center gap-1">
-                      <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
-                        <GraduationCap className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                        <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
-                      </span>
-                      <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
-                        <Award className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                        <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
-                      </span>
-                      <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
-                        <Shield className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                        <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
-                      </span>
-                      <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
-                        <BookOpen className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                        <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
-                      </span>
-                    </div>
                     {/* Desktop: One line */}
                     <div className="hidden md:flex flex-nowrap justify-start gap-2">
                       <span className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
@@ -167,6 +148,25 @@ export default function FmhcPage() {
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
                     <Link href="#contact-form">Get Started — It's Free</Link>
                   </Button>
+                </div>
+                {/* Mobile pills - after CTA */}
+                <div className="mt-6 flex md:hidden flex-wrap justify-center gap-1">
+                  <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
+                    <GraduationCap className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                  </span>
+                  <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
+                    <Award className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                  </span>
+                  <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
+                    <Shield className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                  </span>
+                  <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
+                    <BookOpen className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
+                  </span>
                 </div>
               </div>
               <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%] md:max-w-none">
