@@ -116,7 +116,7 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3">
+                  <div className="my-3">
                     {/* Mobile & Desktop: One line */}
                     <div className="flex md:hidden flex-wrap justify-center gap-1">
                       <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
