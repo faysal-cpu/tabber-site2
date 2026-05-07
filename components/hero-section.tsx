@@ -41,7 +41,7 @@ export function HeroSection() {
 
           <div className="mt-6 md:mt-8">
             {/* Mobile & Desktop: One line */}
-            <div className="flex md:hidden flex-wrap justify-center gap-1">
+            <div className="flex md:hidden flex-nowrap justify-center gap-0.5">
               {trustBadges.map((badge) => {
                 const Icon = badge.icon
                 return (
