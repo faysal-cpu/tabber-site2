@@ -118,7 +118,7 @@ export default function FmhcPage() {
                 <div>
                   <div className="mb-3">
                     {/* Mobile & Desktop: One line */}
-                    <div className="flex md:hidden flex-wrap justify-start gap-1">
+                    <div className="flex md:hidden flex-wrap justify-center gap-1">
                       <span className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
                         <GraduationCap className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                         <span className="text-[10px] font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
