@@ -41,13 +41,13 @@ export function HeroSection() {
 
           <div className="mt-6 md:mt-8">
             {/* Mobile & Desktop: One line */}
-            <div className="flex md:hidden flex-nowrap justify-start gap-1 overflow-x-auto">
+            <div className="flex md:hidden flex-wrap justify-start gap-1">
               {trustBadges.map((badge) => {
                 const Icon = badge.icon
                 return (
-                  <span key={badge.label} className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-1 shadow-md">
-                    <Icon className="size-3 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                    <span className="text-[11px] font-medium text-navy/70">{badge.label}</span>
+                  <span key={badge.label} className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-0.5 shadow-md">
+                    <Icon className="size-2.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[10px] font-medium text-navy/70">{badge.label}</span>
                   </span>
                 )
               })}
