@@ -116,22 +116,22 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 flex md:inline-flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 bg-white px-4 md:px-6 py-3 md:py-4 rounded-full shadow-md md:max-w-fit">
-                    <span className="flex items-center gap-1.5 whitespace-nowrap">
-                      <GraduationCap className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                  <div className="mb-3 flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-3">
+                    <span className="flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2.5 md:px-4 py-2 md:py-3 shadow-md">
+                      <GraduationCap className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
                     </span>
-                    <span className="flex items-center gap-1.5 whitespace-nowrap">
-                      <Award className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                    <span className="flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2.5 md:px-4 py-2 md:py-3 shadow-md">
+                      <Award className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
                     </span>
-                    <span className="flex items-center gap-1.5 whitespace-nowrap">
-                      <Shield className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                    <span className="flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2.5 md:px-4 py-2 md:py-3 shadow-md">
+                      <Shield className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
                     </span>
-                    <span className="flex items-center gap-1.5 whitespace-nowrap">
-                      <BookOpen className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
+                    <span className="flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2.5 md:px-4 py-2 md:py-3 shadow-md">
+                      <BookOpen className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
                     </span>
                   </div>
                   <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeper for Ontario Families</h1>
