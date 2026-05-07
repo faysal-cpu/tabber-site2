@@ -36,20 +36,20 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
-          <div className="mx-auto max-w-[1100px] px-6">
-            <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-center">
-              <div className="mx-auto md:mx-0">
+        <section className="bg-secondary border-b border-border/40">
+          <div className="mx-auto max-w-[1100px]">
+            <div className="grid md:grid-cols-[350px_1fr] md:gap-12 items-center">
+              <div className="w-full md:ml-6 md:my-14">
                 <Image
                   src="/images/profile-photo-optimized.jpg"
                   alt="Faysal El Masri CPA, Founder of Tabber Bookkeeping - Ontario FMHC specialist and certified accountant"
-                  width={350}
-                  height={350}
-                  className="rounded-2xl shadow-lg"
+                  width={1100}
+                  height={400}
+                  className="w-full md:w-[350px] md:rounded-2xl shadow-lg object-cover aspect-[11/4] md:aspect-square"
                   priority
                 />
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-8 px-6 py-10 md:py-14 md:pr-6">
                 <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
                   <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
                   <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
