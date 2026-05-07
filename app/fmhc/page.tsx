@@ -116,23 +116,50 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-2">
-                    <span className="inline-flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2 md:px-3 py-1.5 md:py-2.5 shadow-md">
-                      <GraduationCap className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
-                    </span>
-                    <span className="inline-flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2 md:px-3 py-1.5 md:py-2.5 shadow-md">
-                      <Award className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
-                    </span>
-                    <span className="inline-flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2 md:px-3 py-1.5 md:py-2.5 shadow-md">
-                      <Shield className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
-                    </span>
-                    <span className="inline-flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2 md:px-3 py-1.5 md:py-2.5 shadow-md">
-                      <BookOpen className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-xs md:text-sm font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
-                    </span>
+                  <div className="mb-3">
+                    {/* Mobile: Diamond layout (1-2-1), Desktop: One line */}
+                    <div className="flex md:hidden flex-col items-center gap-1.5">
+                      {/* First pill - centered */}
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                        <GraduationCap className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-xs font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                      </span>
+                      {/* Middle two pills - side by side */}
+                      <div className="flex gap-1.5">
+                        <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                          <Award className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                          <span className="text-xs font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                          <Shield className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                          <span className="text-xs font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                        </span>
+                      </div>
+                      {/* Last pill - centered */}
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                        <BookOpen className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-xs font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
+                      </span>
+                    </div>
+                    {/* Desktop: One line */}
+                    <div className="hidden md:flex flex-nowrap justify-start gap-2">
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
+                        <GraduationCap className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>CPA Certified</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
+                        <Award className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>FMHC Specialist</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
+                        <Shield className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>Fully Insured</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
+                        <BookOpen className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                        <span className="text-sm font-medium" style={{ color: '#2B4C7E' }}>NPI Member</span>
+                      </span>
+                    </div>
                   </div>
                   <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeper for Ontario Families</h1>
                   <div className="mt-4">

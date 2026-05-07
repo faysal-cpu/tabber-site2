@@ -39,16 +39,43 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-6 md:mt-8 flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-2">
-            {trustBadges.map((badge) => {
-              const Icon = badge.icon
-              return (
-                <span key={badge.label} className="inline-flex items-center gap-1 md:gap-1.5 whitespace-nowrap bg-white rounded-full px-2 md:px-3 py-1.5 md:py-2.5 shadow-md">
-                  <Icon className="size-3.5 md:size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                  <span className="text-xs md:text-sm font-medium text-navy/70">{badge.label}</span>
+          <div className="mt-6 md:mt-8">
+            {/* Mobile: Diamond layout (1-2-1), Desktop: One line */}
+            <div className="flex md:hidden flex-col items-center gap-1.5">
+              {/* First pill - centered */}
+              <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                <Award className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                <span className="text-xs font-medium text-navy/70">{trustBadges[0].label}</span>
+              </span>
+              {/* Middle two pills - side by side */}
+              <div className="flex gap-1.5">
+                <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                  <Home className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                  <span className="text-xs font-medium text-navy/70">{trustBadges[1].label}</span>
                 </span>
-              )
-            })}
+                <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                  <Shield className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                  <span className="text-xs font-medium text-navy/70">{trustBadges[2].label}</span>
+                </span>
+              </div>
+              {/* Last pill - centered */}
+              <span className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
+                <MapPin className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                <span className="text-xs font-medium text-navy/70">{trustBadges[3].label}</span>
+              </span>
+            </div>
+            {/* Desktop: One line */}
+            <div className="hidden md:flex flex-nowrap justify-start gap-2">
+              {trustBadges.map((badge) => {
+                const Icon = badge.icon
+                return (
+                  <span key={badge.label} className="inline-flex items-center gap-1.5 whitespace-nowrap bg-white rounded-full px-3 py-2.5 shadow-md">
+                    <Icon className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-sm font-medium text-navy/70">{badge.label}</span>
+                  </span>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
