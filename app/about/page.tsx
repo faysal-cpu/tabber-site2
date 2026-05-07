@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
 import { Award, Shield, FileCheck, Users } from "lucide-react"
 
@@ -32,13 +33,14 @@ export default function AboutPage() {
         <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">About Tabber</h1>
-            <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">CPA-led bookkeeping specializing in Family-Managed Home Care, with support for Ontario small businesses.</p>
           </div>
         </section>
 
+        <WaveDivider backgroundColor="#FAF9F7" />
+
         <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="flex flex-col md:grid md:grid-cols-[350px_1fr] gap-10 md:gap-12 md:items-center">
+            <div className="flex flex-col md:grid md:grid-cols-[350px_1fr] gap-10 md:gap-12 md:items-start">
               <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground md:order-2">
                 <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
                 <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
@@ -55,7 +57,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              <blockquote className="border-l-4 pl-6 py-2 italic text-[15px] leading-[1.7] md:order-3 md:col-span-2" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
+              <blockquote className="border-l-4 pl-6 py-2 italic text-[15px] leading-[1.7] md:order-2 md:mt-8" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
                 "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.<br /><br />Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
                 <footer className="mt-3 text-sm font-medium text-navy not-italic">— Faysal El Masri, CPA | Founder of Tabber</footer>
               </blockquote>
