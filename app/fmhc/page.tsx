@@ -68,8 +68,8 @@ export default function FmhcPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Tabber FMHC Bookkeeping Services",
-    "description": "Expert FMHC bookkeeping services for Ontario families managing home care programs. CPA-qualified Family-Managed Home Care bookkeeping, payroll, and Ontario Health atHome compliance reporting.",
+    "name": "Tabber - FMHC Bookkeeper Ontario",
+    "description": "Expert FMHC bookkeeper for Ontario families. Specialized Family-Managed Home Care bookkeeping services including CPA-led FMHC bookkeeping, payroll processing, and Ontario Health atHome compliance reporting.",
     "areaServed": {
       "@type": "State",
       "name": "Ontario"
@@ -116,7 +116,7 @@ export default function FmhcPage() {
             <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
               <div className="flex-1 text-center md:text-left flex flex-col justify-between">
                 <div>
-                  <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-2">
+                  <div className="mb-3 grid grid-cols-2 md:flex md:flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-2">
                     <div className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-white px-2 md:px-3 py-1 md:py-1.5 shadow-sm">
                       <GraduationCap className="size-3 md:size-3.5" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>CPA Certified</span>
@@ -134,12 +134,12 @@ export default function FmhcPage() {
                       <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap" style={{ color: '#2B4C7E' }}>NPI Member</span>
                     </div>
                   </div>
-                  <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeping for Ontario Families</h1>
+                  <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">FMHC Bookkeeper for Ontario Families</h1>
                   <div className="mt-4">
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
                   </div>
-                  <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">We handle bookkeeping, payroll, and your FMHC compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
+                  <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">Your dedicated FMHC bookkeeper handles all Family-Managed Home Care bookkeeping, payroll, and compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
                 </div>
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -186,7 +186,7 @@ export default function FmhcPage() {
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>Family-Managed Home Care (FMHC) is a program through Ontario Health atHome that empowers families to receive funding and hire their own care workers, rather than receiving care through an agency. This gives families control and flexibility — but also creates administrative responsibilities like payroll, compliance reporting, and financial recordkeeping.</p>
-              <p className="font-medium text-navy">{"That's where Tabber comes in. Our CPA-qualified bookkeeper handles the numbers so you can focus on care."}</p>
+              <p className="font-medium text-navy">{"That's where your FMHC bookkeeper comes in. Our CPA-qualified bookkeeper specializes in Family-Managed Home Care bookkeeping and handles all the numbers so you can focus on care."}</p>
             </div>
           </div>
         </section>
