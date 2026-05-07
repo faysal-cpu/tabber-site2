@@ -39,11 +39,11 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-6 md:mt-8 flex flex-col md:flex-row md:inline-flex justify-center md:justify-start gap-3 md:gap-3 bg-white px-4 md:px-6 py-4 md:py-4 rounded-2xl md:rounded-full shadow-md md:max-w-fit">
+          <div className="mt-6 md:mt-8 flex flex-wrap md:inline-flex justify-center md:justify-start gap-2 md:gap-3 bg-white px-4 md:px-6 py-3 md:py-4 rounded-full shadow-md md:max-w-fit">
             {trustBadges.map((badge) => {
               const Icon = badge.icon
               return (
-                <span key={badge.label} className="flex items-center justify-center md:justify-start gap-1.5 whitespace-nowrap">
+                <span key={badge.label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
                   <Icon className="size-4 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
                   <span className="text-sm font-medium text-navy/70">{badge.label}</span>
                 </span>
