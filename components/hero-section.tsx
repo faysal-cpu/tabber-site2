@@ -29,7 +29,7 @@ export function HeroSection() {
             CPA‑led financial management with specialized expertise in Family‑Managed Home Care (FMHC) and small business bookkeeping.
           </p>
 
-          <div className="mt-6 md:mt-8">
+          <div className="mt-6 md:mt-8 flex justify-center md:justify-start">
             <Button
               asChild
               className="rounded-lg px-9 py-4 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
