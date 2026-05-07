@@ -45,9 +45,9 @@ export function HeroSection() {
               {trustBadges.map((badge) => {
                 const Icon = badge.icon
                 return (
-                  <span key={badge.label} className="inline-flex items-center gap-1 whitespace-nowrap bg-white rounded-full px-2 py-1.5 shadow-md">
-                    <Icon className="size-3.5 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                    <span className="text-xs font-medium text-navy/70">{badge.label}</span>
+                  <span key={badge.label} className="inline-flex items-center gap-0.5 whitespace-nowrap bg-white rounded-full px-1.5 py-1 shadow-md">
+                    <Icon className="size-3 flex-shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[11px] font-medium text-navy/70">{badge.label}</span>
                   </span>
                 )
               })}
