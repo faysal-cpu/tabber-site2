@@ -40,13 +40,8 @@ export default function AboutPage() {
 
         <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="flex flex-col md:grid md:grid-cols-[350px_1fr] gap-10 md:gap-12 md:items-start">
-              <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground md:order-2">
-                <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
-                <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
-              </div>
-
-              <div className="mx-auto md:mx-0 md:order-1">
+            <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-center">
+              <div className="mx-auto md:mx-0">
                 <Image
                   src="/images/profile-photo-optimized.jpg"
                   alt="Faysal El Masri CPA, Founder of Tabber Bookkeeping - Ontario FMHC specialist and certified accountant"
@@ -56,11 +51,17 @@ export default function AboutPage() {
                   priority
                 />
               </div>
+              <div className="flex flex-col gap-8">
+                <div className="space-y-5 text-[15px] leading-[1.7] text-muted-foreground">
+                  <p>Tabber is a CPA-led bookkeeping and financial management practice serving Ontario families and small businesses. We provide accurate, organized, and compliant bookkeeping, payroll, and reporting support — particularly in environments where administrative requirements can quickly become overwhelming.</p>
+                  <p>Our approach was shaped by firsthand experience supporting families navigating Family-Managed Home Care (FMHC), where financial administration is essential but often difficult to manage alongside caregiving. That same focus on clarity, structure, and reliability extends to all of the work we do.</p>
+                </div>
 
-              <blockquote className="border-l-4 pl-6 py-2 italic text-[15px] leading-[1.7] md:order-2 md:mt-8" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
-                "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.<br /><br />Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
-                <footer className="mt-3 text-sm font-medium text-navy not-italic">— Faysal El Masri, CPA | Founder of Tabber</footer>
-              </blockquote>
+                <blockquote className="border-l-4 pl-6 py-2 italic text-[15px] leading-[1.7]" style={{ borderLeftColor: '#2B4C7E', color: '#2B4C7E' }}>
+                  "I saw firsthand how overwhelming FMHC administration can be for families, especially when their focus should be on caring for someone they love. Too often, financial tracking and reporting become an added burden during already difficult moments.<br /><br />Tabber was created to bring clarity, structure, and peace of mind so families don't have to navigate these requirements alone."
+                  <footer className="mt-3 text-sm font-medium text-navy not-italic">— Faysal El Masri, CPA | Founder of Tabber</footer>
+                </blockquote>
+              </div>
             </div>
           </div>
         </section>
