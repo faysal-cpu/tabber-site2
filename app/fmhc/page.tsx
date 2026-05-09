@@ -139,7 +139,7 @@ export default function FmhcPage() {
                   </div>
                   <h1 className="font-serif text-[30px] font-bold leading-[1.15] text-navy md:text-[44px]">Trusted Family-Managed Home Care (FMHC) Bookkeeping</h1>
                   <div className="mt-4">
-                    <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Fully covered by program funding —</p>
+                    <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Fully covered by program funding,</p>
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>at no cost to families.</p>
                   </div>
                   <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">Your dedicated FMHC bookkeeper handles your payroll, monthly reporting, and funding administration — so instead of managing paperwork, you can focus on the people who need you most.</p>
