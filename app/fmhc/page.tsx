@@ -137,7 +137,7 @@ export default function FmhcPage() {
                       </span>
                     </div>
                   </div>
-                  <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">Your Trusted FMHC Bookkeeper</h1>
+                  <h1 className="font-serif text-[28px] font-bold leading-[1.15] text-navy md:text-[44px]">Trusted FMHC Bookkeeping</h1>
                   <div className="mt-4">
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Covered by Program Funding.</p>
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>No Cost to Families.</p>
