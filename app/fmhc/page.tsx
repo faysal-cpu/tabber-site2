@@ -196,7 +196,7 @@ export default function FmhcPage() {
               </div>
               <div>
                 <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified for Ontario Health atHome</h2>
-                <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide the required credential letter and documentation for submission to Ontario Health atHome.</p>
+                <p className="text-[14px] leading-[1.7] text-muted-foreground">Tabber meets all Schedule O qualification requirements under the FMHC program agreement, including CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide all the required documentation for submission to Ontario Health atHome.</p>
               </div>
             </div>
           </div>
