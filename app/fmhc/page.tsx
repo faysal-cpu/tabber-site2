@@ -208,7 +208,7 @@ export default function FmhcPage() {
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>Family-Managed Home Care (FMHC) is a program through Ontario Health atHome that empowers families to receive funding and hire their own care workers, rather than receiving care through an agency. This gives families control and flexibility — but also creates administrative responsibilities like payroll, monthly reporting & tracking, and financial recordkeeping.</p>
-              <p className="font-medium text-navy">{"That's where your FMHC bookkeeper comes in. Our CPA-qualified bookkeeper specializes in Family-Managed Home Care and handles all the numbers so you can focus on care."}</p>
+              <p className="font-medium text-navy">{"That's where we come in. Our CPA-qualified bookkeeper specializes in Family-Managed Home Care and handles all the numbers so you can focus on care."}</p>
             </div>
           </div>
         </section>
