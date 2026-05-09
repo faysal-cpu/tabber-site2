@@ -142,7 +142,7 @@ export default function FmhcPage() {
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>Fully covered by program funding —</p>
                     <p className="text-[16px] md:text-[18px] font-medium leading-relaxed" style={{ color: '#2B4C7E' }}>at no cost to families.</p>
                   </div>
-                  <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">Your dedicated FMHC bookkeeper handles your bookkeeping, payroll, and compliance requirements — so instead of managing paperwork, you can focus on the people who need you most.</p>
+                  <p className="mt-4 text-[15px] leading-[1.6] text-muted-foreground">Your dedicated FMHC bookkeeper handles your payroll, monthly reporting, and funding administration — so instead of managing paperwork, you can focus on the people who need you most.</p>
                 </div>
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg" style={{ backgroundColor: '#2B4C7E' }}>
