@@ -82,10 +82,7 @@ export default function FmhcResourcesPage() {
             <h1 className="font-serif text-[32px] font-bold leading-[1.2] text-navy md:text-[44px]">
               Family Managed Home Care (FMHC)
             </h1>
-            <p className="mt-3 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-              A Practical Guide for Families
-            </p>
-            <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground max-w-[700px] mx-auto">
+            <p className="mt-4 text-[18px] font-medium leading-[1.4] max-w-[700px] mx-auto" style={{ color: '#2B4C7E' }}>
               A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the SDC process.
             </p>
           </div>
