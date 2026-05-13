@@ -853,21 +853,6 @@ export default function FmhcResourcesPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="care-type" className="block text-sm font-semibold text-navy mb-2">How are you receiving care?</label>
-                    <select
-                      id="care-type"
-                      name="care-type"
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
-                    >
-                      <option value="">Select an option</option>
-                      <option value="agency">Through a registered agency</option>
-                      <option value="independent-contractor">Through independent contracting</option>
-                      <option value="direct">Directly hiring</option>
-                      <option value="unsure">Not sure yet</option>
-                    </select>
-                  </div>
-
-                  <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">Anything you'd like us to know? <span className="text-gray-400 text-xs font-normal">(optional)</span></label>
                     <textarea
                       id="message"
