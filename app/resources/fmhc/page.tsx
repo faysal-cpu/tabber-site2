@@ -43,6 +43,7 @@ const sections = [
   { id: "deadlines", title: "Key Deadlines", icon: Clock },
   { id: "mistakes", title: "Common Mistakes", icon: AlertTriangle },
   { id: "faq", title: "FAQ", icon: HelpCircle },
+  { id: "where-tabber-fits-in", title: "Where Tabber Fits In", icon: CheckCircle },
 ]
 
 export default function FmhcResourcesPage() {
@@ -770,7 +771,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* CTA Section with Form */}
-        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="where-tabber-fits-in" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6">
             <div className="text-center mb-8">
               <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">Where Tabber Fits In</h2>
