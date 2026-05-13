@@ -1035,6 +1035,15 @@ export default function FmhcResourcesPage() {
             </div>
           </div>
         </section>
+
+        {/* Hidden form for Netlify detection */}
+        <form name="fmhc-guide-contact" method="POST" data-netlify="true" hidden>
+          <input type="hidden" name="form-name" value="fmhc-guide-contact" />
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <textarea name="message"></textarea>
+        </form>
       </main>
       <SiteFooter />
     </div>
