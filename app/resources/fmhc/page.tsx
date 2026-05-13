@@ -93,23 +93,96 @@ export default function FmhcResourcesPage() {
         {/* Table of Contents */}
         <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[1100px] px-6">
-            <h2 className="mb-6 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {sections.map((section) => {
-                const Icon = section.icon
-                return (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md"
-                  >
-                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Icon className="size-4" style={{ color: '#2B4C7E' }} />
-                    </div>
-                    <span className="text-sm font-medium text-navy">{section.title}</span>
+            <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {/* Understanding the Program */}
+              <div>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Understanding the Program</h3>
+                <div className="space-y-2">
+                  <a href="#overview" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <BookOpen className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">FMHC Overview</span>
                   </a>
-                )
-              })}
+                  <a href="#eligibility" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <ClipboardCheck className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Eligibility</span>
+                  </a>
+                  <a href="#sdm" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Users className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">How to Become an SDM</span>
+                  </a>
+                  <a href="#requirements" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <FileCheck className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Program Requirements</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Getting Set Up */}
+              <div>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Getting Set Up</h3>
+                <div className="space-y-2">
+                  <a href="#application" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <FileText className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Application Process</span>
+                  </a>
+                  <a href="#responsibilities" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Shield className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Your Responsibilities</span>
+                  </a>
+                  <a href="#care-arrangements" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Users className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Care Arrangements</span>
+                  </a>
+                  <a href="#bookkeeper" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Calculator className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Bookkeeper Requirements</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Managing the Program */}
+              <div>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Managing the Program</h3>
+                <div className="space-y-2">
+                  <a href="#reporting" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <FileText className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Monthly Reporting</span>
+                  </a>
+                  <a href="#typical-month" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Calendar className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Typical Month Flow</span>
+                  </a>
+                  <a href="#eligible-expenses" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <DollarSign className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Eligible Expenses</span>
+                  </a>
+                  <a href="#deadlines" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <Clock className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Key Deadlines</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Avoiding Issues & Getting Support */}
+              <div>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Avoiding Issues & Getting Support</h3>
+                <div className="space-y-2">
+                  <a href="#mistakes" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <AlertTriangle className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Common Mistakes</span>
+                  </a>
+                  <a href="#faq" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <HelpCircle className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">FAQ</span>
+                  </a>
+                  <a href="#where-tabber-fits-in" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <CheckCircle className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Where Tabber Fits In</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
