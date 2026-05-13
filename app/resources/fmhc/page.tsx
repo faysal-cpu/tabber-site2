@@ -88,21 +88,22 @@ export default function FmhcResourcesPage() {
             <p className="mt-4 text-[18px] font-medium leading-[1.4] max-w-[700px] mx-auto" style={{ color: '#2B4C7E' }}>
               A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the FMHC program.
             </p>
-            <div className="mt-8 mx-auto max-w-[900px]">
-              <Image
-                src="/images/fmhc-resources.png"
-                alt="FMHC Resources Guide"
-                width={900}
-                height={450}
-                className="w-full h-auto rounded-2xl shadow-lg"
-                priority
-              />
+            <div className="mt-6 mx-auto max-w-[650px]">
+              <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ height: '280px' }}>
+                <Image
+                  src="/images/fmhc-resources.png"
+                  alt="FMHC Resources Guide"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Table of Contents */}
-        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="pt-6 pb-10 md:pt-8 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
             <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
 
