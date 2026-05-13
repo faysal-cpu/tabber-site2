@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { FileText, Download, ExternalLink, BookOpen, Calculator, CheckSquare, FileCheck, Users, Building2 } from "lucide-react"
+import { FileText, Download, ExternalLink, BookOpen, Calculator, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Resources | Tabber",
@@ -52,21 +52,27 @@ const fmhcResources = [
 const externalLinks = [
   {
     icon: Building2,
-    title: "Ontario Health atHome",
-    description: "Official FMHC program information and resources",
-    link: "https://www.ontariohealth.ca/",
+    title: "FMHC Official Page",
+    description: "Ontario Health atHome's official Family-Managed Home Care program page",
+    link: "https://ontariohealthathome.ca/home-care/family-managed-home-care/",
+  },
+  {
+    icon: FileText,
+    title: "FMHC Fact Sheet",
+    description: "Official fact sheet for patients and families (PDF)",
+    link: "https://www.ontariohealthathome.ca/blobohahprod4cd80afe1b/wp-content/uploads/2024/02/OHaH-Family-Managed-Home-Care-Fact-Sheet-EN.pdf",
   },
   {
     icon: FileCheck,
-    title: "Canada Revenue Agency - Payroll",
-    description: "CRA payroll information, remittance deadlines, and tax guides",
-    link: "https://www.canada.ca/en/services/taxes/payroll.html",
+    title: "FMHC Process Guide",
+    description: "Step-by-step process document for FMHC patients (PDF)",
+    link: "https://www.ontariohealthathome.ca/blobohahprod4cd80afe1b/wp-content/uploads/2024/10/OHaH-Family-Managed-Home-Care-Process-Patient-EN.pdf",
   },
   {
-    icon: Users,
-    title: "National Payroll Institute",
-    description: "Canadian payroll resources and compliance information",
-    link: "https://www.payroll.ca/",
+    icon: Youtube,
+    title: "FMHC Video Tutorials",
+    description: "Official Ontario Health atHome instructional video playlist",
+    link: "https://www.youtube.com/playlist?list=PLBiwj7dQ3f5tfq6KyeTTLJg8kcK3O3f2H",
   },
 ]
 
