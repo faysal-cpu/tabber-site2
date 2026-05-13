@@ -665,7 +665,7 @@ export default function FmhcResourcesPage() {
               <div className="space-y-3">
                 {[
                   {
-                    title: "Editing the report offline",
+                    title: "Editing the Sync Excel Report Offline",
                     description: "All updates to your Schedule G&H report must be made on the live web version via Sync. Editing the file offline and re-uploading it causes version control issues that can affect your submission and delay your funding."
                   },
                   {
@@ -770,31 +770,41 @@ export default function FmhcResourcesPage() {
           </div>
         </section>
 
-        {/* CTA Section with Form */}
+        {/* Where Tabber Fits In */}
         <section id="where-tabber-fits-in" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
-          <div className="mx-auto max-w-[800px] px-6">
-            <div className="text-center mb-8">
-              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">Where Tabber Fits In</h2>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                <CheckCircle className="size-5 text-white" />
+              </div>
+              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Where Tabber Fits In</h2>
+            </div>
+            <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
+              <p>
                 Tabber was built specifically to support families navigating the financial and reporting side of Family‑Managed Home Care.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+              <p>
                 We work alongside families to handle the administrative responsibilities that come with the program — from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+              <p>
                 Our role is to keep everything structured, accurate, and up to date so that nothing is missed, delayed, or flagged — and so that families don't have to think about the reporting side each month.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+              <p>
                 For families managing care at home, the administrative burden can build quickly. Having the right systems in place early makes a meaningful difference, and that's where we focus — creating a simple, repeatable process that works month after month.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+              <p>
                 Our services are structured to fit within the program's approved funding allocation, which means in most cases there is no out‑of‑pocket cost to the family.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+              <p>
                 If you're early in the program or want to make sure everything is set up properly, we're always happy to connect and walk through what to expect.
               </p>
             </div>
+          </div>
+        </section>
 
+        {/* Contact Form Section */}
+        <section className="py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[800px] px-6">
             <div className="text-center mb-8">
               <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — No Pressure</h2>
               <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details and we'll follow up within 1 business day to walk through your setup and next steps.</p>
