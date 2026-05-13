@@ -7,6 +7,7 @@ const quickLinks = [
   { href: "/fmhc", label: "FMHC Bookkeeping" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
+  { href: "/resources", label: "Resources & Guides" },
   { href: "/contact", label: "Contact" },
 ]
 

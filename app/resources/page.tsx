@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { FileText, Download, ExternalLink, BookOpen, Calculator, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Resources | Tabber",
+  title: "Resources & Guides | Tabber",
   description: "Helpful resources, guides, and tools for FMHC families and small businesses. Download checklists, access external resources, and learn more about bookkeeping and financial management.",
 }
 
@@ -75,7 +75,7 @@ export default function ResourcesPage() {
         {/* Hero Section */}
         <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[800px] px-6 text-center">
-            <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Resources</h1>
+            <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Resources & Guides</h1>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
               Helpful guides, tools, and external resources to support your financial management needs.
             </p>
