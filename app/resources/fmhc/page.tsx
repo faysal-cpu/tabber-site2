@@ -795,8 +795,8 @@ export default function FmhcResourcesPage() {
             </div>
 
             <div className="text-center mb-8">
-              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — It's Free</h2>
-              <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details below and we'll reach out within 1 business day and get you set up.</p>
+              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — No Pressure</h2>
+              <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details and we'll follow up within 1 business day to walk through your setup and next steps.</p>
             </div>
 
             {submitted ? (
