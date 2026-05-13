@@ -91,7 +91,7 @@ export default function FmhcResourcesPage() {
         {/* Table of Contents */}
         <section className="pt-8 pb-10 md:pt-8 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="mb-8 flex justify-center">
+            <div className="mb-10 flex justify-center">
               <div className="h-[2px] w-96 rounded-full" style={{ backgroundColor: '#2B4C7E' }}></div>
             </div>
             <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
