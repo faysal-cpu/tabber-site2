@@ -73,7 +73,7 @@ export default function FmhcResourcesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="pt-10 pb-8 md:pt-12 md:pb-8" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
               <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
@@ -82,18 +82,17 @@ export default function FmhcResourcesPage() {
             <h1 className="font-serif text-[32px] font-bold leading-[1.2] text-navy md:text-[44px]">
               Family Managed Home Care (FMHC)
             </h1>
-            <p className="mt-4 mb-0 text-[18px] font-medium leading-[1.4] max-w-[700px] mx-auto" style={{ color: '#2B4C7E' }}>
+            <p className="mt-4 text-[18px] font-medium leading-[1.4] max-w-[700px] mx-auto" style={{ color: '#2B4C7E' }}>
               A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the FMHC program.
             </p>
           </div>
         </section>
 
+        <WaveDivider fillColor="#E8EDF5" backgroundColor="#E8EDF5" />
+
         {/* Table of Contents */}
-        <section className="pt-8 pb-10 md:pt-8 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="mb-10 flex justify-center">
-              <div className="h-[2px] w-96 rounded-full" style={{ backgroundColor: '#2B4C7E' }}></div>
-            </div>
             <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
