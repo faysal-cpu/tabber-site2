@@ -84,7 +84,7 @@ export default function FmhcResourcesPage() {
                   <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Comprehensive Guide</span>
                 </div>
-                <h1 className="font-serif text-[32px] font-bold leading-[1.2] text-navy md:text-[44px]">
+                <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[38px]">
                   Family Managed Home Care (FMHC)
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
@@ -97,7 +97,7 @@ export default function FmhcResourcesPage() {
                     src="/images/fmhc-resources.png"
                     alt="FMHC Resources Guide"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-bottom"
                     priority
                   />
                 </div>
