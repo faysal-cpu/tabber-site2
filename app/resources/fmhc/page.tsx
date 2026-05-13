@@ -88,8 +88,6 @@ export default function FmhcResourcesPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#F9FAFB" />
-
         {/* Table of Contents */}
         <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
@@ -186,6 +184,8 @@ export default function FmhcResourcesPage() {
             </div>
           </div>
         </section>
+
+        <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
 
         {/* FMHC Overview */}
         <section id="overview" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
