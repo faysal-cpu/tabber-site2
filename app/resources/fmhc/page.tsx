@@ -172,16 +172,26 @@ export default function FmhcResourcesPage() {
           </div>
         </section>
 
-        {/* How to Become an SDM */}
+        {/* Substitute Decision-Maker (SDM) */}
         <section id="sdm" className="scroll-mt-20 bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
                 <Users className="size-5 text-white" />
               </div>
-              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">How to Become an SDM</h2>
+              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Substitute Decision-Maker (SDM)</h2>
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
+              <p>
+                A Substitute Decision-Maker is a person authorized to make decisions on behalf of someone who is unable to make them independently. In the context of FMHC, the SDM takes on the financial and administrative responsibilities of the program — managing funds, submitting reports, and fulfilling all obligations under the SDC agreement.
+              </p>
+
+              <h3 className="font-serif text-[20px] font-semibold text-navy pt-4">Who Can Be a Substitute Decision-Maker?</h3>
+              <p>
+                An SDM can be a spouse, partner, family member, or trusted person who is capable of managing these responsibilities on the client's behalf. For minors, a parent or legal guardian who lives with the child can serve in this role.
+              </p>
+
+              <h3 className="font-serif text-[20px] font-semibold text-navy pt-4">How to Become an SDM</h3>
               <p>
                 For minors, a parent or legal guardian who lives with the child can serve as SDM. For adults, the SDM must hold one of the following:
               </p>
@@ -190,7 +200,7 @@ export default function FmhcResourcesPage() {
                 <li>A Continuing Power of Attorney for Property under the Powers of Attorney Act or Part 1 of the Substitute Decisions Act, 1992</li>
                 <li>A role managing Ontario government funding from the Passport Program, Ontario Works, or ODSP on behalf of the client</li>
               </ul>
-              <div className="rounded-xl border border-[#2B4C7E] bg-white p-5">
+              <div className="rounded-xl border border-[#2B4C7E] bg-white p-5 mt-4">
                 <p className="text-sm">
                   <strong className="text-navy">For information on establishing Power of Attorney or Guardian of Property status:</strong><br />
                   <a href="https://www.attorneygeneral.jus.gov.on.ca/english/family/pgt/" target="_blank" rel="noopener noreferrer" className="text-[#2B4C7E] hover:underline">
