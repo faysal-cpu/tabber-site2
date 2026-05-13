@@ -99,7 +99,7 @@ export default function FmhcResourcesPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {/* Understanding the Program */}
               <div>
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Understanding the Program</h3>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Program Basics</h3>
                 <div className="space-y-2">
                   <a href="#overview" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
                     <BookOpen className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
@@ -168,7 +168,7 @@ export default function FmhcResourcesPage() {
 
               {/* Avoiding Issues & Getting Support */}
               <div>
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Avoiding Issues & Getting Support</h3>
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Avoiding Issues</h3>
                 <div className="space-y-2">
                   <a href="#mistakes" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
                     <AlertTriangle className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
