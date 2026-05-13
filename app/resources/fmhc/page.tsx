@@ -3,6 +3,7 @@
 import { useState } from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
@@ -87,6 +88,16 @@ export default function FmhcResourcesPage() {
             <p className="mt-4 text-[18px] font-medium leading-[1.4] max-w-[700px] mx-auto" style={{ color: '#2B4C7E' }}>
               A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the FMHC program.
             </p>
+            <div className="mt-8 mx-auto max-w-[900px]">
+              <Image
+                src="/images/fmhc-resources.png"
+                alt="FMHC Resources Guide"
+                width={900}
+                height={450}
+                className="w-full h-auto rounded-2xl shadow-lg"
+                priority
+              />
+            </div>
           </div>
         </section>
 
