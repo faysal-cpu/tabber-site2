@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const fmhcResources = [
   {
+    icon: BookOpen,
+    title: "Complete FMHC Guide",
+    description: "Comprehensive guide covering eligibility, application process, responsibilities, reporting requirements, and common mistakes to avoid.",
+    type: "Full Guide",
+    link: "/resources/fmhc",
+    isDownload: false,
+    featured: true,
+  },
+  {
     icon: Download,
     title: "FMHC Bookkeeping Checklist",
     description: "Essential checklist for staying compliant with Ontario Health atHome requirements.",
@@ -91,9 +100,9 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            {/* Downloadable Resources */}
+            {/* Guides & Resources */}
             <div className="mb-10">
-              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Downloadable Guides</h3>
+              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Guides & Resources</h3>
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {fmhcResources.map((resource) => {
                   const Icon = resource.icon
@@ -114,15 +123,27 @@ export default function ResourcesPage() {
                         </span>
                       </div>
                       {!resource.comingSoon ? (
-                        <Link href={resource.link} download={resource.isDownload} target="_blank" className="mt-4">
-                          <Button
-                            variant="outline"
-                            className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] px-4 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white transition-all duration-200"
-                          >
-                            <Download className="size-4" />
-                            Download
-                          </Button>
-                        </Link>
+                        resource.featured ? (
+                          <Link href={resource.link} className="mt-4">
+                            <Button
+                              className="w-full gap-2 rounded-lg px-4 text-white transition-all duration-200"
+                              style={{ backgroundColor: '#2B4C7E' }}
+                            >
+                              <BookOpen className="size-4" />
+                              Read Guide
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Link href={resource.link} download={resource.isDownload} target="_blank" className="mt-4">
+                            <Button
+                              variant="outline"
+                              className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] px-4 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white transition-all duration-200"
+                            >
+                              <Download className="size-4" />
+                              Download
+                            </Button>
+                          </Link>
+                        )
                       ) : (
                         <Button
                           variant="outline"
