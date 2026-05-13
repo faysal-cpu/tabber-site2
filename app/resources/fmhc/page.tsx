@@ -73,7 +73,7 @@ export default function FmhcResourcesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="pt-10 pb-0 md:pt-12 md:pb-0" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="pt-10 pb-8 md:pt-12 md:pb-8" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
               <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
@@ -89,8 +89,8 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Table of Contents */}
-        <section className="pt-0 pb-10 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[1100px] px-6">
+        <section className="pt-0 pb-10 md:pt-0 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[1100px] px-6" style={{ backgroundColor: '#E8EDF5' }}>
             <div className="my-8 flex justify-center">
               <div className="h-[2px] w-96 rounded-full" style={{ backgroundColor: '#2B4C7E' }}></div>
             </div>
