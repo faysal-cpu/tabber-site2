@@ -309,9 +309,9 @@ export default function FmhcResourcesPage() {
             <div className="space-y-3 text-[15px] leading-[1.8] text-muted-foreground">
               <p className="mb-4">By signing the SDC agreement, you take on the following obligations:</p>
               {[
-                "Ensuring every service provider meets the minimum qualifications set out in Schedule "C" before they begin providing services, including holding the required insurance",
+                "Ensuring every service provider meets the minimum qualifications set out in Schedule \"C\" before they begin providing services, including holding the required insurance",
                 "Ensuring every provider has applied for a Police Vulnerable Sector Check (PVSC) and disclosed the results to you before starting — or, in urgent situations, has applied and will disclose results as soon as they are available",
-                "Entering into a written employment or service agreement with each provider that contains all provisions required under Schedule "D"",
+                "Entering into a written employment or service agreement with each provider that contains all provisions required under Schedule \"D\"",
                 "Opening and maintaining a dedicated non-interest-bearing chequing account used exclusively for FMHC funds",
                 "Keeping a record of every transaction made from that account",
                 "Retaining all financial records, including invoices, proof of payment, and bank statements, for seven years from the date the agreement ends",
@@ -376,11 +376,11 @@ export default function FmhcResourcesPage() {
                   <li>A provision that the provider will deliver services in accordance with the client's care plan</li>
                   <li>A provision that the provider will disclose their PVSC results immediately upon receiving them, if not already disclosed before hiring</li>
                   <li>A provision that the provider will notify you immediately if charged with or convicted of any criminal offence</li>
-                  <li>A provision that the provider will notify you immediately if they no longer meet the minimum qualifications set out in Schedule "C"</li>
+                  <li>A provision that the provider will notify you immediately if they no longer meet the minimum qualifications set out in Schedule &quot;C&quot;</li>
                   <li>A provision that if Ontario Health atHome wishes to obtain information about the client's care or the SDM's participation in the program, the provider will cooperate directly with the Care Coordinator</li>
-                  <li>The indemnification language set out exactly as it appears in Schedule "D" of the program agreement</li>
+                  <li>The indemnification language set out exactly as it appears in Schedule &quot;D&quot; of the program agreement</li>
                   <li>Insurance confirmation: at minimum $2M in Commercial General Liability Insurance and $25,000 in Abuse Liability coverage, unless Ontario Health atHome has provided written permission for an exception</li>
-                  <li>A relationship clause — either confirming the provider is an employee, or confirming they are an independent contractor — using the exact wording required by Schedule "D"</li>
+                  <li>A relationship clause — either confirming the provider is an employee, or confirming they are an independent contractor — using the exact wording required by Schedule &quot;D&quot;</li>
                   <li>A provision acknowledging the provider is a health information custodian subject to the Personal Health Information Protection Act, 2004</li>
                 </ul>
               </div>
@@ -403,7 +403,7 @@ export default function FmhcResourcesPage() {
               </p>
 
               <div className="rounded-xl border-2 border-[#2B4C7E] bg-secondary p-6">
-                <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">Schedule "O" Requirements</h3>
+                <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">Schedule &quot;O&quot; Requirements</h3>
                 <p className="mb-3">Every individual retained as the bookkeeper must have all of the following:</p>
                 <ul className="ml-6 space-y-2 list-disc">
                   <li>A registered business number</li>
@@ -550,7 +550,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                In addition to funding for care services, your agreement includes a monthly allowance for eligible administrative expenses. The specific caps for each category are set out in your individual Schedule "I" — confirm the amounts with your Care Coordinator, as they are specific to your agreement. Your agreement includes a separate allowance for administrative expenses, each with a defined monthly cap. These caps are not interchangeable and must be tracked by category.
+                In addition to funding for care services, your agreement includes a monthly allowance for eligible administrative expenses. The specific caps for each category are set out in your individual Schedule &quot;I&quot; — confirm the amounts with your Care Coordinator, as they are specific to your agreement. Your agreement includes a separate allowance for administrative expenses, each with a defined monthly cap. These caps are not interchangeable and must be tracked by category.
               </p>
 
               <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
@@ -590,9 +590,9 @@ export default function FmhcResourcesPage() {
               <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                 <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">Confirming Your Expenses Will Be Approved</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><strong>For service provider payments:</strong> Divide the total monthly cost by the total hours of service received. The result must be equal to or less than the maximum approved rate set out in Schedule "B".</li>
+                  <li><strong>For service provider payments:</strong> Divide the total monthly cost by the total hours of service received. The result must be equal to or less than the maximum approved rate set out in Schedule &quot;B&quot;.</li>
                   <li><strong>For hours of service:</strong> The total claimed must not exceed the monthly limit authorized in your care plan.</li>
-                  <li><strong>For eligible expenses:</strong> Each category has a monthly cap as specified in Schedule "I". All transactions must be supported by documentation.</li>
+                  <li><strong>For eligible expenses:</strong> Each category has a monthly cap as specified in Schedule &quot;I&quot;. All transactions must be supported by documentation.</li>
                 </ul>
                 <p className="mt-4 text-sm font-medium text-red-700">
                   Items that exceed approved limits will be flagged in red in the reporting spreadsheet and must be repaid to the FMHC bank account within 30 days.
