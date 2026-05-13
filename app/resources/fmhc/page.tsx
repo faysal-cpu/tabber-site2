@@ -25,7 +25,8 @@ import {
   AlertTriangle,
   BookOpen,
   Phone,
-  Mail
+  Mail,
+  ExternalLink
 } from "lucide-react"
 
 const sections = [
@@ -44,6 +45,7 @@ const sections = [
   { id: "mistakes", title: "Common Mistakes", icon: AlertTriangle },
   { id: "faq", title: "FAQ", icon: HelpCircle },
   { id: "where-tabber-fits-in", title: "Where Tabber Fits In", icon: CheckCircle },
+  { id: "external-links", title: "Helpful External Links", icon: ExternalLink },
 ]
 
 export default function FmhcResourcesPage() {
@@ -178,6 +180,10 @@ export default function FmhcResourcesPage() {
                   <a href="#where-tabber-fits-in" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
                     <CheckCircle className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
                     <span className="font-medium text-navy">Where Tabber Fits In</span>
+                  </a>
+                  <a href="#external-links" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
+                    <ExternalLink className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
+                    <span className="font-medium text-navy">Helpful External Links</span>
                   </a>
                 </div>
               </div>
@@ -960,12 +966,71 @@ export default function FmhcResourcesPage() {
           </div>
         </section>
 
-        {/* Disclaimer */}
-        <section className="bg-gray-50 py-8 border-t border-border/30">
-          <div className="mx-auto max-w-[900px] px-6">
-            <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
-              This page was prepared by Tabber based on direct program experience and Ontario Health atHome's published documentation. Program requirements may change. Always verify current requirements with your Care Coordinator.
-            </p>
+        {/* Helpful External Links & Disclaimer */}
+        <section id="external-links" className="scroll-mt-20 bg-gray-50 py-10 md:py-12 border-t border-border/30">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                <ExternalLink className="size-5 text-white" />
+              </div>
+              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Helpful External Links</h2>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-4 mb-10">
+              <a
+                href="https://ontariohealthathome.ca/home-care/family-managed-home-care/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <ExternalLink className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Ontario Health atHome - FMHC Page</h3>
+              </a>
+
+              <a
+                href="https://www.ontariohealthathome.ca/blobohahprod4cd80afe1b/wp-content/uploads/2024/02/OHaH-Family-Managed-Home-Care-Fact-Sheet-EN.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <FileText className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Ontario Health atHome - FMHC Fact Sheet</h3>
+              </a>
+
+              <a
+                href="https://www.ontariohealthathome.ca/blobohahprod4cd80afe1b/wp-content/uploads/2024/10/OHaH-Family-Managed-Home-Care-Process-Patient-EN.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <FileCheck className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Ontario Health atHome - FMHC Process Guide</h3>
+              </a>
+
+              <a
+                href="https://www.youtube.com/playlist?list=PLBiwj7dQ3f5tfq6KyeTTLJg8kcK3O3f2H"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <BookOpen className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Ontario Health atHome - FMHC YouTube Playlist</h3>
+              </a>
+            </div>
+
+            <div className="mt-8 border-t border-border/30 pt-8">
+              <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
+                This page was prepared by Tabber based on direct program experience and Ontario Health atHome's published documentation. Program requirements may change. Always verify current requirements with your Care Coordinator.
+              </p>
+            </div>
           </div>
         </section>
       </main>
