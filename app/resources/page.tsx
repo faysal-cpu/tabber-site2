@@ -38,15 +38,6 @@ const fmhcResources = [
     isDownload: false,
     comingSoon: true,
   },
-  {
-    icon: Calculator,
-    title: "Payroll Guide for FMHC Families",
-    description: "Step-by-step guide to understanding payroll requirements and remittance deadlines.",
-    type: "Coming Soon",
-    link: "#",
-    isDownload: false,
-    comingSoon: true,
-  },
 ]
 
 const externalLinks = [
