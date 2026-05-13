@@ -84,20 +84,21 @@ export default function FmhcResourcesPage() {
                   <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Comprehensive Guide</span>
                 </div>
-                <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[38px]">
+                <h1 className="font-serif text-[26px] font-bold leading-[1.2] text-navy md:text-[34px]">
                   Family Managed Home Care (FMHC)
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
                   A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the FMHC program.
                 </p>
               </div>
-              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[40%] md:max-w-none">
+              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[35%] md:max-w-none">
                 <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-resources.png"
                     alt="FMHC Resources Guide"
                     fill
-                    className="object-cover object-bottom"
+                    className="object-cover"
+                    style={{ objectPosition: 'right bottom' }}
                     priority
                   />
                 </div>
