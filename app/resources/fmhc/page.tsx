@@ -58,7 +58,7 @@ export default function FmhcResourcesPage() {
     const formData = new FormData(form)
 
     try {
-      await fetch("/__forms.html", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
@@ -899,11 +899,18 @@ export default function FmhcResourcesPage() {
               <form
                 name="fmhc-guide-contact"
                 method="POST"
+                action="/"
                 data-netlify="true"
+                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
               >
                 <input type="hidden" name="form-name" value="fmhc-guide-contact" />
+                <p hidden>
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="space-y-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">Full Name <span className="text-red-500">*</span></label>
@@ -1037,8 +1044,9 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Hidden form for Netlify detection */}
-        <form name="fmhc-guide-contact" method="POST" data-netlify="true" hidden>
+        <form name="fmhc-guide-contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" hidden>
           <input type="hidden" name="form-name" value="fmhc-guide-contact" />
+          <input name="bot-field" />
           <input type="text" name="name" />
           <input type="email" name="email" />
           <input type="tel" name="phone" />
