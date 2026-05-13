@@ -118,7 +118,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* FMHC Overview */}
-        <section id="overview" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="overview" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -138,7 +138,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Eligibility */}
-        <section id="eligibility" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="eligibility" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -174,7 +174,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Substitute Decision-Maker (SDM) */}
-        <section id="sdm" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="sdm" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -214,7 +214,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* What the Program Requires */}
-        <section id="requirements" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="requirements" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -248,7 +248,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Application Process */}
-        <section id="application" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="application" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -309,7 +309,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Responsibilities */}
-        <section id="responsibilities" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="responsibilities" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -340,7 +340,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Care Arrangements */}
-        <section id="care-arrangements" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="care-arrangements" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -400,7 +400,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Bookkeeper Requirements */}
-        <section id="bookkeeper" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="bookkeeper" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -434,7 +434,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Monthly Reporting */}
-        <section id="reporting" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="reporting" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -501,7 +501,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Typical Month */}
-        <section id="typical-month" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="typical-month" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -551,7 +551,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Eligible Expenses */}
-        <section id="eligible-expenses" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="eligible-expenses" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -614,7 +614,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Key Deadlines */}
-        <section id="deadlines" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="deadlines" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -649,7 +649,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Common Mistakes */}
-        <section id="mistakes" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="mistakes" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -711,7 +711,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="scroll-mt-20 bg-card py-10 md:py-14">
+        <section id="faq" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -771,7 +771,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* CTA Section with Form */}
-        <section id="where-tabber-fits-in" className="scroll-mt-20 py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="where-tabber-fits-in" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[800px] px-6">
             <div className="text-center mb-8">
               <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">Where Tabber Fits In</h2>
@@ -881,7 +881,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="bg-secondary py-6">
+        <section className="bg-gray-50 py-8 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <p className="text-center text-xs leading-[1.6] text-muted-foreground">
               This page was prepared by Tabber based on direct program experience and Ontario Health atHome's published documentation. Program requirements may change. Always verify current requirements with your Care Coordinator.
