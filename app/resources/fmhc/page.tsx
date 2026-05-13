@@ -773,16 +773,30 @@ export default function FmhcResourcesPage() {
         <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6">
             <div className="text-center mb-8">
-              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">Ready to Navigate FMHC with an Expert Partner?</h2>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[650px] mx-auto">
-                The Family-Managed Home Care program is a meaningful opportunity for families — but the administrative responsibilities are real, and the stakes are high. Missing a deadline, submitting an incomplete report, or misclassifying an expense can delay your funding or put your program at risk.
+              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[36px]">Where Tabber Fits In</h2>
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                Tabber was built specifically to support families navigating the financial and reporting side of Family‑Managed Home Care.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[650px] mx-auto">
-                Tabber was built specifically for FMHC families. We handle the bookkeeping, reporting, and compliance requirements so you can stay focused on the people who need you most.
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                We work alongside families to handle the administrative responsibilities that come with the program — from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
               </p>
-              <p className="mt-4 text-[16px] font-semibold" style={{ color: '#2B4C7E' }}>
-                Our services are delivered fully within your approved FMHC funding allocation — at no out-of-pocket cost to you.
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                Our role is to keep everything structured, accurate, and up to date so that nothing is missed, delayed, or flagged — and so that families don't have to think about the reporting side each month.
               </p>
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                For families managing care at home, the administrative burden can build quickly. Having the right systems in place early makes a meaningful difference, and that's where we focus — creating a simple, repeatable process that works month after month.
+              </p>
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                Our services are structured to fit within the program's approved funding allocation, which means in most cases there is no out‑of‑pocket cost to the family.
+              </p>
+              <p className="mt-4 text-[15px] leading-[1.7] text-navy/80 max-w-[700px] mx-auto">
+                If you're early in the program or want to make sure everything is set up properly, we're always happy to connect and walk through what to expect.
+              </p>
+            </div>
+
+            <div className="text-center mb-8">
+              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — It's Free</h2>
+              <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details below and we'll reach out within 1 business day and get you set up.</p>
             </div>
 
             {submitted ? (
