@@ -898,6 +898,8 @@ export default function FmhcResourcesPage() {
             ) : (
               <form
                 name="fmhc-contact"
+                method="POST"
+                data-netlify="true"
                 onSubmit={handleSubmit}
                 className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
               >
