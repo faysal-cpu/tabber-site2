@@ -85,7 +85,7 @@ export default function FmhcResourcesPage() {
               A Practical Guide for Families
             </p>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground max-w-[700px] mx-auto">
-              A plain-language guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the SDC process.
+              A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the SDC process.
             </p>
           </div>
         </section>
