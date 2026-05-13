@@ -88,10 +88,10 @@ export default function FmhcResourcesPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#FFFFFF" />
+        <WaveDivider backgroundColor="#F9FAFB" />
 
         {/* Table of Contents */}
-        <section className="bg-card py-10 md:py-12">
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
             <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
 
@@ -188,7 +188,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* FMHC Overview */}
-        <section id="overview" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="overview" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -208,7 +208,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Eligibility */}
-        <section id="eligibility" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="eligibility" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -220,7 +220,7 @@ export default function FmhcResourcesPage() {
               <p>
                 FMHC is not open to everyone, and enrollment is not a direct application — it begins with a conversation with your Ontario Health atHome Care Coordinator. Eligibility is assessed in two distinct parts.
               </p>
-              <div className="rounded-xl border-l-4 bg-white p-6" style={{ borderLeftColor: '#2B4C7E' }}>
+              <div className="rounded-xl border-l-4 bg-white p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
                 <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Clinical Eligibility</h3>
                 <p className="mb-3">The person receiving care must already have an assessed need for home and community care services and an active care plan. The program is currently available to:</p>
                 <ul className="ml-6 space-y-2 list-disc">
@@ -230,7 +230,7 @@ export default function FmhcResourcesPage() {
                   <li>Individuals in extraordinary circumstances as determined by Ontario Health atHome</li>
                 </ul>
               </div>
-              <div className="rounded-xl border-l-4 bg-white p-6" style={{ borderLeftColor: '#2B4C7E' }}>
+              <div className="rounded-xl border-l-4 bg-white p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
                 <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Administrative Eligibility</h3>
                 <p>
                   Someone capable of managing the program's financial and employer-level responsibilities must be in place. This person is called the contract holder, and they can be the client themselves if capable, or a Substitute Decision Maker (SDM) acting on their behalf.
@@ -244,7 +244,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Substitute Decision-Maker (SDM) */}
-        <section id="sdm" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="sdm" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -271,7 +271,7 @@ export default function FmhcResourcesPage() {
                 <li>A Continuing Power of Attorney for Property under the Powers of Attorney Act or Part 1 of the Substitute Decisions Act, 1992</li>
                 <li>A role managing Ontario government funding from the Passport Program, Ontario Works, or ODSP on behalf of the client</li>
               </ul>
-              <div className="rounded-xl border border-[#2B4C7E] bg-white p-5 mt-4">
+              <div className="rounded-xl border border-[#2B4C7E] bg-white p-5 mt-4 shadow-sm">
                 <p className="text-sm">
                   <strong className="text-navy">For information on establishing Power of Attorney or Guardian of Property status:</strong><br />
                   <a href="https://www.attorneygeneral.jus.gov.on.ca/english/family/pgt/" target="_blank" rel="noopener noreferrer" className="text-[#2B4C7E] hover:underline">
@@ -284,7 +284,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* What the Program Requires */}
-        <section id="requirements" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="requirements" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -307,7 +307,7 @@ export default function FmhcResourcesPage() {
                   "Retaining all financial records and documents for seven years",
                   "Complying with all applicable employment laws if hiring directly",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4">
+                  <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4 shadow-sm">
                     <CheckCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
                     <span className="text-sm">{item}</span>
                   </div>
@@ -318,7 +318,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Application Process */}
-        <section id="application" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="application" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -361,7 +361,7 @@ export default function FmhcResourcesPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6">
+              <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
                 <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">Before Funding Begins</h3>
                 <p className="mb-3">Ontario Health atHome will not deposit initial funds until you have provided:</p>
                 <ul className="ml-6 space-y-2 list-disc">
@@ -379,7 +379,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Responsibilities */}
-        <section id="responsibilities" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="responsibilities" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -400,7 +400,7 @@ export default function FmhcResourcesPage() {
                 "Having contingency plans in place for when a provider is unavailable — Ontario Health atHome will not cover services that were not delivered",
                 "Complying with all applicable laws, including the Employment Standards Act, 2000, the Occupational Health and Safety Act, the Human Rights Code, and the Workplace Safety and Insurance Act, 1997, if you are acting as an employer",
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4">
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4 shadow-sm">
                   <AlertCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
                   <span className="text-sm">{item}</span>
                 </div>
@@ -410,7 +410,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Care Arrangements */}
-        <section id="care-arrangements" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="care-arrangements" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -422,21 +422,21 @@ export default function FmhcResourcesPage() {
               <p>You have three options for engaging care providers:</p>
 
               <div className="space-y-4">
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
+                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Through a Registered Agency</h3>
                   <p>
                     The agency employs the care workers and manages all payroll and employer obligations. Your role is to pay agency invoices and report those payments. This is the simplest arrangement administratively.
                   </p>
                 </div>
 
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
+                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">As an Independent Contractor</h3>
                   <p>
                     You hire care providers directly, and they invoice you for their services. They are responsible for their own taxes, CPP/EI, and insurance. Your role is to pay invoices, track them against your budget, and report monthly. The working arrangement must genuinely reflect a contractor relationship — the CRA does not rely solely on what a contract says.
                   </p>
                 </div>
 
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
+                <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">As a Direct Employer</h3>
                   <p>
                     You hire care workers as employees, which means you are responsible for payroll, source deductions, CRA remittances, T4s, and all other employer obligations under Ontario and federal law. This arrangement is the most administratively complex and is where having a qualified bookkeeper is most critical.
@@ -444,7 +444,7 @@ export default function FmhcResourcesPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-border bg-white p-5">
+              <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
                 <p className="text-sm font-medium text-navy">
                   The approved hourly rate in your budget applies across all three models and is an all-in rate — it is intended to cover wages, applicable payroll costs, insurance, and all other costs associated with delivering the service.
                 </p>
@@ -470,7 +470,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Bookkeeper Requirements */}
-        <section id="bookkeeper" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="bookkeeper" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -483,7 +483,7 @@ export default function FmhcResourcesPage() {
                 Section B5.1 of the SDC agreement requires you to hire or retain a bookkeeper to provide bookkeeping services in respect of the funds, unless Ontario Health atHome has approved an alternate arrangement in writing.
               </p>
 
-              <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6">
+              <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
                 <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">Schedule &quot;O&quot; Requirements</h3>
                 <p className="mb-3">Every individual retained as the bookkeeper must have all of the following:</p>
                 <ul className="ml-6 space-y-2 list-disc">
@@ -504,7 +504,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Monthly Reporting */}
-        <section id="reporting" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="reporting" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -571,7 +571,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Typical Month */}
-        <section id="typical-month" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="typical-month" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -606,7 +606,7 @@ export default function FmhcResourcesPage() {
                   content: "Ontario Health atHome reviews your submission. If it is complete and compliant, your next funding deposit is issued within 14 days. The cycle then repeats."
                 },
               ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 rounded-xl border border-border bg-white p-5">
+                <div key={i} className="flex items-start gap-4 rounded-xl border border-border bg-white p-5 shadow-sm">
                   <div className="flex size-8 shrink-0 items-center justify-center rounded-full font-semibold text-white" style={{ backgroundColor: '#2B4C7E' }}>
                     {i + 1}
                   </div>
@@ -621,7 +621,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Eligible Expenses */}
-        <section id="eligible-expenses" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="eligible-expenses" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -684,7 +684,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Key Deadlines */}
-        <section id="deadlines" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="deadlines" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -700,7 +700,7 @@ export default function FmhcResourcesPage() {
                 { deadline: "Before hiring any provider", task: "Confirm qualifications, insurance, and PVSC results" },
                 { deadline: "Within 48 hours", task: "Notify your Care Coordinator of hospitalizations, emergency visits, or significant health changes" },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4 rounded-xl border-2 border-[#2B4C7E] bg-white p-5">
+                <div key={i} className="flex items-start gap-4 rounded-xl border-2 border-[#2B4C7E] bg-white p-5 shadow-md">
                   <Clock className="mt-0.5 size-6 shrink-0" style={{ color: '#2B4C7E' }} />
                   <div>
                     <p className="font-semibold text-navy">{item.deadline}</p>
@@ -719,7 +719,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Common Mistakes */}
-        <section id="mistakes" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="mistakes" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -781,7 +781,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="scroll-mt-20 py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+        <section id="faq" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -824,7 +824,7 @@ export default function FmhcResourcesPage() {
                   a: "For financial reporting: fmhcfinance@ontariohealthathome.ca | For general inquiries: 310-2222 (no area code required)"
                 },
               ].map((faq, i) => (
-                <details key={i} className="group rounded-xl border border-border bg-white overflow-hidden">
+                <details key={i} className="group rounded-xl border border-border bg-white overflow-hidden shadow-sm">
                   <summary className="flex cursor-pointer items-start gap-3 px-6 py-5 transition-colors hover:bg-card">
                     <HelpCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
                     <span className="flex-1 font-serif text-[15px] font-semibold text-navy">{faq.q}</span>
@@ -841,7 +841,7 @@ export default function FmhcResourcesPage() {
         </section>
 
         {/* Where Tabber Fits In */}
-        <section id="where-tabber-fits-in" className="scroll-mt-20 bg-card py-10 md:py-14 border-t border-border/30">
+        <section id="where-tabber-fits-in" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -893,7 +893,7 @@ export default function FmhcResourcesPage() {
               <form
                 name="fmhc-contact"
                 onSubmit={handleSubmit}
-                className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-lg"
+                className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
               >
                 <input type="hidden" name="form-name" value="fmhc-contact" />
                 <div className="space-y-5">
