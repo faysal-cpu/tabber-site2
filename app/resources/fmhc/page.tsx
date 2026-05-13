@@ -91,6 +91,9 @@ export default function FmhcResourcesPage() {
         {/* Table of Contents */}
         <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
+            <div className="mb-6 flex justify-center">
+              <div className="h-1 w-32 rounded-full" style={{ backgroundColor: '#2B4C7E' }}></div>
+            </div>
             <h2 className="mb-8 text-center font-serif text-[24px] font-bold text-navy">Quick Navigation</h2>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -963,7 +966,7 @@ export default function FmhcResourcesPage() {
         {/* Disclaimer */}
         <section className="bg-gray-50 py-8 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
-            <p className="text-center text-xs leading-[1.6] text-muted-foreground">
+            <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
               This page was prepared by Tabber based on direct program experience and Ontario Health atHome's published documentation. Program requirements may change. Always verify current requirements with your Care Coordinator.
             </p>
           </div>
