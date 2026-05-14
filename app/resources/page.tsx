@@ -156,37 +156,6 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            {/* External Links */}
-            <div>
-              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Helpful External Links</h3>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {externalLinks.map((link) => {
-                  const Icon = link.icon
-                  return (
-                    <a
-                      key={link.title}
-                      href={link.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-md hover:border-[#2B4C7E]"
-                    >
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                        <Icon className="size-5" style={{ color: '#2B4C7E' }} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="mb-1 flex items-center gap-2">
-                          <h4 className="font-serif text-[16px] font-semibold text-navy group-hover:text-[#2B4C7E] transition-colors">
-                            {link.title}
-                          </h4>
-                          <ExternalLink className="size-3.5 text-muted-foreground" />
-                        </div>
-                        <p className="text-sm leading-[1.6] text-muted-foreground">{link.description}</p>
-                      </div>
-                    </a>
-                  )
-                })}
-              </div>
-            </div>
           </div>
         </section>
 
