@@ -86,9 +86,140 @@ export default function FmhcResourcesPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <SiteHeader />
-      <main className="flex-1">
+    <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://tabber.ca/resources/fmhc#article",
+                "headline": "Complete Guide to Family-Managed Home Care (FMHC) in Ontario",
+                "description": "Comprehensive guide covering FMHC eligibility, application process, bookkeeper requirements, monthly reporting, and responsibilities for Ontario families.",
+                "image": "https://tabber.ca/images/fmhc-resources.png",
+                "datePublished": "2026-05-14",
+                "dateModified": "2026-05-14",
+                "author": {
+                  "@type": "Person",
+                  "name": "Faysal El Masri",
+                  "jobTitle": "CPA",
+                  "url": "https://tabber.ca/about"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "@id": "https://tabber.ca/#organization",
+                  "name": "Tabber",
+                  "url": "https://tabber.ca",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://tabber.ca/tabber-logo-full.svg"
+                  }
+                },
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://tabber.ca/resources/fmhc"
+                },
+                "keywords": "FMHC, Family-Managed Home Care, Ontario, Self-Directed Care, SDC, Ontario Health atHome, bookkeeping, financial reporting"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://tabber.ca/resources/fmhc#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://tabber.ca"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Resources",
+                    "item": "https://tabber.ca/resources"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "FMHC Guide",
+                    "item": "https://tabber.ca/resources/fmhc"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://tabber.ca/resources/fmhc#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is Family-Managed Home Care (FMHC)?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Family-Managed Home Care (FMHC), also known as Self-Directed Care (SDC), is a program administered by Ontario Health atHome where approved families receive direct funding to hire and manage their own care workers instead of receiving services through a contracted agency."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Who is eligible for FMHC in Ontario?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "FMHC is available to children with complex medical needs, adults with acquired brain injuries, children receiving education at home who meet program criteria, and individuals in extraordinary circumstances as determined by Ontario Health atHome. The person must have an assessed need for home care services and an active care plan."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Do I need a bookkeeper for FMHC?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, Section B5.1 of the SDC agreement requires you to hire or retain a bookkeeper unless Ontario Health atHome has approved an alternate arrangement in writing. The bookkeeper must meet Schedule O requirements including having a registered business number, relevant certification (PCP, CPM, CPB, or CPA), and proof of insurance."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "When are FMHC monthly reports due?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Reports are due no later than ten calendar days after the end of each month. Late reports may delay your next funding deposit or trigger a compliance follow-up."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://tabber.ca/#organization",
+                "name": "Tabber",
+                "url": "https://tabber.ca",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://tabber.ca/tabber-logo-full.svg"
+                },
+                "description": "Professional FMHC bookkeeping and financial reporting services for Ontario families in the Family-Managed Home Care program.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressRegion": "ON",
+                  "addressCountry": "CA"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-647-872-0394",
+                  "contactType": "customer service",
+                  "email": "hello@tabber.ca"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/profile.php?id=61582161815813",
+                  "https://www.linkedin.com/company/tabberbookkeeping"
+                ]
+              }
+            ]
+          })
+        }}
+      />
+
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1">
         {/* Hero Section */}
         <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1200px] px-6">
@@ -99,7 +230,7 @@ export default function FmhcResourcesPage() {
                   <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Comprehensive Guide</span>
                 </div>
                 <h1 className="font-serif text-[26px] font-bold leading-[1.2] text-navy md:text-[34px]">
-                  Family Managed Home Care (FMHC)
+                  Family Managed Home Care (FMHC) Guide for Ontario
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
                   A practical guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and anyone navigating it.
@@ -121,7 +252,7 @@ export default function FmhcResourcesPage() {
                 <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
                   <Image
                     src="/images/fmhc-resources.png"
-                    alt="FMHC Resources Guide"
+                    alt="Family-Managed Home Care FMHC Guide for Ontario families - comprehensive resource for eligibility, application, and bookkeeping requirements"
                     fill
                     className="object-cover"
                     style={{ objectPosition: 'right bottom' }}
@@ -1091,5 +1222,6 @@ export default function FmhcResourcesPage() {
       </main>
       <SiteFooter />
     </div>
+    </>
   )
 }

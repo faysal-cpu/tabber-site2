@@ -5,26 +5,37 @@ const siteUrl = 'https://tabber.ca'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: 'FMHC Guide | Family-Managed Home Care Resources | Tabber',
+  title: 'FMHC Guide 2026: Complete Family-Managed Home Care Guide for Ontario | Tabber',
   description:
-    'Comprehensive guide to Ontario\'s Family-Managed Home Care (FMHC) program. Learn about eligibility, application process, responsibilities, reporting requirements, and how to manage your SDC agreement.',
+    'Complete FMHC guide for Ontario families 2026. Learn about Family-Managed Home Care (FMHC) eligibility, application process, bookkeeper requirements, monthly reporting, Schedule O requirements, and how to successfully manage your FMHC program with Ontario Health atHome.',
 
   keywords: [
+    'FMHC',
     'FMHC guide',
-    'Family-Managed Home Care guide',
-    'FMHC resources',
-    'Self-Directed Care Ontario',
+    'FMHC Ontario',
+    'Family-Managed Home Care',
+    'Family-Managed Home Care Ontario',
+    'FMHC guide Ontario',
+    'FMHC 2026',
+    'Self-Directed Care',
+    'SDC Ontario',
     'FMHC eligibility',
-    'FMHC application process',
+    'FMHC application',
     'Ontario Health atHome FMHC',
-    'FMHC reporting requirements',
-    'FMHC bookkeeper requirements',
+    'FMHC reporting',
+    'FMHC bookkeeper',
+    'FMHC bookkeeping',
     'Schedule O requirements',
-    'SDC agreement Ontario',
+    'FMHC requirements',
+    'SDC agreement',
     'FMHC monthly reporting',
+    'family managed home care guide',
+    'FMHC how to apply',
+    'FMHC substitute decision maker',
+    'FMHC SDM',
   ],
 
-  authors: [{ name: 'Tabber' }],
+  authors: [{ name: 'Faysal El Masri, CPA' }, { name: 'Tabber' }],
 
   alternates: {
     canonical: `${siteUrl}/resources/fmhc`,
@@ -33,27 +44,30 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: `${siteUrl}/resources/fmhc`,
-    title: 'FMHC Guide | Family-Managed Home Care Resources',
+    title: 'Complete FMHC Guide for Ontario Families 2026 - Family-Managed Home Care',
     description:
-      'Comprehensive guide to Ontario\'s Family-Managed Home Care (FMHC) program. Learn about eligibility, application, responsibilities, and reporting requirements.',
+      'Complete guide to Family-Managed Home Care (FMHC) in Ontario. Learn about FMHC eligibility, application process, bookkeeper requirements, monthly reporting, and how to successfully manage your FMHC program.',
     siteName: 'Tabber',
     images: [
       {
-        url: '/images/fmhc-hero-woman.jpg',
+        url: '/images/fmhc-resources.png',
         width: 1200,
         height: 630,
-        alt: 'FMHC Guide - Family-Managed Home Care Resources',
+        alt: 'FMHC Guide - Complete Family-Managed Home Care Guide for Ontario 2026',
       },
     ],
     locale: 'en_CA',
+    publishedTime: '2026-05-14T00:00:00Z',
+    modifiedTime: '2026-05-14T00:00:00Z',
+    authors: ['Faysal El Masri, CPA'],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'FMHC Guide | Family-Managed Home Care Resources',
+    title: 'Complete FMHC Guide for Ontario Families 2026',
     description:
-      'Comprehensive guide to Ontario\'s Family-Managed Home Care program. Eligibility, application, responsibilities, and reporting requirements.',
-    images: ['/images/fmhc-hero-woman.jpg'],
+      'Complete guide to Family-Managed Home Care (FMHC) in Ontario. Everything you need to know about FMHC eligibility, application, bookkeeper requirements, and monthly reporting.',
+    images: ['/images/fmhc-resources.png'],
   },
 
   robots: {
