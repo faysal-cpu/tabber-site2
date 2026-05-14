@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
@@ -27,7 +27,8 @@ import {
   BookOpen,
   Phone,
   Mail,
-  ExternalLink
+  ExternalLink,
+  ChevronUp
 } from "lucide-react"
 
 const sections = [
@@ -51,6 +52,19 @@ const sections = [
 
 export default function FmhcResourcesPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > window.innerHeight)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -88,8 +102,18 @@ export default function FmhcResourcesPage() {
                   Family Managed Home Care (FMHC)
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-                  A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating the FMHC program.
+                  A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating it.
                 </p>
+                <div className="mt-4 flex items-center gap-2 text-sm text-navy/70">
+                  <Image
+                    src="/images/profile-faysal.jpg"
+                    alt="Faysal El Masri"
+                    width={24}
+                    height={24}
+                    className="rounded-full"
+                  />
+                  <span>Written by Faysal El Masri, CPA | Updated May 2026</span>
+                </div>
               </div>
               <div className="w-full max-w-[380px] flex-shrink-0 md:w-[35%] md:max-w-none">
                 <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
@@ -379,7 +403,7 @@ export default function FmhcResourcesPage() {
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 3 — Financial Orientation</h3>
                   <p>
-                    Ontario Health atHome offers a third meeting for the contract holder and their bookkeeper, focused specifically on the financial and reporting side of the program. This meeting is described as optional in official documentation, but every system needs to be in place before the first month of expenses is reported. Your bookkeeper must be available to attend when requested.
+                    Ontario Health atHome offers a third meeting for the contract holder and their bookkeeper, focused specifically on the financial and reporting side of the program. This meeting is described as optional in official documentation, but every system needs to be in place before the first month of expenses is reported. Your bookkeeper must be available to attend when requested. Tabber is available to attend this meeting alongside you to answer financial and reporting questions directly with your Care Coordinator.
                   </p>
                 </div>
               </div>
@@ -516,6 +540,12 @@ export default function FmhcResourcesPage() {
                 </ul>
                 <p className="mt-4">
                   Where the service provider is retained as an independent contractor or employed directly, the bookkeeper must also be a member of the Canadian Payroll Association.
+                </p>
+              </div>
+
+              <div className="rounded-xl bg-blue-50 border-l-4 p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
+                <p className="text-[15px] leading-[1.7]" style={{ color: '#2B4C7E' }}>
+                  Before your Financial Orientation meeting with Ontario Health atHome, your bookkeeper must provide written confirmation of their Schedule O qualifications. We prepare this documentation as part of our standard onboarding — so your setup is complete and approved without delays.
                 </p>
               </div>
 
@@ -874,22 +904,16 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                Tabber was built specifically to support families navigating the financial and reporting side of Family‑Managed Home Care.
+                Tabber was built to support families through the financial and reporting side of FMHC — from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
               </p>
               <p>
-                We work alongside families to handle the administrative responsibilities that come with the program — from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
+                Our FMHC bookkeeping services are structured to fit within the program's approved funding allocation, which means there is <strong className="font-semibold text-navy">no out of pocket cost to families</strong>.
               </p>
               <p>
-                Our role is to keep everything structured, accurate, and up to date so that nothing is missed, delayed, or flagged — and so that families don't have to think about the reporting side each month.
+                When paperwork needs to be handled properly, we're here for you — so you can focus on what matters most.
               </p>
               <p>
-                For families managing care at home, the administrative burden can build quickly. Having the right systems in place early makes a meaningful difference, and that's where we focus — creating a simple, repeatable process that works month after month.
-              </p>
-              <p>
-                Our services are structured to fit within the program's approved funding allocation, which means in most cases there is no out‑of‑pocket cost to the family.
-              </p>
-              <p>
-                If you're early in the program or want to make sure everything is set up properly, we're always happy to connect and walk through what to expect.
+                Reach out today to get started.
               </p>
             </div>
           </div>
@@ -1050,6 +1074,18 @@ export default function FmhcResourcesPage() {
             </div>
           </div>
         </section>
+
+        {/* Back to Top Button */}
+        {showBackToTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 flex size-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ backgroundColor: '#2B4C7E' }}
+            aria-label="Back to top"
+          >
+            <ChevronUp className="size-6 text-white" />
+          </button>
+        )}
       </main>
       <SiteFooter />
     </div>
