@@ -111,7 +111,7 @@ export default function FmhcResourcesPage() {
                       alt="Faysal El Masri"
                       fill
                       className="object-cover"
-                      style={{ objectPosition: 'center 20%' }}
+                      style={{ objectPosition: '56% 31%' }}
                     />
                   </div>
                   <span>Written by Faysal El Masri, CPA | Updated May 2026</span>
