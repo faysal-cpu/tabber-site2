@@ -1071,7 +1071,7 @@ export default function FmhcResourcesPage() {
 
             <div className="mt-8 border-t border-border/30 pt-8">
               <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
-                This page was prepared by Tabber based on direct program experience and Ontario Health atHome's published documentation. Program requirements may change. Always verify current requirements with your Care Coordinator.
+                Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome. Program requirements can change and may vary by agreement. This page provides general information only and is not legal, tax, payroll, medical, or eligibility advice. Families should follow their own signed agreement and confirm current requirements with their Ontario Health atHome care coordinator. For legal, employment, payroll, tax, or SDM questions, consult an appropriate qualified professional.
               </p>
             </div>
           </div>
