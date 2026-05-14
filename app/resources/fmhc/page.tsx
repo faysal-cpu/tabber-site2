@@ -102,7 +102,7 @@ export default function FmhcResourcesPage() {
                   Family Managed Home Care (FMHC)
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-                  A practical guide to Ontario's Family-Managed Home Care program — written for families, SDMs, and anyone navigating it.
+                  A practical guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and anyone navigating it.
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-sm text-navy/70">
                   <div className="relative size-9 overflow-hidden rounded-full flex-shrink-0">
@@ -250,7 +250,7 @@ export default function FmhcResourcesPage() {
                 Family-Managed Home Care (FMHC), also known as Self-Directed Care (SDC), is a program administered by Ontario Health atHome. Rather than receiving personal support services through a contracted agency, approved families receive direct funding to hire and manage their own care workers.
               </p>
               <p>
-                That shift in control is meaningful — it means care can be arranged around the client's actual schedule, preferences, and needs. But it also means the family takes on real administrative and employer-level responsibilities that don't exist in the traditional home care model. Managing payroll, tracking expenses against a funding budget, submitting monthly reports, and maintaining records for seven years are all part of the job.
+                That shift in control is meaningful - it means care can be arranged around the client's actual schedule, preferences, and needs. But it also means the family takes on real administrative and employer-level responsibilities that don't exist in the traditional home care model. Managing payroll, tracking expenses against a funding budget, submitting monthly reports, and maintaining records for seven years are all part of the job.
               </p>
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                FMHC is not open to everyone, and enrollment is not a direct application — it begins with a conversation with your Ontario Health atHome Care Coordinator. Eligibility is assessed in two distinct parts.
+                FMHC is not open to everyone, and enrollment is not a direct application - it begins with a conversation with your Ontario Health atHome Care Coordinator. Eligibility is assessed in two distinct parts.
               </p>
               <div className="rounded-xl border-l-4 bg-white p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
                 <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Clinical Eligibility</h3>
@@ -303,7 +303,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                A Substitute Decision-Maker is a person authorized to make decisions on behalf of someone who is unable to make them independently. In the context of FMHC, the SDM takes on the financial and administrative responsibilities of the program — managing funds, submitting reports, and fulfilling all obligations under the SDC agreement.
+                A Substitute Decision-Maker is a person authorized to make decisions on behalf of someone who is unable to make them independently. In the context of FMHC, the SDM takes on the financial and administrative responsibilities of the program - managing funds, submitting reports, and fulfilling all obligations under the SDC agreement.
               </p>
 
               <h3 className="font-serif text-[20px] font-semibold text-navy pt-4">Who Can Be a Substitute Decision-Maker?</h3>
@@ -377,7 +377,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-6 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                Unlike most programs, FMHC doesn't have a standalone application form you fill out and submit. Access runs through Ontario Health atHome, and the process moves in stages — beginning with a conversation with your Care Coordinator.
+                Unlike most programs, FMHC doesn't have a standalone application form you fill out and submit. Access runs through Ontario Health atHome, and the process moves in stages - beginning with a conversation with your Care Coordinator.
               </p>
 
               <div className="space-y-4">
@@ -389,21 +389,21 @@ export default function FmhcResourcesPage() {
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 1 — Getting Oriented</h3>
+                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 1 - Getting Oriented</h3>
                   <p>
-                    The FMHC team will book your first formal meeting, where you'll learn how to submit your application, review the client's care needs, and discuss your options for structuring care — whether through a registered agency, an independent contractor, or by hiring directly as an employer. This decision has meaningful administrative and financial implications, and it's worth understanding your options before moving forward.
+                    The FMHC team will book your first formal meeting, where you'll learn how to submit your application, review the client's care needs, and discuss your options for structuring care - whether through a registered agency, an independent contractor, or by hiring directly as an employer. This decision has meaningful administrative and financial implications, and it's worth understanding your options before moving forward.
                   </p>
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 2 — The Contract</h3>
+                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 2 - The Contract</h3>
                   <p>
-                    After your application is submitted, you'll meet with the FMHC team a second time to review the full program agreement and all associated documentation, including your care plan and approved budget. This is a substantive meeting — the agreement outlines your legal obligations, the funding structure, reporting requirements, and the circumstances under which the contract can be amended or terminated. Ask questions here. Once signed, it is binding. At the end of this meeting, a start date is agreed upon.
+                    After your application is submitted, you'll meet with the FMHC team a second time to review the full program agreement and all associated documentation, including your care plan and approved budget. This is a substantive meeting - the agreement outlines your legal obligations, the funding structure, reporting requirements, and the circumstances under which the contract can be amended or terminated. Ask questions here. Once signed, it is binding. At the end of this meeting, a start date is agreed upon.
                   </p>
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 3 — Financial Orientation</h3>
+                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 3 - Financial Orientation</h3>
                   <p>
                     Ontario Health atHome offers a third meeting for the contract holder and their bookkeeper, focused specifically on the financial and reporting side of the program. This meeting is described as optional in official documentation, but every system needs to be in place before the first month of expenses is reported. Your bookkeeper must be available to attend when requested. Tabber is available to attend this meeting alongside you to answer financial and reporting questions directly with your Care Coordinator.
                   </p>
@@ -420,7 +420,7 @@ export default function FmhcResourcesPage() {
                   <li>Confirmation that you have hired or retained a service provider, including a description of the services they will provide</li>
                 </ul>
                 <p className="mt-3">
-                  Once everything is in place, your first deposit will arrive. After that, funding is deposited monthly — within 14 calendar days of Ontario Health atHome receiving your complete monthly report.
+                  Once everything is in place, your first deposit will arrive. After that, funding is deposited monthly - within 14 calendar days of Ontario Health atHome receiving your complete monthly report.
                 </p>
               </div>
             </div>
@@ -440,13 +440,13 @@ export default function FmhcResourcesPage() {
               <p className="mb-4">By signing the SDC agreement, you take on the following obligations:</p>
               {[
                 "Ensuring every service provider meets the minimum qualifications set out in Schedule \"C\" before they begin providing services, including holding the required insurance",
-                "Ensuring every provider has applied for a Police Vulnerable Sector Check (PVSC) and disclosed the results to you before starting — or, in urgent situations, has applied and will disclose results as soon as they are available",
+                "Ensuring every provider has applied for a Police Vulnerable Sector Check (PVSC) and disclosed the results to you before starting - or, in urgent situations, has applied and will disclose results as soon as they are available",
                 "Entering into a written employment or service agreement with each provider that contains all provisions required under Schedule \"D\"",
                 "Opening and maintaining a dedicated non-interest-bearing chequing account used exclusively for FMHC funds",
                 "Keeping a record of every transaction made from that account",
                 "Retaining all financial records, including invoices, proof of payment, and bank statements, for seven years from the date the agreement ends",
                 "Notifying your Care Coordinator within 48 hours of any actual or potential changes to the client's health, any hospitalization or emergency department visit, or any situation where the client will not need services for two weeks or more",
-                "Having contingency plans in place for when a provider is unavailable — Ontario Health atHome will not cover services that were not delivered",
+                "Having contingency plans in place for when a provider is unavailable - Ontario Health atHome will not cover services that were not delivered",
                 "Complying with all applicable laws, including the Employment Standards Act, 2000, the Occupational Health and Safety Act, the Human Rights Code, and the Workplace Safety and Insurance Act, 1997, if you are acting as an employer",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4 shadow-sm">
@@ -481,7 +481,7 @@ export default function FmhcResourcesPage() {
                 <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">As an Independent Contractor</h3>
                   <p>
-                    You hire care providers directly, and they invoice you for their services. They are responsible for their own taxes, CPP/EI, and insurance. Your role is to pay invoices, track them against your budget, and report monthly. The working arrangement must genuinely reflect a contractor relationship — the CRA does not rely solely on what a contract says.
+                    You hire care providers directly, and they invoice you for their services. They are responsible for their own taxes, CPP/EI, and insurance. Your role is to pay invoices, track them against your budget, and report monthly. The working arrangement must genuinely reflect a contractor relationship - the CRA does not rely solely on what a contract says.
                   </p>
                 </div>
 
@@ -495,7 +495,7 @@ export default function FmhcResourcesPage() {
 
               <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
                 <p className="text-sm font-medium text-navy">
-                  The approved hourly rate in your budget applies across all three models and is an all-in rate — it is intended to cover wages, applicable payroll costs, insurance, and all other costs associated with delivering the service.
+                  The approved hourly rate in your budget applies across all three models and is an all-in rate - it is intended to cover wages, applicable payroll costs, insurance, and all other costs associated with delivering the service.
                 </p>
               </div>
 
@@ -510,7 +510,7 @@ export default function FmhcResourcesPage() {
                   <li>A provision that if Ontario Health atHome wishes to obtain information about the client's care or the SDM's participation in the program, the provider will cooperate directly with the Care Coordinator</li>
                   <li>The indemnification language set out exactly as it appears in Schedule &quot;D&quot; of the program agreement</li>
                   <li>Insurance confirmation: at minimum $2M in Commercial General Liability Insurance and $25,000 in Abuse Liability coverage, unless Ontario Health atHome has provided written permission for an exception</li>
-                  <li>A relationship clause — either confirming the provider is an employee, or confirming they are an independent contractor — using the exact wording required by Schedule &quot;D&quot;</li>
+                  <li>A relationship clause - either confirming the provider is an employee, or confirming they are an independent contractor - using the exact wording required by Schedule &quot;D&quot;</li>
                   <li>A provision acknowledging the provider is a health information custodian subject to the Personal Health Information Protection Act, 2004</li>
                 </ul>
               </div>
@@ -547,7 +547,7 @@ export default function FmhcResourcesPage() {
 
               <div className="rounded-xl bg-blue-50 border-l-4 p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
                 <p className="text-[15px] leading-[1.7]" style={{ color: '#2B4C7E' }}>
-                  Before your Financial Orientation meeting with Ontario Health atHome, your bookkeeper must provide written confirmation of their Schedule O qualifications. We prepare this documentation as part of our standard onboarding — so your setup is complete and approved without delays.
+                  Before your Financial Orientation meeting with Ontario Health atHome, your bookkeeper must provide written confirmation of their Schedule O qualifications. We prepare this documentation as part of our standard onboarding - so your setup is complete and approved without delays.
                 </p>
               </div>
 
@@ -596,7 +596,7 @@ export default function FmhcResourcesPage() {
               <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
                 <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">How to Complete the Report</h3>
                 <p className="mb-3">
-                  All updates must be made on the live web version of the Excel file via Sync. Do not complete the file offline and re-upload — this causes version control issues that can affect your submission.
+                  All updates must be made on the live web version of the Excel file via Sync. Do not complete the file offline and re-upload - this causes version control issues that can affect your submission.
                 </p>
                 <p>
                   To find the reporting documents, open the Financial Documentation folder in the SYNC Secure Portal and locate the Excel file titled Schedule G&H Monthly Financial Report. Open it using Edit in Office.
@@ -616,7 +616,7 @@ export default function FmhcResourcesPage() {
                   <div>
                     <h3 className="mb-2 font-serif text-[18px] font-semibold text-orange-900">The Surplus Rule</h3>
                     <p className="text-sm text-orange-900">
-                      Unused funds accumulate as a surplus. When that surplus exceeds two months' worth of your approved funding, the next month's deposit is skipped. You will not receive notification of a skipped payment — it is your responsibility to monitor your balance.
+                      Unused funds accumulate as a surplus. When that surplus exceeds two months' worth of your approved funding, the next month's deposit is skipped. You will not receive notification of a skipped payment - it is your responsibility to monitor your balance.
                     </p>
                   </div>
                 </div>
@@ -646,7 +646,7 @@ export default function FmhcResourcesPage() {
                 },
                 {
                   title: "Throughout the Month",
-                  content: "As payments are made, each transaction must be tracked and categorized — by service type, provider, and service dates — within your Schedule G&H report."
+                  content: "As payments are made, each transaction must be tracked and categorized - by service type, provider, and service dates - within your Schedule G&H report."
                 },
                 {
                   title: "End of Month",
@@ -686,7 +686,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                In addition to funding for care services, your agreement includes a monthly allowance for eligible administrative expenses. The specific caps for each category are set out in your individual Schedule &quot;I&quot; — confirm the amounts with your Care Coordinator, as they are specific to your agreement. Your agreement includes a separate allowance for administrative expenses, each with a defined monthly cap. These caps are not interchangeable and must be tracked by category.
+                In addition to funding for care services, your agreement includes a monthly allowance for eligible administrative expenses. The specific caps for each category are set out in your individual Schedule &quot;I&quot; - confirm the amounts with your Care Coordinator, as they are specific to your agreement. Your agreement includes a separate allowance for administrative expenses, each with a defined monthly cap. These caps are not interchangeable and must be tracked by category.
               </p>
 
               <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
@@ -718,7 +718,7 @@ export default function FmhcResourcesPage() {
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="mt-0.5 size-5 shrink-0 text-orange-600" />
                   <p className="text-sm text-orange-900">
-                    Items requiring pre-approval must be approved in writing before you spend. The eligible expense caps do not include applicable taxes — applicable taxes may be reported separately and, if approved, will be funded.
+                    Items requiring pre-approval must be approved in writing before you spend. The eligible expense caps do not include applicable taxes - applicable taxes may be reported separately and, if approved, will be funded.
                   </p>
                 </div>
               </div>
@@ -767,7 +767,7 @@ export default function FmhcResourcesPage() {
             <div className="mt-6 rounded-xl border-2 border-[#2B4C7E] bg-card p-6">
               <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Record Retention</h3>
               <p className="text-[15px] leading-[1.8] text-muted-foreground">
-                You must retain all financial records and non-financial documents for seven years from the date the agreement expires or is terminated, or longer if required by applicable law. Do not rely on Sync for record keeping — save local copies of everything.
+                You must retain all financial records and non-financial documents for seven years from the date the agreement expires or is terminated, or longer if required by applicable law. Do not rely on Sync for record keeping - save local copies of everything.
               </p>
             </div>
           </div>
@@ -784,7 +784,7 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                Most issues in the program don't come from misunderstanding the rules — they come from small operational misses that compound over time. These are the situations we see most often:
+                Most issues in the program don't come from misunderstanding the rules - they come from small operational misses that compound over time. These are the situations we see most often:
               </p>
 
               <div className="space-y-3">
@@ -799,11 +799,11 @@ export default function FmhcResourcesPage() {
                   },
                   {
                     title: "Incomplete documentation",
-                    description: "Every expense and every payment must be supported by proper documentation — invoices, timesheets, and proof of payment. Ontario Health atHome requires documentation for each transaction before it can be approved, so keeping organized records throughout the month is far easier than trying to reconstruct them at reporting time."
+                    description: "Every expense and every payment must be supported by proper documentation - invoices, timesheets, and proof of payment. Ontario Health atHome requires documentation for each transaction before it can be approved, so keeping organized records throughout the month is far easier than trying to reconstruct them at reporting time."
                   },
                   {
                     title: "Spending without pre-approval",
-                    description: "Training, medical supplies, and diagnostic services all require written pre-approval from your Care Coordinator before the cost is incurred. Seeking approval after the fact is not an option — these expenses will not be reimbursed unless pre-approval was obtained in advance."
+                    description: "Training, medical supplies, and diagnostic services all require written pre-approval from your Care Coordinator before the cost is incurred. Seeking approval after the fact is not an option - these expenses will not be reimbursed unless pre-approval was obtained in advance."
                   },
                   {
                     title: "Not monitoring your surplus",
@@ -815,7 +815,7 @@ export default function FmhcResourcesPage() {
                   },
                   {
                     title: "Hiring without PVSC confirmation",
-                    description: "All service providers must disclose their Police Vulnerable Sector Check results to you before starting — or, in urgent situations, as soon as results are available. Hiring without this step in place puts you in breach of your agreement."
+                    description: "All service providers must disclose their Police Vulnerable Sector Check results to you before starting - or, in urgent situations, as soon as results are available. Hiring without this step in place puts you in breach of your agreement."
                   },
                   {
                     title: "No contingency plan",
@@ -848,7 +848,7 @@ export default function FmhcResourcesPage() {
               {[
                 {
                   q: "What qualifications must my bookkeeper have?",
-                  a: "A registered business number, a professional designation (CPA, PCP, CPM, or CPB), proof of insurance, and — where service providers are independent contractors or employees — membership in the Canadian Payroll Association."
+                  a: "A registered business number, a professional designation (CPA, PCP, CPM, or CPB), proof of insurance, and - where service providers are independent contractors or employees - membership in the Canadian Payroll Association."
                 },
                 {
                   q: "Can I hire a family member as my bookkeeper?",
@@ -856,7 +856,7 @@ export default function FmhcResourcesPage() {
                 },
                 {
                   q: "Can I hire a family member as a care provider?",
-                  a: "Also generally no, with the same exception — written permission from Ontario Health atHome is required."
+                  a: "Also generally no, with the same exception - written permission from Ontario Health atHome is required."
                 },
                 {
                   q: "What is the difference between an employee and an independent contractor?",
@@ -872,7 +872,7 @@ export default function FmhcResourcesPage() {
                 },
                 {
                   q: "Can services be provided outside Ontario?",
-                  a: "In limited circumstances — specifically where the client is a child with complex medical needs — funding may cover services provided outside Ontario for up to three weeks per calendar year, provided you give advance notice to your Care Coordinator and confirm the provider is authorized to provide services in that location."
+                  a: "In limited circumstances - specifically where the client is a child with complex medical needs - funding may cover services provided outside Ontario for up to three weeks per calendar year, provided you give advance notice to your Care Coordinator and confirm the provider is authorized to provide services in that location."
                 },
                 {
                   q: "How do I contact Ontario Health atHome?",
@@ -906,13 +906,13 @@ export default function FmhcResourcesPage() {
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>
-                Tabber was built to support families through the financial and reporting side of FMHC — from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
+                Tabber was built to support families through the financial and reporting side of FMHC - from organizing and tracking expenses to preparing and submitting monthly reports in the format Ontario Health atHome expects.
               </p>
               <p>
                 Our FMHC bookkeeping services are structured to fit within the program's approved funding allocation, which means there is <strong className="font-semibold text-navy">no out of pocket cost to families</strong>.
               </p>
               <p>
-                When paperwork needs to be handled properly, we're here for you — so you can focus on what matters most.
+                When paperwork needs to be handled properly, we're here for you - so you can focus on what matters most.
               </p>
               <p>
                 Reach out today to get started.
@@ -925,7 +925,7 @@ export default function FmhcResourcesPage() {
         <section className="py-10 md:py-14 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6">
             <div className="text-center mb-8">
-              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch — No Pressure</h2>
+              <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Get in Touch - No Pressure</h2>
               <p className="mt-3 text-[15px] leading-[1.6] text-navy/70">Fill in your details and we'll follow up within 1 business day to walk through your setup and next steps.</p>
             </div>
 
