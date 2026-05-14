@@ -104,14 +104,14 @@ export default function FmhcResourcesPage() {
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
                   A practical guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and anyone navigating it.
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-sm text-navy/70">
+                <div className="mt-4 flex items-center gap-2 text-xs text-navy/70">
                   <div className="relative size-9 overflow-hidden rounded-full flex-shrink-0">
                     <Image
                       src="/images/profile-faysal.jpg"
                       alt="Faysal El Masri"
                       fill
                       className="object-cover"
-                      style={{ objectPosition: '56% 31%' }}
+                      style={{ objectPosition: '58% 33%', transform: 'scale(1.70)' }}
                     />
                   </div>
                   <span>Written by Faysal El Masri, CPA | Updated May 2026</span>
