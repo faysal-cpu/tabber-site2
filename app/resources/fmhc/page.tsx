@@ -246,7 +246,7 @@ export default function FmhcResourcesPage() {
             <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
               A clear, practical breakdown of Ontario's Family-Managed Home Care program - written for families, SDMs, and caregivers.
             </p>
-            <div className="flex items-center gap-2 text-xs justify-center pt-4 border-t border-gray-200 text-navy/70">
+            <div className="flex items-center gap-2 text-[11px] justify-center pt-4 border-t border-gray-200 text-navy/70">
               <div className="relative size-7 overflow-hidden rounded-full flex-shrink-0">
                 <Image
                   src="/images/profile-faysal.jpg"
