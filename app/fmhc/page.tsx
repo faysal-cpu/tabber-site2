@@ -198,6 +198,27 @@ export default function FmhcPage() {
           </div>
         </section>
 
+        {/* Complete Guide CTA */}
+        <section className="py-8 md:py-10" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="relative flex flex-col items-center gap-6 rounded-xl bg-gradient-to-br from-white to-[#F9FAFB] border-2 p-8 shadow-lg text-center md:flex-row md:text-left" style={{ borderColor: '#2B4C7E' }}>
+              <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#2B4C7E' }}>
+                <BookOpen className="size-7 text-white" strokeWidth={1.5} />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-serif text-[20px] font-bold text-navy">Complete Guide to Family Managed Home Care (FMHC) in Ontario</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Everything you need to know about eligibility, application, responsibilities, reporting, and avoiding common mistakes.</p>
+              </div>
+              <Link href="/resources/fmhc">
+                <Button className="shrink-0 gap-2 rounded-lg px-6 text-white transition-all duration-200 hover:shadow-lg active:scale-95" style={{ backgroundColor: '#2B4C7E' }}>
+                  Read Guide
+                  <ChevronRight className="size-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Downloadable Checklist CTA */}
         <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
