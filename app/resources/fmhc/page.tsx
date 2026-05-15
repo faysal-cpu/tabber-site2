@@ -97,7 +97,7 @@ export default function FmhcResourcesPage() {
               {
                 "@type": "Article",
                 "@id": "https://tabber.ca/resources/fmhc#article",
-                "headline": "Complete Guide to Family-Managed Home Care (FMHC) in Ontario",
+                "headline": "The Complete Guide to Family Managed Home Care (FMHC) in Ontario",
                 "description": "Comprehensive guide covering FMHC eligibility, application process, bookkeeper requirements, monthly reporting, and responsibilities for Ontario families.",
                 "image": "https://tabber.ca/images/fmhc-resources.png",
                 "datePublished": "2026-05-14",
@@ -227,13 +227,13 @@ export default function FmhcResourcesPage() {
               <div className="flex-1 text-center md:text-left">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
                   <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
-                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Comprehensive Guide</span>
+                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Essential Resource</span>
                 </div>
                 <h1 className="font-serif text-[26px] font-bold leading-[1.2] text-navy md:text-[34px]">
-                  Family Managed Home Care (FMHC) Guide for Ontario
+                  The Complete Guide to Family Managed Home Care (FMHC) in Ontario
                 </h1>
                 <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-                  A practical guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and anyone navigating it.
+                  A comprehensive guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and caregivers.
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-xs text-navy/70">
                   <div className="relative size-9 overflow-hidden rounded-full flex-shrink-0">
