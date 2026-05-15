@@ -220,49 +220,46 @@ export default function FmhcResourcesPage() {
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16 md:items-stretch">
-              <div className="flex-1 text-center md:text-left">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
-                  <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
-                  <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Essential Resource</span>
-                </div>
-                <h1 className="font-serif text-[26px] font-bold leading-[1.2] text-navy md:text-[30px]">
-                  The Complete Guide to Family Managed Home Care (FMHC) in Ontario
-                </h1>
-                <p className="mt-4 text-[18px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-                  A comprehensive guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and caregivers.
-                </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-navy/70">
-                  <div className="relative size-9 overflow-hidden rounded-full flex-shrink-0">
-                    <Image
-                      src="/images/profile-faysal.jpg"
-                      alt="Faysal El Masri"
-                      fill
-                      className="object-cover"
-                      style={{ objectPosition: '58% 25%', transform: 'scale(1.70)' }}
-                    />
-                  </div>
-                  <span>Written by Faysal El Masri, CPA | Updated May 2026</span>
-                </div>
+        {/* Hero Section with Overlay */}
+        <section className="relative h-[400px] md:h-[500px] flex items-center justify-center">
+          <Image
+            src="/images/fmhc-resources.png"
+            alt="Family-Managed Home Care FMHC Guide for Ontario families"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2B4C7E]/70 to-[#2B4C7E]/85" />
+
+          <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center text-white">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-md">
+              <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
+              <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Essential Resource</span>
+            </div>
+            <h1 className="font-serif text-[32px] font-bold leading-[1.2] md:text-[42px] mb-4">
+              The Complete Guide to Family Managed Home Care (FMHC) in Ontario
+            </h1>
+            <p className="text-[17px] md:text-[18px] leading-[1.6] mb-4 opacity-95">
+              A comprehensive guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and caregivers.
+            </p>
+            <div className="flex items-center gap-2 text-xs justify-center opacity-85">
+              <div className="relative size-8 overflow-hidden rounded-full flex-shrink-0 border-2 border-white">
+                <Image
+                  src="/images/profile-faysal.jpg"
+                  alt="Faysal El Masri"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: '58% 25%', transform: 'scale(1.70)' }}
+                />
               </div>
-              <div className="w-full max-w-[380px] flex-shrink-0 md:w-[30%] md:max-w-none">
-                <div className="relative aspect-[3/2] md:aspect-auto md:h-full overflow-hidden rounded-2xl shadow-lg">
-                  <Image
-                    src="/images/fmhc-resources.png"
-                    alt="Family-Managed Home Care FMHC Guide for Ontario families - comprehensive resource for eligibility, application, and bookkeeping requirements"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: 'right bottom' }}
-                    priority
-                  />
-                </div>
-              </div>
+              <span>Written by Faysal El Masri, CPA | Updated May 2026</span>
             </div>
           </div>
         </section>
+
+        {/* Smooth Fade Transition */}
+        <div className="h-[60px] -mt-[60px] relative z-20 bg-gradient-to-b from-transparent to-[#E8EDF5]" />
 
         {/* Table of Contents */}
         <section className="pt-6 pb-10 md:pt-8 md:pb-12" style={{ backgroundColor: '#E8EDF5' }}>
