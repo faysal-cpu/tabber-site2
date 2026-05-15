@@ -233,17 +233,17 @@ export default function FmhcResourcesPage() {
           <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
           <div className="relative z-10 max-w-[800px] w-full p-8 md:p-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2" style={{ backgroundColor: '#E8EDF5' }}>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
               <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
               <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Essential Resource</span>
             </div>
-            <h1 className="font-serif text-[28px] font-bold leading-[1.2] md:text-[34px] mb-4" style={{ color: '#2B4C7E' }}>
+            <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[34px] mb-4">
               The Complete Guide to Family Managed Home Care (FMHC) in Ontario
             </h1>
-            <p className="text-[16px] md:text-[17px] leading-[1.6] mb-5 text-navy/90">
+            <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
               A comprehensive guide to Ontario's Family-Managed Home Care program - written for families, SDMs, and caregivers.
             </p>
-            <div className="flex items-center gap-2 text-xs justify-center pt-4 border-t border-gray-200" style={{ color: '#666' }}>
+            <div className="flex items-center gap-2 text-xs justify-center pt-4 border-t border-gray-200 text-navy/70">
               <div className="relative size-7 overflow-hidden rounded-full flex-shrink-0">
                 <Image
                   src="/images/profile-faysal.jpg"
