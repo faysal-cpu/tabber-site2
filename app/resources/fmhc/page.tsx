@@ -236,9 +236,9 @@ export default function FmhcResourcesPage() {
           <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#E8EDF5]" />
 
           <div className="relative z-10 max-w-[800px] w-full p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: 'rgba(249, 250, 251, 0.95)', backdropFilter: 'blur(12px)' }}>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
-              <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
-              <span className="text-sm font-semibold" style={{ color: '#2B4C7E' }}>Essential Resource</span>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md text-white" style={{ backgroundColor: '#2B4C7E' }}>
+              <BookOpen className="size-4" />
+              <span className="text-sm font-semibold">Essential Resource</span>
             </div>
             <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[34px] mb-4">
               The Complete Guide to Family Managed Home Care (FMHC) in Ontario
