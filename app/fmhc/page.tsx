@@ -188,7 +188,7 @@ export default function FmhcPage() {
         <WaveDivider backgroundColor="#FFFFFF" />
 
         {/* What is FMHC - SHORTENED */}
-        <section className="bg-secondary py-10 md:py-12">
+        <section className="bg-card py-10 md:py-12">
           <div className="mx-auto max-w-[1000px] px-6">
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
@@ -258,7 +258,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What We Handle For You */}
-        <section className="bg-card py-10 md:py-14">
+        <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
