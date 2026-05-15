@@ -232,6 +232,9 @@ export default function FmhcResourcesPage() {
           />
           <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
+          {/* Bottom fade to blend with next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#E8EDF5]" />
+
           <div className="relative z-10 max-w-[800px] w-full p-8 md:p-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl text-center">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
               <BookOpen className="size-4" style={{ color: '#2B4C7E' }} />
