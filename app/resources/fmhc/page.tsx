@@ -34,7 +34,7 @@ import {
 const sections = [
   { id: "overview", title: "FMHC Overview", icon: BookOpen },
   { id: "eligibility", title: "Eligibility", icon: ClipboardCheck },
-  { id: "sdm", title: "How to Become an SDM", icon: Users },
+  { id: "sdm", title: "SDM Role & Requirements", icon: Users },
   { id: "requirements", title: "What the Program Requires", icon: FileCheck },
   { id: "application", title: "Application Process", icon: FileText },
   { id: "responsibilities", title: "Your Responsibilities", icon: Shield },
@@ -281,7 +281,7 @@ export default function FmhcResourcesPage() {
                   </a>
                   <a href="#sdm" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
                     <Users className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
-                    <span className="font-medium text-navy">How to Become an SDM</span>
+                    <span className="font-medium text-navy">SDM Role & Requirements</span>
                   </a>
                   <a href="#requirements" className="flex items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm transition-all duration-200 hover:border-[#2B4C7E] hover:shadow-md">
                     <FileCheck className="size-4 shrink-0" style={{ color: '#2B4C7E' }} />
@@ -446,7 +446,7 @@ export default function FmhcResourcesPage() {
               <ul className="ml-6 space-y-2 list-disc">
                 <li>Guardian of Property status under Part 1 of the Substitute Decisions Act, 1992</li>
                 <li>A Continuing Power of Attorney for Property under the Powers of Attorney Act or Part 1 of the Substitute Decisions Act, 1992</li>
-                <li>A role managing Ontario government funding from the Passport Program, Ontario Works, or ODSP on behalf of the client</li>
+                <li>A role managing Ontario government funding from the Passport Program, Ontario Works, or Ontario Disability Support Program (ODSP) on behalf of the client</li>
               </ul>
               <div className="rounded-xl border border-[#2B4C7E] bg-white p-5 mt-4 shadow-sm">
                 <p className="text-sm">
@@ -514,19 +514,22 @@ export default function FmhcResourcesPage() {
                   <p>
                     Start by telling your Care Coordinator you're interested in self-directing care. They will walk through the basics of the program and make an initial assessment of whether you might be eligible. If things look promising, your file is referred to the FMHC team for a more formal review.
                   </p>
+                  <p className="mt-3">
+                    If you don't already have a Care Coordinator through Ontario Health atHome, your first step is to contact them directly to request a home care assessment. Once assigned, your Care Coordinator becomes your starting point for everything FMHC-related.
+                  </p>
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 1 - Getting Oriented</h3>
                   <p>
-                    The FMHC team will book your first formal meeting, where you'll learn how to submit your application, review the client's care needs, and discuss your options for structuring care - whether through a registered agency, an independent contractor, or by hiring directly as an employer. This decision has meaningful administrative and financial implications, and it's worth understanding your options before moving forward.
+                    The FMHC team will book your first formal meeting, where you'll learn how to submit your application, review the client's care needs, and discuss your options for structuring care - whether through a registered agency, an independent contractor, or by hiring directly as an employer. This decision has meaningful administrative and financial implications, and it's worth understanding your options before moving forward. After this meeting, you have 60 days to complete the onboarding checklist before your file can advance to Meeting 2.
                   </p>
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Meeting 2 - The Contract</h3>
                   <p>
-                    After your application is submitted, you'll meet with the FMHC team a second time to review the full program agreement and all associated documentation, including your care plan and approved budget. This is a substantive meeting - the agreement outlines your legal obligations, the funding structure, reporting requirements, and the circumstances under which the contract can be amended or terminated. Ask questions here. Once signed, it is binding. At the end of this meeting, a start date is agreed upon.
+                    After your application is submitted, you'll meet with the FMHC team a second time to review the full program agreement and all associated documentation, including your care plan and approved budget. This is a substantive meeting - the agreement outlines your legal obligations, the funding structure, reporting requirements, and the circumstances under which the contract can be amended or terminated. Ask questions here. Once signed, it is binding. At the end of this meeting, a start date is agreed upon. If Ontario Health atHome receives your signed agreement by the 20th of the month, your first deposit will arrive on the 1st of the following month. If received after the 20th, your start date shifts to the month after.
                   </p>
                 </div>
 
@@ -714,7 +717,7 @@ export default function FmhcResourcesPage() {
                     <p className="mb-2">Each month you must provide:</p>
                     <ul className="ml-4 space-y-1 list-disc">
                       <li>The completed Schedule G&H Monthly Financial Report form, signed by you and your service provider</li>
-                      <li>The invoice from your service provider (if an independent contractor) or a signed timesheet (if a direct employee)</li>
+                      <li>The agency invoice (if receiving services through a registered agency), the invoice from your service provider (if an independent contractor), or a signed timesheet (if a direct employee)</li>
                       <li>Proof of payment for the services described</li>
                     </ul>
                   </div>
@@ -744,7 +747,7 @@ export default function FmhcResourcesPage() {
                   <div>
                     <h3 className="mb-2 font-serif text-[18px] font-semibold text-orange-900">The Surplus Rule</h3>
                     <p className="text-sm text-orange-900">
-                      Unused funds accumulate as a surplus. When that surplus exceeds two months' worth of your approved funding, the next month's deposit is skipped. You will not receive notification of a skipped payment - it is your responsibility to monitor your balance.
+                      Unused funds accumulate as a surplus. When that surplus exceeds two months' worth of your approved funding, the next month's deposit is skipped. The deposit is withheld until your balance drops below the two-month threshold - it is not permanently forfeited. You will not receive notification of a skipped payment - it is your responsibility to monitor your balance.
                     </p>
                   </div>
                 </div>
