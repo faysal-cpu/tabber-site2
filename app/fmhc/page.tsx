@@ -237,7 +237,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What We Handle For You */}
-        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
