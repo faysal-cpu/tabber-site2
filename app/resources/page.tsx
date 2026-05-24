@@ -26,7 +26,7 @@ const fmhcResources = [
     title: "FMHC Bookkeeping Checklist",
     description: "Essential checklist for staying compliant with Ontario Health atHome requirements.",
     type: "PDF Download",
-    link: "/downloads/FMHC_Bookkeeping_Checklist.pdf",
+    link: "/downloads/Tabber - FMHC Bookkeeping Checklist.pdf",
     isDownload: true,
   },
   {

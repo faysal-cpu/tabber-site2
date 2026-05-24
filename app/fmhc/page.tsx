@@ -230,7 +230,7 @@ export default function FmhcPage() {
                 <h3 className="font-serif text-[20px] font-bold text-navy">Free FMHC Bookkeeping Checklist</h3>
                 <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome.<br />Download our quick-reference PDF.</p>
               </div>
-              <Link href="/downloads/FMHC_Bookkeeping_Checklist.pdf" download target="_blank">
+              <Link href="/downloads/Tabber - FMHC Bookkeeping Checklist.pdf" download target="_blank">
                 <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
                   <Download className="size-4" />
                   Download PDF
