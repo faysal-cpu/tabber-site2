@@ -198,10 +198,10 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#FFFFFF" />
+        <WaveDivider backgroundColor="#F9FAFB" />
 
         {/* What is FMHC - SHORTENED */}
-        <section className="bg-card py-10 md:py-12">
+        <section className="bg-gray-50 py-10 md:py-12 border-t border-border/30">
           <div className="mx-auto max-w-[1000px] px-6">
             <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What is FMHC?</h2>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
@@ -212,7 +212,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Our Services - Combined Section */}
-        <section id="our-services" className="scroll-mt-20 bg-secondary py-10 md:py-14">
+        <section id="our-services" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-8 text-center">
               <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Full-Service FMHC Bookkeeping</h2>
@@ -253,7 +253,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Schedule O Credentials Callout */}
-        <section className="bg-card py-8 md:py-10">
+        <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
@@ -268,7 +268,7 @@ export default function FmhcPage() {
         </section>
 
         {/* Pricing Example - MORE PROMINENT */}
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
@@ -281,7 +281,7 @@ export default function FmhcPage() {
         </section>
 
         {/* FMHC Resources - Guide + Checklists */}
-        <section className="bg-card py-8 md:py-10">
+        <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="flex flex-col gap-4">
               {/* Guide Card */}
@@ -348,7 +348,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What Happens After You Reach Out */}
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
           <div className="mx-auto max-w-[1100px] px-6">
             <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
@@ -370,7 +370,7 @@ export default function FmhcPage() {
         </section>
 
         {/* FAQ Section - with borders and icons */}
-        <section className="bg-card py-10 md:py-14">
+        <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
           <div className="mx-auto max-w-[800px] px-6">
             <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Questions</h2>
             <div className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
