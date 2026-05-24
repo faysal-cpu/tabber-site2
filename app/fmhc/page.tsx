@@ -12,7 +12,7 @@ import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, Che
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for agency or independent contractor arrangements." },
   { num: "02", icon: FileText, title: "Monthly Reconciliation", tagline: "Clear, organized records every month.", description: "Expense tracking against your FMHC funding allocation, clear categorization of all transactions, and organized records for every submission." },
-  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline again.", description: "Organized records and monthly reports prepared to Ontario Health atHome requirements. Submissions completed accurately, on time, every time." },
+  { num: "03", icon: ClipboardCheck, title: "Compliance Reporting", tagline: "Never miss a deadline.", description: "Organized records and monthly reports prepared to Ontario Health atHome requirements. Submissions completed accurately, on time, every time." },
   { num: "04", icon: BarChart3, title: "Monthly Funding Reports", tagline: "Understand your funding at a glance.", description: "Clear monthly summaries showing budget vs. actuals, remaining funds, and spending trends — always know where you stand against your approved allocation." },
 ]
 
