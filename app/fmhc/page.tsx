@@ -215,8 +215,8 @@ export default function FmhcPage() {
         <section id="our-services" className="scroll-mt-20 bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-8 text-center">
-              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Services</h2>
-              <p className="text-[15px] leading-[1.7] text-muted-foreground">End-to-end FMHC bookkeeping — so you never miss a deadline or risk your funding.</p>
+              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Full-Service FMHC Bookkeeping</h2>
+              <p className="text-[15px] leading-[1.7] text-muted-foreground">We handle everything end-to-end — so you never miss a deadline or risk your funding.</p>
             </div>
 
             {/* Service Cards */}
