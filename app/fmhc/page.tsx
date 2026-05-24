@@ -305,7 +305,7 @@ export default function FmhcPage() {
               <div className="bg-white rounded-xl p-6 shadow-md" style={{ borderLeft: '4px solid #2B4C7E', borderRight: '4px solid #2B4C7E', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
                 <div className="mb-5">
                   <h4 className="font-serif text-[17px] font-bold text-navy">Compliance Checklists</h4>
-                  <p className="text-xs text-muted-foreground mt-1">Download our references to help you stay organised and on track.</p>
+                  <p className="text-xs text-muted-foreground mt-1">Download our references to help you stay organized and on track.</p>
                 </div>
                 <div className="flex flex-col gap-4">
                   {/* Bookkeeping Checklist */}
