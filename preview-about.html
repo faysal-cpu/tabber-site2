@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Tabber - Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .bg-card { background-color: #ffffff; }
+        .bg-secondary { background-color: #f9fafb; }
+        .bg-cta { background-color: #E8EDF5; }
+        .text-navy { color: #2B4C7E; }
+        .text-muted { color: #6b7280; }
+        .section { padding: 2.5rem 1.5rem; }
+        @media (min-width: 768px) {
+            .section { padding: 3.5rem 1.5rem; }
+        }
+        .container-800 { max-width: 800px; margin: 0 auto; }
+        .container-1000 { max-width: 1000px; margin: 0 auto; }
+        .container-1200 { max-width: 1200px; margin: 0 auto; }
+        .text-center { text-align: center; }
+        .mb-10 { margin-bottom: 2.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-10 { margin-top: 2.5rem; }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 44px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: #2B4C7E;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #2B4C7E;
+            margin-bottom: 2.5rem;
+        }
+        .subtitle {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #6b7280;
+        }
+        .grid-2col {
+            display: grid;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        @media (min-width: 768px) {
+            .grid-2col {
+                grid-template-columns: 350px 1fr;
+                gap: 3rem;
+            }
+        }
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto 1rem auto;
+        }
+        .profile-info {
+            text-align: center;
+        }
+        .profile-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2B4C7E;
+            margin-bottom: 0.25rem;
+        }
+        .profile-title {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .right-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        blockquote {
+            border-left: 4px solid #2B4C7E;
+            padding-left: 1.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            font-style: italic;
+            font-size: 19px;
+            line-height: 1.5;
+            color: #2B4C7E;
+        }
+        blockquote footer {
+            margin-top: 0.75rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: #2B4C7E;
+            font-style: normal;
+        }
+        .story-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6b7280;
+        }
+        .story-text p { margin-bottom: 1.25rem; }
+        .border-b {
+            border-bottom: 1px solid rgba(229, 231, 235, 0.4);
+        }
+        .credentials-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        @media (min-width: 640px) {
+            .credentials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .credential-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-left: 3px solid #2B4C7E;
+            border-radius: 0.75rem;
+        }
+        .credential-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #E8EDF5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .values-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .values-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .value-item { text-align: center; }
+        .value-item h3 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #2B4C7E;
+            margin-bottom: 0.5rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background-color: #2B4C7E;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header would go here -->
+
+    <main>
+        <!-- About Section - Heading Only -->
+        <section class="bg-card section">
+            <div class="container-800 text-center">
+                <h1>About Tabber</h1>
+                <p class="mt-3 subtitle">CPA-qualified financial management built on accuracy, transparency, and personalized service.</p>
+            </div>
+        </section>
+
+        <!-- Photo, Quote & Founding Story - All in One Section -->
+        <section class="bg-secondary section border-b">
+            <div class="container-1200">
+                <div class="grid-2col">
+                    <div>
+                        <img src="/images/profile-photo.jpg" alt="Faysal El Masri, Founder & CPA" class="profile-img">
+                        <div class="profile-info">
+                            <p class="profile-name">Faysal El Masri, CPA</p>
+                            <p class="profile-title">Founder of Tabber</p>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <blockquote>
+                            "I saw too many FMHC families struggling with compliance and reporting requirements that distracted them from what really mattered — caring for their loved ones."
+                            <footer>— Faysal El Masri, CPA | Founder of Tabber</footer>
+                        </blockquote>
+
+                        <div class="story-text">
+                            <p>Tabber was founded with a simple belief: every family and small business deserves accurate, professional financial management — without the complexity or cost of a large accounting firm.</p>
+                            <p>With CPA qualifications and deep expertise in both small business bookkeeping and Family-Managed Home Care programs, Tabber delivers the precision of a professional firm with the attentiveness of a dedicated partner.</p>
+                            <p>Based in Ontario, Tabber serves families and businesses across the province, providing remote bookkeeping services that are timely, accurate, and always compliant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials & Qualifications -->
+        <section class="bg-card section">
+            <div class="container-1200">
+                <h2 class="text-center">Credentials & Qualifications</h2>
+                <div class="credentials-grid">
+                    <div class="credential-card">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B4C7E" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #2B4C7E; margin-bottom: 0.375rem;">CPA Designation</h3>
+                            <p style="font-size: 14px; line-height: 1.65; color: #6b7280;">Chartered Professional Accountant qualification ensuring the highest standards of financial accuracy and ethics.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B4C7E" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #2B4C7E; margin-bottom: 0.375rem;">Professional Insurance</h3>
+                            <p style="font-size: 14px; line-height: 1.65; color: #6b7280;">Full professional liability coverage protecting your financial operations and giving you peace of mind.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B4C7E" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #2B4C7E; margin-bottom: 0.375rem;">FMHC Certified</h3>
+                            <p style="font-size: 14px; line-height: 1.65; color: #6b7280;">Specialized training and ongoing education in Ontario Health atHome FMHC program requirements and compliance.</p>
+                        </div>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B4C7E" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #2B4C7E; margin-bottom: 0.375rem;">CPA Ontario Member</h3>
+                            <p style="font-size: 14px; line-height: 1.65; color: #6b7280;">Active member of CPA Ontario with continuing professional development and adherence to professional standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section class="bg-secondary section">
+            <div class="container-1200">
+                <h2 class="text-center">Our Approach</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h3>Accuracy</h3>
+                        <p style="font-size: 14px; line-height: 1.65; color: #6b7280; max-width: 280px; margin: 0 auto;">Every transaction is recorded correctly. Every report is verified. Your financial data is reliable.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Transparency</h3>
+                        <p style="font-size: 14px; line-height: 1.65; color: #6b7280; max-width: 280px; margin: 0 auto;">Clear communication, straightforward pricing, and no surprises. You always know where things stand.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Personalized Service</h3>
+                        <p style="font-size: 14px; line-height: 1.65; color: #6b7280; max-width: 280px; margin: 0 auto;">Your business is unique. We tailor our approach to fit your specific needs and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-cta section">
+            <div class="container-800 text-center">
+                <h2 style="font-size: 34px;">Ready to Work Together?</h2>
+                <p class="mt-3" style="font-size: 15px; line-height: 1.6; color: rgba(43, 76, 126, 0.8);">Reach out to our team and see how Tabber can simplify your financial management.</p>
+                <a href="/contact" class="cta-btn mt-6">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer would go here -->
+</body>
+</html>

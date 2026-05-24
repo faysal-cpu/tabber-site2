@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Design Options</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #E8EDF5; padding: 2rem; }
+        .option { background: white; padding: 2rem; margin-bottom: 3rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .option h2 { color: #2B4C7E; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
+        .option-desc { color: #666; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .btn-outline { border: 2px solid #2B4C7E; color: #2B4C7E; padding: 0.5rem 1.5rem; border-radius: 0.5rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; }
+    </style>
+</head>
+<body>
+
+<!-- OPTION A: No Outer Wrapper - Just Two Cards Side by Side -->
+<div class="option">
+    <h2>Option A: No Outer Wrapper - Clean Cards Side by Side</h2>
+    <p class="option-desc">Remove the outer container entirely. Just show section title and two clean cards side by side.</p>
+
+    <div style="max-width: 900px; background: #E8EDF5; padding: 2rem; border-radius: 1rem;">
+        <!-- Section Title -->
+        <div style="margin-bottom: 1.5rem;">
+            <h4 style="font-family: serif; font-size: 1.125rem; font-weight: bold; color: #2B4C7E; margin-bottom: 0.25rem;">Compliance Checklists</h4>
+            <p style="font-size: 0.75rem; color: #666;">Download our helpful references to help you stay organised and on track.</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+            <!-- Bookkeeping -->
+            <div style="background: white; border-left: 4px solid #2B4C7E; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                    </div>
+                    <div>
+                        <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.25rem;">Bookkeeping Checklist</h5>
+                        <p style="font-size: 0.8rem; color: #666;">What you need to stay compliant with Ontario Health atHome.</p>
+                    </div>
+                </div>
+                <button class="btn-outline" style="width: 100%;">
+                    <span>📥</span> Download PDF
+                </button>
+            </div>
+
+            <!-- Monthly -->
+            <div style="background: white; border-left: 4px solid #2B4C7E; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                    </div>
+                    <div>
+                        <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.25rem;">Monthly Submission Checklist</h5>
+                        <p style="font-size: 0.8rem; color: #666;">What to track, collect, and submit each month to stay compliant.</p>
+                    </div>
+                </div>
+                <button class="btn-outline" style="width: 100%;">
+                    <span>📥</span> Download PDF
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION B: Keep Outer Card, Simpler Inner Cards -->
+<div class="option">
+    <h2>Option B: Outer Card with Simpler Inner Style</h2>
+    <p class="option-desc">Keep the outer white card, but inner cards are just white with left accent - no gradient or full borders.</p>
+
+    <div style="max-width: 900px; background: #E8EDF5; padding: 2rem; border-radius: 1rem;">
+        <div style="background: white; border-left: 4px solid #2B4C7E; border-right: 4px solid #2B4C7E; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <!-- Title -->
+            <div style="margin-bottom: 1.25rem;">
+                <h4 style="font-family: serif; font-size: 1.0625rem; font-weight: bold; color: #2B4C7E; margin-bottom: 0.25rem;">Compliance Checklists</h4>
+                <p style="font-size: 0.75rem; color: #666;">Download our helpful references to help you stay organised and on track.</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <!-- Bookkeeping -->
+                <div style="border-left: 3px solid #2B4C7E; padding-left: 1rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                        </div>
+                        <div>
+                            <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.25rem;">Bookkeeping Checklist</h5>
+                            <p style="font-size: 0.8rem; color: #666;">What you need to stay compliant with Ontario Health atHome.</p>
+                        </div>
+                    </div>
+                    <button class="btn-outline" style="width: 100%;">
+                        <span>📥</span> Download PDF
+                    </button>
+                </div>
+
+                <!-- Monthly -->
+                <div style="border-left: 3px solid #2B4C7E; padding-left: 1rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                        </div>
+                        <div>
+                            <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.25rem;">Monthly Submission Checklist</h5>
+                            <p style="font-size: 0.8rem; color: #666;">What to track, collect, and submit each month to stay compliant.</p>
+                        </div>
+                    </div>
+                    <button class="btn-outline" style="width: 100%;">
+                        <span>📥</span> Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION C: Horizontal List Style -->
+<div class="option">
+    <h2>Option C: Clean Horizontal List</h2>
+    <p class="option-desc">Vertical list format - each checklist as a clean horizontal row.</p>
+
+    <div style="max-width: 900px; background: #E8EDF5; padding: 2rem; border-radius: 1rem;">
+        <div style="background: white; border-left: 4px solid #2B4C7E; border-right: 4px solid #2B4C7E; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <!-- Title -->
+            <div style="margin-bottom: 1.25rem;">
+                <h4 style="font-family: serif; font-size: 1.0625rem; font-weight: bold; color: #2B4C7E; margin-bottom: 0.25rem;">Compliance Checklists</h4>
+                <p style="font-size: 0.75rem; color: #666;">Download our helpful references to help you stay organised and on track.</p>
+            </div>
+
+            <!-- List Items -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Bookkeeping -->
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #F9FAFB; border-radius: 0.5rem; border-left: 3px solid #2B4C7E;">
+                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.125rem;">Bookkeeping Checklist</h5>
+                        <p style="font-size: 0.8rem; color: #666;">What you need to stay compliant with Ontario Health atHome.</p>
+                    </div>
+                    <button class="btn-outline" style="flex-shrink: 0;">
+                        <span>📥</span> Download PDF
+                    </button>
+                </div>
+
+                <!-- Monthly -->
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #F9FAFB; border-radius: 0.5rem; border-left: 3px solid #2B4C7E;">
+                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="color: #2B4C7E; font-size: 1.25rem;">📥</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 0.95rem; margin-bottom: 0.125rem;">Monthly Submission Checklist</h5>
+                        <p style="font-size: 0.8rem; color: #666;">What to track, collect, and submit each month to stay compliant.</p>
+                    </div>
+                    <button class="btn-outline" style="flex-shrink: 0;">
+                        <span>📥</span> Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OPTION D: Super Clean - No Outer Card, Minimal Inner Cards -->
+<div class="option">
+    <h2>Option D: Minimal & Clean - No Nesting</h2>
+    <p class="option-desc">Cleanest option - section title with two simple cards, no outer wrapper at all.</p>
+
+    <div style="max-width: 900px; background: #E8EDF5; padding: 2rem; border-radius: 1rem;">
+        <!-- Just Title -->
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <h4 style="font-family: serif; font-size: 1.125rem; font-weight: bold; color: #2B4C7E; margin-bottom: 0.25rem;">Compliance Checklists</h4>
+            <p style="font-size: 0.8rem; color: #666;">Download our helpful references to help you stay organised and on track.</p>
+        </div>
+
+        <!-- Simple Cards -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;">
+            <!-- Bookkeeping -->
+            <div style="background: white; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-top: 3px solid #2B4C7E;">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <div style="width: 3rem; height: 3rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                        <span style="color: #2B4C7E; font-size: 1.5rem;">📥</span>
+                    </div>
+                    <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 1rem; margin-bottom: 0.5rem;">Bookkeeping Checklist</h5>
+                    <p style="font-size: 0.8rem; color: #666; line-height: 1.4;">What you need to stay compliant with Ontario Health atHome.</p>
+                </div>
+                <button class="btn-outline" style="width: 100%; justify-content: center;">
+                    <span>📥</span> Download PDF
+                </button>
+            </div>
+
+            <!-- Monthly -->
+            <div style="background: white; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-top: 3px solid #2B4C7E;">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <div style="width: 3rem; height: 3rem; border-radius: 50%; background: #E8EDF5; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                        <span style="color: #2B4C7E; font-size: 1.5rem;">📥</span>
+                    </div>
+                    <h5 style="font-family: serif; font-weight: bold; color: #2B4C7E; font-size: 1rem; margin-bottom: 0.5rem;">Monthly Submission Checklist</h5>
+                    <p style="font-size: 0.8rem; color: #666; line-height: 1.4;">What to track, collect, and submit each month to stay compliant.</p>
+                </div>
+                <button class="btn-outline" style="width: 100%; justify-content: center;">
+                    <span>📥</span> Download PDF
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
