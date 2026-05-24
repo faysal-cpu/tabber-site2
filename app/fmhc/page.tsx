@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send, ChevronUp } from "lucide-react"
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for agency or independent contractor arrangements." },
@@ -45,6 +45,19 @@ const onboardingSteps = [
 
 export default function FmhcPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > window.innerHeight)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -485,6 +498,18 @@ export default function FmhcPage() {
             )}
           </div>
         </section>
+
+        {/* Back to Top Button */}
+        {showBackToTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 flex size-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ backgroundColor: '#2B4C7E' }}
+            aria-label="Back to top"
+          >
+            <ChevronUp className="size-6 text-white" />
+          </button>
+        )}
       </main>
       <SiteFooter />
     </div>
