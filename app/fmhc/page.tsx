@@ -211,26 +211,16 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Schedule O Credentials Callout */}
-        <section className="py-8 md:py-10" style={{ backgroundColor: '#E8EDF5' }}>
+        {/* Our Services - Combined Section */}
+        <section id="our-services" className="scroll-mt-20 bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
-                <Shield className="size-6 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified for Ontario Health atHome</h2>
-                <p className="text-[14px] leading-[1.7] text-muted-foreground">Your dedicated Bookkeeper meets all Schedule O qualification requirements under the FMHC program agreement, including a CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide all the required documentation for submission to Ontario Health atHome.</p>
-              </div>
+            <div className="mb-8 text-center">
+              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Services</h2>
+              <p className="text-[15px] leading-[1.7] text-muted-foreground">End-to-end FMHC bookkeeping — so you never miss a deadline or risk your funding.</p>
             </div>
-          </div>
-        </section>
 
-        {/* How We Help - more spacing, taglines */}
-        <section id="how-we-help" className="scroll-mt-20 bg-card py-10 md:py-14">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">How We Help</h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            {/* Service Cards */}
+            <div className="mb-10 grid gap-6 md:grid-cols-2">
               {steps.map((step) => {
                 const Icon = step.icon
                 return (
@@ -246,33 +236,39 @@ export default function FmhcPage() {
                 )
               })}
             </div>
+
+            {/* Also Included */}
+            <div className="mx-auto max-w-[900px] rounded-xl border-2 border-[#2B4C7E]/20 bg-card p-8 shadow-sm">
+              <h3 className="mb-5 text-center font-serif text-[18px] font-semibold text-navy">Also Included</h3>
+              <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                {complianceItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="mt-0.5 size-4 shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
+                    <span className="text-[14px] leading-[1.6] text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
-        {/* What We Handle For You */}
-        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        {/* Schedule O Credentials Callout */}
+        <section className="bg-card py-8 md:py-10">
           <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
-              <div className="md:flex-[0.4]">
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[30px]">What We Handle For You</h2>
-                <p className="mt-4 max-w-[420px] text-[15px] leading-[1.7] text-muted-foreground">We handle your FMHC bookkeeping end-to-end — so you never miss a deadline or risk your funding.</p>
+            <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
+                <Shield className="size-6 text-white" strokeWidth={2} />
               </div>
-              <div className="md:flex-[0.6]">
-                <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                  {complianceItems.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <Check className="mt-0.5 size-4 shrink-0" style={{ color: '#2B4C7E' }} strokeWidth={2.5} />
-                      <span className="text-[14px] leading-[1.6] text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div>
+                <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified for Ontario Health atHome</h2>
+                <p className="text-[14px] leading-[1.7] text-muted-foreground">Your dedicated Bookkeeper meets all Schedule O qualification requirements under the FMHC program agreement, including a CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide all the required documentation for submission to Ontario Health atHome.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Pricing Example - MORE PROMINENT */}
-        <section className="bg-card py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
             <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
@@ -285,7 +281,7 @@ export default function FmhcPage() {
         </section>
 
         {/* FMHC Resources - Guide + Checklists */}
-        <section className="bg-secondary py-8 md:py-10">
+        <section className="bg-card py-8 md:py-10">
           <div className="mx-auto max-w-[900px] px-6">
             <div className="flex flex-col gap-4">
               {/* Guide Card */}
@@ -352,7 +348,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What Happens After You Reach Out */}
-        <section className="bg-card py-12 md:py-16">
+        <section className="bg-secondary py-12 md:py-16">
           <div className="mx-auto max-w-[1100px] px-6">
             <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
@@ -374,7 +370,7 @@ export default function FmhcPage() {
         </section>
 
         {/* FAQ Section - with borders and icons */}
-        <section className="bg-secondary py-10 md:py-14">
+        <section className="bg-card py-10 md:py-14">
           <div className="mx-auto max-w-[800px] px-6">
             <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Questions</h2>
             <div className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
