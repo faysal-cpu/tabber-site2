@@ -282,7 +282,7 @@ export default function FmhcPage() {
         </section>
 
         {/* What Happens After You Reach Out */}
-        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
+        <section className="py-12 md:py-16 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
             <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
