@@ -30,13 +30,12 @@ const fmhcResources = [
     isDownload: true,
   },
   {
-    icon: FileText,
-    title: "Monthly Reporting Template",
-    description: "Template for organizing your monthly FMHC expenses and tracking your funding allocation.",
-    type: "Coming Soon",
-    link: "#",
-    isDownload: false,
-    comingSoon: true,
+    icon: Download,
+    title: "Monthly Submission Checklist",
+    description: "Step-by-step checklist for submitting your monthly FMHC financial report on time and staying compliant.",
+    type: "PDF Download",
+    link: "/downloads/Tabber - FMHC Monthly Submission Checklist.pdf",
+    isDownload: true,
   },
 ]
 

@@ -227,10 +227,31 @@ export default function FmhcPage() {
                 <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
               </div>
               <div className="flex-1">
-                <h3 className="font-serif text-[20px] font-bold text-navy">Free FMHC Bookkeeping Checklist</h3>
+                <h3 className="font-serif text-[20px] font-bold text-navy">FMHC Bookkeeping Checklist</h3>
                 <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome.<br />Download our quick-reference PDF.</p>
               </div>
               <Link href="/downloads/Tabber - FMHC Bookkeeping Checklist.pdf" download target="_blank">
+                <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
+                  <Download className="size-4" />
+                  Download PDF
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Monthly Submission Checklist CTA */}
+        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 border-r-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E', borderRightColor: '#2B4C7E' }}>
+              <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-serif text-[20px] font-bold text-navy">FMHC Monthly Submission Checklist</h3>
+                <p className="mt-1 text-sm text-muted-foreground">What to track, collect, and submit each month to stay compliant.<br />Download our quick-reference PDF.</p>
+              </div>
+              <Link href="/downloads/Tabber - FMHC Monthly Submission Checklist.pdf" download target="_blank">
                 <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
                   <Download className="size-4" />
                   Download PDF
