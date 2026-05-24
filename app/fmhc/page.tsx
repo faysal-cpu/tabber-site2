@@ -237,9 +237,9 @@ export default function FmhcPage() {
               })}
             </div>
 
-            {/* Every Detail, Taken Care Of */}
+            {/* What's Covered */}
             <div className="mx-auto max-w-[900px] rounded-xl border-2 border-[#2B4C7E]/20 bg-card p-8 shadow-sm">
-              <h3 className="mb-5 text-center font-serif text-[18px] font-semibold text-navy">Every Detail, Taken Care Of</h3>
+              <h3 className="mb-5 text-center font-serif text-[18px] font-semibold text-navy">What's Covered</h3>
               <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
                 {complianceItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -305,7 +305,7 @@ export default function FmhcPage() {
               <div className="bg-white rounded-xl p-6 shadow-md" style={{ borderLeft: '4px solid #2B4C7E', borderRight: '4px solid #2B4C7E', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
                 <div className="mb-5">
                   <h4 className="font-serif text-[17px] font-bold text-navy">Compliance Checklists</h4>
-                  <p className="text-xs text-muted-foreground mt-1">Download our helpful references to help you stay organised and on track.</p>
+                  <p className="text-xs text-muted-foreground mt-1">Download our references to help you stay organised and on track.</p>
                 </div>
                 <div className="flex flex-col gap-4">
                   {/* Bookkeeping Checklist */}
