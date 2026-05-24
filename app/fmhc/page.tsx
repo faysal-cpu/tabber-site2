@@ -227,7 +227,7 @@ export default function FmhcPage() {
                 </div>
                 <div className="flex flex-col gap-4">
                   {/* Bookkeeping Checklist */}
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-secondary rounded-lg" style={{ borderLeft: '3px solid #2B4C7E' }}>
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-white rounded-lg border border-border" style={{ borderLeft: '3px solid #2B4C7E' }}>
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                       <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
                     </div>
@@ -244,7 +244,7 @@ export default function FmhcPage() {
                   </div>
 
                   {/* Monthly Submission Checklist */}
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-secondary rounded-lg" style={{ borderLeft: '3px solid #2B4C7E' }}>
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-white rounded-lg border border-border" style={{ borderLeft: '3px solid #2B4C7E' }}>
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                       <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
                     </div>
