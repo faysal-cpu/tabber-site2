@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send, ChevronUp } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send, ChevronUp, DollarSign } from "lucide-react"
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for agency or independent contractor arrangements." },
@@ -252,29 +252,30 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Schedule O Credentials Callout */}
+        {/* Credentials & Pricing - Consistent Cards */}
         <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
           <div className="mx-auto max-w-[1200px] px-6">
-            <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-sm">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
-                <Shield className="size-6 text-white" strokeWidth={2} />
+            <div className="flex flex-col gap-6">
+              {/* Fully Qualified */}
+              <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-md">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
+                  <Shield className="size-6 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                  <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified for Ontario Health atHome</h2>
+                  <p className="text-[14px] leading-[1.7] text-muted-foreground">Your dedicated Bookkeeper meets all Schedule O qualification requirements under the FMHC program agreement, including a CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide all the required documentation for submission to Ontario Health atHome.</p>
+                </div>
               </div>
-              <div>
-                <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">Fully Qualified for Ontario Health atHome</h2>
-                <p className="text-[14px] leading-[1.7] text-muted-foreground">Your dedicated Bookkeeper meets all Schedule O qualification requirements under the FMHC program agreement, including a CPA designation in good standing, professional liability insurance, National Payroll Institute membership, and a registered business number. We provide all the required documentation for submission to Ontario Health atHome.</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Pricing Example - MORE PROMINENT */}
-        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
-          <div className="mx-auto max-w-[900px] px-6">
-            <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
-              <h2 className="font-serif text-[32px] font-bold text-navy md:text-[40px] leading-tight">You will never be charged out-of-pocket.</h2>
-              <div className="mx-auto mt-6 max-w-[600px]">
-                <p className="text-[16px] font-semibold text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
+              {/* Transparent Pricing */}
+              <div className="flex items-center gap-6 rounded-xl border-2 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-6 md:p-8 shadow-md">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#2B4C7E]">
+                  <DollarSign className="size-6 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                  <h2 className="mb-2 font-serif text-[20px] font-bold text-navy md:text-[22px]">You will never be charged out-of-pocket</h2>
+                  <p className="text-[14px] leading-[1.7] text-muted-foreground">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
+                </div>
               </div>
             </div>
           </div>
