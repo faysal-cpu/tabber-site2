@@ -198,65 +198,73 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Complete Guide CTA */}
+        {/* FMHC Resources - Guide + Checklists */}
         <section className="py-8 md:py-10" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[900px] px-6">
-            <div className="relative flex flex-col items-center gap-6 rounded-xl bg-gradient-to-br from-white to-[#F9FAFB] border-2 p-8 shadow-lg text-center md:flex-row md:text-left" style={{ borderColor: '#2B4C7E' }}>
-              <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#2B4C7E' }}>
-                <BookOpen className="size-7 text-white" strokeWidth={1.5} />
+            <div className="flex flex-col gap-4">
+              {/* Guide Card */}
+              <div className="relative flex flex-col items-center gap-6 rounded-xl bg-gradient-to-br from-white to-[#F9FAFB] border-2 p-6 shadow-lg text-center md:flex-row md:text-left" style={{ borderColor: '#2B4C7E' }}>
+                <div className="flex size-14 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#2B4C7E' }}>
+                  <BookOpen className="size-7 text-white" strokeWidth={1.5} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-serif text-[18px] font-bold text-navy md:text-[20px]">Complete Guide to Family Managed Home Care (FMHC) in Ontario</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">Everything you need to know about eligibility, application, responsibilities, reporting, and avoiding common mistakes.</p>
+                </div>
+                <Link href="/resources/fmhc">
+                  <Button className="shrink-0 gap-2 rounded-lg px-6 text-white transition-all duration-200 hover:shadow-lg active:scale-95" style={{ backgroundColor: '#2B4C7E' }}>
+                    Read Guide
+                    <ChevronRight className="size-4" />
+                  </Button>
+                </Link>
               </div>
-              <div className="flex-1">
-                <h3 className="font-serif text-[20px] font-bold text-navy">Complete Guide to Family Managed Home Care (FMHC) in Ontario</h3>
-                <p className="mt-1 text-sm text-muted-foreground">Everything you need to know about eligibility, application, responsibilities, reporting, and avoiding common mistakes.</p>
-              </div>
-              <Link href="/resources/fmhc">
-                <Button className="shrink-0 gap-2 rounded-lg px-6 text-white transition-all duration-200 hover:shadow-lg active:scale-95" style={{ backgroundColor: '#2B4C7E' }}>
-                  Read Guide
-                  <ChevronRight className="size-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
 
-        {/* Downloadable Checklist CTA */}
-        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[900px] px-6">
-            <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 border-r-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E', borderRightColor: '#2B4C7E' }}>
-              <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-serif text-[20px] font-bold text-navy">FMHC Bookkeeping Checklist</h3>
-                <p className="mt-1 text-sm text-muted-foreground">What you need to stay compliant with Ontario Health atHome.<br />Download our quick-reference PDF.</p>
-              </div>
-              <Link href="/downloads/Tabber - FMHC Bookkeeping Checklist.pdf" download target="_blank">
-                <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
-                  <Download className="size-4" />
-                  Download PDF
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+              {/* Checklists Card */}
+              <div className="bg-white rounded-xl p-6 shadow-md" style={{ borderLeft: '4px solid #2B4C7E', borderRight: '4px solid #2B4C7E', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
+                <div className="mb-4">
+                  <h4 className="font-serif text-[17px] font-bold text-navy">FMHC Compliance Checklists</h4>
+                  <p className="text-xs text-muted-foreground mt-1">Helpful references to help you stay organised and on track.</p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {/* Bookkeeping Checklist */}
+                  <div className="flex flex-col gap-4 p-4 bg-secondary rounded-lg">
+                    <div className="flex items-start gap-3">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                        <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="font-serif text-[15px] font-bold text-navy">FMHC Bookkeeping Checklist</h5>
+                        <p className="text-xs text-muted-foreground mt-1">What you need to stay compliant with Ontario Health atHome.</p>
+                      </div>
+                    </div>
+                    <Link href="/downloads/Tabber - FMHC Bookkeeping Checklist.pdf" download target="_blank" className="w-full">
+                      <Button variant="outline" className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200 text-sm">
+                        <Download className="size-4" />
+                        Download PDF
+                      </Button>
+                    </Link>
+                  </div>
 
-        {/* Monthly Submission Checklist CTA */}
-        <section className="py-8 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[900px] px-6">
-            <div className="relative flex flex-col items-center gap-6 rounded-xl border-l-4 border-r-4 bg-white p-8 shadow-md text-center md:flex-row md:text-left" style={{ borderLeftColor: '#2B4C7E', borderRightColor: '#2B4C7E' }}>
-              <div className="flex size-16 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                <Download className="size-7" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+                  {/* Monthly Submission Checklist */}
+                  <div className="flex flex-col gap-4 p-4 bg-secondary rounded-lg">
+                    <div className="flex items-start gap-3">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                        <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="font-serif text-[15px] font-bold text-navy">FMHC Monthly Submission Checklist</h5>
+                        <p className="text-xs text-muted-foreground mt-1">What to track, collect, and submit each month to stay compliant.</p>
+                      </div>
+                    </div>
+                    <Link href="/downloads/Tabber - FMHC Monthly Submission Checklist.pdf" download target="_blank" className="w-full">
+                      <Button variant="outline" className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200 text-sm">
+                        <Download className="size-4" />
+                        Download PDF
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <div className="flex-1">
-                <h3 className="font-serif text-[20px] font-bold text-navy">FMHC Monthly Submission Checklist</h3>
-                <p className="mt-1 text-sm text-muted-foreground">What to track, collect, and submit each month to stay compliant.<br />Download our quick-reference PDF.</p>
-              </div>
-              <Link href="/downloads/Tabber - FMHC Monthly Submission Checklist.pdf" download target="_blank">
-                <Button variant="outline" className="shrink-0 gap-2 rounded-lg border-2 border-[#2B4C7E] px-6 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200">
-                  <Download className="size-4" />
-                  Download PDF
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
