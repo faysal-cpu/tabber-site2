@@ -227,7 +227,7 @@ export default function FmhcPage() {
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   {/* Bookkeeping Checklist */}
-                  <div className="flex flex-col gap-4 p-4 bg-secondary rounded-lg">
+                  <div className="flex flex-col gap-4 p-4 bg-gradient-to-br from-[#E8EDF5] to-white border-2 border-[#2B4C7E] rounded-lg shadow-sm">
                     <div className="flex items-start gap-3">
                       <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                         <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
@@ -246,7 +246,7 @@ export default function FmhcPage() {
                   </div>
 
                   {/* Monthly Submission Checklist */}
-                  <div className="flex flex-col gap-4 p-4 bg-secondary rounded-lg">
+                  <div className="flex flex-col gap-4 p-4 bg-gradient-to-br from-[#E8EDF5] to-white border-2 border-[#2B4C7E] rounded-lg shadow-sm">
                     <div className="flex items-start gap-3">
                       <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                         <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
