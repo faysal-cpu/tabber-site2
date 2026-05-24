@@ -236,21 +236,8 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* Pricing Example - MORE PROMINENT */}
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[900px] px-6">
-            <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
-              <h2 className="font-serif text-[32px] font-bold text-navy md:text-[40px] leading-tight">You will never be charged out-of-pocket.</h2>
-              <div className="mx-auto mt-6 max-w-[600px]">
-                <p className="text-[16px] font-semibold text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* What We Handle For You */}
-        <section className="bg-card py-10 md:py-14">
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
               <div className="md:flex-[0.4]">
@@ -266,6 +253,19 @@ export default function FmhcPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Example - MORE PROMINENT */}
+        <section className="bg-card py-12 md:py-16">
+          <div className="mx-auto max-w-[900px] px-6">
+            <div className="rounded-2xl border-4 border-[#2B4C7E] bg-gradient-to-br from-[#E8EDF5] to-white p-8 md:p-10 text-center shadow-lg">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#2B4C7E' }}>Transparent Pricing</p>
+              <h2 className="font-serif text-[32px] font-bold text-navy md:text-[40px] leading-tight">You will never be charged out-of-pocket.</h2>
+              <div className="mx-auto mt-6 max-w-[600px]">
+                <p className="text-[16px] font-semibold text-navy">All FMHC bookkeeping services are delivered fully within your approved funding allocation.</p>
               </div>
             </div>
           </div>
