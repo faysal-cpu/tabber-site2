@@ -237,9 +237,9 @@ export default function FmhcPage() {
               })}
             </div>
 
-            {/* Also Included */}
+            {/* Every Detail, Taken Care Of */}
             <div className="mx-auto max-w-[900px] rounded-xl border-2 border-[#2B4C7E]/20 bg-card p-8 shadow-sm">
-              <h3 className="mb-5 text-center font-serif text-[18px] font-semibold text-navy">Also Included</h3>
+              <h3 className="mb-5 text-center font-serif text-[18px] font-semibold text-navy">Every Detail, Taken Care Of</h3>
               <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
                 {complianceItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
