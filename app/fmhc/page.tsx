@@ -281,9 +281,32 @@ export default function FmhcPage() {
           </div>
         </section>
 
-        {/* FMHC Resources - Guide + Checklists */}
+        {/* What Happens After You Reach Out */}
+        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {onboardingSteps.map((step, i) => {
+                const Icon = step.icon
+                return (
+                  <div key={step.title} className="relative rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/30 p-6 text-center shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
+                    <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-[#2B4C7E] shadow-md">
+                      <Icon className="size-7 text-white" strokeWidth={2} />
+                    </div>
+                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Step {i + 1}</span>
+                    <h3 className="mb-3 font-serif text-[17px] font-bold text-navy">{step.title}</h3>
+                    <p className="text-[14px] leading-[1.7] text-muted-foreground">{step.description}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Resources & Guides */}
         <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
           <div className="mx-auto max-w-[900px] px-6">
+            <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Resources & Guides</h2>
             <div className="flex flex-col gap-4">
               {/* Guide Card */}
               <div className="relative flex flex-col items-center gap-6 rounded-xl bg-gradient-to-br from-white to-[#F9FAFB] border-2 p-6 shadow-lg text-center md:flex-row md:text-left" style={{ borderColor: '#2B4C7E' }}>
@@ -344,28 +367,6 @@ export default function FmhcPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What Happens After You Reach Out */}
-        <section className="bg-gray-50 py-12 md:py-16 border-t border-border/30">
-          <div className="mx-auto max-w-[1100px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              {onboardingSteps.map((step, i) => {
-                const Icon = step.icon
-                return (
-                  <div key={step.title} className="relative rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/30 p-6 text-center shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
-                    <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-[#2B4C7E] shadow-md">
-                      <Icon className="size-7 text-white" strokeWidth={2} />
-                    </div>
-                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Step {i + 1}</span>
-                    <h3 className="mb-3 font-serif text-[17px] font-bold text-navy">{step.title}</h3>
-                    <p className="text-[14px] leading-[1.7] text-muted-foreground">{step.description}</p>
-                  </div>
-                )
-              })}
             </div>
           </div>
         </section>
