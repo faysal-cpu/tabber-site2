@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { Award, Shield, FileCheck, Users } from "lucide-react"
+import { Award, Shield, FileCheck, Users, Target, Eye, Puzzle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About | Tabber",
@@ -21,9 +21,9 @@ const credentials = [
 ]
 
 const values = [
-  { title: "Accuracy", description: "Transactions are recorded carefully, reports are reviewed, and records are kept consistent over time. Your financial information is dependable and ready when it's needed." },
-  { title: "Transparency", description: "Clear communication and straightforward pricing at every step. You know what's being handled, why it matters, and where things stand." },
-  { title: "Tailored Support", description: "Support shaped around how you actually operate — whether managing care funding or running a business — without unnecessary complexity or one-size-fits-all processes." },
+  { icon: Target, title: "Accuracy", description: "Transactions are recorded carefully, reports are reviewed, and records are kept consistent over time. Your financial information is dependable and ready when it's needed." },
+  { icon: Eye, title: "Transparency", description: "Clear communication and straightforward pricing at every step. You know what's being handled, why it matters, and where things stand." },
+  { icon: Puzzle, title: "Tailored Support", description: "Support shaped around how you actually operate — whether managing care funding or running a business — without unnecessary complexity or one-size-fits-all processes." },
 ]
 
 export default function AboutPage() {
@@ -91,14 +91,20 @@ export default function AboutPage() {
 
         <section className="bg-secondary py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
             <div className="grid gap-6 md:grid-cols-3">
-              {values.map((value) => (
-                <div key={value.title} className="text-center">
-                  <h3 className="mb-2 font-serif text-[20px] font-semibold text-navy">{value.title}</h3>
-                  <p className="mx-auto max-w-[280px] text-sm leading-[1.65] text-muted-foreground">{value.description}</p>
-                </div>
-              ))}
+              {values.map((value) => {
+                const Icon = value.icon
+                return (
+                  <div key={value.title} className="relative rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/30 p-6 text-center shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
+                    <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-[#2B4C7E] shadow-md">
+                      <Icon className="size-7 text-white" strokeWidth={2} />
+                    </div>
+                    <h3 className="mb-3 font-serif text-[17px] font-bold text-navy">{value.title}</h3>
+                    <p className="text-[14px] leading-[1.7] text-muted-foreground">{value.description}</p>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </section>
