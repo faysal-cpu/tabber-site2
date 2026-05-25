@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { Award, Shield, FileCheck, Users, Target, Eye, Puzzle } from "lucide-react"
+import { Award, Shield, FileCheck, Users, CheckSquare, FileSearch, Heart } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About | Tabber",
@@ -21,9 +21,9 @@ const credentials = [
 ]
 
 const values = [
-  { icon: Target, title: "Accuracy", description: "Transactions are recorded carefully, reports are reviewed, and records are kept consistent over time. Your financial information is dependable and ready when it's needed." },
-  { icon: Eye, title: "Transparency", description: "Clear communication and straightforward pricing at every step. You know what's being handled, why it matters, and where things stand." },
-  { icon: Puzzle, title: "Tailored Support", description: "Support shaped around how you actually operate — whether managing care funding or running a business — without unnecessary complexity or one-size-fits-all processes." },
+  { icon: CheckSquare, title: "Accuracy", description: "Transactions are recorded carefully, reports are reviewed, and records are kept consistent over time. Your financial information is dependable and ready when it's needed." },
+  { icon: FileSearch, title: "Transparency", description: "Clear communication and straightforward pricing at every step. You know what's being handled, why it matters, and where things stand." },
+  { icon: Heart, title: "Tailored Support", description: "Support shaped around how you actually operate — whether managing care funding or running a business — without unnecessary complexity or one-size-fits-all processes." },
 ]
 
 export default function AboutPage() {

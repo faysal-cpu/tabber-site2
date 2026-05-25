@@ -141,8 +141,7 @@ export default function ContactPage() {
               <div className="rounded-xl p-6 text-white" style={{ backgroundColor: '#1A2A44' }}>
                 <h3 className="font-serif text-base font-semibold">Office Hours</h3>
                 <div className="mt-2 space-y-1 text-sm text-white/70">
-                  <p>Monday - Friday: 9 AM - 5 PM EST</p>
-                  <p>Saturday - Sunday: Closed</p>
+                  <p>Monday - Sunday: 9 AM - 9 PM EST</p>
                 </div>
               </div>
             </div>

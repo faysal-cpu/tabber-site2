@@ -38,9 +38,9 @@ const faqs = [
 ]
 
 const onboardingSteps = [
-  { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to understand your needs and confirm your funding covers bookkeeping — no surprises, no out-of-pocket cost." },
-  { icon: FileText, title: "Review your funding & documents", description: "We confirm your funding covers bookkeeping and send you your onboarding guide." },
-  { icon: Sparkles, title: "Start within 7 days", description: "We take over your bookkeeping and reporting. You focus on care." },
+  { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to learn more about your setup and answer any questions." },
+  { icon: FileText, title: "Review your funding & documents", description: "We review your funding agreement and any relevant documents, and confirm your onboarding steps." },
+  { icon: Sparkles, title: "Start within 7 days", description: "You're in good hands! We take over your bookkeeping and reporting so you can focus on care." },
 ]
 
 export default function FmhcPage() {

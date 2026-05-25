@@ -23,7 +23,7 @@ const fmhcResources = [
   },
   {
     icon: Download,
-    title: "FMHC Bookkeeping Checklist",
+    title: "Bookkeeping Checklist",
     description: "Essential checklist for staying compliant with Ontario Health atHome requirements.",
     type: "PDF Download",
     link: "/downloads/Tabber - FMHC Bookkeeping Checklist.pdf",
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
               </div>
               <div>
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Resources</h2>
-                <p className="text-sm text-muted-foreground">Tools and guides for Family-Managed Home Care families</p>
+                <p className="text-sm text-muted-foreground">Tools and guides for families, SDMs, and caregivers</p>
               </div>
             </div>
 
