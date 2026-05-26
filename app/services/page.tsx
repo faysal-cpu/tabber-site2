@@ -250,8 +250,8 @@ export default function ServicesPage() {
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-muted-foreground">
               Every client is different. We provide clear, upfront quotes based
-              on the scope of work. No hidden fees, no surprises. Most FMHC
-              services are typically covered within your funding allocation.
+              on the scope of work. No hidden fees, no surprises. FMHC bookkeeping
+              services are delivered fully within your approved funding allocation.
             </p>
             <Button
               asChild

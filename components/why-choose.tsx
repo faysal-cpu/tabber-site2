@@ -23,7 +23,7 @@ const reasons = [
     icon: DollarSign,
     title: "Transparent Pricing",
     description:
-      "Clear, straightforward pricing with no hidden fees. FMHC services typically covered within funding allocation.",
+      "Clear, straightforward pricing with no hidden fees. FMHC bookkeeping delivered fully within approved funding allocation.",
   },
 ]
 
