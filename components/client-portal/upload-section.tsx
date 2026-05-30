@@ -207,7 +207,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
             <input
               ref={fileInputRef}
               type="file"
-              accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv"
+              accept=".pdf,.jpg,.jpeg,.png,.xlsx,.csv,.doc,.docx"
               onChange={handleInputChange}
               className="hidden"
               disabled={uploading}
@@ -222,7 +222,7 @@ export function UploadSection({ token, onUploadComplete }: UploadSectionProps) {
                     Drop files here or click to browse
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
-                    PDF, JPG, PNG, XLSX, CSV • Max 50MB each
+                    PDF, Word (DOC/DOCX), JPG, PNG, XLSX, CSV • Max 50MB each
                   </p>
                 </div>
               </div>

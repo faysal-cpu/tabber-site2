@@ -5,6 +5,8 @@ export const ALLOWED_MIME_TYPES = [
   'image/png',
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
   'text/csv',
+  'application/msword', // .doc
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .docx
 ] as const;
 
 // Allowed file extensions
@@ -15,6 +17,8 @@ export const ALLOWED_EXTENSIONS = [
   '.png',
   '.xlsx',
   '.csv',
+  '.doc',
+  '.docx',
 ] as const;
 
 // Blocked file extensions for security
@@ -46,4 +50,6 @@ export const MIME_TO_EXTENSION: Record<string, string> = {
   'image/png': '.png',
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': '.xlsx',
   'text/csv': '.csv',
+  'application/msword': '.doc',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': '.docx',
 };
