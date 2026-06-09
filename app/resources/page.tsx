@@ -26,7 +26,7 @@ const fmhcResources = [
     title: "Choosing Your FMHC Care Arrangement",
     description: "Compare agency, independent contractor, and direct hire models. Includes an interactive decision quiz to help you choose the right path.",
     type: "Decision Guide",
-    link: "/resources/agency-vs-contractor-vs-direct-hire",
+    link: "/resources/care-arrangement-guide",
     isDownload: false,
     featured: true,
   },

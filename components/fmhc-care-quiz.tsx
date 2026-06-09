@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, ChevronRight } from "lucide-react"
+import { CheckCircle2, ChevronRight, HelpCircle } from "lucide-react"
 
 type QuizAnswer = {
   text: string
