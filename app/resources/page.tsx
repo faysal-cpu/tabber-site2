@@ -22,6 +22,15 @@ const fmhcResources = [
     featured: true,
   },
   {
+    icon: Users,
+    title: "Choosing Your FMHC Care Arrangement",
+    description: "Compare agency, independent contractor, and direct hire models. Includes an interactive decision quiz to help you choose the right path.",
+    type: "Decision Guide",
+    link: "/resources/agency-vs-contractor-vs-direct-hire",
+    isDownload: false,
+    featured: true,
+  },
+  {
     icon: Download,
     title: "Bookkeeping Checklist",
     description: "Essential checklist for staying compliant with Ontario Health atHome requirements.",
