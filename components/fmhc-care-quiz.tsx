@@ -146,6 +146,15 @@ export function DecisionQuiz() {
     }
     setTotalScores(newScores)
 
+    // Track quiz answer in Google Analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'quiz_answer', {
+        event_category: 'Care Arrangement Quiz',
+        event_label: `Q${currentQuestion + 1}: ${selectedAnswer.text}`,
+        question_number: currentQuestion + 1,
+      })
+    }
+
     if (currentQuestion < activeQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
     } else {
@@ -162,6 +171,18 @@ export function DecisionQuiz() {
   }
 
   const result = showResult ? calculateResult(totalScores) : null
+
+  // Track quiz completion in Google Analytics
+  if (showResult && result && typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'quiz_complete', {
+      event_category: 'Care Arrangement Quiz',
+      event_label: result.title,
+      quiz_result: result.variant,
+      score_agency: totalScores.agency,
+      score_contractor: totalScores.contractor,
+      score_direct_hire: totalScores.directHire,
+    })
+  }
 
   if (showResult && result) {
     return (
@@ -226,7 +247,16 @@ export function DecisionQuiz() {
             Take our Interactive Quiz
           </h3>
           <Button
-            onClick={() => setStarted(true)}
+            onClick={() => {
+              setStarted(true)
+              // Track quiz start in Google Analytics
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'quiz_start', {
+                  event_category: 'Care Arrangement Quiz',
+                  event_label: 'Quiz Started',
+                })
+              }
+            }}
             className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white"
             style={{ backgroundColor: '#2B4C7E' }}
           >
