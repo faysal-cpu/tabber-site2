@@ -301,112 +301,6 @@ export default function CareArrangementGuidePage() {
             </div>
           </section>
 
-          {/* Side-by-Side Comparison */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
-            <div className="mx-auto max-w-[1200px] px-6">
-              <div className="mb-10 flex items-center gap-3">
-                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                  <FileText className="size-5 text-white" />
-                </div>
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Side-by-Side Comparison</h2>
-              </div>
-
-              {/* Desktop Table */}
-              <div className="hidden lg:block overflow-hidden rounded-2xl shadow-xl">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr style={{ backgroundColor: '#2B4C7E' }}>
-                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
-                        Factor
-                      </th>
-                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
-                        Agency
-                      </th>
-                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
-                        Independent Contractor
-                      </th>
-                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
-                        Direct Hire (Employee)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {comparisonData.map((row, index) => (
-                      <tr key={index} className="border-b" style={{ borderColor: '#E8EDF5' }}>
-                        <td className="bg-white p-5 text-[15px] font-semibold text-navy">
-                          {row.factor}
-                        </td>
-                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
-                          {row.agency}
-                        </td>
-                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
-                          {row.contractor}
-                        </td>
-                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
-                          {row.directHire}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Mobile Swipeable Cards */}
-              <div className="lg:hidden">
-                <p className="mb-4 text-center text-sm text-muted-foreground">
-                  Swipe to navigate →
-                </p>
-                <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
-                  <div className="flex gap-4 pb-4" style={{ width: `${comparisonData.length * 100}%` }}>
-                    {comparisonData.map((row, index) => (
-                      <div
-                        key={index}
-                        className="snap-center shrink-0 rounded-xl bg-white p-6 shadow-lg"
-                        style={{ width: `calc(${100 / comparisonData.length}% - 12px)`, minWidth: '85vw' }}
-                      >
-                        <h3 className="mb-5 font-serif text-[18px] font-bold text-navy border-b pb-3" style={{ borderColor: '#E8EDF5' }}>
-                          {row.factor}
-                        </h3>
-                        <div className="space-y-4">
-                          <div>
-                            <div className="mb-2 flex items-center gap-2">
-                              <Building2 className="size-4" style={{ color: '#2B4C7E' }} />
-                              <div className="text-[14px] font-semibold text-navy">Agency</div>
-                            </div>
-                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.agency}</div>
-                          </div>
-                          <div>
-                            <div className="mb-2 flex items-center gap-2">
-                              <Users className="size-4" style={{ color: '#2B4C7E' }} />
-                              <div className="text-[14px] font-semibold text-navy">Independent Contractor</div>
-                            </div>
-                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.contractor}</div>
-                          </div>
-                          <div>
-                            <div className="mb-2 flex items-center gap-2">
-                              <FileText className="size-4" style={{ color: '#2B4C7E' }} />
-                              <div className="text-[14px] font-semibold text-navy">Direct Hire</div>
-                            </div>
-                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.directHire}</div>
-                          </div>
-                        </div>
-                        <div className="mt-5 pt-4 border-t flex justify-center gap-2" style={{ borderColor: '#E8EDF5' }}>
-                          {comparisonData.map((_, i) => (
-                            <div
-                              key={i}
-                              className="h-1.5 w-1.5 rounded-full transition-all"
-                              style={{ backgroundColor: i === index ? '#2B4C7E' : '#E8EDF5' }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* A Closer Look - Tabs */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
@@ -525,6 +419,114 @@ export default function CareArrangementGuidePage() {
               </Tabs>
             </div>
           </section>
+
+
+          {/* Side-by-Side Comparison */}
+          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+            <div className="mx-auto max-w-[1200px] px-6">
+              <div className="mb-10 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <FileText className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Side-by-Side Comparison</h2>
+              </div>
+
+              {/* Desktop Table */}
+              <div className="hidden lg:block overflow-hidden rounded-2xl shadow-xl">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr style={{ backgroundColor: '#2B4C7E' }}>
+                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
+                        Factor
+                      </th>
+                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
+                        Agency
+                      </th>
+                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
+                        Independent Contractor
+                      </th>
+                      <th className="p-5 text-left font-serif text-[17px] font-semibold text-white">
+                        Direct Hire (Employee)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonData.map((row, index) => (
+                      <tr key={index} className="border-b" style={{ borderColor: '#E8EDF5' }}>
+                        <td className="bg-white p-5 text-[15px] font-semibold text-navy">
+                          {row.factor}
+                        </td>
+                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
+                          {row.agency}
+                        </td>
+                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
+                          {row.contractor}
+                        </td>
+                        <td className="bg-white p-5 text-[15px] leading-[1.6] text-navy/80">
+                          {row.directHire}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Swipeable Cards */}
+              <div className="lg:hidden">
+                <p className="mb-4 text-center text-sm text-muted-foreground">
+                  Swipe to navigate →
+                </p>
+                <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
+                  <div className="flex gap-4 pb-4" style={{ width: `${comparisonData.length * 100}%` }}>
+                    {comparisonData.map((row, index) => (
+                      <div
+                        key={index}
+                        className="snap-center shrink-0 rounded-xl bg-white p-6 shadow-lg"
+                        style={{ width: `calc(${100 / comparisonData.length}% - 12px)`, minWidth: '85vw' }}
+                      >
+                        <h3 className="mb-5 font-serif text-[18px] font-bold text-navy border-b pb-3" style={{ borderColor: '#E8EDF5' }}>
+                          {row.factor}
+                        </h3>
+                        <div className="space-y-4">
+                          <div>
+                            <div className="mb-2 flex items-center gap-2">
+                              <Building2 className="size-4" style={{ color: '#2B4C7E' }} />
+                              <div className="text-[14px] font-semibold text-navy">Agency</div>
+                            </div>
+                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.agency}</div>
+                          </div>
+                          <div>
+                            <div className="mb-2 flex items-center gap-2">
+                              <Users className="size-4" style={{ color: '#2B4C7E' }} />
+                              <div className="text-[14px] font-semibold text-navy">Independent Contractor</div>
+                            </div>
+                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.contractor}</div>
+                          </div>
+                          <div>
+                            <div className="mb-2 flex items-center gap-2">
+                              <FileText className="size-4" style={{ color: '#2B4C7E' }} />
+                              <div className="text-[14px] font-semibold text-navy">Direct Hire</div>
+                            </div>
+                            <div className="text-[15px] leading-[1.6] text-navy/80">{row.directHire}</div>
+                          </div>
+                        </div>
+                        <div className="mt-5 pt-4 border-t flex justify-center gap-2" style={{ borderColor: '#E8EDF5' }}>
+                          {comparisonData.map((_, i) => (
+                            <div
+                              key={i}
+                              className="h-1.5 w-1.5 rounded-full transition-all"
+                              style={{ backgroundColor: i === index ? '#2B4C7E' : '#E8EDF5' }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           {/* How to Choose */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
