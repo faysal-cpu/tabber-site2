@@ -23,7 +23,7 @@ import {
   FileCheck
 } from "lucide-react"
 import { DecisionQuiz } from "@/components/fmhc-care-quiz"
-import { ContactFormEmbed } from "@/components/contact-form-embed"
+import { Send } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
@@ -108,6 +108,7 @@ const faqs = [
 
 export default function CareArrangementGuidePage() {
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,6 +120,24 @@ export default function CareArrangementGuidePage() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+      setFormSubmitted(true)
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert("There was an error submitting the form. Please try again.")
+    }
   }
 
   return (
@@ -602,7 +621,99 @@ export default function CareArrangementGuidePage() {
                   Every FMHC situation is different. If you're unsure which path makes sense for your setup, feel free to reach out — we're happy to talk it through.
                 </p>
               </div>
-              <ContactFormEmbed />
+              {formSubmitted ? (
+                <div className="flex flex-col items-center justify-center rounded-xl bg-card p-12 text-center shadow-sm border border-border">
+                  <div className="mb-3 flex size-14 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                    <Send className="size-6" style={{ color: '#2B4C7E' }} />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-navy">Message Sent</h3>
+                  <p className="mt-2 max-w-[380px] text-sm text-muted-foreground">
+                    Thank you for reaching out. We will get back to you within one business day.
+                  </p>
+                  <Button
+                    onClick={() => setFormSubmitted(false)}
+                    className="mt-5 rounded-lg text-white"
+                    style={{ backgroundColor: '#2B4C7E' }}
+                  >
+                    Send Another Message
+                  </Button>
+                </div>
+              ) : (
+                <form
+                  name="care-arrangement-inquiry"
+                  onSubmit={handleFormSubmit}
+                  className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
+                >
+                  <input type="hidden" name="form-name" value="care-arrangement-inquiry" />
+                  <div className="space-y-5">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                        placeholder="Your full name"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2">
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-navy mb-2">
+                        Phone Number <span className="text-gray-400 text-xs font-normal">(optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">
+                        Anything you'd like us to know? <span className="text-gray-400 text-xs font-normal">(optional)</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={3}
+                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 resize-none"
+                        placeholder="Tell us a bit about your situation..."
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full rounded-lg px-8 py-3.5 text-[15px] font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200"
+                      style={{ backgroundColor: '#2B4C7E' }}
+                    >
+                      Send Message
+                    </button>
+
+                    <p className="text-center text-xs text-muted-foreground mt-3">
+                      We'll respond within 1 business day. No commitment required.
+                    </p>
+                  </div>
+                </form>
+              )}
             </div>
           </section>
 
