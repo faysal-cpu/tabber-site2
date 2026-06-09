@@ -123,16 +123,6 @@ export default function CareArrangementGuidePage() {
 
   return (
     <>
-      {/* Hidden form for Netlify detection */}
-      <form name="care-arrangement-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="care-arrangement-inquiry" />
-        <input type="hidden" name="bot-field" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <textarea name="message"></textarea>
-      </form>
-
       {/* JSON-LD Structured Data for SEO */}
       <script
         type="application/ld+json"
