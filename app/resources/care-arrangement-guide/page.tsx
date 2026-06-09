@@ -128,7 +128,7 @@ export default function CareArrangementGuidePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Choosing Your FMHC Care Arrangement: Agency, Contractor, or Direct Hire",
+            "headline": "Choosing Your FMHC Care Arrangement",
             "description": "Compare the three options for hiring care under Ontario's Family-Managed Home Care program — agency, independent contractor, or direct employee. A practical decision guide from Tabber.",
             "image": "https://tabber.ca/images/care-arrangement-guide.png",
             "datePublished": "2026-06-09",
@@ -171,7 +171,7 @@ export default function CareArrangementGuidePage() {
                 <span className="text-sm font-semibold">Decision Guide</span>
               </div>
               <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[38px] mb-4">
-                Choosing Your FMHC Care Arrangement: Agency, Contractor, or Direct Hire
+                Choosing Your FMHC Care Arrangement
               </h1>
               <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
                 A practical decision guide for FMHC families — compare agency, contractor, and direct-hire arrangements, and find the path that fits you and your family.
@@ -191,33 +191,82 @@ export default function CareArrangementGuidePage() {
             </div>
           </section>
 
-          {/* Lead Paragraph */}
-          <section style={{ backgroundColor: '#E8EDF5' }} className="py-12 md:py-16">
+          <WaveDivider fillColor="rgba(249, 250, 251, 0)" backgroundColor="#F9FAFB" />
+
+          {/* Care Arrangement Overview */}
+          <section className="bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
+              <h2 className="mb-6 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
+                Care Arrangement Overview
+              </h2>
               <p className="text-[17px] leading-[1.8] text-navy/90">
-                Choosing how to structure your care under FMHC is one of the first — and most important — decisions you'll make.
+                One of the first decisions a Family-Managed Home Care family makes — usually during Meeting 1 with Ontario Health atHome — is how to structure care. You have three options: contract with a registered agency, hire a care worker as an independent contractor, or hire them directly as an employee. The choice shapes your administrative load, your effective hourly rate, and the legal relationship between you and the person providing care.
               </p>
               <p className="mt-4 text-[17px] leading-[1.8] text-navy/90">
-                Agency, contractor, or employee all come with different tradeoffs. Below is a clear breakdown to help you decide what fits your situation.
+                There's no universal right answer. Below is a closer look at each path, a side-by-side comparison, and a short quiz to help you find a starting point.
               </p>
             </div>
           </section>
 
-          <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
+          {/* Three Options at a Glance */}
+          <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
+            <div className="mx-auto max-w-[1200px] px-6">
+              <h2 className="mb-10 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
+                The Three Options at a Glance
+              </h2>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {/* Agency Card */}
+                <div className="rounded-xl bg-white p-8 shadow-lg border-l-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                  <div className="mb-4 flex size-12 items-center justify-center rounded-xl" style={{ backgroundColor: '#E8EDF5' }}>
+                    <Building2 className="size-6" style={{ color: '#2B4C7E' }} />
+                  </div>
+                  <h3 className="mb-4 font-serif text-[20px] font-bold text-navy">
+                    Working with a Registered Agency
+                  </h3>
+                  <p className="text-[15px] leading-[1.7] text-navy/85">
+                    You contract with a home care agency. They employ the care workers, manage all payroll and HR, and send you monthly invoices. You pay the invoices from your FMHC bank account and report them on your monthly Schedule G&H.
+                  </p>
+                </div>
+
+                {/* Contractor Card */}
+                <div className="rounded-xl bg-white p-8 shadow-lg border-l-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                  <div className="mb-4 flex size-12 items-center justify-center rounded-xl" style={{ backgroundColor: '#E8EDF5' }}>
+                    <Users className="size-6" style={{ color: '#2B4C7E' }} />
+                  </div>
+                  <h3 className="mb-4 font-serif text-[20px] font-bold text-navy">
+                    Hiring an Independent Contractor
+                  </h3>
+                  <p className="text-[15px] leading-[1.7] text-navy/85">
+                    You find a specific caregiver who works as a self-employed contractor. They send you invoices for their services; you pay them from your FMHC account. They handle their own income tax, CPP, and insurance.
+                  </p>
+                </div>
+
+                {/* Direct Hire Card */}
+                <div className="rounded-xl bg-white p-8 shadow-lg border-l-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                  <div className="mb-4 flex size-12 items-center justify-center rounded-xl" style={{ backgroundColor: '#E8EDF5' }}>
+                    <FileText className="size-6" style={{ color: '#2B4C7E' }} />
+                  </div>
+                  <h3 className="mb-4 font-serif text-[20px] font-bold text-navy">
+                    Hiring a Direct Employee
+                  </h3>
+                  <p className="text-[15px] leading-[1.7] text-navy/85">
+                    You become the employer of record. You register a CRA payroll account, run payroll each pay period, withhold and remit source deductions, register with WSIB if hours warrant, and file T4s at year-end. Your bookkeeper handles the mechanics; the legal responsibility sits with you as the contract holder.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Decision Quiz Section - Distinct Design */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-8 text-center">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 border-2" style={{ backgroundColor: 'white', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
-                  <HelpCircle className="size-4" />
-                  <span className="text-sm font-semibold">Interactive Tool</span>
-                </div>
                 <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px] mb-3">
                   Not Sure Which Option Is Right for You?
                 </h2>
                 <p className="text-[16px] leading-[1.7] text-navy/80">
-                  Answer a few quick questions and we'll recommend the care structure that best fits your situation.
+                  Answer a few questions and we'll recommend the care structure that best fits your situation.
                 </p>
               </div>
               <DecisionQuiz />
@@ -315,16 +364,25 @@ export default function CareArrangementGuidePage() {
               </h2>
 
               <Tabs defaultValue="agency" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 mb-8">
-                  <TabsTrigger value="agency" className="font-serif text-[15px]">
+                <TabsList className="grid w-full grid-cols-3 mb-8 bg-white border-2 border-gray-200 p-1 rounded-xl h-auto">
+                  <TabsTrigger
+                    value="agency"
+                    className="font-serif text-[15px] data-[state=active]:bg-[#2B4C7E] data-[state=active]:text-white rounded-lg py-3 transition-all"
+                  >
                     <Building2 className="mr-2 size-4" />
                     Agency
                   </TabsTrigger>
-                  <TabsTrigger value="contractor" className="font-serif text-[15px]">
+                  <TabsTrigger
+                    value="contractor"
+                    className="font-serif text-[15px] data-[state=active]:bg-[#2B4C7E] data-[state=active]:text-white rounded-lg py-3 transition-all"
+                  >
                     <Users className="mr-2 size-4" />
                     Contractor
                   </TabsTrigger>
-                  <TabsTrigger value="direct-hire" className="font-serif text-[15px]">
+                  <TabsTrigger
+                    value="direct-hire"
+                    className="font-serif text-[15px] data-[state=active]:bg-[#2B4C7E] data-[state=active]:text-white rounded-lg py-3 transition-all"
+                  >
                     <FileText className="mr-2 size-4" />
                     Direct Hire
                   </TabsTrigger>
@@ -371,9 +429,9 @@ export default function CareArrangementGuidePage() {
                     <p>
                       The advantages: you choose your caregiver(s) and keep them consistently, and their full rate goes to the worker — no agency markup — which often leaves more room in the budget for other eligible expenses. The disadvantages: you take on the responsibility of recruiting, screening, and verifying credentials, you need to arrange backup care when they're unavailable, and each contractor must genuinely meet CRA's criteria for self-employment.
                     </p>
-                    <div className="rounded-xl p-5" style={{ backgroundColor: '#FEF3C7', borderLeft: '4px solid #F59E0B' }}>
-                      <p className="text-[15px] font-medium text-amber-900">
-                        <AlertCircle className="mr-2 inline size-5" />
+                    <div className="rounded-xl p-5 border-l-4" style={{ backgroundColor: '#FEF5F5', borderLeftColor: '#DC2626' }}>
+                      <p className="text-[15px] font-medium" style={{ color: '#7F1D1D' }}>
+                        <AlertCircle className="mr-2 inline size-5" style={{ color: '#DC2626' }} />
                         <strong>Important:</strong> The CRA doesn't go by what your contract says — they look at the actual working relationship. Who controls the hours, the methods, the routines? Who provides the tools? Who bears the risk of loss? CRA can reclassify a contractor as an employee retroactively and assess back source deductions plus interest if it determines the relationship was actually employment. If you're uncertain about the classification, a tax advisor or a CRA ruling (Form CPT1) is the right next step.
                       </p>
                     </div>
@@ -449,7 +507,7 @@ export default function CareArrangementGuidePage() {
                     </h3>
                   </div>
                   <p className="text-[16px] leading-[1.7] text-navy/85">
-                    Direct hire and independent contractor arrangements give you direct control over who provides care, so consistency is built in. With an agency, consistency depends on the agency's scheduling and worker availability — some agencies prioritize keeping the same worker(s) assigned, others rotate based on shift coverage.
+                    Direct hire and independent contractor arrangements give you direct control over who provides care, so consistency is built in. With an agency, consistency depends on the agency's scheduling and worker availability — some agencies prioritize keeping the same worker assigned, others rotate based on shift coverage.
                   </p>
                 </div>
 
@@ -466,17 +524,13 @@ export default function CareArrangementGuidePage() {
                     The CRA doesn't go by what your contract says — they look at who controls the work, who provides the tools, and who bears the risk of loss. If you're uncertain how to classify your situation, that's a question for a tax advisor or CRA directly (Form CPT1, Request for a CPP/EI Ruling).
                   </p>
                 </div>
-              </div>
-            </div>
-          </section>
 
-          {/* What Happens Next - Trimmed */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
-            <div className="mx-auto max-w-[900px] px-6">
-              <div className="rounded-xl bg-white p-8 shadow-lg">
-                <p className="text-[16px] leading-[1.7] text-navy/85">
-                  <strong>Once you've chosen your path,</strong> you'll need a qualified bookkeeper before Ontario Health atHome releases your first funding deposit. Schedule O of your agreement specifies the required qualifications. Tabber supports families across all three models, and our services are structured to fit within the bookkeeping allowance built into your FMHC budget — no out-of-pocket cost to you.
-                </p>
+                {/* Closing paragraph */}
+                <div className="mt-8 rounded-xl p-8" style={{ backgroundColor: '#E8EDF5' }}>
+                  <p className="text-[16px] leading-[1.7] text-navy/85">
+                    Whatever path you choose, you'll need a qualified bookkeeper before Ontario Health atHome releases your first funding deposit. Schedule O of your agreement specifies the required bookkeeper qualifications. Tabber supports families across all three models, and our services are structured to fit within the bookkeeping allowance built into your FMHC budget — no out-of-pocket cost to you.
+                  </p>
+                </div>
               </div>
             </div>
           </section>

@@ -230,7 +230,7 @@ export function DecisionQuiz() {
             Take the Interactive Quiz
           </h3>
           <p className="mb-6 text-[15px] leading-[1.7] text-navy/75">
-            Answer 4 quick questions to get a personalized recommendation on which care arrangement fits your situation best.
+            Answer a few questions to get a personalized recommendation on which care arrangement fits your situation best.
           </p>
           <Button
             onClick={() => setStarted(true)}
