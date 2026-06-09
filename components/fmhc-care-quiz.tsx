@@ -123,6 +123,7 @@ function calculateResult(scores: { agency: number; contractor: number; directHir
 }
 
 export function DecisionQuiz() {
+  const [started, setStarted] = useState(false)
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<number[]>([])
   const [showResult, setShowResult] = useState(false)
@@ -153,6 +154,7 @@ export function DecisionQuiz() {
   }
 
   const resetQuiz = () => {
+    setStarted(false)
     setCurrentQuestion(0)
     setAnswers([])
     setShowResult(false)
@@ -214,18 +216,35 @@ export function DecisionQuiz() {
     )
   }
 
-  return (
-    <section className="bg-secondary py-10 md:py-14">
-      <div className="mx-auto max-w-[900px] px-6">
-        <div className="mb-6 text-center">
-          <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">
-            Find Your Starting Point
-          </h2>
-          <p className="text-[15px] leading-[1.7] text-muted-foreground">
-            Not sure where to start? Answer 4 quick questions and we'll point you toward a recommended path. Think of it as orientation, not a verdict — you can always change direction as your situation becomes clearer.
+  // Show start button if not started
+  if (!started && !showResult) {
+    return (
+      <div className="rounded-xl border-2 bg-white p-8 shadow-lg" style={{ borderColor: '#E8EDF5' }}>
+        <div className="text-center">
+          <div className="mb-4 flex items-center justify-center">
+            <div className="flex size-16 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+              <HelpCircle className="size-8" style={{ color: '#2B4C7E' }} />
+            </div>
+          </div>
+          <h3 className="mb-3 font-serif text-[22px] font-bold text-navy">
+            Take the Interactive Quiz
+          </h3>
+          <p className="mb-6 text-[15px] leading-[1.7] text-navy/75">
+            Answer 4 quick questions to get a personalized recommendation on which care arrangement fits your situation best.
           </p>
+          <Button
+            onClick={() => setStarted(true)}
+            className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white"
+            style={{ backgroundColor: '#2B4C7E' }}
+          >
+            Start Quiz →
+          </Button>
         </div>
+      </div>
+    )
+  }
 
+  return (
         <div className="rounded-xl border-2 border-border bg-card p-8">
           {/* Progress Bar */}
           <div className="mb-8">
@@ -278,7 +297,5 @@ export function DecisionQuiz() {
             </div>
           )}
         </div>
-      </div>
-    </section>
   )
 }

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Arrangement Guide - Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1e3a5f; line-height: 1.6; }
+        .hero { position: relative; height: 500px; background: linear-gradient(135deg, #2B4C7E 0%, #4a6fa5 100%); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        .hero-box { max-width: 900px; background: rgba(249, 250, 251, 0.95); backdrop-filter: blur(12px); padding: 3rem; border-radius: 1rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+        .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: #F3F4F6; border: 2px solid #2B4C7E; border-radius: 999px; color: #2B4C7E; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem; }
+        h1 { font-size: 2.25rem; font-weight: 700; color: #1e3a5f; margin-bottom: 1rem; font-family: Georgia, serif; }
+        .subtitle { font-size: 1.0625rem; font-weight: 500; color: #2B4C7E; margin-bottom: 1.5rem; }
+        .author { padding-top: 1rem; border-top: 1px solid #e5e7eb; font-size: 0.6875rem; color: rgba(30, 58, 95, 0.7); }
+
+        .section { padding: 3rem 1.5rem; max-width: 900px; margin: 0 auto; }
+        .section-wide { padding: 3rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .bg-gray { background: #f9fafb; }
+        .bg-light-blue { background: #E8EDF5; }
+        .border-top { border-top: 1px solid rgba(229, 231, 235, 0.3); }
+
+        h2 { font-size: 2rem; font-weight: 700; color: #1e3a5f; text-align: center; margin-bottom: 2.5rem; font-family: Georgia, serif; }
+        h3 { font-size: 1.5rem; font-weight: 700; color: #1e3a5f; margin-bottom: 1rem; font-family: Georgia, serif; }
+
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: white; border: 1px solid #E8EDF5; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.2s; }
+        .card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card-icon { width: 3rem; height: 3rem; background: #E8EDF5; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: #2B4C7E; font-size: 1.5rem; }
+        .card h3 { font-size: 1.1875rem; margin-bottom: 0.75rem; }
+        .card p { font-size: 0.9375rem; line-height: 1.65; color: rgba(30, 58, 95, 0.75); margin-bottom: 1rem; }
+        .tag { display: inline-block; padding: 0.375rem 0.75rem; background: #E8EDF5; color: #2B4C7E; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+
+        .quiz-section { background: white; border: 2px solid #E8EDF5; border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+        .quiz-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: white; border: 2px solid #2B4C7E; border-radius: 999px; color: #2B4C7E; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+
+        table { width: 100%; border-collapse: collapse; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        thead { background: #2B4C7E; color: white; }
+        th, td { padding: 1.25rem; text-align: left; }
+        th { font-size: 1.0625rem; font-weight: 600; }
+        tbody tr { border-bottom: 1px solid #E8EDF5; background: white; }
+        td:first-child { font-weight: 600; font-size: 0.9375rem; }
+        td { font-size: 0.9375rem; color: rgba(30, 58, 95, 0.8); }
+
+        .detail-card { background: white; border: 2px solid #E8EDF5; border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .detail-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .detail-icon { width: 3.5rem; height: 3.5rem; background: #E8EDF5; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; color: #2B4C7E; font-size: 1.75rem; }
+        .detail-card h3 { font-size: 1.5rem; margin-bottom: 0; }
+        .detail-card p { font-size: 1rem; line-height: 1.8; color: rgba(30, 58, 95, 0.85); margin-bottom: 1rem; }
+        .highlight-box { background: #E8EDF5; border-radius: 0.75rem; padding: 1.25rem; margin-top: 1.5rem; }
+        .warning-box { background: #FEF3C7; border-left: 4px solid #F59E0B; border-radius: 0.75rem; padding: 1.25rem; }
+
+        .choice-card { background: white; border-radius: 1rem; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .choice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+        .choice-icon { width: 3rem; height: 3rem; background: #E8EDF5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2B4C7E; font-size: 1.5rem; }
+        .choice-card h3 { font-size: 1.25rem; margin-bottom: 0; }
+
+        .next-step { background: white; border-left: 4px solid #2B4C7E; border-radius: 0.75rem; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .next-step h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+
+        .faq-item { background: white; border-radius: 0.75rem; padding: 1.5rem 2rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .faq-question { font-size: 1.0625rem; font-weight: 600; color: #1e3a5f; margin-bottom: 0.5rem; }
+        .faq-answer { font-size: 1rem; line-height: 1.7; color: rgba(30, 58, 95, 0.85); }
+
+        .contact-form { background: white; border: 1px solid #E8EDF5; border-radius: 0.75rem; padding: 2rem; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; font-size: 0.875rem; font-weight: 500; color: #1e3a5f; margin-bottom: 0.375rem; }
+        input, textarea { width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 0.875rem; }
+        input:focus, textarea:focus { outline: none; border-color: #2B4C7E; }
+        button { background: #2B4C7E; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-size: 0.9375rem; font-weight: 600; cursor: pointer; }
+
+        .disclaimer { font-size: 0.8125rem; line-height: 1.6; color: rgba(30, 58, 95, 0.7); text-align: center; padding: 2rem; }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-box">
+            <div class="badge">
+                📖 Decision Guide
+            </div>
+            <h1>Choosing Your FMHC Care Arrangement: Agency, Contractor, or Direct Hire</h1>
+            <p class="subtitle">A practical decision guide for FMHC families — compare agency, contractor, and direct-hire arrangements, and find the path that fits you and your family.</p>
+            <div class="author">Written by Faysal El Masri, CPA | Updated June 2026</div>
+        </div>
+    </div>
+
+    <!-- Lead Paragraph -->
+    <div class="bg-light-blue">
+        <div class="section">
+            <p style="font-size: 1.0625rem; line-height: 1.8; color: rgba(30, 58, 95, 0.9);">
+                One of the first major decisions in FMHC — usually during Meeting 1 with Ontario Health atHome — is how to structure your care arrangement. You have three options: contract with a registered agency, hire a care worker as an independent contractor, or hire them directly as an employee. The choice shapes your administrative load, your effective hourly rate, and the legal relationship between you and the person providing care.
+            </p>
+            <p style="font-size: 1.0625rem; line-height: 1.8; color: rgba(30, 58, 95, 0.9); margin-top: 1rem;">
+                There's no universal right answer. Below is a side-by-side comparison and a closer look at each path, so you can decide what fits your family.
+            </p>
+        </div>
+    </div>
+
+    <!-- Decision Quiz Placeholder -->
+    <div class="bg-gray border-top">
+        <div class="section">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="quiz-badge">❓ Interactive Tool</div>
+                <h2>Not Sure Which Option Is Right for You?</h2>
+                <p style="font-size: 1rem; color: rgba(30, 58, 95, 0.8);">
+                    Answer a few quick questions and we'll recommend the care structure that best fits your situation.
+                </p>
+            </div>
+            <div class="quiz-section">
+                <p style="text-align: center; color: #2B4C7E; font-weight: 600;">[Interactive Quiz Component]</p>
+                <p style="text-align: center; color: rgba(30, 58, 95, 0.7); font-size: 0.875rem;">4 questions with smart recommendations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three Options at a Glance -->
+    <div class="bg-gray border-top">
+        <div class="section-wide">
+            <h2>The Three Options at a Glance</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Working with a Registered Agency</h3>
+                    <p>You contract with a home care agency. They employ the care workers, manage all payroll and HR, and send you monthly invoices.</p>
+                    <span class="tag">Minimal administration</span>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👤</div>
+                    <h3>Hiring an Independent Contractor</h3>
+                    <p>You find a specific caregiver who works as self-employed. They invoice you; you pay them from your FMHC account.</p>
+                    <span class="tag">Consistent caregiver</span>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>Hiring a Direct Employee</h3>
+                    <p>You become the employer of record. You register a CRA payroll account, run payroll, withhold and remit deductions, and file T4s.</p>
+                    <span class="tag">Full control</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="bg-gray border-top">
+        <div class="section-wide">
+            <h2>Side-by-Side Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>Agency</th>
+                        <th>Independent Contractor</th>
+                        <th>Direct Hire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Administrative complexity</td>
+                        <td>Lowest — pay invoices, report monthly</td>
+                        <td>Moderate — track invoices, manage relationship</td>
+                        <td>Highest — full employer obligations</td>
+                    </tr>
+                    <tr>
+                        <td>Caregiver continuity</td>
+                        <td>Depends on agency scheduling</td>
+                        <td>Consistent — your chosen contractor</td>
+                        <td>Consistent — your chosen employee</td>
+                    </tr>
+                    <tr>
+                        <td>Time to set up</td>
+                        <td>Fastest</td>
+                        <td>Moderate</td>
+                        <td>Longest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- A Closer Look -->
+    <div class="bg-gray border-top">
+        <div class="section">
+            <h2>A Closer Look at Each Path</h2>
+
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-icon">🏢</div>
+                    <h3>Working with a Registered Agency</h3>
+                </div>
+                <p>The simplest path administratively. The agency employs the care workers and handles all of their payroll, taxes, insurance, and HR.</p>
+                <p>The main trade-off is rate. Agencies charge an hourly rate that includes their margin, which can leave less budget room for other eligible expenses.</p>
+                <div class="highlight-box">
+                    <p style="font-weight: 600; color: #2B4C7E;">✓ Best suited for families who want minimal administrative load and want a turnkey arrangement.</p>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-icon">👤</div>
+                    <h3>Hiring an Independent Contractor</h3>
+                </div>
+                <p>A middle path. You find a specific caregiver who works as a self-employed contractor.</p>
+                <div class="warning-box">
+                    <p style="font-weight: 500; color: #92400e;">⚠️ <strong>Important:</strong> The CRA doesn't go by what your contract says — they look at the actual working relationship. CRA can reclassify a contractor as an employee retroactively.</p>
+                </div>
+                <div class="highlight-box" style="margin-top: 1rem;">
+                    <p style="font-weight: 600; color: #2B4C7E;">✓ Best suited for families with a specific caregiver who genuinely meets CRA's contractor criteria.</p>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-icon">📄</div>
+                    <h3>Hiring a Direct Employee</h3>
+                </div>
+                <p>The most administratively involved path, and the one with the most control. You become the employer of record.</p>
+                <p>The benefits are full control over the working relationship and consistency of caregiver. The drawbacks are the administrative weight and real liability exposure as an employer.</p>
+                <div class="highlight-box">
+                    <p style="font-weight: 600; color: #2B4C7E;">✓ Best suited for families with admin capacity who want full control and are comfortable taking on employer obligations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Choose -->
+    <div class="bg-gray border-top">
+        <div class="section">
+            <h2>How to Choose</h2>
+            <p style="text-align: center; font-size: 1.0625rem; margin-bottom: 2.5rem; color: rgba(30, 58, 95, 0.85);">
+                The right path depends less on what's "best in general" and more on what fits your family's situation. Three questions can help you orient.
+            </p>
+
+            <div class="choice-card">
+                <div class="choice-header">
+                    <div class="choice-icon">⏰</div>
+                    <h3>How much administrative work can you reasonably take on?</h3>
+                </div>
+                <p>Agencies require almost none. Contractors require some. Direct hire requires real ongoing commitment.</p>
+            </div>
+
+            <div class="choice-card">
+                <div class="choice-header">
+                    <div class="choice-icon">👥</div>
+                    <h3>How important is having the same caregiver every visit?</h3>
+                </div>
+                <p>Direct hire and independent contractor arrangements give you direct control over who provides care.</p>
+            </div>
+
+            <div class="choice-card">
+                <div class="choice-header">
+                    <div class="choice-icon">🛡️</div>
+                    <h3>How well does the working relationship match CRA's criteria?</h3>
+                </div>
+                <p>The CRA looks at who controls the work, who provides the tools, and who bears the risk of loss.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="bg-gray border-top">
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I change my mind later?</div>
+                <div class="faq-answer">Yes — you can transition between models if your situation changes. We can walk you through what the change involves.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does it cost more to use a bookkeeper if I'm a direct hire?</div>
+                <div class="faq-answer">Schedule I of your FMHC agreement includes a monthly bookkeeping allowance regardless of which model you choose. Tabber's services fit within that allowance — no out-of-pocket cost.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which arrangement is most common?</div>
+                <div class="faq-answer">Which arrangement is right depends on your family's situation more than any "typical" choice. Each of the three is well-established under FMHC.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gray border-top">
+        <div class="section">
+            <h2>Have Questions About Your Situation?</h2>
+            <p style="text-align: center; font-size: 1.0625rem; margin-bottom: 2.5rem; color: rgba(30, 58, 95, 0.85);">
+                Every FMHC situation is slightly different. If you're unsure which path makes sense for your setup, feel free to reach out — we're happy to talk it through.
+            </p>
+
+            <div class="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Tell us about your situation..."></textarea>
+                </div>
+                <button>Send Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="bg-gray border-top">
+        <div class="disclaimer">
+            Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome. Program requirements can change and may vary by agreement. This page provides general information only and is not legal, tax, payroll, medical, or eligibility advice.
+        </div>
+    </div>
+</body>
+</html>
