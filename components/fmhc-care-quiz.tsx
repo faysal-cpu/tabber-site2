@@ -188,7 +188,7 @@ export function DecisionQuiz() {
 
         <div className="rounded-lg p-5 text-center text-[14px] leading-[1.6] text-muted-foreground" style={{ backgroundColor: '#F9FAFB' }}>
           <p className="mb-4">
-            This is a starting point, not a verdict. Real situations have nuances no quiz can capture. If you'd like to talk through your specific circumstances, we're happy to help.
+            This quiz offers general guidance. If you'd like to walk through your setup together, we're here to help.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button

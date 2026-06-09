@@ -193,10 +193,8 @@ export default function CareArrangementGuidePage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
-
           {/* Care Arrangement Overview */}
-          <section className="bg-gray-50 py-10 md:py-14">
+          <section style={{ backgroundColor: '#E8EDF5' }} className="py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -204,18 +202,20 @@ export default function CareArrangementGuidePage() {
                 </div>
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Care Arrangement Overview</h2>
               </div>
-              <p className="text-[17px] leading-[1.8] text-navy/90">
+              <p className="text-[15px] leading-[1.8] text-muted-foreground">
                 One of the first decisions a Family-Managed Home Care family makes — usually during Meeting 1 with Ontario Health atHome — is how to structure care. You have three options: contract with a registered agency, hire a care worker as an independent contractor, or hire them directly as an employee. The choice shapes your administrative load, your effective hourly rate, and the legal relationship between you and the person providing care.
               </p>
-              <p className="mt-4 text-[17px] leading-[1.8] text-navy/90">
+              <p className="mt-4 text-[15px] leading-[1.8] text-muted-foreground">
                 There's no universal right answer. Below is a closer look at each path, a side-by-side comparison, and a short quiz to help you find a starting point.
               </p>
             </div>
           </section>
 
+          <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
+
           {/* Three Options at a Glance */}
-          <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
-            <div className="mx-auto max-w-[1200px] px-6">
+          <section className="bg-gray-50 py-10 md:py-14">
+            <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-10 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
                   <Users className="size-5 text-white" />
