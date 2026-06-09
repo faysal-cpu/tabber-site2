@@ -84,8 +84,8 @@ function calculateResult(scores: { agency: number; contractor: number; directHir
     if (winners.includes("agency")) {
       // Agency wins ties
       return {
-        title: "Your starting point: Working with a Registered Agency",
-        description: "Based on your answers — particularly your preference for minimal administrative work — an agency is the path that fits best right now. You can start receiving care quickly, with the agency handling all the employment and reporting complexity. Read the section below for more on what this involves.",
+        title: "Recommended path: Working with a Registered Agency",
+        description: "Based on your answers — particularly your preference for minimal administrative work — an agency is the path that fits best. You can start receiving care quickly, with the agency handling all the employment and reporting complexity.",
         variant: "agency"
       }
     }
@@ -101,23 +101,23 @@ function calculateResult(scores: { agency: number; contractor: number; directHir
   // Single winner
   if (agency === max) {
     return {
-      title: "Your starting point: Working with a Registered Agency",
-      description: "Based on your answers — particularly your preference for minimal administrative work — an agency is the path that fits best right now. You can start receiving care quickly, with the agency handling all the employment and reporting complexity. Read the section below for more on what this involves.",
+      title: "Recommended path: Working with a Registered Agency",
+      description: "Based on your answers — particularly your preference for minimal administrative work — an agency is the path that fits best. You can start receiving care quickly, with the agency handling all the employment and reporting complexity.",
       variant: "agency"
     }
   }
 
   if (contractor === max) {
     return {
-      title: "Your starting point: Hiring an Independent Contractor",
-      description: "Based on your answers — particularly that you have a specific caregiver in mind, value continuity, and the working relationship has the markers of genuine self-employment — independent contracting is the path that fits best. You'll get the consistency of a chosen caregiver and the highest hours-per-dollar of FMHC funding. The section below has more, including the CRA criteria worth confirming before you commit.",
+      title: "Recommended: Hiring an Independent Contractor",
+      description: "Based on your answers — particularly that you have a specific caregiver in mind and value continuity — a contractor arrangement likely makes the most sense. You'll have a consistent caregiver without taking on full employer responsibilities.\n\nOne important consideration: the working relationship needs to genuinely operate as a contractor arrangement under CRA guidelines.",
       variant: "contractor"
     }
   }
 
   return {
-    title: "Your starting point: Hiring a Direct Employee",
-    description: "Based on your answers — particularly that you have a chosen caregiver, the working relationship is one of direction and supervision, and you're comfortable with employer obligations — direct hire is the path that fits best. You'll have full control and consistency of care, with the trade-off of higher administrative load. Read the section below for what's involved.",
+    title: "Recommended: Hiring a Direct Employee",
+    description: "Based on your answers — particularly that you have a chosen caregiver and are comfortable taking on employer responsibilities — direct hire is likely the strongest fit. You'll have full control and consistency of care, with the trade-off of higher administrative load.",
     variant: "directHire"
   }
 }
@@ -165,54 +165,50 @@ export function DecisionQuiz() {
 
   if (showResult && result) {
     return (
-      <section className="bg-secondary py-10 md:py-14">
-        <div className="mx-auto max-w-[900px] px-6">
-          <div className="rounded-xl border-2 border-border bg-card p-8">
-            <div className="mb-6 flex items-center justify-center">
-              <div className="flex size-16 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                <CheckCircle2 className="size-8" style={{ color: '#2B4C7E' }} />
-              </div>
-            </div>
-
-            <h3 className="mb-4 text-center font-serif text-[24px] font-bold text-navy">
-              {result.title}
-            </h3>
-
-            <p className="mb-6 text-center text-[15px] leading-[1.7] text-muted-foreground">
-              {result.description}
-            </p>
-
-            <div className="mb-6 rounded-lg bg-secondary p-4">
-              <div className="text-center text-[14px] text-navy">
-                <strong>Your scores</strong> — Agency: {totalScores.agency} / Contractor: {totalScores.contractor} / Direct Hire: {totalScores.directHire}
-              </div>
-            </div>
-
-            <div className="rounded-lg bg-secondary p-5 text-center text-[14px] leading-[1.6] text-muted-foreground">
-              <p className="mb-4">
-                This is a starting point, not a verdict. Real situations have nuances no quiz can capture. If you'd like to talk through your specific circumstances, we're happy to help.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button
-                  asChild
-                  className="rounded-lg px-6 text-white"
-                  style={{ backgroundColor: '#2B4C7E' }}
-                >
-                  <a href="#contact-form">Contact Us</a>
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={resetQuiz}
-                  className="rounded-lg border-2 px-6"
-                  style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}
-                >
-                  Retake Quiz
-                </Button>
-              </div>
-            </div>
+      <div className="rounded-xl border-2 bg-white p-8 shadow-lg" style={{ borderColor: '#E8EDF5' }}>
+        <div className="mb-6 flex items-center justify-center">
+          <div className="flex size-16 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+            <CheckCircle2 className="size-8" style={{ color: '#2B4C7E' }} />
           </div>
         </div>
-      </section>
+
+        <h3 className="mb-4 text-center font-serif text-[24px] font-bold text-navy">
+          {result.title}
+        </h3>
+
+        <p className="mb-6 text-center text-[15px] leading-[1.7] text-muted-foreground">
+          {result.description}
+        </p>
+
+        <div className="mb-6 rounded-lg p-4" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="text-center text-[14px] text-navy">
+            <strong>Score:</strong> Agency ({totalScores.agency}) • Contractor ({totalScores.contractor}) • Direct Hire ({totalScores.directHire})
+          </div>
+        </div>
+
+        <div className="rounded-lg p-5 text-center text-[14px] leading-[1.6] text-muted-foreground" style={{ backgroundColor: '#F9FAFB' }}>
+          <p className="mb-4">
+            This is a starting point, not a verdict. Real situations have nuances no quiz can capture. If you'd like to talk through your specific circumstances, we're happy to help.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button
+              asChild
+              className="rounded-lg px-6 text-white"
+              style={{ backgroundColor: '#2B4C7E' }}
+            >
+              <a href="#contact-form">Contact Us</a>
+            </Button>
+            <Button
+              variant="outline"
+              onClick={resetQuiz}
+              className="rounded-lg border-2 px-6"
+              style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}
+            >
+              Retake Quiz
+            </Button>
+          </div>
+        </div>
+      </div>
     )
   }
 
@@ -226,12 +222,9 @@ export function DecisionQuiz() {
               <HelpCircle className="size-8" style={{ color: '#2B4C7E' }} />
             </div>
           </div>
-          <h3 className="mb-3 font-serif text-[22px] font-bold text-navy">
-            Take the Interactive Quiz
+          <h3 className="mb-6 font-serif text-[22px] font-bold text-navy">
+            Take our Interactive Quiz
           </h3>
-          <p className="mb-6 text-[15px] leading-[1.7] text-navy/75">
-            Answer a few questions to get a personalized recommendation on which care arrangement fits your situation best.
-          </p>
           <Button
             onClick={() => setStarted(true)}
             className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white"
@@ -245,14 +238,14 @@ export function DecisionQuiz() {
   }
 
   return (
-        <div className="rounded-xl border-2 border-border bg-card p-8">
+        <div className="rounded-xl border-2 bg-white p-8 shadow-lg" style={{ borderColor: '#E8EDF5' }}>
           {/* Progress Bar */}
           <div className="mb-8">
             <div className="mb-2 flex items-center justify-between text-[13px] font-medium text-navy">
               <span>Question {currentQuestion + 1} of {activeQuestions.length}</span>
               <span>{Math.round(((currentQuestion + 1) / activeQuestions.length) * 100)}%</span>
             </div>
-            <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
+            <div className="h-2 w-full overflow-hidden rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
               <div
                 className="h-full transition-all duration-300"
                 style={{
@@ -274,11 +267,18 @@ export function DecisionQuiz() {
                 <button
                   key={index}
                   onClick={() => handleAnswer(index)}
-                  className="group w-full rounded-lg border-2 border-border bg-secondary p-4 text-left transition-all duration-200 hover:border-[#2B4C7E] hover:bg-card"
+                  className="group w-full rounded-lg border-2 bg-white p-4 text-left transition-all duration-200 hover:shadow-md"
+                  style={{ borderColor: '#E8EDF5' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#2B4C7E'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#E8EDF5'
+                  }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-[15px] text-navy">{answer.text}</span>
-                    <ChevronRight className="size-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                    <ChevronRight className="size-5 opacity-0 transition-opacity group-hover:opacity-100" style={{ color: '#2B4C7E' }} />
                   </div>
                 </button>
               ))}
@@ -290,7 +290,8 @@ export function DecisionQuiz() {
             <div className="text-center">
               <button
                 onClick={() => setShowResult(true)}
-                className="text-[14px] text-muted-foreground underline hover:text-navy"
+                className="text-[14px] underline hover:text-navy"
+                style={{ color: '#6B7280' }}
               >
                 Skip to results
               </button>

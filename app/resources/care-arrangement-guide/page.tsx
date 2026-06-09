@@ -18,7 +18,9 @@ import {
   ChevronUp,
   BookOpen,
   ChevronRight,
-  HelpCircle
+  HelpCircle,
+  Mail,
+  FileCheck
 } from "lucide-react"
 import { DecisionQuiz } from "@/components/fmhc-care-quiz"
 import { ContactFormEmbed } from "@/components/contact-form-embed"
@@ -191,14 +193,17 @@ export default function CareArrangementGuidePage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="rgba(249, 250, 251, 0)" backgroundColor="#F9FAFB" />
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
 
           {/* Care Arrangement Overview */}
           <section className="bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
-              <h2 className="mb-6 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                Care Arrangement Overview
-              </h2>
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <BookOpen className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Care Arrangement Overview</h2>
+              </div>
               <p className="text-[17px] leading-[1.8] text-navy/90">
                 One of the first decisions a Family-Managed Home Care family makes — usually during Meeting 1 with Ontario Health atHome — is how to structure care. You have three options: contract with a registered agency, hire a care worker as an independent contractor, or hire them directly as an employee. The choice shapes your administrative load, your effective hourly rate, and the legal relationship between you and the person providing care.
               </p>
@@ -211,9 +216,12 @@ export default function CareArrangementGuidePage() {
           {/* Three Options at a Glance */}
           <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[1200px] px-6">
-              <h2 className="mb-10 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                The Three Options at a Glance
-              </h2>
+              <div className="mb-10 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <Users className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">The Three Options at a Glance</h2>
+              </div>
 
               <div className="grid gap-6 md:grid-cols-3">
                 {/* Agency Card */}
@@ -258,17 +266,18 @@ export default function CareArrangementGuidePage() {
             </div>
           </section>
 
-          {/* Decision Quiz Section - Distinct Design */}
+          {/* Decision Quiz Section */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <div className="mb-8 text-center">
-                <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px] mb-3">
-                  Not Sure Which Option Is Right for You?
-                </h2>
-                <p className="text-[16px] leading-[1.7] text-navy/80">
-                  Answer a few questions and we'll recommend the care structure that best fits your situation.
-                </p>
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <HelpCircle className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Not Sure Which Option Is Right for You?</h2>
               </div>
+              <p className="mb-8 text-[15px] leading-[1.8] text-muted-foreground">
+                Answer a few questions and we'll recommend the care structure that best fits your situation.
+              </p>
               <DecisionQuiz />
             </div>
           </section>
@@ -276,9 +285,12 @@ export default function CareArrangementGuidePage() {
           {/* Side-by-Side Comparison */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[1200px] px-6">
-              <h2 className="mb-10 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                Side-by-Side Comparison
-              </h2>
+              <div className="mb-10 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <FileText className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Side-by-Side Comparison</h2>
+              </div>
 
               {/* Desktop Table */}
               <div className="hidden lg:block overflow-hidden rounded-2xl shadow-xl">
@@ -359,9 +371,12 @@ export default function CareArrangementGuidePage() {
           {/* A Closer Look - Tabs */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <h2 className="mb-10 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                A Closer Look at Each Path
-              </h2>
+              <div className="mb-10 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <FileCheck className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">A Closer Look at Each Path</h2>
+              </div>
 
               <Tabs defaultValue="agency" className="w-full">
                 <TabsList className="grid w-full grid-cols-3 mb-8 bg-white border-2 border-gray-200 p-1 rounded-xl h-auto">
@@ -475,59 +490,48 @@ export default function CareArrangementGuidePage() {
           {/* How to Choose */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <h2 className="mb-6 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                How to Choose
-              </h2>
-              <p className="mb-10 text-center text-[17px] leading-[1.7] text-navy/85">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <HelpCircle className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">How to Choose</h2>
+              </div>
+
+              <p className="mb-8 text-[15px] leading-[1.8] text-muted-foreground">
                 The right path depends less on what's "best in general" and more on what fits your family's situation. Three questions can help you orient.
               </p>
 
-              <div className="space-y-6">
-                <div className="rounded-2xl bg-white p-8 shadow-lg">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex size-12 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Clock className="size-6" style={{ color: '#2B4C7E' }} />
-                    </div>
-                    <h3 className="font-serif text-[20px] font-bold text-navy">
-                      How much administrative work can you reasonably take on?
-                    </h3>
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-navy/85">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
+                    How much administrative work can you reasonably take on?
+                  </h3>
+                  <p className="text-[15px] leading-[1.8] text-muted-foreground">
                     Agencies require almost none — pay an invoice, file the report. Contractors require some — track invoices, verify credentials, arrange contingency care. Direct hire requires real ongoing commitment — payroll calendars, CRA deadlines, T4 season, WSIB if applicable.
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-white p-8 shadow-lg">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex size-12 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Users className="size-6" style={{ color: '#2B4C7E' }} />
-                    </div>
-                    <h3 className="font-serif text-[20px] font-bold text-navy">
-                      How important is having the same caregiver every visit?
-                    </h3>
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-navy/85">
+                <div>
+                  <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
+                    How important is having the same caregiver every visit?
+                  </h3>
+                  <p className="text-[15px] leading-[1.8] text-muted-foreground">
                     Direct hire and independent contractor arrangements give you direct control over who provides care, so consistency is built in. With an agency, consistency depends on the agency's scheduling and worker availability — some agencies prioritize keeping the same worker assigned, others rotate based on shift coverage.
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-white p-8 shadow-lg">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex size-12 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Shield className="size-6" style={{ color: '#2B4C7E' }} />
-                    </div>
-                    <h3 className="font-serif text-[20px] font-bold text-navy">
-                      How well does the working relationship match CRA's criteria for contractor versus employee?
-                    </h3>
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-navy/85">
+                <div>
+                  <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
+                    How well does the working relationship match CRA's criteria for contractor versus employee?
+                  </h3>
+                  <p className="text-[15px] leading-[1.8] text-muted-foreground">
                     The CRA doesn't go by what your contract says — they look at who controls the work, who provides the tools, and who bears the risk of loss. If you're uncertain how to classify your situation, that's a question for a tax advisor or CRA directly (Form CPT1, Request for a CPP/EI Ruling).
                   </p>
                 </div>
 
-                {/* Closing paragraph */}
-                <div className="mt-8 rounded-xl p-8" style={{ backgroundColor: '#E8EDF5' }}>
-                  <p className="text-[16px] leading-[1.7] text-navy/85">
+                {/* Closing paragraph - styled like FMHC page */}
+                <div className="rounded-xl bg-blue-50 border-l-4 p-6 shadow-sm" style={{ borderLeftColor: '#2B4C7E' }}>
+                  <p className="text-[15px] leading-[1.7]" style={{ color: '#2B4C7E' }}>
                     Whatever path you choose, you'll need a qualified bookkeeper before Ontario Health atHome releases your first funding deposit. Schedule O of your agreement specifies the required bookkeeper qualifications. Tabber supports families across all three models, and our services are structured to fit within the bookkeeping allowance built into your FMHC budget — no out-of-pocket cost to you.
                   </p>
                 </div>
@@ -538,9 +542,12 @@ export default function CareArrangementGuidePage() {
           {/* FAQs */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <h2 className="mb-10 text-center font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                Frequently Asked Questions
-              </h2>
+              <div className="mb-10 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                  <HelpCircle className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Frequently Asked Questions</h2>
+              </div>
 
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, index) => (
@@ -564,12 +571,15 @@ export default function CareArrangementGuidePage() {
           {/* CTA Section with Contact Form */}
           <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <div className="mb-10 text-center">
-                <h2 className="font-serif text-[32px] font-bold text-navy md:text-[38px]">
-                  Have Questions About Your Situation?
-                </h2>
-                <p className="mt-4 text-[17px] leading-[1.7] text-navy/85">
-                  Every FMHC situation is slightly different. If you're unsure which path makes sense for your setup, feel free to reach out — we're happy to talk it through.
+              <div className="mb-10">
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                    <Mail className="size-5 text-white" />
+                  </div>
+                  <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Have Questions?</h2>
+                </div>
+                <p className="text-[15px] leading-[1.8] text-muted-foreground">
+                  Every FMHC situation is different. If you're unsure which path makes sense for your setup, feel free to reach out — we're happy to talk it through.
                 </p>
               </div>
               <ContactFormEmbed />
@@ -579,8 +589,8 @@ export default function CareArrangementGuidePage() {
           {/* Footer Disclaimer */}
           <section className="scroll-mt-20 bg-gray-50 py-8 border-t border-border/30">
             <div className="mx-auto max-w-[900px] px-6">
-              <p className="text-center text-[13px] leading-[1.6] text-navy/70">
-                Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome. Program requirements can change and may vary by agreement. This page provides general information only and is not legal, tax, payroll, medical, or eligibility advice. Families should follow their own signed agreement and confirm current requirements with their Ontario Health atHome Care Coordinator. For legal, employment, payroll, tax, or SDM questions, consult an appropriate qualified professional.
+              <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
+                Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome. Program requirements can change and may vary by agreement. This page provides general information only and is not legal, tax, payroll, medical, or eligibility advice. Families should follow their own signed agreement and confirm current requirements with their Ontario Health atHome care coordinator. For legal, employment, payroll, tax, or SDM questions, consult an appropriate qualified professional.
               </p>
             </div>
           </section>
