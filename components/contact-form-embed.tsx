@@ -51,10 +51,14 @@ export function ContactFormEmbed() {
     <form
       id="contact-form"
       name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 rounded-xl bg-card p-8 shadow-sm border border-border"
     >
       <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-medium text-navy">
