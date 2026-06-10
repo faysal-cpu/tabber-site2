@@ -125,31 +125,53 @@ function Tooltip({ text }: { text: string }) {
 
 export function DirectHireCalculator() {
   const [scheduleBMax, setScheduleBMax] = useState(38.46)
+  const [hoursInputMode, setHoursInputMode] = useState<"weekly" | "monthly">("weekly")
   const [hoursPerWeek, setHoursPerWeek] = useState(21)
+  const [hoursPerMonth, setHoursPerMonth] = useState(91)
   const [hourlyWage, setHourlyWage] = useState(33.0)
   const [vacationStructure, setVacationStructure] = useState<"included" | "separate">("included")
   const [wsibApplicable, setWsibApplicable] = useState(false)
+  const [wsibManualOverride, setWsibManualOverride] = useState(false)
   const [wsibRate, setWsibRate] = useState(1.05)
 
-  // Auto-determine WSIB based on hours
+  // Sync hours between weekly and monthly
+  const effectiveHoursPerWeek = hoursInputMode === "weekly"
+    ? hoursPerWeek
+    : hoursPerMonth / WEEKS_PER_MONTH
+
+  // Auto-suggest WSIB based on hours (but allow manual override)
   useMemo(() => {
-    const shouldApply = hoursPerWeek > 24
-    if (wsibApplicable !== shouldApply) {
-      setWsibApplicable(shouldApply)
+    if (!wsibManualOverride) {
+      const shouldApply = effectiveHoursPerWeek > 24
+      if (wsibApplicable !== shouldApply) {
+        setWsibApplicable(shouldApply)
+      }
     }
-  }, [hoursPerWeek])
+  }, [effectiveHoursPerWeek, wsibManualOverride])
 
   const results = useMemo(
-    () =>
-      calculateResults(
+    () => {
+      const calcResults = calculateResults(
         scheduleBMax,
-        hoursPerWeek,
+        effectiveHoursPerWeek,
         hourlyWage,
         vacationStructure,
         wsibApplicable,
         wsibRate
-      ),
-    [scheduleBMax, hoursPerWeek, hourlyWage, vacationStructure, wsibApplicable, wsibRate]
+      )
+
+      // Track calculation in Google Analytics
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'calculator_use', {
+          event_category: 'Direct Hire Calculator',
+          event_label: calcResults.fitsWithinCap ? 'Within Budget' : 'Over Budget',
+          value: Math.round(calcResults.effectiveHourlyRate * 100) / 100,
+        })
+      }
+
+      return calcResults
+    },
+    [scheduleBMax, effectiveHoursPerWeek, hourlyWage, vacationStructure, wsibApplicable, wsibRate]
   )
 
   return (
@@ -181,20 +203,67 @@ export function DirectHireCalculator() {
               </div>
 
               <div>
-                <label htmlFor="hoursPerWeek" className="flex items-center text-sm font-semibold text-navy mb-2">
-                  Worker hours per week
-                  <Tooltip text="The number of service hours the worker will be scheduled for each week. Used to calculate monthly hours and to flag WSIB applicability." />
+                <label className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Worker hours
+                  <Tooltip text="The number of service hours the worker will be scheduled for. Used to calculate monthly costs and to flag WSIB applicability (>24 hrs/week)." />
                 </label>
-                <input
-                  id="hoursPerWeek"
-                  type="number"
-                  step="0.5"
-                  min="0"
-                  max="60"
-                  value={hoursPerWeek}
-                  onChange={(e) => setHoursPerWeek(parseFloat(e.target.value) || 0)}
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
-                />
+                <div className="mb-3 flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setHoursInputMode("weekly")
+                      setHoursPerWeek(hoursPerMonth / WEEKS_PER_MONTH)
+                    }}
+                    className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
+                      hoursInputMode === "weekly"
+                        ? "text-white"
+                        : "bg-gray-100 text-navy hover:bg-gray-200"
+                    }`}
+                    style={hoursInputMode === "weekly" ? { backgroundColor: "#2B4C7E" } : {}}
+                  >
+                    Per Week
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setHoursInputMode("monthly")
+                      setHoursPerMonth(hoursPerWeek * WEEKS_PER_MONTH)
+                    }}
+                    className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
+                      hoursInputMode === "monthly"
+                        ? "text-white"
+                        : "bg-gray-100 text-navy hover:bg-gray-200"
+                    }`}
+                    style={hoursInputMode === "monthly" ? { backgroundColor: "#2B4C7E" } : {}}
+                  >
+                    Per Month
+                  </button>
+                </div>
+                {hoursInputMode === "weekly" ? (
+                  <input
+                    id="hoursPerWeek"
+                    type="number"
+                    step="0.5"
+                    min="0"
+                    max="60"
+                    value={hoursPerWeek}
+                    onChange={(e) => setHoursPerWeek(parseFloat(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="e.g., 21"
+                  />
+                ) : (
+                  <input
+                    id="hoursPerMonth"
+                    type="number"
+                    step="1"
+                    min="0"
+                    max="260"
+                    value={hoursPerMonth}
+                    onChange={(e) => setHoursPerMonth(parseFloat(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="e.g., 91"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -255,20 +324,32 @@ export function DirectHireCalculator() {
           <div>
             <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">WSIB</h3>
             <div className="space-y-4">
+              {hoursInputMode === "monthly" && (
+                <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
+                  <p className="text-xs text-amber-900 leading-relaxed">
+                    <strong>Important:</strong> WSIB applies if the worker exceeds 24 hours in <em>any single week</em>, even if the monthly average is below that threshold. If your worker's hours vary week-to-week, check the WSIB box manually if any week exceeds 24 hours.
+                  </p>
+                </div>
+              )}
               <div>
                 <label className="flex items-center text-sm font-semibold text-navy mb-2">
                   WSIB applicable?
-                  <Tooltip text="In Ontario, domestic workers in a private residence are exempt from WSIB if they work less than 24 hours per week. Above that threshold, the family must register and pay WSIB premiums." />
+                  <Tooltip text="In Ontario, domestic workers in a private residence are exempt from WSIB if they work less than 24 hours per week. WSIB applies if ANY week exceeds 24 hours — not based on monthly average. Check this box if any week will exceed 24 hours." />
                 </label>
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={wsibApplicable}
-                    onChange={(e) => setWsibApplicable(e.target.checked)}
+                    onChange={(e) => {
+                      setWsibApplicable(e.target.checked)
+                      setWsibManualOverride(true)
+                    }}
                     className="size-4 rounded text-[#2B4C7E] focus:ring-[#2B4C7E]"
                   />
                   <span className="text-sm text-navy">
-                    {hoursPerWeek > 24 ? "Yes (auto-determined: >24 hrs/week)" : "No (auto-determined: ≤24 hrs/week)"}
+                    {wsibManualOverride
+                      ? (wsibApplicable ? "Yes (manually set)" : "No (manually set)")
+                      : (effectiveHoursPerWeek > 24 ? "Yes (auto-detected: >24 hrs/week avg)" : "No (auto-detected: ≤24 hrs/week avg)")}
                   </span>
                 </label>
               </div>
@@ -381,9 +462,9 @@ export function DirectHireCalculator() {
             </div>
           </div>
 
-          {/* Schedule B Headroom */}
+          {/* Schedule B Rate Check */}
           <div className="rounded-xl p-6" style={{ backgroundColor: '#E8EDF5' }}>
-            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Your Schedule B Headroom</h3>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Schedule B Rate Check</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-navy/70">Schedule B max per hour:</span>
@@ -395,22 +476,26 @@ export function DirectHireCalculator() {
               </div>
               <div className="flex justify-between">
                 <span className="text-navy/70">
-                  {results.fitsWithinCap ? "Room per hour:" : "Over by:"}
+                  {results.fitsWithinCap ? "Difference per hour:" : "Over by:"}
                 </span>
                 <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
                   ${Math.abs(results.overageOrHeadroom).toFixed(2)}
                 </span>
               </div>
-              <div className="pt-2 border-t" style={{ borderColor: '#2B4C7E' }}>
-                <p className="text-xs text-navy/70">
-                  Over {results.hoursPerMonth.toFixed(1)} hours, that's{" "}
-                  <span className="font-semibold">${Math.abs(results.monthlyHeadroom).toFixed(2)}</span>{" "}
-                  {results.fitsWithinCap
-                    ? "of monthly budget remaining for other eligible expenses"
-                    : "you'd need to cover"}
-                  .
-                </p>
-              </div>
+              {results.fitsWithinCap && (
+                <div className="pt-2 border-t" style={{ borderColor: '#2B4C7E' }}>
+                  <p className="text-xs text-navy/70 leading-relaxed">
+                    <strong>Note:</strong> This difference cannot be used to exceed approved hours or reallocated freely. Both your hourly rate and approved service hours are fixed ceilings in Schedule B.
+                  </p>
+                </div>
+              )}
+              {!results.fitsWithinCap && (
+                <div className="pt-2 border-t" style={{ borderColor: '#DC2626' }}>
+                  <p className="text-xs leading-relaxed" style={{ color: '#7F1D1D' }}>
+                    At {results.hoursPerMonth.toFixed(1)} hours/month, you'd be over budget by ${Math.abs(results.monthlyHeadroom).toFixed(2)}/month. This shortfall would need to come out of pocket.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -77,6 +77,14 @@ export default function DirectHireCalculatorPage() {
         body: new URLSearchParams(formData as any).toString(),
       })
       setFormSubmitted(true)
+
+      // Track form submission in Google Analytics
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submit', {
+          event_category: 'Direct Hire Calculator',
+          event_label: 'Contact Form Submission',
+        })
+      }
     } catch (error) {
       console.error("Form submission error:", error)
       alert("There was an error submitting the form. Please try again.")
@@ -129,13 +137,13 @@ export default function DirectHireCalculatorPage() {
               alt="FMHC Direct Hire Cost Calculator"
               fill
               className="object-cover"
-              style={{ objectPosition: "center" }}
+              style={{ objectPosition: "center", objectFit: "contain" }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#E8EDF5]" />
+            <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-white" />
 
             <div className="relative z-10 max-w-[900px] w-full p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: "rgba(249, 250, 251, 0.95)", backdropFilter: "blur(12px)" }}>
               <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: "#F3F4F6", borderColor: "#2B4C7E", color: "#2B4C7E" }}>
@@ -163,17 +171,9 @@ export default function DirectHireCalculatorPage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
-
           {/* Calculator Overview */}
-          <section className="bg-gray-50 py-10 md:py-14">
+          <section style={{ backgroundColor: "#E8EDF5" }} className="py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
-                  <BookOpen className="size-5 text-white" />
-                </div>
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Calculator Overview</h2>
-              </div>
               <p className="text-[15px] leading-[1.8] text-muted-foreground">
                 If you're hiring a care worker as a direct employee under Family-Managed Home Care, the wage you advertise isn't the whole story. As the employer, you also cover the employer side of Canada Pension Plan, Employment Insurance, and — if hours exceed 24 per week — WSIB premiums. All of those costs add up on top of the wage, and the total has to fit under the all-in hourly rate approved in your FMHC Schedule B.
               </p>
@@ -186,8 +186,10 @@ export default function DirectHireCalculatorPage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
+
           {/* Calculator Section */}
-          <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section className="bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[1200px] px-6">
               <div className="mb-10 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
@@ -258,16 +260,19 @@ export default function DirectHireCalculatorPage() {
                     <li>Per-hour cost: $3,232.79 ÷ 91 = $35.52</li>
                   </ul>
                   <p className="mt-3">
-                    That fits well under a $38.46 Schedule B max, leaving roughly $2.94/hr × 91 hours = $267.54 of monthly budget headroom for eligible expenses (bookkeeping, supplies, etc.).
+                    That fits well under a $38.46 Schedule B max, leaving $2.94/hr of rate capacity.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
-                    Why this matters
+                    Understanding Schedule B constraints
                   </h3>
                   <p>
-                    If you offer a wage that pushes the per-hour cost over the Schedule B max, your monthly costs exceed your approved funding. The shortfall comes out of pocket. The calculator above lets you test different wages against your specific Schedule B before you make an offer.
+                    Your Schedule B sets <strong>two fixed ceilings</strong>: the maximum hourly rate AND the approved number of service hours per month. You cannot exceed the approved hours even if your rate is lower, and you cannot pay a higher rate even if you use fewer hours. There is no flexibility to trade off between rate and units.
+                  </p>
+                  <p className="mt-3">
+                    If you offer a wage that pushes the per-hour cost over the Schedule B max, your monthly costs exceed your approved funding — the shortfall comes out of pocket. The calculator above lets you test different wages against your specific Schedule B before you make an offer.
                   </p>
                   <p className="mt-3">
                     It's also useful when a worker counters your initial offer — you can immediately see whether a higher wage still fits, or whether you need to negotiate other terms.
