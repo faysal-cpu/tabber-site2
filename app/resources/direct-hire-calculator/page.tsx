@@ -86,7 +86,7 @@ export default function DirectHireCalculatorPage() {
   return (
     <>
       {/* Hidden form for Netlify detection */}
-      <form name="direct-hire-calculator-inquiry" netlify netlify-honeypot="bot-field" hidden>
+      <form name="direct-hire-calc" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
@@ -163,9 +163,17 @@ export default function DirectHireCalculatorPage() {
             </div>
           </section>
 
-          {/* Lead Paragraph */}
-          <section style={{ backgroundColor: "#E8EDF5" }} className="py-10 md:py-14">
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
+          {/* Calculator Overview */}
+          <section className="bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
+                  <BookOpen className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Calculator Overview</h2>
+              </div>
               <p className="text-[15px] leading-[1.8] text-muted-foreground">
                 If you're hiring a care worker as a direct employee under Family-Managed Home Care, the wage you advertise isn't the whole story. As the employer, you also cover the employer side of Canada Pension Plan, Employment Insurance, and — if hours exceed 24 per week — WSIB premiums. All of those costs add up on top of the wage, and the total has to fit under the all-in hourly rate approved in your FMHC Schedule B.
               </p>
@@ -178,10 +186,8 @@ export default function DirectHireCalculatorPage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
-
           {/* Calculator Section */}
-          <section className="bg-gray-50 py-10 md:py-14">
+          <section className="bg-gray-50 py-10 md:py-14 border-t border-border/30">
             <div className="mx-auto max-w-[1200px] px-6">
               <div className="mb-10 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
@@ -213,16 +219,20 @@ export default function DirectHireCalculatorPage() {
                   </p>
                   <ul className="mt-3 ml-6 space-y-2 list-disc">
                     <li>
-                      <strong>Canada Pension Plan (CPP)</strong> — employer match. Both employee and employer pay 5.95% of pensionable earnings. Pensionable earnings = gross wages minus the basic exemption ($291.67 per month).
+                      <strong>Canada Pension Plan (CPP) — employer contribution</strong><br />
+                      Both employee and employer contribute 5.95% of pensionable earnings. Pensionable earnings are calculated as gross wages minus the basic exemption ($291.67 per month).
                     </li>
                     <li>
-                      <strong>Employment Insurance (EI)</strong> — employer portion. Employee EI is 1.63% of gross wages. The employer pays 1.4× that rate, or about 2.28%.
+                      <strong>Employment Insurance (EI) — employer portion</strong><br />
+                      Employee EI is 1.63% of gross wages. The employer pays 1.4× that amount, or roughly 2.28%.
                     </li>
                     <li>
-                      <strong>WSIB premiums</strong> — if applicable. In Ontario, in-home domestic workers are exempt from WSIB if they work less than 24 hours per week. Above that threshold, the family must register with WSIB and pay premiums, typically 1.05% of gross wages (rate varies by classification).
+                      <strong>WSIB premiums — if applicable</strong><br />
+                      In Ontario, in-home domestic workers are exempt if they work under 24 hours per week. Above that threshold, WSIB premiums apply, typically around 1.05% of gross wages (varies by classification).
                     </li>
                     <li>
-                      <strong>Vacation pay</strong>. Ontario's Employment Standards Act requires 4% vacation pay (or more, depending on years of service). This can be paid out each pay period (built into the hourly wage) or accrued and paid as a lump sum.
+                      <strong>Vacation pay</strong><br />
+                      Ontario requires at least 4% vacation pay. This can either be included in the hourly rate or paid out separately.
                     </li>
                   </ul>
                   <p className="mt-3">
@@ -304,10 +314,10 @@ export default function DirectHireCalculatorPage() {
                   <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
                     <Mail className="size-5 text-white" />
                   </div>
-                  <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Need Help Sizing Up a Wage Offer?</h2>
+                  <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Need help selecting the right wage?</h2>
                 </div>
                 <p className="text-[15px] leading-[1.8] text-muted-foreground">
-                  Every FMHC budget is different, and edge cases come up — multiple workers sharing hours, mid-year wage changes, surplus management, WSIB classification questions. If you'd like a second set of eyes on your numbers, reach out.
+                  Every FMHC setup is different. If you'd like a quick review of your calculation, we're here to help — no commitment required.
                 </p>
               </div>
 
@@ -330,11 +340,11 @@ export default function DirectHireCalculatorPage() {
                 </div>
               ) : (
                 <form
-                  name="direct-hire-calculator-inquiry"
+                  name="direct-hire-calc"
                   onSubmit={handleFormSubmit}
                   className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
                 >
-                  <input type="hidden" name="form-name" value="direct-hire-calculator-inquiry" />
+                  <input type="hidden" name="form-name" value="direct-hire-calc" />
                   <div className="space-y-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">

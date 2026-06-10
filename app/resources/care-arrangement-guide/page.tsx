@@ -118,6 +118,28 @@ export default function CareArrangementGuidePage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Scroll tracking for mobile comparison cards
+  useEffect(() => {
+    const scrollContainer = document.getElementById('comparison-scroll')
+    if (!scrollContainer) return
+
+    const updateDots = () => {
+      const scrollLeft = scrollContainer.scrollLeft
+      const cardWidth = scrollContainer.scrollWidth / comparisonData.length
+      const activeIndex = Math.round(scrollLeft / cardWidth)
+
+      // Update dot colors
+      const dots = document.querySelectorAll('[data-dot-index]')
+      dots.forEach((dot, i) => {
+        const htmlDot = dot as HTMLElement
+        htmlDot.style.backgroundColor = i === activeIndex ? '#2B4C7E' : '#E8EDF5'
+      })
+    }
+
+    scrollContainer.addEventListener('scroll', updateDots)
+    return () => scrollContainer.removeEventListener('scroll', updateDots)
+  }, [])
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -476,13 +498,14 @@ export default function CareArrangementGuidePage() {
                 <p className="mb-4 text-center text-sm text-muted-foreground">
                   Swipe to navigate →
                 </p>
-                <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
+                <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6" id="comparison-scroll">
                   <div className="flex gap-4 pb-4" style={{ width: `${comparisonData.length * 100}%` }}>
                     {comparisonData.map((row, index) => (
                       <div
                         key={index}
                         className="snap-center shrink-0 rounded-xl bg-white p-6 shadow-lg"
                         style={{ width: `calc(${100 / comparisonData.length}% - 12px)`, minWidth: '85vw' }}
+                        data-index={index}
                       >
                         <h3 className="mb-5 font-serif text-[18px] font-bold text-navy border-b pb-3" style={{ borderColor: '#E8EDF5' }}>
                           {row.factor}
@@ -510,18 +533,20 @@ export default function CareArrangementGuidePage() {
                             <div className="text-[15px] leading-[1.6] text-navy/80">{row.directHire}</div>
                           </div>
                         </div>
-                        <div className="mt-5 pt-4 border-t flex justify-center gap-2" style={{ borderColor: '#E8EDF5' }}>
-                          {comparisonData.map((_, i) => (
-                            <div
-                              key={i}
-                              className="h-1.5 w-1.5 rounded-full transition-all"
-                              style={{ backgroundColor: i === index ? '#2B4C7E' : '#E8EDF5' }}
-                            />
-                          ))}
-                        </div>
                       </div>
                     ))}
                   </div>
+                </div>
+                {/* Pagination dots outside cards */}
+                <div className="mt-4 flex justify-center gap-2" id="comparison-dots">
+                  {comparisonData.map((_, i) => (
+                    <div
+                      key={i}
+                      className="h-2 w-2 rounded-full transition-all duration-300"
+                      style={{ backgroundColor: i === 0 ? '#2B4C7E' : '#E8EDF5' }}
+                      data-dot-index={i}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

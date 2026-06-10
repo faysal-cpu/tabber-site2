@@ -114,11 +114,11 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            {/* Guides & Resources */}
+            {/* Guides */}
             <div className="mb-10">
-              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Guides & Resources</h3>
+              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Guides</h3>
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {fmhcResources.map((resource) => {
+                {fmhcResources.filter(r => r.type === 'Full Guide' || r.type === 'Decision Guide').map((resource) => {
                   const Icon = resource.icon
                   return (
                     <div
@@ -136,37 +136,89 @@ export default function ResourcesPage() {
                           {resource.type}
                         </span>
                       </div>
-                      {!resource.comingSoon ? (
-                        resource.featured ? (
-                          <Link href={resource.link} className="mt-4">
-                            <Button
-                              className="w-full gap-2 rounded-lg px-4 text-white transition-all duration-200"
-                              style={{ backgroundColor: '#2B4C7E' }}
-                            >
-                              <BookOpen className="size-4" />
-                              Read Guide
-                            </Button>
-                          </Link>
-                        ) : (
-                          <Link href={resource.link} download={resource.isDownload} target="_blank" className="mt-4">
-                            <Button
-                              variant="outline"
-                              className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] px-4 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white transition-all duration-200"
-                            >
-                              <Download className="size-4" />
-                              Download
-                            </Button>
-                          </Link>
-                        )
-                      ) : (
+                      <Link href={resource.link} className="mt-4">
+                        <Button
+                          className="w-full gap-2 rounded-lg px-4 text-white transition-all duration-200"
+                          style={{ backgroundColor: '#2B4C7E' }}
+                        >
+                          <BookOpen className="size-4" />
+                          Read Guide
+                        </Button>
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Checklists */}
+            <div className="mb-10">
+              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Checklists</h3>
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {fmhcResources.filter(r => r.type === 'PDF Download').map((resource) => {
+                  const Icon = resource.icon
+                  return (
+                    <div
+                      key={resource.title}
+                      className="flex flex-col justify-between rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md"
+                      style={{ borderLeftWidth: '3px', borderLeftColor: '#2B4C7E' }}
+                    >
+                      <div>
+                        <div className="mb-3 flex size-11 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                          <Icon className="size-5" style={{ color: '#2B4C7E' }} />
+                        </div>
+                        <h4 className="mb-2 font-serif text-[17px] font-semibold text-navy">{resource.title}</h4>
+                        <p className="mb-3 text-sm leading-[1.65] text-muted-foreground">{resource.description}</p>
+                        <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-medium text-navy">
+                          {resource.type}
+                        </span>
+                      </div>
+                      <Link href={resource.link} download={resource.isDownload} target="_blank" className="mt-4">
                         <Button
                           variant="outline"
-                          disabled
-                          className="mt-4 w-full rounded-lg border-2 border-gray-300 px-4 text-gray-400 cursor-not-allowed"
+                          className="w-full gap-2 rounded-lg border-2 border-[#2B4C7E] px-4 text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white transition-all duration-200"
                         >
-                          Coming Soon
+                          <Download className="size-4" />
+                          Download
                         </Button>
-                      )}
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="mb-10">
+              <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Tools</h3>
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {fmhcResources.filter(r => r.type === 'Calculator').map((resource) => {
+                  const Icon = resource.icon
+                  return (
+                    <div
+                      key={resource.title}
+                      className="flex flex-col justify-between rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md"
+                      style={{ borderLeftWidth: '3px', borderLeftColor: '#2B4C7E' }}
+                    >
+                      <div>
+                        <div className="mb-3 flex size-11 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                          <Icon className="size-5" style={{ color: '#2B4C7E' }} />
+                        </div>
+                        <h4 className="mb-2 font-serif text-[17px] font-semibold text-navy">{resource.title}</h4>
+                        <p className="mb-3 text-sm leading-[1.65] text-muted-foreground">{resource.description}</p>
+                        <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-medium text-navy">
+                          {resource.type}
+                        </span>
+                      </div>
+                      <Link href={resource.link} className="mt-4">
+                        <Button
+                          className="w-full gap-2 rounded-lg px-4 text-white transition-all duration-200"
+                          style={{ backgroundColor: '#2B4C7E' }}
+                        >
+                          <CalcIcon className="size-4" />
+                          Run Calculator
+                        </Button>
+                      </Link>
                     </div>
                   )
                 })}
