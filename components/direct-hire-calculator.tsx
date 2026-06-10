@@ -34,16 +34,29 @@ function calculateResults(
   hourlyWage: number,
   vacationStructure: "included" | "separate",
   wsibApplicable: boolean,
-  wsibRate: number
+  wsibRate: number,
+  otherCostsPerHour: number = 0
 ): CalculatorResults {
   const hoursPerMonth = hoursPerWeek * WEEKS_PER_MONTH
   const grossMonthly = hourlyWage * hoursPerMonth
-  const pensionableEarnings = Math.max(0, grossMonthly - CPP_MONTHLY_EXEMPTION)
-  const employerCPP = pensionableEarnings * CPP_RATE
-  const employerEI = grossMonthly * EI_EMPLOYER_RATE
+
+  // Calculate vacation pay first
   const vacationCost = vacationStructure === "separate" ? grossMonthly * VACATION_RATE : 0
+
+  // CPP and EI are calculated on total earnings (gross + vacation if separate)
+  // Per CRA: vacation pay is pensionable and insurable earnings
+  const totalEarnings = grossMonthly + (vacationStructure === "separate" ? vacationCost : 0)
+  const pensionableEarnings = Math.max(0, totalEarnings - CPP_MONTHLY_EXEMPTION)
+  const employerCPP = pensionableEarnings * CPP_RATE
+  const employerEI = totalEarnings * EI_EMPLOYER_RATE
+
+  // WSIB on gross wages only (not vacation)
   const wsibCost = wsibApplicable ? grossMonthly * (wsibRate / 100) : 0
-  const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost
+
+  // Other costs (insurance, travel, supplies, etc.)
+  const otherCostsMon = otherCostsPerHour * hoursPerMonth
+
+  const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost + otherCostsMon
   const effectiveHourlyRate = hoursPerMonth > 0 ? totalMonthlyCost / hoursPerMonth : 0
   const fitsWithinCap = effectiveHourlyRate <= scheduleBMax
   const overageOrHeadroom = scheduleBMax - effectiveHourlyRate
@@ -57,7 +70,8 @@ function calculateResults(
       hoursPerWeek,
       vacationStructure,
       wsibApplicable,
-      wsibRate
+      wsibRate,
+      otherCostsPerHour
     )
   }
 
@@ -83,7 +97,8 @@ function findMaxSustainableWage(
   hoursPerWeek: number,
   vacationStructure: "included" | "separate",
   wsibApplicable: boolean,
-  wsibRate: number
+  wsibRate: number,
+  otherCostsPerHour: number = 0
 ): number {
   let low = 0
   let high = targetRate
@@ -93,12 +108,23 @@ function findMaxSustainableWage(
     const mid = (low + high) / 2
     const hoursPerMonth = hoursPerWeek * WEEKS_PER_MONTH
     const grossMonthly = mid * hoursPerMonth
-    const pensionableEarnings = Math.max(0, grossMonthly - CPP_MONTHLY_EXEMPTION)
-    const employerCPP = pensionableEarnings * CPP_RATE
-    const employerEI = grossMonthly * EI_EMPLOYER_RATE
+
+    // Calculate vacation
     const vacationCost = vacationStructure === "separate" ? grossMonthly * VACATION_RATE : 0
+
+    // CPP and EI on total earnings (gross + vacation if separate)
+    const totalEarnings = grossMonthly + (vacationStructure === "separate" ? vacationCost : 0)
+    const pensionableEarnings = Math.max(0, totalEarnings - CPP_MONTHLY_EXEMPTION)
+    const employerCPP = pensionableEarnings * CPP_RATE
+    const employerEI = totalEarnings * EI_EMPLOYER_RATE
+
+    // WSIB on gross only
     const wsibCost = wsibApplicable ? grossMonthly * (wsibRate / 100) : 0
-    const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost
+
+    // Other costs
+    const otherCostsMon = otherCostsPerHour * hoursPerMonth
+
+    const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost + otherCostsMon
     const effectiveRate = totalMonthlyCost / hoursPerMonth
 
     if (effectiveRate > targetRate) {
@@ -133,6 +159,7 @@ export function DirectHireCalculator() {
   const [wsibApplicable, setWsibApplicable] = useState(false)
   const [wsibManualOverride, setWsibManualOverride] = useState(false)
   const [wsibRate, setWsibRate] = useState(1.05)
+  const [otherCostsPerHour, setOtherCostsPerHour] = useState(0.00)
 
   // Sync hours between weekly and monthly
   const effectiveHoursPerWeek = hoursInputMode === "weekly"
@@ -157,7 +184,8 @@ export function DirectHireCalculator() {
         hourlyWage,
         vacationStructure,
         wsibApplicable,
-        wsibRate
+        wsibRate,
+        otherCostsPerHour
       )
 
       // Track calculation in Google Analytics
@@ -171,7 +199,7 @@ export function DirectHireCalculator() {
 
       return calcResults
     },
-    [scheduleBMax, effectiveHoursPerWeek, hourlyWage, vacationStructure, wsibApplicable, wsibRate]
+    [scheduleBMax, effectiveHoursPerWeek, hourlyWage, vacationStructure, wsibApplicable, wsibRate, otherCostsPerHour]
   )
 
   return (
@@ -375,6 +403,27 @@ export function DirectHireCalculator() {
                   </div>
                 </div>
               )}
+
+              <div>
+                <label htmlFor="otherCosts" className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Other costs per hour (optional)
+                  <Tooltip text="Add any other employer costs not captured above: insurance ($2M liability + $25k abuse liability typically ~$0.50-1.00/hr), travel/preparation time, standard equipment & supplies, or other expenses. This gets added to the effective hourly rate." />
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-navy">$</span>
+                  <input
+                    id="otherCosts"
+                    type="number"
+                    step="0.10"
+                    min="0"
+                    max="10"
+                    value={otherCostsPerHour}
+                    onChange={(e) => setOtherCostsPerHour(parseFloat(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    placeholder="0.00"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

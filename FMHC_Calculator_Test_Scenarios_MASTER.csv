@@ -1,0 +1,47 @@
+Test ID,Client/Category,Scenario Description,Schedule B Max ($/hr),Hours Input Mode,Hours Per Week,Hours Per Month,Hourly Wage ($),Vacation Structure,WSIB Applicable,WSIB Rate (%),Expected Monthly Hours,Expected Gross Wages ($),Expected Employer CPP ($),Expected Employer EI ($),Expected Vacation Cost ($),Expected WSIB Cost ($),Expected Total Monthly Cost ($),Expected Effective Hourly Rate ($/hr),Expected Fits Within Cap,Expected Difference Per Hour ($/hr),Notes
+
+REAL CLIENT SCENARIOS - PARIN SUNDERJI (Jaffer),,,,,,,,,,,,,,,,,,,,
+JS-1,Parin Sunderji,Actual approved care plan - 31.5hrs/week,38.46,weekly,31.5,N/A,33.00,included,Yes,1.05,136.5,4504.50,250.59,102.70,0.00,47.30,4905.09,35.93,Yes,2.53,Real client scenario - matches Schedule J Care Plan
+JS-2,Parin Sunderji,Testing max sustainable wage,38.46,weekly,31.5,N/A,35.54,included,Yes,1.05,136.5,4851.21,270.87,110.61,0.00,50.94,5283.63,38.71,No,-0.25,Finding the exact maximum wage that fits
+JS-3,Parin Sunderji,Lower wage scenario,38.46,weekly,31.5,N/A,30.00,included,Yes,1.05,136.5,4095.00,225.97,93.41,0.00,43.00,4457.38,32.65,Yes,5.81,More budget headroom with lower wage
+JS-4,Parin Sunderji,Monthly hours input - June 2026,38.46,monthly,N/A,135,33.00,included,Yes,1.05,135.0,4455.00,247.58,101.57,0.00,46.78,4850.93,35.93,Yes,2.53,"Using Schedule B June approved units (135), should trigger WSIB warning about weekly variability"
+JS-5,Parin Sunderji,Monthly hours input - July 2026,38.46,monthly,N/A,140,33.00,included,Yes,1.05,140.0,4620.00,257.29,105.37,0.00,48.51,5031.17,35.94,Yes,2.52,"Using Schedule B July approved units (140), WSIB applies"
+JS-6,Parin Sunderji,Monthly hours input - February 2027,38.46,monthly,N/A,126,33.00,included,Yes,1.05,126.0,4158.00,230.17,94.80,0.00,43.66,4526.63,35.93,Yes,2.53,"Using Schedule B February approved units (126), WSIB applies"
+JS-7,Parin Sunderji,Vacation accrued separately,38.46,weekly,31.5,N/A,33.00,separate,Yes,1.05,136.5,4504.50,250.59,102.70,180.18,47.30,5085.27,37.25,Yes,1.21,Adding 4% vacation on top increases cost significantly
+JS-8,Parin Sunderji,Testing over-budget with higher wage,38.46,weekly,31.5,N/A,36.00,included,Yes,1.05,136.5,4914.00,274.65,112.05,0.00,51.60,5352.30,39.21,No,-0.75,Exceeds Schedule B cap
+JS-9,Parin Sunderji,Minimum wage PSW,38.46,weekly,31.5,N/A,19.50,included,Yes,1.05,136.5,2661.75,140.85,60.69,0.00,27.95,2891.24,21.18,Yes,17.28,"Using minimum PSW wage ($19.50 from Schedule G section 5), significant room under cap"
+JS-10,Parin Sunderji,Variable schedule WSIB test,38.46,monthly,N/A,135,33.00,included,Yes,1.05,135.0,4455.00,247.58,101.57,0.00,46.78,4850.93,35.93,Yes,2.53,"135hrs/month = ~31.15hrs/week avg, but user manually sets WSIB=Yes because some weeks exceed 24hrs"
+
+REAL CLIENT SCENARIOS - ALI HAJJAJ (Rima Al Salah),,,,,,,,,,,,,,,,,,,,
+RA-1,Ali Hajjaj,Actual approved care plan - 21hrs/week,38.46,weekly,21,N/A,33.00,included,No,1.05,91.0,3003.00,161.32,68.47,0.00,0.00,3232.79,35.52,Yes,2.94,"Real client scenario - matches Schedule J Care Plan (3 hrs daily), WSIB does NOT apply"
+RA-2,Ali Hajjaj,Monthly hours input - April 2026,38.46,monthly,N/A,90,33.00,included,No,1.05,90.0,2970.00,159.36,67.72,0.00,0.00,3197.08,35.52,Yes,2.94,"Using Schedule B April approved units (90), calculator should show ~20.77hrs/week avg, WSIB=No"
+RA-3,Ali Hajjaj,Monthly hours input - May 2026,38.46,monthly,N/A,93,33.00,included,No,1.05,93.0,3069.00,164.88,69.97,0.00,0.00,3303.85,35.52,Yes,2.94,"Using Schedule B May approved units (93), calculator should show ~21.46hrs/week avg, WSIB=No"
+RA-4,Ali Hajjaj,Testing max sustainable wage,38.46,weekly,21,N/A,35.54,included,No,1.05,91.0,3234.14,175.01,73.74,0.00,0.00,3482.89,38.28,Yes,0.18,Finding the maximum wage that fits under Schedule B cap
+RA-5,Ali Hajjaj,Lower wage scenario,38.46,weekly,21,N/A,28.00,included,No,1.05,91.0,2548.00,134.07,58.09,0.00,0.00,2740.16,30.11,Yes,8.35,Lower wage creates more rate capacity
+RA-6,Ali Hajjaj,Vacation accrued separately,38.46,weekly,21,N/A,33.00,separate,No,1.05,91.0,3003.00,161.32,68.47,120.12,0.00,3352.91,36.84,Yes,1.62,Adding 4% vacation increases effective rate
+RA-7,Ali Hajjaj,Over budget scenario,38.46,weekly,21,N/A,37.00,included,No,1.05,91.0,3367.00,182.85,76.77,0.00,0.00,3626.62,39.85,No,-1.39,Wage too high - exceeds Schedule B cap
+RA-8,Ali Hajjaj,Minimum wage PSW,38.46,weekly,21,N/A,19.50,included,No,1.05,91.0,1774.50,88.22,40.46,0.00,0.00,1903.18,20.91,Yes,17.55,"Using minimum PSW wage ($19.50 from Schedule G), significant headroom"
+RA-9,Ali Hajjaj,Edge case - just under WSIB threshold,38.46,weekly,23.9,N/A,33.00,included,No,1.05,103.6,3418.33,185.92,77.94,0.00,0.00,3682.19,35.54,Yes,2.92,"23.9 hrs/week - just under 24hr WSIB threshold, should NOT trigger WSIB"
+RA-10,Ali Hajjaj,Variable schedule needs WSIB,38.46,monthly,N/A,91,33.00,included,Yes,1.05,91.0,3003.00,161.32,68.47,0.00,31.53,3264.32,35.87,Yes,2.59,"User manually enables WSIB because some weeks exceed 24hrs even though monthly avg is ~21hrs/week"
+
+GENERIC TEST SCENARIOS,,,,,,,,,,,,,,,,,,,,
+G-1,Generic,Basic under-budget scenario,38.46,weekly,21,N/A,33.00,included,No,1.05,91.0,3003.00,161.32,68.47,0.00,0.00,3232.79,35.52,Yes,2.94,Standard FMHC case - below 24hr threshold
+G-2,Generic,Exactly at 24 hours - WSIB boundary,38.46,weekly,24,N/A,33.00,included,No,1.05,104.0,3432.00,186.70,78.25,0.00,0.00,3696.95,35.55,Yes,2.91,Right at WSIB threshold - should NOT trigger WSIB
+G-3,Generic,Just over 24 hours - WSIB triggers,38.46,weekly,25,N/A,33.00,included,Yes,1.05,108.3,3574.95,194.68,81.51,0.00,37.54,3888.68,35.90,Yes,2.56,Above 24hr threshold - WSIB applies
+G-4,Generic,High hours with WSIB,38.46,weekly,35,N/A,30.00,included,Yes,1.05,151.7,4550.00,253.20,103.74,0.00,47.78,4954.72,32.66,Yes,5.80,Higher hours scenario with WSIB
+G-5,Generic,Over budget - needs wage reduction,38.46,weekly,21,N/A,37.00,included,No,1.05,91.0,3367.00,182.85,76.77,0.00,0.00,3626.62,39.85,No,-1.39,Wage too high - exceeds Schedule B cap
+G-6,Generic,Vacation accrued separately,38.46,weekly,21,N/A,33.00,separate,No,1.05,91.0,3003.00,161.32,68.47,120.12,0.00,3352.91,36.84,Yes,1.62,Vacation paid out separately adds 4%
+G-7,Generic,Monthly hours input - under 24/week avg,38.46,monthly,N/A,91,33.00,included,No,1.05,91.0,3003.00,161.32,68.47,0.00,0.00,3232.79,35.52,Yes,2.94,Same as scenario 1 but using monthly input
+G-8,Generic,Monthly hours - variable schedule needs WSIB,38.46,monthly,N/A,91,33.00,included,Yes,1.05,91.0,3003.00,161.32,68.47,0.00,31.53,3264.32,35.87,Yes,2.59,"91 hrs/month avg ~21/wk, but user indicates some weeks >24hrs"
+G-9,Generic,Low Schedule B rate,32.00,weekly,21,N/A,28.00,included,No,1.05,91.0,2548.00,134.07,58.09,0.00,0.00,2740.16,30.11,Yes,1.89,Lower approved rate scenario
+G-10,Generic,High Schedule B rate,45.00,weekly,30,N/A,38.00,included,Yes,1.05,130.0,4940.00,276.20,112.63,0.00,51.87,5380.70,41.39,Yes,3.61,Higher approved rate with more hours
+G-11,Generic,Minimum wage scenario,38.46,weekly,21,N/A,17.20,included,No,1.05,91.0,1565.20,75.73,35.69,0.00,0.00,1676.62,18.42,Yes,20.04,Minimum wage worker (ON 2026)
+G-12,Generic,Part-time low hours,38.46,weekly,10,N/A,35.00,included,No,1.05,43.3,1516.67,72.85,34.58,0.00,0.00,1624.10,37.49,Yes,0.97,Very part-time arrangement
+G-13,Generic,Full-time equivalent hours,38.46,weekly,40,N/A,28.00,included,Yes,1.05,173.3,4853.33,271.17,110.66,0.00,50.96,5286.12,30.50,Yes,7.96,Full-time hours scenario
+G-14,Generic,Vacation separate + WSIB,38.46,weekly,30,N/A,32.00,separate,Yes,1.05,130.0,4160.00,232.05,94.85,166.40,43.68,4697.00,36.13,Yes,2.33,Both vacation accrued and WSIB apply
+G-15,Generic,Right at budget limit,38.46,weekly,21,N/A,35.50,included,No,1.05,91.0,3230.50,174.80,73.66,0.00,0.00,3478.96,38.23,Yes,0.23,Very close to budget cap
+G-16,Generic,Significantly over budget,38.46,weekly,21,N/A,40.00,included,No,1.05,91.0,3640.00,199.13,83.00,0.00,0.00,3922.13,43.10,No,-4.64,Substantially exceeds Schedule B max
+G-17,Generic,High WSIB rate,38.46,weekly,30,N/A,33.00,included,Yes,2.50,130.0,4290.00,239.38,97.82,0.00,107.25,4734.45,36.42,Yes,2.04,Higher WSIB classification rate
+G-18,Generic,Zero CPP exemption scenario,38.46,weekly,5,N/A,50.00,included,No,1.05,21.7,1083.33,47.13,24.70,0.00,0.00,1155.16,53.28,No,-14.82,Very low hours - CPP exemption is larger than gross
+G-19,Generic,Monthly input - high hours,40.00,monthly,N/A,173,35.00,included,Yes,1.05,173.0,6055.00,342.45,138.05,0.00,63.58,6599.08,38.15,Yes,1.85,"Full-time equivalent, monthly input"
+G-20,Generic,Exact Schedule B match,38.46,weekly,21,N/A,35.54,included,No,1.05,91.0,3234.14,175.01,73.74,0.00,0.00,3482.89,38.28,Yes,0.18,Fine-tuned to nearly match cap exactly

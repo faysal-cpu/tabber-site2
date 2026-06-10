@@ -131,13 +131,13 @@ export default function DirectHireCalculatorPage() {
         <SiteHeader />
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="relative h-[450px] md:h-[500px] flex items-center justify-center px-6">
+          <section className="relative h-[450px] md:h-[500px] flex items-center justify-center">
             <Image
               src="/images/direct-hire-calculator.png"
               alt="FMHC Direct Hire Cost Calculator"
               fill
               className="object-cover"
-              style={{ objectPosition: "center", objectFit: "contain" }}
+              style={{ objectPosition: "center" }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
@@ -145,7 +145,7 @@ export default function DirectHireCalculatorPage() {
             {/* Bottom fade */}
             <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-white" />
 
-            <div className="relative z-10 max-w-[900px] w-full p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: "rgba(249, 250, 251, 0.95)", backdropFilter: "blur(12px)" }}>
+            <div className="relative z-10 max-w-[900px] w-full mx-6 p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: "rgba(249, 250, 251, 0.95)", backdropFilter: "blur(12px)" }}>
               <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: "#F3F4F6", borderColor: "#2B4C7E", color: "#2B4C7E" }}>
                 <Calculator className="size-4" />
                 <span className="text-sm font-semibold">Calculator</span>
@@ -174,8 +174,14 @@ export default function DirectHireCalculatorPage() {
           {/* Calculator Overview */}
           <section style={{ backgroundColor: "#E8EDF5" }} className="py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: "#2B4C7E" }}>
+                  <BookOpen className="size-5 text-white" />
+                </div>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Calculator Overview</h2>
+              </div>
               <p className="text-[15px] leading-[1.8] text-muted-foreground">
-                If you're hiring a care worker as a direct employee under Family-Managed Home Care, the wage you advertise isn't the whole story. As the employer, you also cover the employer side of Canada Pension Plan, Employment Insurance, and — if hours exceed 24 per week — WSIB premiums. All of those costs add up on top of the wage, and the total has to fit under the all-in hourly rate approved in your FMHC Schedule B.
+                If you're hiring a care worker as a direct employee under Family-Managed Home Care, the wage you advertise isn't the whole story. As the employer, you also cover the employer side of Canada Pension Plan, Employment Insurance, and — if hours exceed 24 per week — WSIB premiums. All of those costs add up on top of the wage, and the total has to fit under the all-in hourly rate approved in your FMHC Schedule B — otherwise you will have to pay out of pocket.
               </p>
               <p className="mt-4 text-[15px] leading-[1.8] text-muted-foreground">
                 This calculator does the math. Enter the hours, the wage you're considering, and a couple of details about the arrangement, and it shows you the true per-hour cost — and whether your offer fits within your approved rate. It also tells you the maximum sustainable wage if you want to back into it from the cap.

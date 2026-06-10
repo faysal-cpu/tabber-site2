@@ -430,6 +430,13 @@ export default function CareArrangementGuidePage() {
                     <p>
                       The benefits are full control over the working relationship and consistency of caregiver(s). The drawbacks are the administrative weight and real liability exposure as an employer. Setup is more involved than the other paths, between CRA registration, payroll configuration, and onboarding paperwork.
                     </p>
+                    <p>
+                      <strong>Want to calculate what hourly wage you can afford?</strong> Check out our{" "}
+                      <Link href="/resources/direct-hire-calculator" className="font-semibold underline" style={{ color: '#2B4C7E' }}>
+                        Direct Hire Cost Calculator
+                      </Link>
+                      {" "}to see the true per-hour cost — wages plus employer CPP, EI, and WSIB — so you know whether your offer fits within your Schedule B rate cap.
+                    </p>
                     <div className="mt-6 rounded-xl p-5" style={{ backgroundColor: '#E8EDF5' }}>
                       <p className="font-semibold text-navy">
                         <CheckCircle2 className="mr-2 inline size-5" style={{ color: '#2B4C7E' }} />
