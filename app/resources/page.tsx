@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { FileText, Download, ExternalLink, BookOpen, Calculator, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
+import { FileText, Download, ExternalLink, BookOpen, Calculator as CalcIcon, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Resources & Guides | Tabber",
@@ -27,6 +27,15 @@ const fmhcResources = [
     description: "Compare agency, independent contractor, and direct hire models. Includes an interactive decision quiz to help you choose the right path.",
     type: "Decision Guide",
     link: "/resources/care-arrangement-guide",
+    isDownload: false,
+    featured: true,
+  },
+  {
+    icon: CalcIcon,
+    title: "FMHC Direct Hire Cost Calculator",
+    description: "Calculate the true hourly cost of hiring a direct employee — wages plus employer CPP, EI, and WSIB. Confirm your offer fits within Schedule B.",
+    type: "Calculator",
+    link: "/resources/direct-hire-calculator",
     isDownload: false,
     featured: true,
   },

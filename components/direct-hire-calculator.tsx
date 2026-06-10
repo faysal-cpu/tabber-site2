@@ -1,0 +1,420 @@
+"use client"
+
+import { useState, useMemo } from "react"
+import { Calculator, HelpCircle, CheckCircle2, AlertCircle } from "lucide-react"
+
+// IMPORTANT: CPP and EI rates are set annually by CRA and Service Canada.
+// Review and update these constants every January.
+// Last reviewed: June 2026
+const CPP_RATE = 0.0595 // employer rate, matches employee
+const CPP_MONTHLY_EXEMPTION = 291.67 // $3,500 annual / 12
+const EI_EMPLOYER_RATE = 0.02282 // 1.4 × employee rate of 1.63%
+const VACATION_RATE = 0.04 // 4% ESA minimum
+const WEEKS_PER_MONTH = 4.333 // 52/12
+
+interface CalculatorResults {
+  hoursPerMonth: number
+  grossMonthly: number
+  pensionableEarnings: number
+  employerCPP: number
+  employerEI: number
+  vacationCost: number
+  wsibCost: number
+  totalMonthlyCost: number
+  effectiveHourlyRate: number
+  fitsWithinCap: boolean
+  overageOrHeadroom: number
+  monthlyHeadroom: number
+  suggestedMaxWage: number | null
+}
+
+function calculateResults(
+  scheduleBMax: number,
+  hoursPerWeek: number,
+  hourlyWage: number,
+  vacationStructure: "included" | "separate",
+  wsibApplicable: boolean,
+  wsibRate: number
+): CalculatorResults {
+  const hoursPerMonth = hoursPerWeek * WEEKS_PER_MONTH
+  const grossMonthly = hourlyWage * hoursPerMonth
+  const pensionableEarnings = Math.max(0, grossMonthly - CPP_MONTHLY_EXEMPTION)
+  const employerCPP = pensionableEarnings * CPP_RATE
+  const employerEI = grossMonthly * EI_EMPLOYER_RATE
+  const vacationCost = vacationStructure === "separate" ? grossMonthly * VACATION_RATE : 0
+  const wsibCost = wsibApplicable ? grossMonthly * (wsibRate / 100) : 0
+  const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost
+  const effectiveHourlyRate = hoursPerMonth > 0 ? totalMonthlyCost / hoursPerMonth : 0
+  const fitsWithinCap = effectiveHourlyRate <= scheduleBMax
+  const overageOrHeadroom = scheduleBMax - effectiveHourlyRate
+  const monthlyHeadroom = overageOrHeadroom * hoursPerMonth
+
+  // Calculate suggested max wage if over budget
+  let suggestedMaxWage: number | null = null
+  if (!fitsWithinCap) {
+    suggestedMaxWage = findMaxSustainableWage(
+      scheduleBMax,
+      hoursPerWeek,
+      vacationStructure,
+      wsibApplicable,
+      wsibRate
+    )
+  }
+
+  return {
+    hoursPerMonth,
+    grossMonthly,
+    pensionableEarnings,
+    employerCPP,
+    employerEI,
+    vacationCost,
+    wsibCost,
+    totalMonthlyCost,
+    effectiveHourlyRate,
+    fitsWithinCap,
+    overageOrHeadroom,
+    monthlyHeadroom,
+    suggestedMaxWage,
+  }
+}
+
+function findMaxSustainableWage(
+  targetRate: number,
+  hoursPerWeek: number,
+  vacationStructure: "included" | "separate",
+  wsibApplicable: boolean,
+  wsibRate: number
+): number {
+  let low = 0
+  let high = targetRate
+  let iterations = 0
+
+  while (high - low > 0.01 && iterations < 100) {
+    const mid = (low + high) / 2
+    const hoursPerMonth = hoursPerWeek * WEEKS_PER_MONTH
+    const grossMonthly = mid * hoursPerMonth
+    const pensionableEarnings = Math.max(0, grossMonthly - CPP_MONTHLY_EXEMPTION)
+    const employerCPP = pensionableEarnings * CPP_RATE
+    const employerEI = grossMonthly * EI_EMPLOYER_RATE
+    const vacationCost = vacationStructure === "separate" ? grossMonthly * VACATION_RATE : 0
+    const wsibCost = wsibApplicable ? grossMonthly * (wsibRate / 100) : 0
+    const totalMonthlyCost = grossMonthly + employerCPP + employerEI + vacationCost + wsibCost
+    const effectiveRate = totalMonthlyCost / hoursPerMonth
+
+    if (effectiveRate > targetRate) {
+      high = mid
+    } else {
+      low = mid
+    }
+    iterations++
+  }
+
+  return low
+}
+
+function Tooltip({ text }: { text: string }) {
+  return (
+    <div className="group relative inline-block ml-2">
+      <HelpCircle className="size-4 cursor-help" style={{ color: '#2B4C7E' }} />
+      <div className="absolute left-0 top-6 z-10 hidden w-64 rounded-lg bg-navy p-3 text-xs text-white shadow-xl group-hover:block">
+        {text}
+      </div>
+    </div>
+  )
+}
+
+export function DirectHireCalculator() {
+  const [scheduleBMax, setScheduleBMax] = useState(38.46)
+  const [hoursPerWeek, setHoursPerWeek] = useState(21)
+  const [hourlyWage, setHourlyWage] = useState(33.0)
+  const [vacationStructure, setVacationStructure] = useState<"included" | "separate">("included")
+  const [wsibApplicable, setWsibApplicable] = useState(false)
+  const [wsibRate, setWsibRate] = useState(1.05)
+
+  // Auto-determine WSIB based on hours
+  useMemo(() => {
+    const shouldApply = hoursPerWeek > 24
+    if (wsibApplicable !== shouldApply) {
+      setWsibApplicable(shouldApply)
+    }
+  }, [hoursPerWeek])
+
+  const results = useMemo(
+    () =>
+      calculateResults(
+        scheduleBMax,
+        hoursPerWeek,
+        hourlyWage,
+        vacationStructure,
+        wsibApplicable,
+        wsibRate
+      ),
+    [scheduleBMax, hoursPerWeek, hourlyWage, vacationStructure, wsibApplicable, wsibRate]
+  )
+
+  return (
+    <div className="rounded-xl bg-white p-8 shadow-xl border-2" style={{ borderColor: '#E8EDF5' }}>
+      <div className="grid gap-8 lg:grid-cols-2">
+        {/* Inputs */}
+        <div className="space-y-6">
+          {/* Group 1: Your FMHC Setup */}
+          <div>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Your FMHC Setup</h3>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="scheduleBMax" className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Schedule B maximum hourly rate
+                  <Tooltip text="The all-in hourly rate approved in your FMHC Schedule B. This caps the total per-hour cost of the service. Find it in your signed FMHC agreement." />
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-navy">$</span>
+                  <input
+                    id="scheduleBMax"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={scheduleBMax}
+                    onChange={(e) => setScheduleBMax(parseFloat(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="hoursPerWeek" className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Worker hours per week
+                  <Tooltip text="The number of service hours the worker will be scheduled for each week. Used to calculate monthly hours and to flag WSIB applicability." />
+                </label>
+                <input
+                  id="hoursPerWeek"
+                  type="number"
+                  step="0.5"
+                  min="0"
+                  max="60"
+                  value={hoursPerWeek}
+                  onChange={(e) => setHoursPerWeek(parseFloat(e.target.value) || 0)}
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Group 2: The Wage You're Considering */}
+          <div>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">The Wage You're Considering</h3>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="hourlyWage" className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Hourly wage
+                  <Tooltip text="The hourly wage you're considering offering the worker. This is what they receive on their pay stub before deductions." />
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-navy">$</span>
+                  <input
+                    id="hourlyWage"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={hourlyWage}
+                    onChange={(e) => setHourlyWage(parseFloat(e.target.value) || 0)}
+                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="flex items-center text-sm font-semibold text-navy mb-2">
+                  Vacation handling
+                  <Tooltip text="'Included in hourly rate': Vacation pay is baked into the wage above (typical for Ontario direct hires). 'Accrued separately': Vacation pay is calculated and paid out separately at 4% on top of wages." />
+                </label>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={vacationStructure === "included"}
+                      onChange={() => setVacationStructure("included")}
+                      className="text-[#2B4C7E] focus:ring-[#2B4C7E]"
+                    />
+                    <span className="text-sm text-navy">Included in hourly rate</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={vacationStructure === "separate"}
+                      onChange={() => setVacationStructure("separate")}
+                      className="text-[#2B4C7E] focus:ring-[#2B4C7E]"
+                    />
+                    <span className="text-sm text-navy">Accrued separately</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Group 3: WSIB */}
+          <div>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">WSIB</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="flex items-center text-sm font-semibold text-navy mb-2">
+                  WSIB applicable?
+                  <Tooltip text="In Ontario, domestic workers in a private residence are exempt from WSIB if they work less than 24 hours per week. Above that threshold, the family must register and pay WSIB premiums." />
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={wsibApplicable}
+                    onChange={(e) => setWsibApplicable(e.target.checked)}
+                    className="size-4 rounded text-[#2B4C7E] focus:ring-[#2B4C7E]"
+                  />
+                  <span className="text-sm text-navy">
+                    {hoursPerWeek > 24 ? "Yes (auto-determined: >24 hrs/week)" : "No (auto-determined: ≤24 hrs/week)"}
+                  </span>
+                </label>
+              </div>
+
+              {wsibApplicable && (
+                <div>
+                  <label htmlFor="wsibRate" className="flex items-center text-sm font-semibold text-navy mb-2">
+                    WSIB rate (%)
+                    <Tooltip text="Your WSIB premium rate as a percent of payroll. The rate varies by classification; check your WSIB account or recent invoice. 1.05% is a typical rate for in-home domestic worker classifications." />
+                  </label>
+                  <div className="relative">
+                    <input
+                      id="wsibRate"
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      max="10"
+                      value={wsibRate}
+                      onChange={(e) => setWsibRate(parseFloat(e.target.value) || 0)}
+                      className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    />
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-navy">%</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Outputs */}
+        <div className="space-y-6">
+          {/* Status Banner */}
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-xl p-6 text-center"
+            style={{
+              backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5',
+            }}
+          >
+            {results.fitsWithinCap ? (
+              <>
+                <CheckCircle2 className="mx-auto size-12 mb-3" style={{ color: '#2B4C7E' }} />
+                <p className="font-serif text-[18px] font-bold text-navy">
+                  ✓ This wage fits within your Schedule B max
+                </p>
+              </>
+            ) : (
+              <>
+                <AlertCircle className="mx-auto size-12 mb-3" style={{ color: '#DC2626' }} />
+                <p className="font-serif text-[18px] font-bold mb-2" style={{ color: '#7F1D1D' }}>
+                  ✗ This wage exceeds your Schedule B max
+                </p>
+                <p className="text-sm" style={{ color: '#7F1D1D' }}>
+                  Over by ${Math.abs(results.overageOrHeadroom).toFixed(2)} per hour
+                </p>
+                {results.suggestedMaxWage && (
+                  <p className="mt-2 text-sm font-semibold" style={{ color: '#7F1D1D' }}>
+                    Suggested maximum wage: ${results.suggestedMaxWage.toFixed(2)}/hr
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* Monthly Cost Breakdown */}
+          <div className="rounded-xl bg-white border-2 p-6" style={{ borderColor: '#E8EDF5' }}>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy border-b pb-3" style={{ borderColor: '#E8EDF5' }}>
+              Monthly Cost Breakdown
+            </h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between">
+                <span className="text-navy/70">Gross wages (hours × wage)</span>
+                <span className="font-semibold text-navy">${results.grossMonthly.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Employer CPP (5.95%)</span>
+                <span className="font-semibold text-navy">${results.employerCPP.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Employer EI (2.28%)</span>
+                <span className="font-semibold text-navy">${results.employerEI.toFixed(2)}</span>
+              </div>
+              {results.vacationCost > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-navy/70">Vacation pay (4%)</span>
+                  <span className="font-semibold text-navy">${results.vacationCost.toFixed(2)}</span>
+                </div>
+              )}
+              {results.wsibCost > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-navy/70">WSIB ({wsibRate}%)</span>
+                  <span className="font-semibold text-navy">${results.wsibCost.toFixed(2)}</span>
+                </div>
+              )}
+              <div className="border-t pt-3" style={{ borderColor: '#E8EDF5' }}>
+                <div className="flex justify-between">
+                  <span className="font-bold text-navy">Total monthly labour cost</span>
+                  <span className="font-bold text-navy">${results.totalMonthlyCost.toFixed(2)}</span>
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Monthly service hours</span>
+                <span className="font-semibold text-navy">{results.hoursPerMonth.toFixed(1)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-bold text-navy">Effective per-hour cost</span>
+                <span className="font-bold text-navy">${results.effectiveHourlyRate.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Schedule B Headroom */}
+          <div className="rounded-xl p-6" style={{ backgroundColor: '#E8EDF5' }}>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Your Schedule B Headroom</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-navy/70">Schedule B max per hour:</span>
+                <span className="font-semibold text-navy">${scheduleBMax.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Your effective rate:</span>
+                <span className="font-semibold text-navy">${results.effectiveHourlyRate.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">
+                  {results.fitsWithinCap ? "Room per hour:" : "Over by:"}
+                </span>
+                <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
+                  ${Math.abs(results.overageOrHeadroom).toFixed(2)}
+                </span>
+              </div>
+              <div className="pt-2 border-t" style={{ borderColor: '#2B4C7E' }}>
+                <p className="text-xs text-navy/70">
+                  Over {results.hoursPerMonth.toFixed(1)} hours, that's{" "}
+                  <span className="font-semibold">${Math.abs(results.monthlyHeadroom).toFixed(2)}</span>{" "}
+                  {results.fitsWithinCap
+                    ? "of monthly budget remaining for other eligible expenses"
+                    : "you'd need to cover"}
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
