@@ -30,12 +30,13 @@ export interface Database {
           notes: string | null;
           processed: boolean;
           uploaded_at: string;
+          deleted_at: string | null;
           // Deprecated fields (kept for backward compatibility)
           category: string | null;
           onedrive_path: string | null;
         };
-        Insert: Omit<Database['public']['Tables']['uploads']['Row'], 'id' | 'uploaded_at' | 'processed'>;
-        Update: Partial<Database['public']['Tables']['uploads']['Insert']>;
+        Insert: Omit<Database['public']['Tables']['uploads']['Row'], 'id' | 'uploaded_at' | 'processed' | 'deleted_at'>;
+        Update: Partial<Database['public']['Tables']['uploads']['Insert']> & { deleted_at?: string | null };
       };
       checklists: {
         Row: {

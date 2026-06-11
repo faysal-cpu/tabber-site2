@@ -61,16 +61,14 @@ export async function DELETE(request: Request) {
       );
     }
 
-    // Mark as deleted in database (soft delete - file stays in Azure)
+    // Delete from database (file stays in Azure for admin access)
     const { error: deleteError } = await supabase
       .from('uploads')
-      .update({
-        deleted_at: new Date().toISOString(),
-      })
+      .delete()
       .eq('id', uploadId);
 
     if (deleteError) {
-      console.error('Failed to mark as deleted:', deleteError);
+      console.error('Failed to delete upload:', deleteError);
       return NextResponse.json(
         { error: 'Failed to delete file' },
         { status: 500 }
