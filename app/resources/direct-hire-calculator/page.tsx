@@ -70,12 +70,22 @@ export default function DirectHireCalculatorPage() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    // Ensure form-name is in the FormData
+    if (!formData.has('form-name')) {
+      formData.append('form-name', 'direct-hire-calc')
+    }
+
     try {
-      await fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       })
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`)
+      }
+
       setFormSubmitted(true)
 
       // Track form submission in Google Analytics
