@@ -47,13 +47,14 @@ export async function DELETE(request: Request) {
 
     // Verify upload ownership before deleting
     const { data: upload, error: uploadError } = await supabase
-      .from('client_uploads')
+      .from('uploads')
       .select('id, client_id')
       .eq('id', uploadId)
       .eq('client_id', authData.client_id)
       .single();
 
     if (uploadError || !upload) {
+      console.error('Upload lookup error:', uploadError);
       return NextResponse.json(
         { error: 'Upload not found or access denied' },
         { status: 404 }
@@ -62,7 +63,7 @@ export async function DELETE(request: Request) {
 
     // Mark as deleted in database (soft delete - file stays in Azure)
     const { error: deleteError } = await supabase
-      .from('client_uploads')
+      .from('uploads')
       .update({
         deleted_at: new Date().toISOString(),
       })
