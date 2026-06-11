@@ -70,16 +70,18 @@ export default function DirectHireCalculatorPage() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
-    // Ensure form-name is in the FormData
-    if (!formData.has('form-name')) {
-      formData.append('form-name', 'direct-hire-calc')
+    // Convert FormData to URL-encoded string manually
+    const encode = (data: FormData) => {
+      return Array.from(data.entries())
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
+        .join('&')
     }
 
     try {
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: encode(formData),
       })
 
       if (!response.ok) {
