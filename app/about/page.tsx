@@ -31,15 +31,15 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="bg-card py-10 md:py-12">
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">About Tabber</h1>
           </div>
         </section>
 
-        <WaveDivider fillColor="#FFFFFF" backgroundColor="#F0EDE8" />
+        <WaveDivider fillColor="#F9FAFB" backgroundColor="#E8EDF5" />
 
-        <section className="bg-secondary py-10 md:py-14 border-b border-border/40">
+        <section className="py-10 md:py-14 border-b border-border/40" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[1100px] px-6">
             <div className="grid gap-10 md:grid-cols-[350px_1fr] md:gap-12 items-center">
               <div className="mx-auto md:mx-0">
@@ -67,7 +67,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-card py-10 md:py-14">
+        <section className="bg-white py-10 md:py-14">
           <div className="mx-auto max-w-[1200px] px-6">
             <h2 className="mb-8 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Credentials & Qualifications</h2>
             <div className="grid gap-5 sm:grid-cols-2">
@@ -89,7 +89,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-10 md:py-14">
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[1200px] px-6">
             <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Our Approach</h2>
             <div className="grid gap-6 md:grid-cols-3">

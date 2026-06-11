@@ -90,7 +90,7 @@ export default function ResourcesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-white py-10 md:py-12">
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Resources & Guides</h1>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
@@ -99,7 +99,7 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+        <WaveDivider fillColor="#F9FAFB" backgroundColor="#E8EDF5" />
 
         {/* FMHC Resources Section */}
         <section className="py-10 md:py-14" style={{ backgroundColor: '#F9FAFB' }}>
