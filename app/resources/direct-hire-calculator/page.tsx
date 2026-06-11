@@ -134,8 +134,8 @@ export default function DirectHireCalculatorPage() {
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
-            {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-white" />
+            {/* Bottom fade to blend with next section */}
+            <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#E8EDF5]" />
 
             <div className="relative z-10 max-w-[900px] w-full mx-6 p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: "rgba(249, 250, 251, 0.95)", backdropFilter: "blur(12px)" }}>
               <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: "#F3F4F6", borderColor: "#2B4C7E", color: "#2B4C7E" }}>
