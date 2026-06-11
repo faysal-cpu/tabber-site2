@@ -1,14 +1,12 @@
-"use client"
-
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useEffect } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { FileText, Download, ExternalLink, BookOpen, Calculator as CalcIcon, CheckSquare, FileCheck, Users, Building2, Youtube, ChevronUp } from "lucide-react"
+import { BackToTopButton } from "@/components/back-to-top-button"
+import { FileText, Download, ExternalLink, BookOpen, Calculator as CalcIcon, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Resources & Guides | Tabber",
@@ -89,26 +87,12 @@ const externalLinks = [
 ]
 
 export default function ResourcesPage() {
-  const [showBackToTop, setShowBackToTop] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > window.innerHeight)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section with Background Image */}
-        <section className="relative h-[300px] md:h-[330px] flex items-center justify-center px-6">
+        <section className="relative h-[350px] md:h-[380px] flex items-center justify-center px-6">
           <Image
             src="/images/Designer (8).png"
             alt="Resources & Guides for FMHC and Financial Management"
@@ -117,21 +101,21 @@ export default function ResourcesPage() {
             style={{ objectPosition: 'center' }}
             priority
           />
-          <div className="absolute inset-0 bg-[#2B4C7E]/30" />
+          <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
           {/* Bottom fade to blend with next section */}
           <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-[#F9FAFB]" />
 
-          <div className="relative z-10 max-w-[800px] w-full text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-lg border-2" style={{ backgroundColor: 'rgba(243, 244, 246, 0.95)', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
+          <div className="relative z-10 max-w-[800px] w-full p-6 md:p-10 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: 'rgba(249, 250, 251, 0.95)', backdropFilter: 'blur(12px)' }}>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: '#F3F4F6', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
               <BookOpen className="size-4" />
               <span className="text-sm font-semibold">Resources</span>
             </div>
-            <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-white md:text-[38px] mb-3" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.4)' }}>
+            <h1 className="font-serif text-[30px] font-bold leading-[1.2] text-navy md:text-[36px] mb-3">
               Resources & Guides
             </h1>
-            <p className="text-[16px] md:text-[17px] font-medium leading-[1.5] text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-              Guides, tools, and resources to help you navigate FMHC with confidence.
+            <p className="text-[15px] md:text-[16px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>
+              Comprehensive guides, downloadable tools, and helpful resources to support you through every step of the FMHC journey — from understanding the program to staying compliant.
             </p>
           </div>
         </section>
@@ -292,17 +276,7 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Back to Top Button */}
-        {showBackToTop && (
-          <button
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 flex size-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-            style={{ backgroundColor: '#2B4C7E' }}
-            aria-label="Back to top"
-          >
-            <ChevronUp className="size-6 text-white" />
-          </button>
-        )}
+        <BackToTopButton />
       </main>
       <SiteFooter />
     </div>
