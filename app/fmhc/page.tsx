@@ -373,6 +373,18 @@ export default function FmhcPage() {
                 </div>
               </Link>
             </div>
+
+            {/* See All Resources Button */}
+            <div className="mt-6 text-center">
+              <Link
+                href="/resources"
+                className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-[15px] font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
+                style={{ backgroundColor: '#2B4C7E' }}
+              >
+                <BookOpen className="size-4" />
+                See All Resources & Guides
+              </Link>
+            </div>
           </div>
         </section>
 
