@@ -115,7 +115,7 @@ export default function ResourcesPage() {
               Resources & Guides
             </h1>
             <p className="text-[15px] md:text-[16px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>
-              Comprehensive guides, downloadable tools, and helpful resources to support you through every step of the FMHC journey — from understanding the program to staying compliant.
+              Practical guides, tools, and checklists to help you understand FMHC, stay compliant, and make confident decisions.
             </p>
           </div>
         </section>
