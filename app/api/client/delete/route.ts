@@ -1,14 +1,10 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { validateClientToken } from '@/lib/validation/token-validator';
+import { createServiceClient } from '@/lib/db/supabase';
 
 /**
  * DELETE /api/client/delete
- * Hide file from client portal (soft delete - file remains in Azure)
+ * Delete file from client portal (removes from database, file stays in Azure)
  */
 export async function DELETE(request: Request) {
   try {
@@ -26,38 +22,28 @@ export async function DELETE(request: Request) {
       );
     }
 
-    // Verify token and get client info
-    const { data: authData, error: authError } = await supabase
-      .from('client_access_tokens')
-      .select('client_id, expires_at')
-      .eq('token', token)
-      .single();
+    // Validate token using the same method as other endpoints
+    const tokenResult = await validateClientToken(token);
 
-    if (authError || !authData) {
-      console.error('Token validation failed:', authError);
+    if (!tokenResult.valid || !tokenResult.client) {
+      console.error('Token validation failed:', tokenResult.error);
       return NextResponse.json(
-        { error: 'Invalid or expired token' },
+        { error: tokenResult.error || 'Invalid or expired token' },
         { status: 401 }
       );
     }
 
-    console.log('Token validated for client:', authData.client_id);
+    const clientId = tokenResult.client.id;
+    console.log('Token validated for client:', clientId);
 
-    // Check token expiration
-    if (new Date(authData.expires_at) < new Date()) {
-      console.error('Token expired:', authData.expires_at);
-      return NextResponse.json(
-        { error: 'Token has expired' },
-        { status: 401 }
-      );
-    }
+    const supabase = createServiceClient();
 
     // Verify upload ownership before deleting
     const { data: upload, error: uploadError } = await supabase
       .from('uploads')
       .select('id, client_id')
       .eq('id', uploadId)
-      .eq('client_id', authData.client_id)
+      .eq('client_id', clientId)
       .single();
 
     if (uploadError || !upload) {
