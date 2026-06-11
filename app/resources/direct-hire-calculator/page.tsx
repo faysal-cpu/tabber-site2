@@ -65,38 +65,30 @@ export default function DirectHireCalculatorPage() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
-
-    // Encode form data for Netlify
     const formData = new FormData(form)
-    const data: Record<string, string> = {}
 
-    formData.forEach((value, key) => {
-      data[key] = value.toString()
-    })
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString()
-    })
-      .then(() => {
-        setFormSubmitted(true)
-
-        // Track form submission in Google Analytics
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'form_submit', {
-            event_category: 'Direct Hire Calculator',
-            event_label: 'Contact Form Submission',
-          })
-        }
+    try {
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
       })
-      .catch((error) => {
-        console.error("Form submission error:", error)
-        alert("There was an error submitting the form. Please try again.")
-      })
+      setFormSubmitted(true)
+
+      // Track form submission in Google Analytics
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submit', {
+          event_category: 'Direct Hire Calculator',
+          event_label: 'Contact Form Submission',
+        })
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert("There was an error submitting the form. Please try again.")
+    }
   }
 
   return (
