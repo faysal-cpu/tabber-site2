@@ -91,7 +91,7 @@ export default function ResourcesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section with Background Image */}
-        <section className="relative h-[450px] md:h-[500px] flex items-center justify-center px-6">
+        <section className="relative h-[350px] md:h-[380px] flex items-center justify-center px-6">
           <Image
             src="/images/Designer (8).png"
             alt="Resources & Guides for FMHC and Financial Management"
@@ -103,18 +103,18 @@ export default function ResourcesPage() {
           <div className="absolute inset-0 bg-[#2B4C7E]/15" />
 
           {/* Bottom fade to blend with next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#F9FAFB]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-b from-transparent to-[#F9FAFB]" />
 
-          <div className="relative z-10 max-w-[800px] w-full p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: 'rgba(249, 250, 251, 0.95)', backdropFilter: 'blur(12px)' }}>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: '#F3F4F6', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
+          <div className="relative z-10 max-w-[800px] w-full p-6 md:p-10 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: 'rgba(249, 250, 251, 0.95)', backdropFilter: 'blur(12px)' }}>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: '#F3F4F6', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
               <BookOpen className="size-4" />
               <span className="text-sm font-semibold">Resources</span>
             </div>
-            <h1 className="font-serif text-[32px] font-bold leading-[1.2] text-navy md:text-[40px] mb-4">
+            <h1 className="font-serif text-[30px] font-bold leading-[1.2] text-navy md:text-[36px] mb-3">
               Resources & Guides
             </h1>
-            <p className="text-[16px] md:text-[17px] font-medium leading-[1.6]" style={{ color: '#2B4C7E' }}>
-              Helpful guides, tools, and resources to support your FMHC journey and financial management needs.
+            <p className="text-[15px] md:text-[16px] font-medium leading-[1.5]" style={{ color: '#2B4C7E' }}>
+              Guides, tools, and resources to help you navigate FMHC with confidence.
             </p>
           </div>
         </section>
