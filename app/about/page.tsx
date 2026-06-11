@@ -37,7 +37,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <WaveDivider fillColor="#F9FAFB" backgroundColor="#E8EDF5" />
+        <WaveDivider backgroundColor="#F9FAFB" />
 
         <section className="py-10 md:py-14 border-b border-border/40" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[1100px] px-6">

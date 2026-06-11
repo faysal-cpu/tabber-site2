@@ -99,7 +99,7 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        <WaveDivider fillColor="#F9FAFB" backgroundColor="#E8EDF5" />
+        <WaveDivider backgroundColor="#F9FAFB" />
 
         {/* FMHC Resources Section */}
         <section className="py-10 md:py-14" style={{ backgroundColor: '#F9FAFB' }}>
