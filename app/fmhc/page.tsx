@@ -325,7 +325,10 @@ export default function FmhcPage() {
                 <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                   <BookOpen className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-                <h3 className="font-serif text-[15px] font-semibold text-navy">Complete FMHC Guide</h3>
+                <div>
+                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Complete FMHC Guide</h3>
+                  <p className="text-xs text-muted-foreground">Eligibility, application, and compliance requirements</p>
+                </div>
               </Link>
 
               {/* Care Arrangement Guide */}
@@ -336,7 +339,10 @@ export default function FmhcPage() {
                 <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                   <Users className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-                <h3 className="font-serif text-[15px] font-semibold text-navy">Choosing Your Care Arrangement</h3>
+                <div>
+                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Choosing Your Care Arrangement</h3>
+                  <p className="text-xs text-muted-foreground">Compare agency, contractor, and direct hire options</p>
+                </div>
               </Link>
 
               {/* Direct Hire Calculator */}
@@ -347,7 +353,10 @@ export default function FmhcPage() {
                 <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                   <Calculator className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-                <h3 className="font-serif text-[15px] font-semibold text-navy">Direct Hire Cost Calculator</h3>
+                <div>
+                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Direct Hire Cost Calculator</h3>
+                  <p className="text-xs text-muted-foreground">Calculate true employer costs for direct hire</p>
+                </div>
               </Link>
 
               {/* Checklists */}
@@ -358,7 +367,10 @@ export default function FmhcPage() {
                 <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
                   <Download className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-                <h3 className="font-serif text-[15px] font-semibold text-navy">Downloadable Checklists</h3>
+                <div>
+                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Downloadable Checklists</h3>
+                  <p className="text-xs text-muted-foreground">Stay organized with compliance checklists</p>
+                </div>
               </Link>
             </div>
           </div>
