@@ -523,66 +523,69 @@ export function DirectHireCalculator() {
       </div>
 
       {/* Budget Check Cards - Full Width Below */}
-      <div className="grid gap-6 md:grid-cols-2 mt-8">
-        {/* Schedule B Rate Check */}
-        <div className="rounded-xl p-6" style={{ backgroundColor: '#E8EDF5' }}>
-          <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Schedule B Rate Check</h3>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-navy/70">Schedule B max per hour:</span>
-              <span className="font-semibold text-navy">${formatCurrency(scheduleBMax)}</span>
+      <div className="mt-8">
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Schedule B Rate Check */}
+          <div className="rounded-xl p-6" style={{ backgroundColor: '#E8EDF5' }}>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Schedule B Rate Check</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-navy/70">Schedule B max per hour:</span>
+                <span className="font-semibold text-navy">${formatCurrency(scheduleBMax)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Your effective rate:</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.effectiveHourlyRate)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">
+                  {results.fitsWithinCap ? "Difference per hour:" : "Over by:"}
+                </span>
+                <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
+                  ${formatCurrency(Math.abs(results.overageOrHeadroom))}
+                </span>
+              </div>
             </div>
-            <div className="flex justify-between">
-              <span className="text-navy/70">Your effective rate:</span>
-              <span className="font-semibold text-navy">${formatCurrency(results.effectiveHourlyRate)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-navy/70">
-                {results.fitsWithinCap ? "Difference per hour:" : "Over by:"}
-              </span>
-              <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
-                ${formatCurrency(Math.abs(results.overageOrHeadroom))}
-              </span>
+          </div>
+
+          {/* Monthly Budget Check */}
+          <div className="rounded-xl p-6" style={{ backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5' }}>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Monthly Budget Check</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-navy/70">Maximum monthly budget:</span>
+                <span className="font-semibold text-navy">${formatCurrency(scheduleBMax * results.hoursPerMonth)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Your monthly cost:</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.totalMonthlyCost)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">
+                  {results.fitsWithinCap ? "Monthly room:" : "Monthly overage:"}
+                </span>
+                <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
+                  ${formatCurrency(Math.abs(results.monthlyHeadroom))}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Monthly Budget Check */}
-        <div className="rounded-xl p-6" style={{ backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5' }}>
-          <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Monthly Budget Check</h3>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-navy/70">Maximum monthly budget:</span>
-              <span className="font-semibold text-navy">${formatCurrency(scheduleBMax * results.hoursPerMonth)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-navy/70">Your monthly cost:</span>
-              <span className="font-semibold text-navy">${formatCurrency(results.totalMonthlyCost)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-navy/70">
-                {results.fitsWithinCap ? "Monthly room:" : "Monthly overage:"}
-              </span>
-              <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
-                ${formatCurrency(Math.abs(results.monthlyHeadroom))}
-              </span>
-            </div>
-            {results.fitsWithinCap && (
-              <div className="pt-2 border-t" style={{ borderColor: '#2B4C7E' }}>
-                <p className="text-xs text-navy/70 leading-relaxed">
-                  <strong>Note:</strong> This difference cannot be used to exceed approved hours or reallocated freely. Both your hourly rate and approved service hours are fixed ceilings in Schedule B.
-                </p>
-              </div>
-            )}
-            {!results.fitsWithinCap && (
-              <div className="pt-2 border-t" style={{ borderColor: '#DC2626' }}>
-                <p className="text-xs leading-relaxed" style={{ color: '#7F1D1D' }}>
-                  You'd be over budget by ${formatCurrency(Math.abs(results.monthlyHeadroom))}/month. This shortfall would need to come out of pocket.
-                </p>
-              </div>
-            )}
+        {/* Shared Note Below Both Cards */}
+        {results.fitsWithinCap ? (
+          <div className="mt-4 rounded-lg p-4" style={{ backgroundColor: '#F0F9FF', borderLeft: '4px solid #2B4C7E' }}>
+            <p className="text-xs text-navy/70 leading-relaxed">
+              <strong>Note:</strong> This difference cannot be used to exceed approved hours or reallocated freely. Both your hourly rate and approved service hours are fixed ceilings in Schedule B.
+            </p>
           </div>
-        </div>
+        ) : (
+          <div className="mt-4 rounded-lg p-4" style={{ backgroundColor: '#FEF5F5', borderLeft: '4px solid #DC2626' }}>
+            <p className="text-xs leading-relaxed" style={{ color: '#7F1D1D' }}>
+              You'd be over budget by ${formatCurrency(Math.abs(results.monthlyHeadroom))}/month. This shortfall would need to come out of pocket.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )
