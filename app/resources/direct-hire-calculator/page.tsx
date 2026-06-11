@@ -65,54 +65,42 @@ export default function DirectHireCalculatorPage() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
+
+    // Encode form data for Netlify
     const formData = new FormData(form)
+    const data: Record<string, string> = {}
 
-    // Convert FormData to URL-encoded string manually
-    const encode = (data: FormData) => {
-      return Array.from(data.entries())
-        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
-        .join('&')
-    }
+    formData.forEach((value, key) => {
+      data[key] = value.toString()
+    })
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString()
+    })
+      .then(() => {
+        setFormSubmitted(true)
+
+        // Track form submission in Google Analytics
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'form_submit', {
+            event_category: 'Direct Hire Calculator',
+            event_label: 'Contact Form Submission',
+          })
+        }
       })
-
-      if (!response.ok) {
-        throw new Error(`Form submission failed: ${response.status}`)
-      }
-
-      setFormSubmitted(true)
-
-      // Track form submission in Google Analytics
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'form_submit', {
-          event_category: 'Direct Hire Calculator',
-          event_label: 'Contact Form Submission',
-        })
-      }
-    } catch (error) {
-      console.error("Form submission error:", error)
-      alert("There was an error submitting the form. Please try again.")
-    }
+      .catch((error) => {
+        console.error("Form submission error:", error)
+        alert("There was an error submitting the form. Please try again.")
+      })
   }
 
   return (
     <>
-      {/* Hidden form for Netlify detection */}
-      <form name="direct-hire-calc" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <textarea name="message"></textarea>
-      </form>
-
       {/* JSON-LD Structured Data for SEO */}
       <script
         type="application/ld+json"
