@@ -126,17 +126,29 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
       setDeleting(fileToDelete.id);
       setDeleteDialogOpen(false);
 
+      console.log('Deleting file:', fileToDelete.id, fileToDelete.name);
+
       const response = await fetch(`/api/client/delete?token=${token}&uploadId=${fileToDelete.id}`, {
         method: 'DELETE',
       });
 
+      console.log('Delete response status:', response.status);
+
       if (!response.ok) {
         const data = await response.json();
+        console.error('Delete failed with error:', data);
         throw new Error(data.error || 'Failed to delete file');
       }
 
+      const result = await response.json();
+      console.log('Delete successful:', result);
+
       // Remove from local state
-      setUploads(prev => prev.filter(u => u.id !== fileToDelete.id));
+      setUploads(prev => {
+        const newUploads = prev.filter(u => u.id !== fileToDelete.id);
+        console.log('Updated uploads count:', prev.length, '->', newUploads.length);
+        return newUploads;
+      });
 
       toast.success('File removed', {
         description: fileToDelete.name,

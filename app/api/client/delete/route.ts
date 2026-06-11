@@ -16,7 +16,10 @@ export async function DELETE(request: Request) {
     const token = searchParams.get('token');
     const uploadId = searchParams.get('uploadId');
 
+    console.log('DELETE request received:', { token: token?.substring(0, 10) + '...', uploadId });
+
     if (!token || !uploadId) {
+      console.error('Missing parameters:', { token: !!token, uploadId: !!uploadId });
       return NextResponse.json(
         { error: 'Missing token or uploadId' },
         { status: 400 }
@@ -31,14 +34,18 @@ export async function DELETE(request: Request) {
       .single();
 
     if (authError || !authData) {
+      console.error('Token validation failed:', authError);
       return NextResponse.json(
         { error: 'Invalid or expired token' },
         { status: 401 }
       );
     }
 
+    console.log('Token validated for client:', authData.client_id);
+
     // Check token expiration
     if (new Date(authData.expires_at) < new Date()) {
+      console.error('Token expired:', authData.expires_at);
       return NextResponse.json(
         { error: 'Token has expired' },
         { status: 401 }
@@ -62,22 +69,27 @@ export async function DELETE(request: Request) {
     }
 
     // Delete from database (file stays in Azure for admin access)
-    const { error: deleteError } = await supabase
+    console.log('Attempting to delete upload:', uploadId);
+    const { error: deleteError, data: deleteData } = await supabase
       .from('uploads')
       .delete()
-      .eq('id', uploadId);
+      .eq('id', uploadId)
+      .select();
 
     if (deleteError) {
       console.error('Failed to delete upload:', deleteError);
       return NextResponse.json(
-        { error: 'Failed to delete file' },
+        { error: 'Failed to delete file', details: deleteError.message },
         { status: 500 }
       );
     }
 
+    console.log('Delete successful, deleted rows:', deleteData);
+
     return NextResponse.json({
       success: true,
-      message: 'File removed from portal'
+      message: 'File removed from portal',
+      deletedCount: deleteData?.length || 0
     });
 
   } catch (error) {
