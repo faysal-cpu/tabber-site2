@@ -305,68 +305,58 @@ export default function FmhcPage() {
 
         {/* Resources & Guides */}
         <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
-          <div className="mx-auto max-w-[900px] px-6">
-            <h2 className="mb-6 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">Resources & Guides</h2>
-            <div className="flex flex-col gap-4">
-              {/* Guide Card */}
-              <div className="relative flex flex-col items-center gap-6 rounded-xl bg-gradient-to-br from-white to-[#F9FAFB] border-2 p-6 shadow-lg text-center md:flex-row md:text-left" style={{ borderColor: '#2B4C7E' }}>
-                <div className="flex size-14 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#2B4C7E' }}>
-                  <BookOpen className="size-7 text-white" strokeWidth={1.5} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-serif text-[18px] font-bold text-navy md:text-[20px]">Complete Guide to Family Managed Home Care (FMHC) in Ontario</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">Everything you need to know about eligibility, application, responsibilities, reporting, and avoiding common mistakes.</p>
-                </div>
-                <Link href="/resources/fmhc">
-                  <Button className="shrink-0 gap-2 rounded-lg px-6 text-white transition-all duration-200 hover:shadow-lg active:scale-95" style={{ backgroundColor: '#2B4C7E' }}>
-                    Read Guide
-                    <ChevronRight className="size-4" />
-                  </Button>
-                </Link>
+          <div className="mx-auto max-w-[1100px] px-6">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                <BookOpen className="size-5 text-white" />
               </div>
+              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Resources & Guides</h2>
+            </div>
 
-              {/* Checklists Card */}
-              <div className="bg-white rounded-xl p-6 shadow-md" style={{ borderLeft: '4px solid #2B4C7E', borderRight: '4px solid #2B4C7E', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
-                <div className="mb-5">
-                  <h4 className="font-serif text-[17px] font-bold text-navy">Compliance Checklists</h4>
-                  <p className="text-xs text-muted-foreground mt-1">Download our references to help you stay organized and on track.</p>
+            <div className="grid gap-4 md:grid-cols-4">
+              {/* Complete FMHC Guide */}
+              <Link
+                href="/resources/fmhc"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <BookOpen className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-                <div className="flex flex-col gap-4">
-                  {/* Bookkeeping Checklist */}
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-gradient-to-br from-white to-[#E8EDF5]/30 rounded-lg border-2 border-[#2B4C7E]/20 shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h5 className="font-serif text-[15px] font-bold text-navy">Bookkeeping Checklist</h5>
-                      <p className="text-[13px] text-muted-foreground mt-0.5">What you need to stay compliant with Ontario Health atHome.</p>
-                    </div>
-                    <Link href="/downloads/Tabber - FMHC Bookkeeping Checklist.pdf" download target="_blank" className="w-full md:w-auto">
-                      <Button variant="outline" className="w-full md:w-auto gap-2 rounded-lg border-2 border-[#2B4C7E] text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200 text-sm shrink-0">
-                        <Download className="size-4" />
-                        Download PDF
-                      </Button>
-                    </Link>
-                  </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Complete FMHC Guide</h3>
+              </Link>
 
-                  {/* Monthly Submission Checklist */}
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-gradient-to-br from-white to-[#E8EDF5]/30 rounded-lg border-2 border-[#2B4C7E]/20 shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Download className="size-5" style={{ color: '#2B4C7E' }} strokeWidth={1.5} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h5 className="font-serif text-[15px] font-bold text-navy">Monthly Submission Checklist</h5>
-                      <p className="text-[13px] text-muted-foreground mt-0.5">What to track, collect, and submit each month to stay compliant.</p>
-                    </div>
-                    <Link href="/downloads/Tabber - FMHC Monthly Submission Checklist.pdf" download target="_blank" className="w-full md:w-auto">
-                      <Button variant="outline" className="w-full md:w-auto gap-2 rounded-lg border-2 border-[#2B4C7E] text-[#2B4C7E] bg-transparent hover:bg-[#2B4C7E] hover:text-white active:scale-95 transition-all duration-200 text-sm shrink-0">
-                        <Download className="size-4" />
-                        Download PDF
-                      </Button>
-                    </Link>
-                  </div>
+              {/* Care Arrangement Guide */}
+              <Link
+                href="/resources/care-arrangement-guide"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <Users className="size-5" style={{ color: '#2B4C7E' }} />
                 </div>
-              </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Choosing Your Care Arrangement</h3>
+              </Link>
+
+              {/* Direct Hire Calculator */}
+              <Link
+                href="/resources/direct-hire-calculator"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <Calculator className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Direct Hire Cost Calculator</h3>
+              </Link>
+
+              {/* Checklists */}
+              <Link
+                href="/resources#checklists"
+                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+              >
+                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                  <Download className="size-5" style={{ color: '#2B4C7E' }} />
+                </div>
+                <h3 className="font-serif text-[15px] font-semibold text-navy">Downloadable Checklists</h3>
+              </Link>
             </div>
           </div>
         </section>

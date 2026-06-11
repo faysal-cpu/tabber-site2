@@ -143,7 +143,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Checklists */}
-            <div className="mb-12">
+            <div id="checklists" className="mb-12 scroll-mt-20">
               <div className="mb-6 border-b pb-4" style={{ borderColor: '#2B4C7E' }}>
                 <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Checklists</h2>
                 <p className="mt-1 text-sm text-muted-foreground">Downloadable checklists to keep you organized</p>
