@@ -174,9 +174,6 @@ export function getUploadConfirmationHTML(data: UploadConfirmationData): string 
       <p>Your information has been securely stored. If you have any questions or concerns, please don't hesitate to contact us.</p>
       <div class="signature">
         <p style="margin-bottom: 5px;">Best regards,<br><strong>The Tabber Team</strong></p>
-        <div class="logo-section">
-          <img src="https://tabber.ca/tabber-og2.png" alt="Tabber - Bookkeeping | Compliance | Advisory" width="250" style="display: block; margin-top: 15px; max-width: 100%; height: auto;">
-        </div>
       </div>
     </div>
     <div class="footer">
@@ -538,9 +535,6 @@ export function getBatchAdminNotificationHTML(data: BatchAdminNotificationData):
 
       <div class="signature">
         <p style="margin-bottom: 5px; font-size: 14px; color: #6B7280;">Tabber Client Portal</p>
-        <div class="logo-section">
-          <img src="https://tabber.ca/tabber-og2.png" alt="Tabber - Bookkeeping | Compliance | Advisory" width="250" style="display: block; margin-top: 15px; max-width: 100%; height: auto;">
-        </div>
       </div>
     </div>
     <div class="footer">
