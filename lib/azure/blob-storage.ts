@@ -104,3 +104,20 @@ export function generateDownloadUrl(blobName: string, filename: string): string 
 
   return `${blobClient.url}?${sasToken}`;
 }
+
+/**
+ * Delete a blob from Azure Blob Storage
+ */
+export async function deleteBlob(blobName: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+    await blockBlobClient.delete();
+    return { success: true };
+  } catch (error) {
+    console.error('Blob delete error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}

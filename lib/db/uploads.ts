@@ -71,7 +71,7 @@ export async function getUploadById(uploadId: string): Promise<UploadRow | null>
 }
 
 /**
- * Get uploads for a specific client
+ * Get uploads for a specific client (excludes deleted files)
  */
 export async function getClientUploads(
   clientId: string,
@@ -84,6 +84,7 @@ export async function getClientUploads(
     .from('uploads')
     .select('*')
     .eq('client_id', clientId)
+    .is('deleted_at', null) // Only show non-deleted files
     .order('uploaded_at', { ascending: false })
     .range(offset, offset + limit - 1);
 
@@ -136,7 +137,7 @@ export async function markUploadAsProcessed(uploadId: string): Promise<boolean> 
 }
 
 /**
- * Get total upload count for a client
+ * Get total upload count for a client (excludes deleted files)
  */
 export async function getClientUploadCount(clientId: string): Promise<number> {
   const supabase = createServiceClient();
@@ -144,7 +145,8 @@ export async function getClientUploadCount(clientId: string): Promise<number> {
   const { count, error } = await supabase
     .from('uploads')
     .select('*', { count: 'exact', head: true })
-    .eq('client_id', clientId);
+    .eq('client_id', clientId)
+    .is('deleted_at', null); // Only count non-deleted files
 
   if (error) {
     console.error('Error counting uploads:', error);

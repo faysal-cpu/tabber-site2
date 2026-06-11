@@ -1,11 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FileText, Loader2, CheckCircle, Download } from 'lucide-react';
+import { FileText, Loader2, CheckCircle, Download, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 
 interface Upload {
   id: string;
@@ -27,6 +37,9 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [downloading, setDownloading] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState<string | null>(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [fileToDelete, setFileToDelete] = useState<{ id: string; name: string } | null>(null);
 
   useEffect(() => {
     fetchUploads();
@@ -101,6 +114,44 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
     }
   };
 
+  const confirmDelete = (uploadId: string, filename: string) => {
+    setFileToDelete({ id: uploadId, name: filename });
+    setDeleteDialogOpen(true);
+  };
+
+  const handleDelete = async () => {
+    if (!fileToDelete) return;
+
+    try {
+      setDeleting(fileToDelete.id);
+      setDeleteDialogOpen(false);
+
+      const response = await fetch(`/api/client/delete?token=${token}&uploadId=${fileToDelete.id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to delete file');
+      }
+
+      // Remove from local state
+      setUploads(prev => prev.filter(u => u.id !== fileToDelete.id));
+
+      toast.success('File removed', {
+        description: fileToDelete.name,
+      });
+    } catch (error) {
+      console.error('Delete error:', error);
+      toast.error('Delete failed', {
+        description: error instanceof Error ? error.message : 'Please try again',
+      });
+    } finally {
+      setDeleting(null);
+      setFileToDelete(null);
+    }
+  };
+
   if (loading) {
     return (
       <Card>
@@ -141,12 +192,11 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
             {uploads.map((upload) => (
               <div
                 key={upload.id}
-                className="rounded-lg p-5 transition-all hover:shadow-md cursor-pointer"
+                className="rounded-lg p-5 transition-all hover:shadow-md"
                 style={{
                   border: '2px solid #E8EDF5',
                   backgroundColor: 'white'
                 }}
-                onClick={() => handleDownload(upload.id, upload.original_name)}
               >
                 <div className="flex items-start gap-3">
                   <FileText className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: '#2B4C7E' }} />
@@ -157,11 +207,32 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
                       </p>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <CheckCircle className="h-6 w-6" style={{ color: '#10B981' }} />
-                        {downloading === upload.id ? (
-                          <Loader2 className="h-5 w-5 animate-spin" style={{ color: '#2B4C7E' }} />
-                        ) : (
-                          <Download className="h-5 w-5" style={{ color: '#2B4C7E' }} />
-                        )}
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleDownload(upload.id, upload.original_name)}
+                          disabled={downloading === upload.id || deleting === upload.id}
+                          className="h-8 w-8 p-0"
+                        >
+                          {downloading === upload.id ? (
+                            <Loader2 className="h-5 w-5 animate-spin" style={{ color: '#2B4C7E' }} />
+                          ) : (
+                            <Download className="h-5 w-5" style={{ color: '#2B4C7E' }} />
+                          )}
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => confirmDelete(upload.id, upload.original_name)}
+                          disabled={downloading === upload.id || deleting === upload.id}
+                          className="h-8 w-8 p-0 hover:bg-red-50"
+                        >
+                          {deleting === upload.id ? (
+                            <Loader2 className="h-5 w-5 animate-spin text-red-500" />
+                          ) : (
+                            <Trash2 className="h-5 w-5 text-red-500" />
+                          )}
+                        </Button>
                       </div>
                     </div>
                     {upload.notes && (
@@ -177,9 +248,6 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
                       <span className="text-xs text-gray-500">
                         {formatDate(upload.uploaded_at)}
                       </span>
-                      <span className="text-xs font-medium" style={{ color: '#2B4C7E' }}>
-                        • Click to download
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -188,6 +256,26 @@ export function UploadHistory({ token, refreshTrigger }: UploadHistoryProps) {
           </div>
         )}
       </CardContent>
+
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Remove file?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to remove "{fileToDelete?.name}"? This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDelete}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              Remove
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </Card>
   );
 }

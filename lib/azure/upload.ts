@@ -1,4 +1,4 @@
-import { uploadToBlob, getBlobUrl } from './blob-storage';
+import { uploadToBlob, getBlobUrl, deleteBlob } from './blob-storage';
 import { generateFilename } from '../utils/file-naming';
 import type { Database } from '../db/supabase';
 
@@ -55,6 +55,22 @@ export async function uploadFileToBlobStorage(
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error during upload',
+    };
+  }
+}
+
+/**
+ * Delete a file from Azure Blob Storage
+ */
+export async function deleteBlobFile(blobPath: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    const result = await deleteBlob(blobPath);
+    return result;
+  } catch (error) {
+    console.error('Azure Blob delete error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error during delete',
     };
   }
 }
