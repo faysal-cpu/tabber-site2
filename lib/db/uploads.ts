@@ -84,7 +84,6 @@ export async function getClientUploads(
     .from('uploads')
     .select('*')
     .eq('client_id', clientId)
-    .is('deleted_at', null) // Only show non-deleted files
     .order('uploaded_at', { ascending: false })
     .range(offset, offset + limit - 1);
 
@@ -93,7 +92,8 @@ export async function getClientUploads(
     return [];
   }
 
-  return data || [];
+  // Filter out deleted files in code (in case column doesn't exist or is null)
+  return (data || []).filter(upload => !upload.deleted_at);
 }
 
 /**
@@ -142,16 +142,17 @@ export async function markUploadAsProcessed(uploadId: string): Promise<boolean> 
 export async function getClientUploadCount(clientId: string): Promise<number> {
   const supabase = createServiceClient();
 
-  const { count, error } = await supabase
+  // Get all uploads and filter in code
+  const { data, error } = await supabase
     .from('uploads')
-    .select('*', { count: 'exact', head: true })
-    .eq('client_id', clientId)
-    .is('deleted_at', null); // Only count non-deleted files
+    .select('deleted_at')
+    .eq('client_id', clientId);
 
   if (error) {
     console.error('Error counting uploads:', error);
     return 0;
   }
 
-  return count || 0;
+  // Count only non-deleted files
+  return (data || []).filter(upload => !upload.deleted_at).length;
 }
