@@ -98,7 +98,7 @@ export default function ResourcesPage() {
             alt="Resources & Guides for FMHC and Financial Management"
             fill
             className="object-cover"
-            style={{ objectPosition: 'center' }}
+            style={{ objectPosition: 'center 60%' }}
             priority
           />
           <div className="absolute inset-0 bg-[#2B4C7E]/15" />
