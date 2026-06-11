@@ -356,6 +356,11 @@ export default function DirectHireCalculatorPage() {
                   className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
                 >
                   <input type="hidden" name="form-name" value="direct-hire-calc" />
+                  <p hidden>
+                    <label>
+                      Don't fill this out: <input name="bot-field" />
+                    </label>
+                  </p>
                   <div className="space-y-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
