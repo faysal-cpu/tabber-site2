@@ -164,10 +164,8 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#FFFFFF" />
-
         {/* Main content with sticky sidebar */}
-        <div className="relative mx-auto max-w-[1200px] px-6 bg-white">
+        <div className="relative mx-auto max-w-[1200px] px-6" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="flex gap-12">
             {/* Sticky Sidebar - Desktop only */}
             <aside className="hidden lg:block lg:w-[220px]">

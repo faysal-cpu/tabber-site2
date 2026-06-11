@@ -41,16 +41,14 @@ export default function FaqPage() {
           </div>
         </section>
 
-        <WaveDivider backgroundColor="#FFFFFF" />
-
-        <section className="py-4 bg-white">
+        <section className="py-6" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto flex max-w-[800px] flex-wrap items-center justify-center gap-2 px-6">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
-                  active === cat ? "text-white" : "bg-white text-navy hover:bg-navy/10"
+                  active === cat ? "text-white shadow-md" : "bg-white text-navy hover:bg-white/80 shadow-sm"
                 }`}
                 style={active === cat ? { backgroundColor: '#2B4C7E' } : {}}
               >
@@ -60,7 +58,7 @@ export default function FaqPage() {
           </div>
         </section>
 
-        <section className="py-6 pb-16 bg-white">
+        <section className="py-6 pb-16" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto flex max-w-[800px] flex-col gap-3 px-6">
             {filtered.map((faq) => (
               <details key={faq.q} className="group rounded-xl bg-white border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
