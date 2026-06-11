@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -33,22 +34,25 @@ export default function FaqPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="bg-card py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Frequently Asked Questions</h1>
             <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">Find answers to common questions about our services</p>
           </div>
         </section>
 
-        <section className="bg-secondary py-4">
+        <WaveDivider backgroundColor="#FFFFFF" />
+
+        <section className="py-4 bg-white">
           <div className="mx-auto flex max-w-[800px] flex-wrap items-center justify-center gap-2 px-6">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
-                  active === cat ? "bg-navy text-white" : "bg-card text-navy hover:bg-navy/10"
+                  active === cat ? "text-white" : "bg-white text-navy hover:bg-navy/10"
                 }`}
+                style={active === cat ? { backgroundColor: '#2B4C7E' } : {}}
               >
                 {cat}
               </button>
@@ -56,10 +60,10 @@ export default function FaqPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-6 pb-16">
+        <section className="py-6 pb-16 bg-white">
           <div className="mx-auto flex max-w-[800px] flex-col gap-3 px-6">
             {filtered.map((faq) => (
-              <details key={faq.q} className="group rounded-xl bg-card p-5 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+              <details key={faq.q} className="group rounded-xl bg-white border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-serif text-[16px] font-semibold text-navy">
                   {faq.q}
                   <span className="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-45" style={{ color: '#2B4C7E' }}>+</span>
@@ -70,7 +74,7 @@ export default function FaqPage() {
           </div>
         </section>
 
-        <section className="bg-card py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[600px] px-6 text-center">
             <h2 className="font-serif text-[24px] font-bold text-navy md:text-[30px]">Still Have Questions?</h2>
             <p className="mt-3 text-[15px] text-muted-foreground">{"We're here to help. Reach out and we'll get back to you within 24 hours."}</p>

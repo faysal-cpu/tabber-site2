@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
 import {
   Calculator,
@@ -132,7 +133,7 @@ export default function ServicesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <nav className="mb-4 text-sm text-muted-foreground" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-brand">
@@ -163,8 +164,10 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        <WaveDivider backgroundColor="#FFFFFF" />
+
         {/* Main content with sticky sidebar */}
-        <div className="relative mx-auto max-w-[1200px] px-6">
+        <div className="relative mx-auto max-w-[1200px] px-6 bg-white">
           <div className="flex gap-12">
             {/* Sticky Sidebar - Desktop only */}
             <aside className="hidden lg:block lg:w-[220px]">
@@ -193,13 +196,11 @@ export default function ServicesPage() {
             <div className="flex-1 py-8 lg:py-0">
               {services.map((service, i) => {
                 const Icon = service.icon
-                const bgClass =
-                  i % 2 === 0 ? "bg-card" : "bg-secondary"
                 return (
                   <section
                     key={service.id}
                     id={service.id}
-                    className={`scroll-mt-24 rounded-xl ${bgClass} mb-6 border border-border/50 p-8 md:p-10`}
+                    className="scroll-mt-24 rounded-xl bg-white mb-6 border border-gray-200 p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow"
                   >
                     <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-10">
                       <div className="flex shrink-0 items-center justify-center">
