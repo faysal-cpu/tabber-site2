@@ -72,7 +72,7 @@ export default function FaqPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
+        <section className="py-12 md:py-16 border-t border-gray-300" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[600px] px-6 text-center">
             <h2 className="font-serif text-[24px] font-bold text-navy md:text-[30px]">Still Have Questions?</h2>
             <p className="mt-3 text-[15px] text-muted-foreground">{"We're here to help. Reach out and we'll get back to you within 24 hours."}</p>
