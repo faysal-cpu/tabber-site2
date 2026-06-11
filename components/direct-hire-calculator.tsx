@@ -438,39 +438,56 @@ export function DirectHireCalculator() {
 
         {/* Outputs */}
         <div className="space-y-6">
-          {/* Status Banner */}
-          <div
-            role="status"
-            aria-live="polite"
-            className="rounded-xl p-6 text-center"
-            style={{
-              backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5',
-            }}
-          >
-            {results.fitsWithinCap ? (
-              <>
-                <CheckCircle2 className="mx-auto size-12 mb-3" style={{ color: '#16A34A' }} />
-                <p className="font-serif text-[18px] font-bold text-navy">
-                  ✓ This wage fits within your Schedule B max
-                </p>
-              </>
-            ) : (
-              <>
-                <AlertCircle className="mx-auto size-12 mb-3" style={{ color: '#DC2626' }} />
-                <p className="font-serif text-[18px] font-bold mb-2" style={{ color: '#7F1D1D' }}>
-                  ✗ This wage exceeds your Schedule B max
-                </p>
-                <p className="text-sm" style={{ color: '#7F1D1D' }}>
-                  Over by ${formatCurrency(Math.abs(results.overageOrHeadroom))} per hour
-                </p>
-                {results.suggestedMaxWage && (
-                  <p className="mt-2 text-sm font-semibold" style={{ color: '#7F1D1D' }}>
-                    Suggested maximum wage: ${formatCurrency(results.suggestedMaxWage)}/hr
+          {/* Status Banner or Instructions */}
+          {scheduleBMax === 0 || hourlyWage === 0 || (hoursInputMode === 'weekly' ? hoursPerWeek === 0 : hoursPerMonth === 0) ? (
+            <div
+              className="rounded-xl p-6 text-center border-2"
+              style={{ backgroundColor: '#F9FAFB', borderColor: '#E8EDF5' }}
+            >
+              <div className="flex size-12 mx-auto mb-3 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
+                <Calculator className="size-6" style={{ color: '#2B4C7E' }} />
+              </div>
+              <p className="font-serif text-[16px] font-semibold text-navy mb-2">
+                Ready to Calculate
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Enter your Schedule B max, worker hours, and hourly wage to see if your offer fits within your approved rate.
+              </p>
+            </div>
+          ) : (
+            <div
+              role="status"
+              aria-live="polite"
+              className="rounded-xl p-6 text-center"
+              style={{
+                backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5',
+              }}
+            >
+              {results.fitsWithinCap ? (
+                <>
+                  <CheckCircle2 className="mx-auto size-12 mb-3" style={{ color: '#16A34A' }} />
+                  <p className="font-serif text-[18px] font-bold text-navy">
+                    ✓ This wage fits within your Schedule B max
                   </p>
-                )}
-              </>
-            )}
-          </div>
+                </>
+              ) : (
+                <>
+                  <AlertCircle className="mx-auto size-12 mb-3" style={{ color: '#DC2626' }} />
+                  <p className="font-serif text-[18px] font-bold mb-2" style={{ color: '#7F1D1D' }}>
+                    ✗ This wage exceeds your Schedule B max
+                  </p>
+                  <p className="text-sm" style={{ color: '#7F1D1D' }}>
+                    Over by ${formatCurrency(Math.abs(results.overageOrHeadroom))} per hour
+                  </p>
+                  {results.suggestedMaxWage && (
+                    <p className="mt-2 text-sm font-semibold" style={{ color: '#7F1D1D' }}>
+                      Suggested maximum wage: ${formatCurrency(results.suggestedMaxWage)}/hr
+                    </p>
+                  )}
+                </>
+              )}
+            </div>
+          )}
 
           {/* Monthly Cost Breakdown */}
           <div className="rounded-xl bg-white border-2 p-6" style={{ borderColor: '#E8EDF5' }}>
