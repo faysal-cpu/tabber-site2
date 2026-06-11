@@ -158,11 +158,11 @@ function formatCurrency(value: number): string {
 }
 
 export function DirectHireCalculator() {
-  const [scheduleBMax, setScheduleBMax] = useState(38.46)
+  const [scheduleBMax, setScheduleBMax] = useState(0)
   const [hoursInputMode, setHoursInputMode] = useState<"weekly" | "monthly">("weekly")
-  const [hoursPerWeek, setHoursPerWeek] = useState(21)
-  const [hoursPerMonth, setHoursPerMonth] = useState(91)
-  const [hourlyWage, setHourlyWage] = useState(33.0)
+  const [hoursPerWeek, setHoursPerWeek] = useState(0)
+  const [hoursPerMonth, setHoursPerMonth] = useState(0)
+  const [hourlyWage, setHourlyWage] = useState(0)
   const [vacationStructure, setVacationStructure] = useState<"included" | "separate">("included")
   const [wsibApplicable, setWsibApplicable] = useState(false)
   const [wsibManualOverride, setWsibManualOverride] = useState(false)
