@@ -90,7 +90,7 @@ export default function ResourcesPage() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-card py-10 md:py-12">
+        <section className="bg-white py-10 md:py-12">
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Resources & Guides</h1>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
@@ -99,10 +99,10 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        <WaveDivider fillColor="#FFFFFF" backgroundColor="#F0EDE8" />
+        <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
 
         {/* FMHC Resources Section */}
-        <section className="bg-secondary py-10 md:py-14">
+        <section className="py-10 md:py-14" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[1200px] px-6">
             {/* Guides */}
             <div className="mb-12">
@@ -241,7 +241,7 @@ export default function ResourcesPage() {
         */}
 
         {/* CTA Section */}
-        <section className="py-10 md:py-14" style={{ backgroundColor: '#E8EDF5' }}>
+        <section className="bg-white py-10 md:py-14">
           <div className="mx-auto max-w-[700px] px-6 text-center">
             <h2 className="font-serif text-[28px] font-bold text-navy md:text-[34px]">Need More Help?</h2>
             <p className="mt-3 text-[15px] leading-[1.6] text-navy/80">
