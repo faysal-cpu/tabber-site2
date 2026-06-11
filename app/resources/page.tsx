@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
@@ -89,17 +90,34 @@ export default function ResourcesPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
-          <div className="mx-auto max-w-[800px] px-6 text-center">
-            <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Resources & Guides</h1>
-            <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
-              Helpful guides, tools, and external resources to support your financial management needs.
+        {/* Hero Section with Background Image */}
+        <section className="relative h-[450px] md:h-[500px] flex items-center justify-center px-6">
+          <Image
+            src="/images/Designer (8).png"
+            alt="Resources & Guides for FMHC and Financial Management"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-[#2B4C7E]/15" />
+
+          {/* Bottom fade to blend with next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-b from-transparent to-[#F9FAFB]" />
+
+          <div className="relative z-10 max-w-[800px] w-full p-8 md:p-12 rounded-2xl shadow-2xl text-center" style={{ backgroundColor: 'rgba(249, 250, 251, 0.95)', backdropFilter: 'blur(12px)' }}>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-md border-2" style={{ backgroundColor: '#F3F4F6', borderColor: '#2B4C7E', color: '#2B4C7E' }}>
+              <BookOpen className="size-4" />
+              <span className="text-sm font-semibold">Resources</span>
+            </div>
+            <h1 className="font-serif text-[32px] font-bold leading-[1.2] text-navy md:text-[40px] mb-4">
+              Resources & Guides
+            </h1>
+            <p className="text-[16px] md:text-[17px] font-medium leading-[1.6]" style={{ color: '#2B4C7E' }}>
+              Helpful guides, tools, and resources to support your FMHC journey and financial management needs.
             </p>
           </div>
         </section>
-
-        <WaveDivider backgroundColor="#F9FAFB" />
 
         {/* FMHC Resources Section */}
         <section className="py-10 md:py-14" style={{ backgroundColor: '#F9FAFB' }}>
