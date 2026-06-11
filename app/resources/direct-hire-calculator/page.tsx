@@ -352,6 +352,9 @@ export default function DirectHireCalculatorPage() {
               ) : (
                 <form
                   name="direct-hire-calc"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
                   onSubmit={handleFormSubmit}
                   className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 md:p-8 shadow-xl"
                 >

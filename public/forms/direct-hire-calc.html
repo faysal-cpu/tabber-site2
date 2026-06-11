@@ -5,7 +5,11 @@
 </head>
 <body>
   <!-- This file exists only for Netlify form detection at build time -->
-  <form name="direct-hire-calc" netlify netlify-honeypot="bot-field" hidden>
+  <form name="direct-hire-calc" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <p hidden>
+      <label>Don't fill this out: <input name="bot-field" /></label>
+    </p>
+    <input type="hidden" name="form-name" value="direct-hire-calc" />
     <input type="text" name="name" />
     <input type="email" name="email" />
     <input type="tel" name="phone" />
