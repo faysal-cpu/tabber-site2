@@ -1,0 +1,21 @@
+Test ID,Scenario Description,Schedule B Max ($/hr),Hours Input Mode,Hours Per Week,Hours Per Month,Hourly Wage ($),Vacation Structure,WSIB Applicable,WSIB Rate (%),Expected Monthly Hours,Expected Gross Wages ($),Expected Employer CPP ($),Expected Employer EI ($),Expected Vacation Cost ($),Expected WSIB Cost ($),Expected Total Monthly Cost ($),Expected Effective Hourly Rate ($/hr),Expected Fits Within Cap,Expected Difference Per Hour ($/hr),Notes
+1,Basic under-budget scenario,38.46,weekly,21,N/A,33.00,included,No,1.05,91.0,3003.00,161.32,68.47,0.00,0.00,3232.79,35.52,Yes,2.94,Standard FMHC case - below 24hr threshold
+2,Exactly at 24 hours - WSIB boundary,38.46,weekly,24,N/A,33.00,included,No,1.05,104.0,3432.00,186.70,78.25,0.00,0.00,3696.95,35.55,Yes,2.91,Right at WSIB threshold - should NOT trigger WSIB
+3,Just over 24 hours - WSIB triggers,38.46,weekly,25,N/A,33.00,included,Yes,1.05,108.3,3574.95,194.68,81.51,0.00,37.54,3888.68,35.90,Yes,2.56,Above 24hr threshold - WSIB applies
+4,High hours with WSIB,38.46,weekly,35,N/A,30.00,included,Yes,1.05,151.7,4550.00,253.20,103.74,0.00,47.78,4954.72,32.66,Yes,5.80,Higher hours scenario with WSIB
+5,Over budget - needs wage reduction,38.46,weekly,21,N/A,37.00,included,No,1.05,91.0,3367.00,182.85,76.77,0.00,0.00,3626.62,39.85,No,-1.39,Wage too high - exceeds Schedule B cap
+6,Vacation accrued separately,38.46,weekly,21,N/A,33.00,separate,No,1.05,91.0,3003.00,161.32,68.47,120.12,0.00,3352.91,36.84,Yes,1.62,Vacation paid out separately adds 4%
+7,Monthly hours input - under 24/week avg,38.46,monthly,N/A,91,33.00,included,No,1.05,91.0,3003.00,161.32,68.47,0.00,0.00,3232.79,35.52,Yes,2.94,Same as scenario 1 but using monthly input
+8,Monthly hours - variable schedule needs WSIB,38.46,monthly,N/A,91,33.00,included,Yes,1.05,91.0,3003.00,161.32,68.47,0.00,31.53,3264.32,35.87,Yes,2.59,"91 hrs/month avg ~21/wk, but user indicates some weeks >24hrs"
+9,Low Schedule B rate,32.00,weekly,21,N/A,28.00,included,No,1.05,91.0,2548.00,134.07,58.09,0.00,0.00,2740.16,30.11,Yes,1.89,Lower approved rate scenario
+10,High Schedule B rate,45.00,weekly,30,N/A,38.00,included,Yes,1.05,130.0,4940.00,276.20,112.63,0.00,51.87,5380.70,41.39,Yes,3.61,Higher approved rate with more hours
+11,Minimum wage scenario,38.46,weekly,21,N/A,17.20,included,No,1.05,91.0,1565.20,75.73,35.69,0.00,0.00,1676.62,18.42,Yes,20.04,Minimum wage worker (ON 2026)
+12,Part-time low hours,38.46,weekly,10,N/A,35.00,included,No,1.05,43.3,1516.67,72.85,34.58,0.00,0.00,1624.10,37.49,Yes,0.97,Very part-time arrangement
+13,Full-time equivalent hours,38.46,weekly,40,N/A,28.00,included,Yes,1.05,173.3,4853.33,271.17,110.66,0.00,50.96,5286.12,30.50,Yes,7.96,Full-time hours scenario
+14,Vacation separate + WSIB,38.46,weekly,30,N/A,32.00,separate,Yes,1.05,130.0,4160.00,232.05,94.85,166.40,43.68,4697.00,36.13,Yes,2.33,Both vacation accrued and WSIB apply
+15,Right at budget limit,38.46,weekly,21,N/A,35.50,included,No,1.05,91.0,3230.50,174.80,73.66,0.00,0.00,3478.96,38.23,Yes,0.23,Very close to budget cap
+16,Significantly over budget,38.46,weekly,21,N/A,40.00,included,No,1.05,91.0,3640.00,199.13,83.00,0.00,0.00,3922.13,43.10,No,-4.64,Substantially exceeds Schedule B max
+17,High WSIB rate,38.46,weekly,30,N/A,33.00,included,Yes,2.50,130.0,4290.00,239.38,97.82,0.00,107.25,4734.45,36.42,Yes,2.04,Higher WSIB classification rate
+18,Zero CPP exemption scenario,38.46,weekly,5,N/A,50.00,included,No,1.05,21.7,1083.33,47.13,24.70,0.00,0.00,1155.16,53.28,No,-14.82,Very low hours - CPP exemption is larger than gross
+19,Monthly input - high hours,40.00,monthly,N/A,173,35.00,included,Yes,1.05,173.0,6055.00,342.45,138.05,0.00,63.58,6599.08,38.15,Yes,1.85,"Full-time equivalent, monthly input"
+20,Exact Schedule B match,38.46,weekly,21,N/A,35.54,included,No,1.05,91.0,3234.14,175.01,73.74,0.00,0.00,3482.89,38.28,Yes,0.18,Fine-tuned to nearly match cap exactly

@@ -71,7 +71,7 @@ export default function DirectHireCalculatorPage() {
     const formData = new FormData(form)
 
     try {
-      await fetch("/__forms.html", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
@@ -133,7 +133,7 @@ export default function DirectHireCalculatorPage() {
           {/* Hero Section */}
           <section className="relative h-[450px] md:h-[500px] flex items-center justify-center">
             <Image
-              src="/images/direct-hire-calculator.png"
+              src="/images/Designer (7).png"
               alt="FMHC Direct Hire Cost Calculator"
               fill
               className="object-cover"

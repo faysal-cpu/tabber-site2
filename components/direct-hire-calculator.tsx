@@ -149,6 +149,14 @@ function Tooltip({ text }: { text: string }) {
   )
 }
 
+// Format currency with commas
+function formatCurrency(value: number): string {
+  return value.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
 export function DirectHireCalculator() {
   const [scheduleBMax, setScheduleBMax] = useState(38.46)
   const [hoursInputMode, setHoursInputMode] = useState<"weekly" | "monthly">("weekly")
@@ -453,11 +461,11 @@ export function DirectHireCalculator() {
                   ✗ This wage exceeds your Schedule B max
                 </p>
                 <p className="text-sm" style={{ color: '#7F1D1D' }}>
-                  Over by ${Math.abs(results.overageOrHeadroom).toFixed(2)} per hour
+                  Over by ${formatCurrency(Math.abs(results.overageOrHeadroom))} per hour
                 </p>
                 {results.suggestedMaxWage && (
                   <p className="mt-2 text-sm font-semibold" style={{ color: '#7F1D1D' }}>
-                    Suggested maximum wage: ${results.suggestedMaxWage.toFixed(2)}/hr
+                    Suggested maximum wage: ${formatCurrency(results.suggestedMaxWage)}/hr
                   </p>
                 )}
               </>
@@ -472,32 +480,32 @@ export function DirectHireCalculator() {
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
                 <span className="text-navy/70">Gross wages (hours × wage)</span>
-                <span className="font-semibold text-navy">${results.grossMonthly.toFixed(2)}</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.grossMonthly)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-navy/70">Employer CPP (5.95%)</span>
-                <span className="font-semibold text-navy">${results.employerCPP.toFixed(2)}</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.employerCPP)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-navy/70">Employer EI (2.28%)</span>
-                <span className="font-semibold text-navy">${results.employerEI.toFixed(2)}</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.employerEI)}</span>
               </div>
               {results.vacationCost > 0 && (
                 <div className="flex justify-between">
                   <span className="text-navy/70">Vacation pay (4%)</span>
-                  <span className="font-semibold text-navy">${results.vacationCost.toFixed(2)}</span>
+                  <span className="font-semibold text-navy">${formatCurrency(results.vacationCost)}</span>
                 </div>
               )}
               {results.wsibCost > 0 && (
                 <div className="flex justify-between">
                   <span className="text-navy/70">WSIB ({wsibRate}%)</span>
-                  <span className="font-semibold text-navy">${results.wsibCost.toFixed(2)}</span>
+                  <span className="font-semibold text-navy">${formatCurrency(results.wsibCost)}</span>
                 </div>
               )}
               <div className="border-t pt-3" style={{ borderColor: '#E8EDF5' }}>
                 <div className="flex justify-between">
                   <span className="font-bold text-navy">Total monthly labour cost</span>
-                  <span className="font-bold text-navy">${results.totalMonthlyCost.toFixed(2)}</span>
+                  <span className="font-bold text-navy">${formatCurrency(results.totalMonthlyCost)}</span>
                 </div>
               </div>
               <div className="flex justify-between">
@@ -506,7 +514,7 @@ export function DirectHireCalculator() {
               </div>
               <div className="flex justify-between">
                 <span className="font-bold text-navy">Effective per-hour cost</span>
-                <span className="font-bold text-navy">${results.effectiveHourlyRate.toFixed(2)}</span>
+                <span className="font-bold text-navy">${formatCurrency(results.effectiveHourlyRate)}</span>
               </div>
             </div>
           </div>
@@ -517,18 +525,41 @@ export function DirectHireCalculator() {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-navy/70">Schedule B max per hour:</span>
-                <span className="font-semibold text-navy">${scheduleBMax.toFixed(2)}</span>
+                <span className="font-semibold text-navy">${formatCurrency(scheduleBMax)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-navy/70">Your effective rate:</span>
-                <span className="font-semibold text-navy">${results.effectiveHourlyRate.toFixed(2)}</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.effectiveHourlyRate)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-navy/70">
                   {results.fitsWithinCap ? "Difference per hour:" : "Over by:"}
                 </span>
                 <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
-                  ${Math.abs(results.overageOrHeadroom).toFixed(2)}
+                  ${formatCurrency(Math.abs(results.overageOrHeadroom))}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Monthly Budget Check */}
+          <div className="rounded-xl p-6" style={{ backgroundColor: results.fitsWithinCap ? '#E8EDF5' : '#FEF5F5' }}>
+            <h3 className="mb-4 font-serif text-[18px] font-bold text-navy">Monthly Budget Check</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-navy/70">Maximum monthly budget:</span>
+                <span className="font-semibold text-navy">${formatCurrency(scheduleBMax * results.hoursPerMonth)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">Your monthly cost:</span>
+                <span className="font-semibold text-navy">${formatCurrency(results.totalMonthlyCost)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-navy/70">
+                  {results.fitsWithinCap ? "Monthly room:" : "Monthly overage:"}
+                </span>
+                <span className={`font-semibold ${results.fitsWithinCap ? "text-navy" : ""}`} style={{ color: results.fitsWithinCap ? '#2B4C7E' : '#DC2626' }}>
+                  ${formatCurrency(Math.abs(results.monthlyHeadroom))}
                 </span>
               </div>
               {results.fitsWithinCap && (
@@ -541,7 +572,7 @@ export function DirectHireCalculator() {
               {!results.fitsWithinCap && (
                 <div className="pt-2 border-t" style={{ borderColor: '#DC2626' }}>
                   <p className="text-xs leading-relaxed" style={{ color: '#7F1D1D' }}>
-                    At {results.hoursPerMonth.toFixed(1)} hours/month, you'd be over budget by ${Math.abs(results.monthlyHeadroom).toFixed(2)}/month. This shortfall would need to come out of pocket.
+                    You'd be over budget by ${formatCurrency(Math.abs(results.monthlyHeadroom))}/month. This shortfall would need to come out of pocket.
                   </p>
                 </div>
               )}
