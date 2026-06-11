@@ -284,10 +284,7 @@ export default function FmhcPage() {
         {/* What Happens After You Reach Out */}
         <section className="py-12 md:py-16 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="mb-10 text-center">
-              <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
-              <p className="mt-2 text-sm text-muted-foreground">You're in good hands</p>
-            </div>
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens After You Reach Out</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {onboardingSteps.map((step, i) => {
                 const Icon = step.icon
@@ -309,8 +306,8 @@ export default function FmhcPage() {
         {/* Resources & Guides */}
         <section className="bg-gray-50 py-8 md:py-10 border-t border-border/30">
           <div className="mx-auto max-w-[1100px] px-6">
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-2">
+            <div className="mb-6 text-center">
+              <div className="flex items-center justify-center gap-3 mb-2">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
                   <BookOpen className="size-5 text-white" />
                 </div>
