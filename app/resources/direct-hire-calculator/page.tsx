@@ -146,7 +146,10 @@ export default function DirectHireCalculatorPage() {
                 FMHC Direct Hire Cost Calculator
               </h1>
               <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: "#2B4C7E" }}>
-                Direct-hire arrangements under FMHC have to fit within your Schedule B all-in rate. This calculator shows you the real per-hour cost of an employee — wages plus employer payroll costs — so you know what wage you can actually offer.
+                Not sure what you can actually afford to pay?
+              </p>
+              <p className="text-[15px] md:text-[16px] font-medium leading-[1.6] mb-5" style={{ color: "#2B4C7E" }}>
+                This calculator shows your true hourly cost — including employer payroll costs — so you know if a wage fits within your FMHC funding.
               </p>
               <div className="flex items-center gap-2 text-[11px] justify-center pt-4 border-t border-gray-200 text-navy/70">
                 <div className="relative size-7 overflow-hidden rounded-full flex-shrink-0">
