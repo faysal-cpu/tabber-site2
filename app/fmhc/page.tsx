@@ -316,7 +316,7 @@ export default function FmhcPage() {
               <p className="text-sm text-muted-foreground">We've put together resources and guides to help you navigate the FMHC program with confidence.</p>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* Complete FMHC Guide */}
               <Link
                 href="/resources/fmhc"
