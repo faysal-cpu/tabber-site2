@@ -638,8 +638,15 @@ export default function FmhcResourcesPage() {
               </div>
 
               <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
-                <p className="text-sm font-medium text-navy">
+                <p className="text-sm font-medium text-navy mb-3">
                   The approved hourly rate in your budget applies across all three models and is an all-in rate - it is intended to cover wages, applicable payroll costs, insurance, and all other costs associated with delivering the service.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Direct-hire employers:</strong> Use our{" "}
+                  <Link href="/resources/direct-hire-calculator" className="font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
+                    Direct Hire Cost Calculator
+                  </Link>
+                  {" "}to see if a proposed wage fits within your Schedule B all-in rate after accounting for employer CPP, EI, and WSIB.
                 </p>
               </div>
 
@@ -764,6 +771,19 @@ export default function FmhcResourcesPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="rounded-xl border-2 bg-white p-5 shadow-sm" style={{ borderColor: '#E8EDF5' }}>
+                <p className="text-sm font-medium text-navy mb-2">
+                  <strong>Stay organized with our checklists</strong>
+                </p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Download our monthly submission checklist and bookkeeping checklist to ensure you're meeting all FMHC requirements.
+                </p>
+                <Link href="/resources#checklists" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
+                  <FileCheck className="size-4" />
+                  View Downloadable Checklists
+                </Link>
               </div>
             </div>
           </div>
