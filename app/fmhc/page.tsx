@@ -316,60 +316,60 @@ export default function FmhcPage() {
               <p className="text-sm text-muted-foreground">We've put together resources and guides to help you navigate the FMHC program with confidence.</p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {/* Complete FMHC Guide */}
               <Link
                 href="/resources/fmhc"
-                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+                className="group flex flex-col gap-4 rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/20 p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#2B4C7E]/50 hover:-translate-y-1"
               >
-                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                  <BookOpen className="size-5" style={{ color: '#2B4C7E' }} />
+                <div className="flex size-14 items-center justify-center rounded-xl shadow-sm transition-all duration-300 group-hover:shadow-md" style={{ backgroundColor: '#2B4C7E' }}>
+                  <BookOpen className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Complete FMHC Guide</h3>
-                  <p className="text-xs text-muted-foreground">Eligibility, application, and compliance requirements</p>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Complete FMHC Guide</h3>
+                  <p className="text-[13px] leading-[1.6] text-muted-foreground">Everything you need to know about eligibility, application, and staying compliant</p>
                 </div>
               </Link>
 
               {/* Care Arrangement Guide */}
               <Link
                 href="/resources/care-arrangement-guide"
-                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+                className="group flex flex-col gap-4 rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/20 p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#2B4C7E]/50 hover:-translate-y-1"
               >
-                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                  <Users className="size-5" style={{ color: '#2B4C7E' }} />
+                <div className="flex size-14 items-center justify-center rounded-xl shadow-sm transition-all duration-300 group-hover:shadow-md" style={{ backgroundColor: '#2B4C7E' }}>
+                  <Users className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Choosing Your Care Arrangement</h3>
-                  <p className="text-xs text-muted-foreground">Compare agency, contractor, and direct hire options</p>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Care Arrangement Guide</h3>
+                  <p className="text-[13px] leading-[1.6] text-muted-foreground">Detailed comparison to help you choose between agency, contractor, and direct hire</p>
                 </div>
               </Link>
 
               {/* Direct Hire Calculator */}
               <Link
                 href="/resources/direct-hire-calculator"
-                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+                className="group flex flex-col gap-4 rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/20 p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#2B4C7E]/50 hover:-translate-y-1"
               >
-                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                  <Calculator className="size-5" style={{ color: '#2B4C7E' }} />
+                <div className="flex size-14 items-center justify-center rounded-xl shadow-sm transition-all duration-300 group-hover:shadow-md" style={{ backgroundColor: '#2B4C7E' }}>
+                  <Calculator className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Direct Hire Cost Calculator</h3>
-                  <p className="text-xs text-muted-foreground">Calculate true employer costs for direct hire</p>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Cost Calculator</h3>
+                  <p className="text-[13px] leading-[1.6] text-muted-foreground">Calculate your true per-hour cost including wages, CPP, EI, and WSIB</p>
                 </div>
               </Link>
 
               {/* Checklists */}
               <Link
                 href="/resources#checklists"
-                className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
+                className="group flex flex-col gap-4 rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/20 p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#2B4C7E]/50 hover:-translate-y-1"
               >
-                <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                  <Download className="size-5" style={{ color: '#2B4C7E' }} />
+                <div className="flex size-14 items-center justify-center rounded-xl shadow-sm transition-all duration-300 group-hover:shadow-md" style={{ backgroundColor: '#2B4C7E' }}>
+                  <Download className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[15px] font-semibold text-navy mb-1">Downloadable Checklists</h3>
-                  <p className="text-xs text-muted-foreground">Stay organized with compliance checklists</p>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Compliance Checklists</h3>
+                  <p className="text-[13px] leading-[1.6] text-muted-foreground">Downloadable checklists for bookkeeping and monthly submissions</p>
                 </div>
               </Link>
             </div>
