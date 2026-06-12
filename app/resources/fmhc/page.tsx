@@ -601,6 +601,19 @@ export default function FmhcResourcesPage() {
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
               <p>You have three options for engaging care providers:</p>
 
+              <div className="rounded-xl border-2 bg-white p-6 shadow-md" style={{ borderColor: '#E8EDF5', backgroundColor: '#F9FAFB' }}>
+                <p className="text-sm font-medium text-navy mb-2">
+                  <strong>Trying to decide on the best care arrangement?</strong>
+                </p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  We put together a detailed comparison guide to help you choose between agency, contractor, and direct hire options.
+                </p>
+                <Link href="/resources/care-arrangement-guide" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
+                  <BookOpen className="size-4" />
+                  View Care Arrangement Guide
+                </Link>
+              </div>
+
               <div className="space-y-4">
                 <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Through a Registered Agency</h3>
