@@ -599,8 +599,6 @@ export default function FmhcResourcesPage() {
               <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">How to Structure Care Arrangements</h2>
             </div>
             <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
-              <p>You have three options for engaging care providers:</p>
-
               <div className="rounded-xl border-2 bg-white p-6 shadow-md" style={{ borderColor: '#E8EDF5', backgroundColor: '#F9FAFB' }}>
                 <p className="text-sm font-medium text-navy mb-2">
                   <strong>Trying to decide on the best care arrangement?</strong>
@@ -613,6 +611,8 @@ export default function FmhcResourcesPage() {
                   View Care Arrangement Guide
                 </Link>
               </div>
+
+              <p>You have three options for engaging care providers:</p>
 
               <div className="space-y-4">
                 <div className="rounded-xl border-2 border-[#2B4C7E] bg-card p-6 shadow-md">
