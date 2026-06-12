@@ -4,6 +4,7 @@ import Script from "next/script"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
 import { Mail, Calendar, Clock, FileSearch, MessageSquare, Send, Phone, MessageCircle, Users } from "lucide-react"
 import { useState } from "react"
@@ -63,12 +64,14 @@ export default function ContactPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <section className="bg-card py-12 md:py-16">
+        <section className="py-10 md:py-12" style={{ backgroundColor: '#E8EDF5' }}>
           <div className="mx-auto max-w-[800px] px-6 text-center">
             <h1 className="font-serif text-[34px] font-bold leading-[1.2] text-navy md:text-[44px]">Get in Touch</h1>
             <p className="mt-3 text-[16px] leading-[1.65] text-muted-foreground">{"We're here to help. Reach out and we'll get back to you within 24 hours."}</p>
           </div>
         </section>
+
+        <WaveDivider backgroundColor="#F9FAFB" />
 
         <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-6 md:flex-row md:gap-12">
