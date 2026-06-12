@@ -245,28 +245,6 @@ export default function DirectHireCalculatorPage() {
 
                 <div>
                   <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
-                    The math, in plain language
-                  </h3>
-                  <p>
-                    For a worker at 21 hours per week, at $33.00 per hour, with vacation included in the rate:
-                  </p>
-                  <ul className="mt-3 ml-6 space-y-2 list-disc">
-                    <li>Monthly hours: 21 × 4.33 ≈ 91 hours per month</li>
-                    <li>Gross wages: 91 × $33.00 = $3,003.00</li>
-                    <li>Pensionable earnings: $3,003.00 − $291.67 (monthly CPP exemption) = $2,711.33</li>
-                    <li>Employer CPP: $2,711.33 × 5.95% = $161.32</li>
-                    <li>Employer EI: $3,003.00 × 2.28% = $68.47</li>
-                    <li>WSIB: $0 (below 24 hrs/week threshold)</li>
-                    <li>Total monthly cost: $3,003.00 + $161.32 + $68.47 = $3,232.79</li>
-                    <li>Per-hour cost: $3,232.79 ÷ 91 = $35.52</li>
-                  </ul>
-                  <p className="mt-3">
-                    That fits well under a $38.46 Schedule B max, leaving $2.94/hr of rate capacity.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-3 font-serif text-[18px] font-bold text-navy">
                     Understanding Schedule B constraints
                   </h3>
                   <p>

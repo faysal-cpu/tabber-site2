@@ -148,22 +148,22 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="bg-card py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto max-w-[1200px] px-6">
             <h2 className="mb-10 text-center font-serif text-[24px] font-bold text-navy md:text-[30px]">What Happens Next</h2>
             <div className="grid gap-5 md:grid-cols-3">
               {nextSteps.map((step) => {
                 const Icon = step.icon
                 return (
-                  <div key={step.num} className="relative rounded-xl bg-secondary p-6 text-center">
-                    <span className="absolute left-5 top-3 font-serif text-[36px] font-bold" style={{ color: 'rgba(43,76,126,0.1)' }}>{step.num}</span>
-                    <div className="relative">
-                      <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
-                        <Icon className="size-5" style={{ color: '#2B4C7E' }} />
-                      </div>
-                      <h3 className="mb-1.5 font-serif text-[17px] font-semibold text-navy">{step.title}</h3>
-                      <p className="mx-auto max-w-[260px] text-sm leading-[1.65] text-muted-foreground">{step.description}</p>
+                  <div key={step.num} className="relative rounded-xl p-6 text-center shadow-sm border-2 border-border bg-white">
+                    <div className="mb-4 flex size-11 items-center justify-center rounded-full mx-auto" style={{ backgroundColor: '#E8EDF5' }}>
+                      <Icon className="size-5" style={{ color: '#2B4C7E' }} />
                     </div>
+                    <div className="mb-2 inline-flex items-center justify-center rounded-full px-3 py-1 text-xs font-bold" style={{ backgroundColor: '#E8EDF5', color: '#2B4C7E' }}>
+                      Step {step.num}
+                    </div>
+                    <h3 className="mb-2 font-serif text-[17px] font-semibold text-navy">{step.title}</h3>
+                    <p className="mx-auto max-w-[280px] text-sm leading-[1.65] text-muted-foreground">{step.description}</p>
                   </div>
                 )
               })}
