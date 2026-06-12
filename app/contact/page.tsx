@@ -70,7 +70,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
           <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-6 md:flex-row md:gap-12">
             <div className="md:flex-[0.6]">
               {submitted ? (
@@ -148,22 +148,20 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16" style={{ backgroundColor: '#F9FAFB' }}>
-          <div className="mx-auto max-w-[1200px] px-6">
-            <h2 className="mb-10 text-center font-serif text-[24px] font-bold text-navy md:text-[30px]">What Happens Next</h2>
-            <div className="grid gap-5 md:grid-cols-3">
-              {nextSteps.map((step) => {
+        <section className="py-12 md:py-16 border-t border-border/30" style={{ backgroundColor: '#E8EDF5' }}>
+          <div className="mx-auto max-w-[1100px] px-6">
+            <h2 className="mb-10 text-center font-serif text-[26px] font-bold text-navy md:text-[32px]">What Happens Next</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {nextSteps.map((step, i) => {
                 const Icon = step.icon
                 return (
-                  <div key={step.num} className="relative rounded-xl p-6 text-center shadow-sm border-2 border-border bg-white">
-                    <div className="mb-4 flex size-11 items-center justify-center rounded-full mx-auto" style={{ backgroundColor: '#E8EDF5' }}>
-                      <Icon className="size-5" style={{ color: '#2B4C7E' }} />
+                  <div key={step.num} className="relative rounded-xl border-2 border-[#2B4C7E]/20 bg-gradient-to-br from-white to-[#E8EDF5]/30 p-6 text-center shadow-md transition-all hover:shadow-xl hover:border-[#2B4C7E]/40">
+                    <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-[#2B4C7E] shadow-md">
+                      <Icon className="size-7 text-white" strokeWidth={2} />
                     </div>
-                    <div className="mb-2 inline-flex items-center justify-center rounded-full px-3 py-1 text-xs font-bold" style={{ backgroundColor: '#E8EDF5', color: '#2B4C7E' }}>
-                      Step {step.num}
-                    </div>
-                    <h3 className="mb-2 font-serif text-[17px] font-semibold text-navy">{step.title}</h3>
-                    <p className="mx-auto max-w-[280px] text-sm leading-[1.65] text-muted-foreground">{step.description}</p>
+                    <span className="mb-2 block text-xs font-bold uppercase tracking-wider" style={{ color: '#2B4C7E' }}>Step {step.num}</span>
+                    <h3 className="mb-3 font-serif text-[17px] font-bold text-navy">{step.title}</h3>
+                    <p className="text-[14px] leading-[1.7] text-muted-foreground">{step.description}</p>
                   </div>
                 )
               })}
