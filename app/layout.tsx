@@ -39,32 +39,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
 
-  // Open Graph (WhatsApp, FB, LinkedIn, Slack, iMessage)
-  openGraph: {
-    type: 'website',
-    url: siteUrl,
-    title: 'Tabber | Financial Management & Bookkeeping',
-    description:
-      'CPA-led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome\'s Family-Managed Home Care (FMHC) program.',
-    siteName: 'Tabber',
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'Tabber — Bookkeeping | Compliance | Advisory',
-      },
-    ],
-  },
-
-  // Twitter / X
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tabber | Financial Management & Bookkeeping',
-    description:
-      'CPA-led bookkeeping, payroll, and reporting for families navigating Ontario Health atHome\'s Family-Managed Home Care (FMHC) program.',
-    images: [ogImage],
-  },
+  // Open Graph removed from root - defined per-page in child layouts
 }
 
 export const viewport: Viewport = {
