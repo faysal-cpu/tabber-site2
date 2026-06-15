@@ -8,9 +8,52 @@ import { Button } from "@/components/ui/button"
 import { BackToTopButton } from "@/components/back-to-top-button"
 import { FileText, Download, ExternalLink, BookOpen, Calculator as CalcIcon, CheckSquare, FileCheck, Users, Building2, Youtube } from "lucide-react"
 
+const siteUrl = 'https://tabber.ca'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Resources & Guides | Tabber",
   description: "Helpful resources, guides, and tools for FMHC families and small businesses. Download checklists, access external resources, and learn more about bookkeeping and financial management.",
+
+  alternates: {
+    canonical: `${siteUrl}/resources`,
+  },
+
+  openGraph: {
+    type: 'website',
+    url: `${siteUrl}/resources`,
+    title: 'Resources & Guides for FMHC Families | Tabber',
+    description: 'Helpful resources, guides, and tools for FMHC families. Access our complete FMHC guide, care arrangement decision guide, direct hire calculator, and downloadable checklists.',
+    siteName: 'Tabber',
+    images: [
+      {
+        url: '/images/Designer (8).png',
+        width: 1200,
+        height: 630,
+        alt: 'FMHC Resources & Guides - Tabber',
+      },
+    ],
+    locale: 'en_CA',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Resources & Guides for FMHC Families | Tabber',
+    description: 'Helpful resources, guides, and tools for FMHC families. Access our complete FMHC guide, care arrangement decision guide, direct hire calculator, and downloadable checklists.',
+    images: ['/images/Designer (8).png'],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 const fmhcResources = [
