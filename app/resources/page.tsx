@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FMHC Resources & Guides for Ontario Families',
     description: 'Free FMHC resources: Complete guide, direct hire calculator, care arrangement decision guide, and compliance checklists for Family-Managed Home Care.',
-    images: ['/images/Designer (8).png'],
+    images: ['/images/resources-og.png'],
   },
 
   robots: {
