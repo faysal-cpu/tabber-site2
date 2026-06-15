@@ -153,7 +153,7 @@ export default function ResourcesPage() {
         {/* Hero Section with Background Image */}
         <section className="relative h-[350px] md:h-[380px] flex items-center justify-center px-6">
           <Image
-            src="/images/Designer (8).png"
+            src="/images/resources-og.png"
             alt="Resources & Guides for FMHC and Financial Management"
             fill
             className="object-cover"
