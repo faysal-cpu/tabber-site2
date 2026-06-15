@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: 'Tabber',
     images: [
       {
-        url: '/images/Designer%20(8).png',
+        url: '/images/resources-hero.png',
         width: 1200,
         height: 630,
         alt: 'FMHC Resources & Guides - Tabber',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FMHC Resources & Guides for Ontario Families',
     description: 'Free FMHC resources: Complete guide, direct hire calculator, care arrangement decision guide, and compliance checklists for Family-Managed Home Care.',
-    images: ['/images/Designer%20(8).png'],
+    images: ['/images/resources-hero.png'],
   },
 
   robots: {
@@ -153,7 +153,7 @@ export default function ResourcesPage() {
         {/* Hero Section with Background Image */}
         <section className="relative h-[350px] md:h-[380px] flex items-center justify-center px-6">
           <Image
-            src="/images/resources-og.png"
+            src="/images/resources-hero.png"
             alt="Resources & Guides for FMHC and Financial Management"
             fill
             className="object-cover"
