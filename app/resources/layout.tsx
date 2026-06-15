@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/images/resources-hero.png`,
-        width: 1200,
-        height: 630,
+        width: 1512,
+        height: 1040,
         alt: 'FMHC Resources & Guides - Tabber',
       },
     ],
