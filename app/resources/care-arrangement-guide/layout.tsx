@@ -5,9 +5,28 @@ const siteUrl = "https://tabber.ca"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: "Choosing Your FMHC Care Arrangement | Tabber",
-  description: "Compare the three options for hiring care under Ontario's Family-Managed Home Care program — agency, independent contractor, or direct employee. A practical decision guide from Tabber.",
-  keywords: ["FMHC employment options", "agency vs direct hire self-directed care Ontario", "Family-Managed Home Care contractor vs employee", "FMHC care arrangement"],
+  title: "FMHC Care Arrangement Guide: Agency vs Contractor vs Direct Hire | Tabber",
+  description: "Compare agency, independent contractor, and direct hire options for Ontario's Family-Managed Home Care program. Interactive decision guide helps you choose the right care arrangement for your FMHC setup.",
+  keywords: [
+    "FMHC care arrangement",
+    "FMHC employment options",
+    "agency vs direct hire FMHC",
+    "FMHC contractor vs employee",
+    "Family-Managed Home Care care arrangements",
+    "Self-Directed Care employment options",
+    "FMHC agency option",
+    "FMHC independent contractor",
+    "FMHC direct hire",
+    "FMHC direct employee",
+    "choosing FMHC care arrangement",
+    "FMHC care arrangement guide",
+    "agency vs contractor vs direct hire FMHC",
+    "FMHC hiring options Ontario",
+    "Family-Managed Home Care hiring guide",
+    "FMHC decision guide",
+    "self-directed care Ontario hiring",
+    "Ontario Health atHome care arrangements",
+  ],
 
   authors: [{ name: "Faysal El Masri, CPA" }, { name: "Tabber" }],
 

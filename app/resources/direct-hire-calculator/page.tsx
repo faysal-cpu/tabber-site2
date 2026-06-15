@@ -99,22 +99,91 @@ export default function DirectHireCalculatorPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "FMHC Direct Hire Cost Calculator",
-            "description": "Calculate the true hourly cost of hiring a direct employee under Ontario's Family-Managed Home Care program — wages plus employer CPP, EI, and WSIB costs.",
-            "image": "https://tabber.ca/images/direct-hire-calculator.png",
-            "datePublished": "2026-06-10",
-            "dateModified": "2026-06-10",
-            "author": {
-              "@type": "Person",
-              "name": "Faysal El Masri",
-              "jobTitle": "CPA"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Tabber",
-              "url": "https://tabber.ca"
-            }
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://tabber.ca/resources/direct-hire-calculator#article",
+                "headline": "FMHC Direct Hire Cost Calculator",
+                "description": "Calculate the true hourly cost of hiring a direct employee under Ontario's Family-Managed Home Care program — wages plus employer CPP, EI, and WSIB costs.",
+                "image": "https://tabber.ca/images/direct-hire-calculator.png",
+                "datePublished": "2026-06-10",
+                "dateModified": "2026-06-10",
+                "author": {
+                  "@type": "Person",
+                  "name": "Faysal El Masri",
+                  "jobTitle": "CPA",
+                  "url": "https://tabber.ca/about"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "@id": "https://tabber.ca/#organization",
+                  "name": "Tabber",
+                  "url": "https://tabber.ca",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://tabber.ca/tabber-logo-full.svg"
+                  }
+                },
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://tabber.ca/resources/direct-hire-calculator"
+                },
+                "keywords": "FMHC calculator, direct hire calculator, FMHC cost calculator, caregiver wage calculator, Schedule B calculator, FMHC payroll calculator"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "https://tabber.ca/resources/direct-hire-calculator#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://tabber.ca"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Resources",
+                    "item": "https://tabber.ca/resources"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Direct Hire Calculator",
+                    "item": "https://tabber.ca/resources/direct-hire-calculator"
+                  }
+                ]
+              },
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://tabber.ca/resources/direct-hire-calculator#calculator",
+                "name": "FMHC Direct Hire Cost Calculator",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Web",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "CAD"
+                },
+                "description": "Free calculator to determine the true hourly cost of hiring a direct employee under Family-Managed Home Care, including wages, CPP, EI, and WSIB costs."
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://tabber.ca/#organization",
+                "name": "Tabber",
+                "url": "https://tabber.ca",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://tabber.ca/tabber-logo-full.svg"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-647-872-0394",
+                  "contactType": "customer service",
+                  "email": "hello@tabber.ca"
+                }
+              }
+            ]
           })
         }}
       />

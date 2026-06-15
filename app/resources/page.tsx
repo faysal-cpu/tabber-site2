@@ -12,8 +12,24 @@ const siteUrl = 'https://tabber.ca'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Resources & Guides | Tabber",
-  description: "Helpful resources, guides, and tools for FMHC families and small businesses. Download checklists, access external resources, and learn more about bookkeeping and financial management.",
+  title: "FMHC Resources & Guides | Family-Managed Home Care Tools | Tabber",
+  description: "Free FMHC resources for Ontario families: Complete FMHC guide, direct hire cost calculator, care arrangement decision guide, and downloadable compliance checklists. Expert tools for Family-Managed Home Care success.",
+
+  keywords: [
+    'FMHC resources',
+    'FMHC guide Ontario',
+    'Family-Managed Home Care resources',
+    'FMHC calculator',
+    'FMHC tools',
+    'FMHC checklists',
+    'Ontario Health atHome resources',
+    'FMHC bookkeeping guide',
+    'self-directed care resources Ontario',
+    'FMHC compliance checklist',
+    'care arrangement guide FMHC',
+  ],
+
+  authors: [{ name: 'Faysal El Masri, CPA' }, { name: 'Tabber' }],
 
   alternates: {
     canonical: `${siteUrl}/resources`,
@@ -22,12 +38,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/resources`,
-    title: 'Resources & Guides for FMHC Families | Tabber',
-    description: 'Helpful resources, guides, and tools for FMHC families. Access our complete FMHC guide, care arrangement decision guide, direct hire calculator, and downloadable checklists.',
+    title: 'FMHC Resources & Guides for Ontario Families | Tabber',
+    description: 'Free FMHC resources for Ontario families: Complete guide, direct hire calculator, care arrangement decision guide, and compliance checklists. Everything you need for Family-Managed Home Care success.',
     siteName: 'Tabber',
     images: [
       {
-        url: '/images/Designer (8).png',
+        url: '/images/resources-og.png',
         width: 1200,
         height: 630,
         alt: 'FMHC Resources & Guides - Tabber',
@@ -38,8 +54,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Resources & Guides for FMHC Families | Tabber',
-    description: 'Helpful resources, guides, and tools for FMHC families. Access our complete FMHC guide, care arrangement decision guide, direct hire calculator, and downloadable checklists.',
+    title: 'FMHC Resources & Guides for Ontario Families',
+    description: 'Free FMHC resources: Complete guide, direct hire calculator, care arrangement decision guide, and compliance checklists for Family-Managed Home Care.',
     images: ['/images/Designer (8).png'],
   },
 
