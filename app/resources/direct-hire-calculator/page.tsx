@@ -146,7 +146,7 @@ export default function DirectHireCalculatorPage() {
                 FMHC Direct Hire Cost Calculator
               </h1>
               <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: "#2B4C7E" }}>
-                Not sure what you can actually afford to pay?
+                Not sure what wage you can afford to pay your employee?
               </p>
               <p className="text-[15px] md:text-[16px] font-medium leading-[1.6] mb-5" style={{ color: "#2B4C7E" }}>
                 This calculator shows your true hourly cost — including employer payroll costs — so you know if a wage fits within your FMHC funding.

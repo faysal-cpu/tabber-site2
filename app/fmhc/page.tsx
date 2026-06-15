@@ -340,7 +340,7 @@ export default function FmhcPage() {
                   <Users className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Care Arrangement Guide</h3>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Care Arrangement Decision Guide</h3>
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">Detailed comparison to help you choose between agency, contractor, and direct hire</p>
                 </div>
               </Link>
@@ -354,7 +354,7 @@ export default function FmhcPage() {
                   <Calculator className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Cost Calculator</h3>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Direct Hire Wage Calculator</h3>
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">Calculate your true per-hour cost including wages, CPP, EI, and WSIB</p>
                 </div>
               </Link>
@@ -368,7 +368,7 @@ export default function FmhcPage() {
                   <Download className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">Compliance Checklists</h3>
+                  <h3 className="font-serif text-[16px] font-bold text-navy mb-2">PDF Compliance Checklists</h3>
                   <p className="text-[13px] leading-[1.6] text-muted-foreground">Downloadable checklists for bookkeeping and monthly submissions</p>
                 </div>
               </Link>
