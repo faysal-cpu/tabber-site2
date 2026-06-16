@@ -233,7 +233,7 @@ export function DirectHireCalculator() {
                     min="0"
                     value={scheduleBMax}
                     onChange={(e) => setScheduleBMax(parseFloat(e.target.value) || 0)}
-                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
               </div>
@@ -284,7 +284,7 @@ export function DirectHireCalculator() {
                     max="60"
                     value={hoursPerWeek}
                     onChange={(e) => setHoursPerWeek(parseFloat(e.target.value) || 0)}
-                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     placeholder="e.g., 21"
                   />
                 ) : (
@@ -296,7 +296,7 @@ export function DirectHireCalculator() {
                     max="260"
                     value={hoursPerMonth}
                     onChange={(e) => setHoursPerMonth(parseFloat(e.target.value) || 0)}
-                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     placeholder="e.g., 91"
                   />
                 )}
@@ -322,7 +322,7 @@ export function DirectHireCalculator() {
                     min="0"
                     value={hourlyWage}
                     onChange={(e) => setHourlyWage(parseFloat(e.target.value) || 0)}
-                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+                    className="w-full rounded-lg border border-gray-300 pl-7 pr-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
               </div>
