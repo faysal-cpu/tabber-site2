@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 
 export function LeadCapturePopup() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const [email, setEmail] = useState('')
@@ -13,6 +15,10 @@ export function LeadCapturePopup() {
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   useEffect(() => {
+    // Pages where popup should NOT show
+    const excludedPages = ['/', '/services', '/faq', '/about', '/privacy', '/contact', '/terms']
+    if (excludedPages.includes(pathname)) return
+
     const hasSeenPopup = sessionStorage.getItem('leadPopupShown')
     if (hasSeenPopup) return
 
@@ -47,7 +53,7 @@ export function LeadCapturePopup() {
       clearTimeout(timeoutId)
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [pathname])
 
   const handleClose = () => {
     setIsClosing(true)
@@ -61,7 +67,7 @@ export function LeadCapturePopup() {
     setIsSubmitting(true)
 
     try {
-      const formData = new FormData()
+      const formData = new URLSearchParams()
       formData.append('form-name', 'lead-capture')
       formData.append('email', email)
       formData.append('phone', phone)
@@ -69,7 +75,7 @@ export function LeadCapturePopup() {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formData.toString(),
       })
 
       setIsSubmitted(true)
@@ -134,7 +140,8 @@ export function LeadCapturePopup() {
               <p className="text-[14px] font-semibold text-green-800">Thanks! We'll be in touch soon.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3" data-netlify="true" name="lead-capture">
+              <input type="hidden" name="form-name" value="lead-capture" />
               <input
                 type="email"
                 name="email"
