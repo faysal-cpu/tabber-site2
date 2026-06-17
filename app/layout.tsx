@@ -3,6 +3,7 @@ import { Inter, Poppins, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { LeadCapturePopup } from '@/components/lead-capture-popup'
 const _inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en" className={`${_inter.variable} ${_poppins.variable} ${_geistMono.variable}`}>
       <body className="font-sans antialiased">
         {children}
+        <LeadCapturePopup />
         <Analytics />
         <GoogleAnalytics />
       </body>
