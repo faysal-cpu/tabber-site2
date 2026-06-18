@@ -17,7 +17,8 @@ export function LeadCapturePopup() {
     if (excludedPages.includes(pathname)) return
 
     const hasSeenPopup = sessionStorage.getItem('leadPopupShown')
-    if (hasSeenPopup) return
+    const wasDismissed = sessionStorage.getItem('leadPopupDismissed')
+    if (hasSeenPopup || wasDismissed) return
 
     let timeoutId: NodeJS.Timeout
     let scrollTriggered = false
@@ -54,6 +55,7 @@ export function LeadCapturePopup() {
 
   const handleClose = () => {
     setIsClosing(true)
+    sessionStorage.setItem('leadPopupDismissed', 'true')
     setTimeout(() => {
       setIsVisible(false)
     }, 300)
@@ -95,7 +97,7 @@ export function LeadCapturePopup() {
       <div className="p-6">
         {/* Header with close button */}
         <div className="mb-4 flex items-start justify-between">
-          <h3 className="font-serif text-[20px] font-bold text-navy leading-tight pr-2">
+          <h3 className="font-serif text-[20px] font-bold leading-tight pr-2" style={{ color: '#2B4C7E' }}>
             Need help navigating FMHC?
           </h3>
           <button
@@ -125,13 +127,13 @@ export function LeadCapturePopup() {
               name="email"
               placeholder="Email *"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-[14px] focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-[14px] text-gray-900 placeholder:text-gray-400 focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
             />
             <input
               type="tel"
               name="phone"
               placeholder="Phone (optional)"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-[14px] focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
+              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-[14px] text-gray-900 placeholder:text-gray-400 focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20"
             />
             <button
               type="submit"
