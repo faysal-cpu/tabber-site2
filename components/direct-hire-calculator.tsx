@@ -376,24 +376,38 @@ export function DirectHireCalculator() {
               <div>
                 <label className="flex items-center text-sm font-semibold text-navy mb-2">
                   WSIB applicable?
-                  <Tooltip text="In Ontario, domestic workers in a private residence are exempt from WSIB if they work less than 24 hours per week. WSIB applies if ANY week exceeds 24 hours — not based on monthly average. Check this box if any week will exceed 24 hours." />
+                  <Tooltip text="In Ontario, domestic workers in a private residence are exempt from WSIB if they work less than 24 hours per week. WSIB applies if ANY week exceeds 24 hours — not based on monthly average. Select 'Yes' if any week will exceed 24 hours." />
                 </label>
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={wsibApplicable}
-                    onChange={(e) => {
-                      setWsibApplicable(e.target.checked)
-                      setWsibManualOverride(true)
-                    }}
-                    className="size-4 rounded text-[#2B4C7E] focus:ring-[#2B4C7E]"
-                  />
-                  <span className="text-sm text-navy">
-                    {wsibManualOverride
-                      ? (wsibApplicable ? "Yes (manually set)" : "No (manually set)")
-                      : (effectiveHoursPerWeek > 24 ? "Yes (auto-detected: >24 hrs/week avg)" : "No (auto-detected: ≤24 hrs/week avg)")}
-                  </span>
-                </label>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={!wsibApplicable}
+                      onChange={() => {
+                        setWsibApplicable(false)
+                        setWsibManualOverride(true)
+                      }}
+                      className="text-[#2B4C7E] focus:ring-[#2B4C7E]"
+                    />
+                    <span className="text-sm text-navy">
+                      No {!wsibManualOverride && effectiveHoursPerWeek <= 24 ? "(auto-detected: ≤24 hrs/week avg)" : ""}
+                    </span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={wsibApplicable}
+                      onChange={() => {
+                        setWsibApplicable(true)
+                        setWsibManualOverride(true)
+                      }}
+                      className="text-[#2B4C7E] focus:ring-[#2B4C7E]"
+                    />
+                    <span className="text-sm text-navy">
+                      Yes {!wsibManualOverride && effectiveHoursPerWeek > 24 ? "(auto-detected: >24 hrs/week avg)" : ""}
+                    </span>
+                  </label>
+                </div>
               </div>
 
               {wsibApplicable && (
