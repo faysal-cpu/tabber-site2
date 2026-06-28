@@ -43,10 +43,6 @@ const faqs = [
     question: "Does the calculator handle stat holiday pay?",
     answer: "Not directly. Stat holiday pay is calculated separately under Ontario's Employment Standards Act (total wages in 4 work weeks before the holiday ÷ 20). Over a full year, stat holiday obligations average roughly 3–4% of total wages. If you want to be conservative, build a small buffer into your wage planning to account for the 9 Ontario public holidays per year.",
   },
-  {
-    question: "What if my Schedule B rate is different from $38.46?",
-    answer: "Just enter your actual Schedule B maximum in the first input. The $38.46 default reflects a common FMHC rate at the time of writing, but every family's Schedule B is calibrated to their specific care plan. Use your number, not ours.",
-  },
 ]
 
 export default function DirectHireCalculatorPage() {
