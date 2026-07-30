@@ -21,7 +21,7 @@ const sections = [
   {
     title: "3. Confidentiality",
     content:
-      "All client financial information is treated as strictly confidential. We will not disclose your information to any third party without your consent, except as required by law or professional regulations.",
+      "All client information is treated as strictly confidential. Access to client information may be provided to authorized employees, contractors, consultants, and service providers where necessary to deliver services on Tabber's behalf and subject to appropriate confidentiality, privacy, and security obligations. We will not disclose your information to any third party without your consent, except as required by law or professional regulations.",
   },
   {
     title: "4. Limitation of Liability",

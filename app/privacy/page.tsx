@@ -21,30 +21,40 @@ const sections = [
   {
     title: "3. Data Security",
     content:
-      "We implement industry-standard security measures to protect your personal and financial information. All data is encrypted in transit and at rest. Access to client data is strictly limited to authorized personnel.",
+      "We implement industry-standard security measures to protect your personal and financial information. All data is encrypted in transit and at rest. Access to client data is strictly limited to authorized employees, contractors, and service providers who require access to perform assigned duties on our behalf. All such individuals are subject to confidentiality, privacy, and security obligations designed to protect client information.",
   },
   {
-    title: "4. Third-Party Services",
+    title: "4. Service Providers and Contractors",
+    content:
+      "We may engage trusted employees, independent contractors, consultants, and service providers to assist in delivering our bookkeeping, payroll, reporting, administrative, and client support services. These individuals and organizations are granted access only to the information necessary to perform their assigned responsibilities and are required to maintain appropriate confidentiality, privacy, and security safeguards. Tabber remains responsible for the protection of personal information handled on its behalf.",
+  },
+  {
+    title: "5. Third-Party Services",
     content:
       "We may use third-party tools for accounting software (QuickBooks, Xero), communication, and website analytics. These services have their own privacy policies and we encourage you to review them.",
   },
   {
-    title: "5. Data Retention",
+    title: "6. Cross-Border Processing",
+    content:
+      "In certain circumstances, personal information may be accessed or processed outside Canada by authorized service providers or contractors assisting in the delivery of our services. Where such processing occurs, Tabber remains responsible for protecting personal information and uses contractual and other measures intended to provide an appropriate level of protection for the information being processed. Personal information processed outside Canada may be subject to the laws of the jurisdiction in which it is processed.",
+  },
+  {
+    title: "7. Data Retention",
     content:
       "We retain your personal information for as long as necessary to provide our services and comply with legal and regulatory requirements. Financial records are retained as required by Canadian tax law.",
   },
   {
-    title: "6. Your Rights",
+    title: "8. Your Rights",
     content:
-      "You have the right to access, correct, or delete your personal information. You may also opt out of non-essential communications at any time by contacting us at hello@tabber.ca.",
+      "You may request access to, correction of, or deletion of your personal information, subject to applicable legal, regulatory, recordkeeping, and professional obligations. You may also opt out of non-essential communications at any time by contacting us at hello@tabber.ca.",
   },
   {
-    title: "7. Changes to This Policy",
+    title: "9. Changes to This Policy",
     content:
       "We may update this privacy policy from time to time. We will notify you of any material changes by posting the updated policy on this page with a revised effective date.",
   },
   {
-    title: "8. Contact",
+    title: "10. Contact",
     content:
       "If you have questions about this privacy policy or our data practices, please contact us at hello@tabber.ca.",
   },
