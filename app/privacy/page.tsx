@@ -67,7 +67,7 @@ export default function PrivacyPage() {
       <main className="flex-1">
         <section className="bg-card py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6">
-            <p className="mb-3 text-sm text-muted-foreground">Last updated: February 2026</p>
+            <p className="mb-3 text-sm text-muted-foreground">Last updated: July 2026</p>
             <h1 className="font-serif text-[30px] font-bold text-navy md:text-[36px]">
               Privacy Policy
             </h1>
