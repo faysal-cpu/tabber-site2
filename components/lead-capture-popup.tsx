@@ -14,7 +14,12 @@ export function LeadCapturePopup() {
   useEffect(() => {
     // Pages where popup should NOT show
     const excludedPages = ['/', '/services', '/faq', '/about', '/privacy', '/contact', '/terms']
-    if (excludedPages.includes(pathname)) return
+    if (excludedPages.includes(pathname)) {
+      // Ensure popup is completely hidden on excluded pages
+      setIsVisible(false)
+      setIsClosing(false)
+      return
+    }
 
     const hasSeenPopup = sessionStorage.getItem('leadPopupShown')
     const wasDismissed = sessionStorage.getItem('leadPopupDismissed')
@@ -58,6 +63,7 @@ export function LeadCapturePopup() {
     sessionStorage.setItem('leadPopupDismissed', 'true')
     setTimeout(() => {
       setIsVisible(false)
+      setIsClosing(false)
     }, 300)
   }
 
@@ -90,7 +96,7 @@ export function LeadCapturePopup() {
   return (
     <div
       className={`fixed bottom-6 right-6 z-50 w-[90vw] max-w-[400px] rounded-2xl bg-white shadow-2xl transition-all duration-300 ${
-        isClosing ? 'translate-y-8 opacity-0' : 'translate-y-0 opacity-100'
+        isClosing ? 'translate-y-8 opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
       }`}
       style={{ boxShadow: '0 10px 40px rgba(43, 76, 126, 0.2)' }}
     >
