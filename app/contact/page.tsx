@@ -18,7 +18,7 @@ const contactMethods = [
 const nextSteps = [
   { num: "1", icon: MessageSquare, title: "We Review Your Inquiry", description: "We read through your message and gather any additional information needed." },
   { num: "2", icon: Users, title: "We Discuss Your Needs", description: "We'll have a conversation to understand what you're looking for and how we can help." },
-  { num: "3", icon: FileSearch, title: "We Build a Custom Proposal", description: "You receive a clear, detailed proposal tailored to your specific requirements." },
+  { num: "3", icon: FileSearch, title: "We Get You Set Up", description: "We'll outline the next steps and help you get organized so you can move forward with confidence." },
 ]
 
 const serviceOptions = ["Bookkeeping & Payroll", "Financial Reporting", "FMHC Bookkeeping", "Risk & Compliance", "Setup & Consulting", "Other"]
