@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send, ChevronUp, DollarSign, Users } from "lucide-react"
+import { Check, FileText, Calculator, ClipboardCheck, BarChart3, HelpCircle, ChevronRight, Download, Clock, Phone, Sparkles, Mail, GraduationCap, Award, Shield, BookOpen, Send, ChevronUp, DollarSign, Users, Star, ExternalLink } from "lucide-react"
 
 const steps = [
   { num: "01", icon: Calculator, title: "Payroll Processing", tagline: "Accurate payroll processing you can rely on.", description: "Payroll processing and source deduction remittances for families who directly employ their care workers, or invoice tracking and payment recording for agency or independent contractor arrangements." },
@@ -41,6 +41,21 @@ const onboardingSteps = [
   { icon: Mail, title: "We review your inquiry", description: "We'll respond within 1 business day to learn more about your setup and answer any questions." },
   { icon: FileText, title: "Review your funding & documents", description: "We review your funding agreement and any relevant documents, and confirm your onboarding steps." },
   { icon: Sparkles, title: "Start within 7 days", description: "You're in good hands! We take over your bookkeeping and reporting so you can focus on care." },
+]
+
+const testimonials = [
+  {
+    name: "Janet B.",
+    review: "We reached out to Faysal for the FMHC program and we couldn't be happier. His expertise is beyond what I expected. He knows this program's requirements fully and has made the process seamless. All aspects were corresponded to me by phone and email and even text immediately. Peace of mind that we are in good hands is how the family is feeling. 10/10 - how lucky are we to have connected with this amazing CPA. He truly cares!",
+  },
+  {
+    name: "Richard G.",
+    review: "I have really appreciated all the work that that Faysal has done for me. He is very efficient, intelligent and has been lovely to deal with. Faysal Is a very genuine person, and I look forward to working more with him in the future. I highly recommend him! Thank you Faysal!",
+  },
+  {
+    name: "Brandon G.",
+    review: "Faysal is an excellent and organized bookkeeper and knows the FMHC program well. Highly recommend working with him",
+  },
 ]
 
 export default function FmhcPage() {
@@ -299,6 +314,57 @@ export default function FmhcPage() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="bg-white py-12 md:py-16 border-t border-border/30">
+          <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mb-10 text-center">
+              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">What Our FMHC Families Say</h2>
+              <p className="text-[15px] leading-[1.7] text-muted-foreground">Real reviews from families we've helped navigate the FMHC program</p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3 mb-8">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.name}
+                  className="relative rounded-xl border-2 border-[#2B4C7E]/10 bg-gradient-to-br from-white to-[#E8EDF5]/20 p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#2B4C7E]/30"
+                >
+                  {/* 5 Stars */}
+                  <div className="mb-4 flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="size-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="mb-4 text-[14px] leading-[1.7] text-muted-foreground italic">
+                    &ldquo;{testimonial.review}&rdquo;
+                  </p>
+
+                  {/* Name */}
+                  <p className="font-semibold text-[15px]" style={{ color: '#2B4C7E' }}>
+                    {testimonial.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Google Reviews Link */}
+            <div className="text-center">
+              <a
+                href="https://share.google/oghQiab77Y73AQz2d"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-[15px] font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
+                style={{ backgroundColor: '#2B4C7E' }}
+              >
+                <Star className="size-4 fill-white" />
+                Read More Reviews on Google
+                <ExternalLink className="size-4" />
+              </a>
             </div>
           </div>
         </section>
