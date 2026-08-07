@@ -50,11 +50,11 @@ const testimonials = [
   },
   {
     name: "Richard G.",
-    review: "I have really appreciated all the work that that Faysal has done for me. He is very efficient, intelligent and has been lovely to deal with. Faysal Is a very genuine person, and I look forward to working more with him in the future. I highly recommend him! Thank you Faysal!",
+    review: "I have really appreciated all the work that that Faysal has done for me. He is very efficient, intelligent and has been lovely to deal with. Faysal Is a very genuine person, and I look forward to working more with him in the future. I highly recommend him!",
   },
   {
     name: "Brandon G.",
-    review: "Faysal is an excellent and organized bookkeeper and knows the FMHC program well. Highly recommend working with him",
+    review: "Faysal is an excellent and organized bookkeeper and knows the FMHC program well. Highly recommend working with him.",
   },
 ]
 
