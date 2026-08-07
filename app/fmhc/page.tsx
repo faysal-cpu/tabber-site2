@@ -300,8 +300,8 @@ export default function FmhcPage() {
         <section className="bg-white py-12 md:py-16 border-t border-border/30">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-10 text-center">
-              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">What Our FMHC Families Say</h2>
-              <p className="text-[15px] leading-[1.7] text-muted-foreground">Real reviews from families we've helped navigate the FMHC program</p>
+              <h2 className="mb-3 font-serif text-[26px] font-bold text-navy md:text-[32px]">Trusted by FMHC Families Across Ontario</h2>
+              <p className="text-[15px] leading-[1.7] text-muted-foreground">Real feedback from the families we serve.</p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3 mb-8">
