@@ -45,7 +45,7 @@ const onboardingSteps = [
 
 const testimonials = [
   {
-    name: "Jenet B.",
+    name: "J B",
     review: "We reached out to Faysal for the FMHC program and we couldn't be happier. His expertise is beyond what I expected. He knows this program's requirements fully and has made the process seamless. All aspects were corresponded to me by phone and email and even text immediately. Peace of mind that we are in good hands is how the family is feeling. 10/10 - how lucky are we to have connected with this amazing CPA. He truly cares!",
   },
   {
