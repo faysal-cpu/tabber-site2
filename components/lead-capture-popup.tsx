@@ -45,6 +45,10 @@ export function LeadCapturePopup() {
     let timeTriggered = false
 
     const checkTriggers = () => {
+      // Double-check it wasn't dismissed before showing
+      const wasDismissed = sessionStorage.getItem('leadPopupDismissed')
+      if (wasDismissed) return
+
       if (scrollTriggered || timeTriggered) {
         setIsVisible(true)
         sessionStorage.setItem(currentPageKey, 'true')
@@ -53,6 +57,10 @@ export function LeadCapturePopup() {
 
     const handleScroll = () => {
       if (scrollTriggered) return
+      // Check if dismissed before triggering
+      const wasDismissed = sessionStorage.getItem('leadPopupDismissed')
+      if (wasDismissed) return
+
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
       if (scrollPercent >= 40) {
         scrollTriggered = true
