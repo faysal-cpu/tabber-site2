@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { X } from 'lucide-react'
 
@@ -10,20 +10,35 @@ export function LeadCapturePopup() {
   const [isClosing, setIsClosing] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const hasInitialized = useRef(false)
 
   useEffect(() => {
+    // Prevent double initialization from React Strict Mode
+    if (hasInitialized.current) return
+    hasInitialized.current = true
+
     // Pages where popup should NOT show
     const excludedPages = ['/', '/services', '/faq', '/about', '/privacy', '/contact', '/terms']
     if (excludedPages.includes(pathname)) {
-      // Ensure popup is completely hidden on excluded pages
       setIsVisible(false)
       setIsClosing(false)
       return
     }
 
-    const hasSeenPopup = sessionStorage.getItem('leadPopupShown')
+    // If dismissed once, stay dismissed for the whole session
     const wasDismissed = sessionStorage.getItem('leadPopupDismissed')
-    if (hasSeenPopup || wasDismissed) return
+    if (wasDismissed) {
+      setIsVisible(false)
+      return
+    }
+
+    // Check if popup was already shown on this specific page
+    const currentPageKey = `leadPopupShown_${pathname}`
+    const hasSeenOnThisPage = sessionStorage.getItem(currentPageKey)
+    if (hasSeenOnThisPage) {
+      setIsVisible(false)
+      return
+    }
 
     let timeoutId: NodeJS.Timeout
     let scrollTriggered = false
@@ -32,7 +47,7 @@ export function LeadCapturePopup() {
     const checkTriggers = () => {
       if (scrollTriggered || timeTriggered) {
         setIsVisible(true)
-        sessionStorage.setItem('leadPopupShown', 'true')
+        sessionStorage.setItem(currentPageKey, 'true')
       }
     }
 
