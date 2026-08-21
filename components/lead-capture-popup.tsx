@@ -10,12 +10,12 @@ export function LeadCapturePopup() {
   const [isClosing, setIsClosing] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const hasInitialized = useRef(false)
+  const initializedPage = useRef<string | null>(null)
 
   useEffect(() => {
-    // Prevent double initialization from React Strict Mode
-    if (hasInitialized.current) return
-    hasInitialized.current = true
+    // Prevent double initialization from React Strict Mode for the same page
+    if (initializedPage.current === pathname) return
+    initializedPage.current = pathname
 
     // Pages where popup should NOT show
     const excludedPages = ['/', '/services', '/faq', '/about', '/privacy', '/contact', '/terms']
