@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     question: "Does the calculator handle stat holiday pay?",
-    answer: "Not directly. Stat holiday pay is calculated separately under Ontario's Employment Standards Act (total wages in 4 work weeks before the holiday ÷ 20). Over a full year, stat holiday obligations average roughly 3–4% of total wages. If you want to be conservative, build a small buffer into your wage planning to account for the 9 Ontario public holidays per year.",
+    answer: "Not directly. Stat holiday pay is calculated separately under Ontario's Employment Standards Act and depends on the employee's earnings and work schedule. Because entitlement varies, the calculator does not estimate these costs automatically. Families who want a more conservative budget may wish to build a small buffer into their wage planning to account for statutory holiday obligations and other employment-related costs not included in the estimate.",
   },
 ]
 
@@ -264,6 +264,13 @@ export default function DirectHireCalculatorPage() {
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">The Calculator</h2>
               </div>
               <DirectHireCalculator />
+
+              {/* Disclaimer */}
+              <div className="mt-8 rounded-xl bg-amber-50 border-2 border-amber-200 p-6">
+                <p className="text-sm leading-relaxed text-amber-900">
+                  <strong>Important:</strong> This calculator estimates regular payroll costs only. Actual employment costs may be higher due to statutory holiday pay, overtime, mileage reimbursements, training time, WSIB rate changes, or other employer obligations.
+                </p>
+              </div>
             </div>
           </section>
 
