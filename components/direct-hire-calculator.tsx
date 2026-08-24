@@ -26,9 +26,6 @@ interface CalculatorResults {
   overageOrHeadroom: number
   monthlyHeadroom: number
   maxSustainableWage: number
-  suggestedMaxWage: number
-  suggestedLow: number
-  suggestedHigh: number
 }
 
 function calculateResults(
@@ -75,11 +72,6 @@ function calculateResults(
     otherCostsPerHour
   )
 
-  // Calculate suggested range (round down to nearest $0.50)
-  const suggestedMaxWage = maxSustainableWage
-  const suggestedLow = Math.floor(maxSustainableWage * 2) / 2 - 0.5
-  const suggestedHigh = Math.floor(maxSustainableWage * 2) / 2
-
   return {
     hoursPerMonth,
     grossMonthly,
@@ -94,9 +86,6 @@ function calculateResults(
     overageOrHeadroom,
     monthlyHeadroom,
     maxSustainableWage,
-    suggestedMaxWage,
-    suggestedLow,
-    suggestedHigh,
   }
 }
 
@@ -496,14 +485,9 @@ export function DirectHireCalculator() {
                   <p className="font-serif text-[18px] font-bold text-navy mb-3">
                     ✓ This wage fits within your Schedule B max
                   </p>
-                  <div className="space-y-1 text-sm">
-                    <p className="font-semibold text-navy">
-                      Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
-                    </p>
-                    <p className="text-navy/70">
-                      Suggested range: ${formatCurrency(results.suggestedLow)} - ${formatCurrency(results.suggestedHigh)}/hr
-                    </p>
-                  </div>
+                  <p className="text-sm font-semibold text-navy">
+                    Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
+                  </p>
                 </>
               ) : (
                 <>
@@ -514,14 +498,9 @@ export function DirectHireCalculator() {
                   <p className="text-sm mb-3" style={{ color: '#7F1D1D' }}>
                     Over by ${formatCurrency(Math.abs(results.overageOrHeadroom))} per hour
                   </p>
-                  <div className="space-y-1 text-sm">
-                    <p className="font-semibold" style={{ color: '#7F1D1D' }}>
-                      Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
-                    </p>
-                    <p style={{ color: '#7F1D1D' }}>
-                      Suggested range: ${formatCurrency(results.suggestedLow)} - ${formatCurrency(results.suggestedHigh)}/hr
-                    </p>
-                  </div>
+                  <p className="text-sm font-semibold" style={{ color: '#7F1D1D' }}>
+                    Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
+                  </p>
                 </>
               )}
             </div>

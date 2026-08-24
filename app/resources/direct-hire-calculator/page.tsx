@@ -266,8 +266,8 @@ export default function DirectHireCalculatorPage() {
               <DirectHireCalculator />
 
               {/* Disclaimer */}
-              <div className="mt-8 rounded-xl bg-amber-50 border-2 border-amber-200 p-6">
-                <p className="text-sm leading-relaxed text-amber-900">
+              <div className="mt-8 rounded-xl border-2 p-6" style={{ backgroundColor: '#E8EDF5', borderColor: '#2B4C7E' }}>
+                <p className="text-sm leading-relaxed text-navy">
                   <strong>Important:</strong> This calculator estimates regular payroll costs only. Actual employment costs may be higher due to statutory holiday pay, overtime, mileage reimbursements, training time, WSIB rate changes, or other employer obligations.
                 </p>
               </div>
