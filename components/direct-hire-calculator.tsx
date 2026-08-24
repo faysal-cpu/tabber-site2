@@ -430,7 +430,7 @@ export function DirectHireCalculator() {
               <div>
                 <label htmlFor="otherCosts" className="flex items-center text-sm font-semibold text-navy mb-2">
                   Other costs per hour (optional)
-                  <Tooltip text="Add any other employer costs not captured above: insurance ($2M liability + $25k abuse liability typically ~$0.50-1.00/hr), travel/preparation time, standard equipment & supplies, or other expenses. This gets added to the effective hourly rate." />
+                  <Tooltip text="Add any other employer costs not captured above. This gets added to the effective hourly rate." />
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-navy">$</span>
