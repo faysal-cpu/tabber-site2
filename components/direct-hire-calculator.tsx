@@ -25,7 +25,10 @@ interface CalculatorResults {
   fitsWithinCap: boolean
   overageOrHeadroom: number
   monthlyHeadroom: number
-  suggestedMaxWage: number | null
+  maxSustainableWage: number
+  suggestedMaxWage: number
+  suggestedLow: number
+  suggestedHigh: number
 }
 
 function calculateResults(
@@ -62,18 +65,20 @@ function calculateResults(
   const overageOrHeadroom = scheduleBMax - effectiveHourlyRate
   const monthlyHeadroom = overageOrHeadroom * hoursPerMonth
 
-  // Calculate suggested max wage if over budget
-  let suggestedMaxWage: number | null = null
-  if (!fitsWithinCap) {
-    suggestedMaxWage = findMaxSustainableWage(
-      scheduleBMax,
-      hoursPerWeek,
-      vacationStructure,
-      wsibApplicable,
-      wsibRate,
-      otherCostsPerHour
-    )
-  }
+  // Always calculate max sustainable wage
+  const maxSustainableWage = findMaxSustainableWage(
+    scheduleBMax,
+    hoursPerWeek,
+    vacationStructure,
+    wsibApplicable,
+    wsibRate,
+    otherCostsPerHour
+  )
+
+  // Calculate suggested range (round down to nearest $0.50)
+  const suggestedMaxWage = maxSustainableWage
+  const suggestedLow = Math.floor(maxSustainableWage * 2) / 2 - 0.5
+  const suggestedHigh = Math.floor(maxSustainableWage * 2) / 2
 
   return {
     hoursPerMonth,
@@ -88,7 +93,10 @@ function calculateResults(
     fitsWithinCap,
     overageOrHeadroom,
     monthlyHeadroom,
+    maxSustainableWage,
     suggestedMaxWage,
+    suggestedLow,
+    suggestedHigh,
   }
 }
 
@@ -485,9 +493,17 @@ export function DirectHireCalculator() {
               {results.fitsWithinCap ? (
                 <>
                   <CheckCircle2 className="mx-auto size-12 mb-3" style={{ color: '#16A34A' }} />
-                  <p className="font-serif text-[18px] font-bold text-navy">
+                  <p className="font-serif text-[18px] font-bold text-navy mb-3">
                     ✓ This wage fits within your Schedule B max
                   </p>
+                  <div className="space-y-1 text-sm">
+                    <p className="font-semibold text-navy">
+                      Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
+                    </p>
+                    <p className="text-navy/70">
+                      Suggested range: ${formatCurrency(results.suggestedLow)} - ${formatCurrency(results.suggestedHigh)}/hr
+                    </p>
+                  </div>
                 </>
               ) : (
                 <>
@@ -495,14 +511,17 @@ export function DirectHireCalculator() {
                   <p className="font-serif text-[18px] font-bold mb-2" style={{ color: '#7F1D1D' }}>
                     ✗ This wage exceeds your Schedule B max
                   </p>
-                  <p className="text-sm" style={{ color: '#7F1D1D' }}>
+                  <p className="text-sm mb-3" style={{ color: '#7F1D1D' }}>
                     Over by ${formatCurrency(Math.abs(results.overageOrHeadroom))} per hour
                   </p>
-                  {results.suggestedMaxWage && (
-                    <p className="mt-2 text-sm font-semibold" style={{ color: '#7F1D1D' }}>
-                      Suggested maximum wage: ${formatCurrency(results.suggestedMaxWage)}/hr
+                  <div className="space-y-1 text-sm">
+                    <p className="font-semibold" style={{ color: '#7F1D1D' }}>
+                      Maximum sustainable wage: ${formatCurrency(results.maxSustainableWage)}/hr
                     </p>
-                  )}
+                    <p style={{ color: '#7F1D1D' }}>
+                      Suggested range: ${formatCurrency(results.suggestedLow)} - ${formatCurrency(results.suggestedHigh)}/hr
+                    </p>
+                  </div>
                 </>
               )}
             </div>
