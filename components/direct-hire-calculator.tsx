@@ -163,7 +163,7 @@ export function DirectHireCalculator() {
   const [vacationStructure, setVacationStructure] = useState<"included" | "separate">("included")
   const [wsibApplicable, setWsibApplicable] = useState(false)
   const [wsibManualOverride, setWsibManualOverride] = useState(false)
-  const [wsibRate, setWsibRate] = useState(1.05)
+  const [wsibRate, setWsibRate] = useState(1.28)
   const [otherCostsPerHour, setOtherCostsPerHour] = useState(0.00)
 
   // Sync hours between weekly and monthly
@@ -407,7 +407,7 @@ export function DirectHireCalculator() {
                 <div>
                   <label htmlFor="wsibRate" className="flex items-center text-sm font-semibold text-navy mb-2">
                     WSIB rate (%)
-                    <Tooltip text="Your WSIB premium rate as a percent of payroll. The rate varies by classification; check your WSIB account or recent invoice. 1.05% is a typical rate for in-home domestic worker classifications." />
+                    <Tooltip text="Your WSIB premium rate as a percent of payroll. The rate varies by classification; check your WSIB account or recent invoice. 1.28% is a typical rate for in-home domestic worker classifications." />
                   </label>
                   <div className="relative">
                     <input
@@ -419,7 +419,7 @@ export function DirectHireCalculator() {
                       value={wsibRate === 0 ? '' : wsibRate}
                       onChange={(e) => setWsibRate(e.target.value === '' ? 0 : parseFloat(e.target.value))}
                       onFocus={(e) => e.target.select()}
-                      placeholder="1.05"
+                      placeholder="1.28"
                       className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-[#2B4C7E] focus:outline-none focus:ring-2 focus:ring-[#2B4C7E]/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-navy">%</span>

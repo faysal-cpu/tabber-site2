@@ -303,7 +303,7 @@ export default function DirectHireCalculatorPage() {
                     </li>
                     <li>
                       <strong>WSIB premiums — if applicable</strong><br />
-                      In Ontario, in-home domestic workers are exempt if they work under 24 hours per week. Above that threshold, WSIB premiums apply, typically around 1.05% of gross wages (varies by classification).
+                      In Ontario, in-home domestic workers are exempt if they work under 24 hours per week. Above that threshold, WSIB premiums apply, typically around 1.28% of gross wages (varies by classification).
                     </li>
                     <li>
                       <strong>Vacation pay</strong><br />
