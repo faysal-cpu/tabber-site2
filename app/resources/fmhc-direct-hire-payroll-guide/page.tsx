@@ -197,11 +197,12 @@ export default function PayrollGuidePage() {
                 <Briefcase className="size-4" />
                 <span className="text-sm font-semibold">Practical Payroll Guide</span>
               </div>
-              <h1 className="font-serif text-[28px] leading-[1.2] text-navy md:text-[34px] mb-4">
-                <span className="font-bold">FMHC Direct-Hire Payroll:</span>
-                <br className="hidden md:block" />
-                <span className="font-normal"> CRA Remittances, WSIB and Employer Responsibilities</span>
+              <h1 className="font-serif text-[32px] md:text-[38px] font-bold leading-[1.2] text-navy mb-3">
+                FMHC Direct-Hire Payroll
               </h1>
+              <p className="text-[18px] md:text-[20px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
+                CRA Remittances, WSIB and Employer Responsibilities
+              </p>
               <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
                 Hiring a caregiver directly through Family-Managed Home Care gives your family greater control — but also makes you an employer. Here's what that means.
               </p>
@@ -318,65 +319,6 @@ export default function PayrollGuidePage() {
           </section>
 
           <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
-
-          {/* FMHC Payroll Is Different */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
-            <div className="mx-auto max-w-[900px] px-6">
-              <div className="mb-6">
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Payroll Is Different From Ordinary Payroll</h2>
-              </div>
-              <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
-                <p>
-                  Direct-hire payroll under FMHC is not just about calculating a paycheque.
-                </p>
-                <p>
-                  Every payroll decision also needs to fit within the family's Schedule B funding, align with the approved hours and care categories, flow through the dedicated FMHC bank account correctly, and be supported for monthly Schedule G&H reporting.
-                </p>
-                <p>
-                  A payroll calculation can be technically accurate and still create an FMHC reporting issue if:
-                </p>
-                <ul className="ml-6 space-y-2 list-disc">
-                  <li>the total employment cost exceeds the funded hourly rate;</li>
-                  <li>the family claims more than the approved hours;</li>
-                  <li>the payroll is reported under the wrong care category;</li>
-                  <li>personally funded costs are charged to FMHC;</li>
-                  <li>CRA or WSIB payments are not properly supported; or</li>
-                  <li>the bank transactions do not reconcile to Schedule G&H.</li>
-                </ul>
-                <p>
-                  That is where specialized FMHC experience matters.
-                </p>
-
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
-                  <h3 className="mb-3 font-serif text-[20px] font-semibold text-navy">Tabber Specializes in FMHC Payroll</h3>
-                  <p className="mb-3">
-                    Tabber specializes in payroll, bookkeeping, and financial reporting for Ontario FMHC families.
-                  </p>
-                  <p className="mb-3">
-                    We help families review proposed caregiver wages, establish a practical payroll process, calculate each payroll, identify CRA and WSIB payment obligations, monitor approved hours and funding, organize supporting records, and connect the payroll activity to the monthly FMHC report.
-                  </p>
-                  <p>
-                    Instead of coordinating separate payroll, bookkeeping, and FMHC reporting processes, families receive one integrated workflow designed specifically around the program.
-                  </p>
-                </div>
-
-                <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <p className="text-sm font-medium text-navy mb-2">
-                    <strong>Planning a caregiver wage?</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Use Tabber's{" "}
-                    <Link href="/resources/direct-hire-calculator" className="font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
-                      FMHC Direct Hire Cost Calculator
-                    </Link>
-                    {" "}before finalizing the employment agreement.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
 
           {/* What Direct Hire Actually Means */}
           <section id="what-direct-hire-means" className="scroll-mt-20 bg-white py-10 md:py-14">
@@ -506,37 +448,13 @@ export default function PayrollGuidePage() {
                 </div>
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">What Information Does the Caregiver Need to Provide?</h3>
-                  <p className="mb-3">
-                    The family should collect the information required to establish an accurate employee payroll record.
-                  </p>
-                  <p className="mb-2">This normally includes:</p>
+                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Employee Information Required</h3>
+                  <p className="mb-2 text-sm">The caregiver must provide:</p>
                   <ul className="ml-6 space-y-1 list-disc text-sm">
-                    <li>legal name;</li>
-                    <li>Social Insurance Number;</li>
-                    <li>home address;</li>
-                    <li>employment start date;</li>
-                    <li>province of employment;</li>
-                    <li>completed Federal TD1;</li>
-                    <li>completed Ontario TD1; and</li>
-                    <li>any written request for additional income tax deductions.</li>
+                    <li>Social Insurance Number</li>
+                    <li>Completed Federal TD1 form</li>
+                    <li>Completed Ontario TD1 form</li>
                   </ul>
-                </div>
-
-                <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">What Do the TD1 Forms Do?</h3>
-                  <p className="mb-3">
-                    The TD1 forms tell the employer which personal tax credits should be considered when calculating income tax deductions.
-                  </p>
-                  <p className="mb-3">
-                    Most employees claim the basic personal amount. However, an employee may have additional claims, work for more than one employer at the same time, or wish to request additional income tax withholding.
-                  </p>
-                  <p className="mb-3">
-                    If an employee claims the same basic personal amount with multiple employers, the combined income tax withheld may be insufficient. An employee who expects to owe additional tax may submit updated TD1 forms or request that an additional fixed amount be deducted from each pay.
-                  </p>
-                  <p>
-                    The family should apply the information provided by the employee. The family or bookkeeper should not make personal tax elections on the employee's behalf.
-                  </p>
                 </div>
               </div>
             </div>
@@ -564,53 +482,7 @@ export default function PayrollGuidePage() {
                   The employer then has additional contributions and employment costs of its own.
                 </p>
 
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
-                  <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">Payroll at a Glance</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b-2" style={{ borderColor: '#2B4C7E' }}>
-                          <th className="text-left py-2 px-3 font-semibold text-navy">Payroll Component</th>
-                          <th className="text-left py-2 px-3 font-semibold text-navy">Who Pays It?</th>
-                          <th className="text-left py-2 px-3 font-semibold text-navy">What Happens to It?</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {[
-                          { component: "Gross wages", who: "Employer", what: "Starting amount for payroll" },
-                          { component: "Employee CPP", who: "Deducted from employee", what: "Remitted to CRA" },
-                          { component: "Employee EI", who: "Deducted from employee", what: "Remitted to CRA" },
-                          { component: "Income tax", who: "Deducted from employee", what: "Remitted to CRA" },
-                          { component: "Net pay", who: "Employer", what: "Paid to the caregiver" },
-                          { component: "Employer CPP", who: "Employer cost", what: "Remitted to CRA" },
-                          { component: "Employer EI", who: "Employer cost", what: "Remitted to CRA" },
-                          { component: "WSIB premium, if applicable", who: "Employer cost", what: "Paid to WSIB" },
-                          { component: "Vacation pay", who: "Employer cost", what: "Paid or accrued according to the employment arrangement" },
-                          { component: "Public holiday pay", who: "Employer cost", what: "Calculated when applicable" },
-                        ].map((row, i) => (
-                          <tr key={i} className="border-b border-border">
-                            <td className="py-3 px-3 align-top font-medium">{row.component}</td>
-                            <td className="py-3 px-3 align-top">{row.who}</td>
-                            <td className="py-3 px-3 align-top text-muted-foreground">{row.what}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-                <p>
-                  The family normally makes at least two separate payments:
-                </p>
-                <ul className="ml-6 space-y-2 list-disc">
-                  <li>the caregiver's net pay; and</li>
-                  <li>the CRA payroll remittance.</li>
-                </ul>
-                <p>
-                  A separate WSIB payment may also be required where coverage applies.
-                </p>
-
-                <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
+                <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md mt-6">
                   <h3 className="mb-3 font-serif text-[20px] font-semibold text-navy">A Simple Payroll Example</h3>
                   <p className="mb-3">Assume one payroll produces the following amounts:</p>
                   <div className="overflow-x-auto">
@@ -653,6 +525,12 @@ export default function PayrollGuidePage() {
                   </p>
                   <p className="mt-2 text-sm font-semibold">
                     This distinction is essential when comparing payroll costs with the Schedule B funded rate.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border-l-4 bg-blue-50 p-6 mt-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                  <p className="text-sm font-medium" style={{ color: '#2B4C7E' }}>
+                    <strong>This is one of the most common reasons direct-hire families accidentally exceed their approved Schedule B funding.</strong> They budget using the caregiver's wage and forget that employer payroll costs must come from the same funding envelope.
                   </p>
                 </div>
 
@@ -939,113 +817,6 @@ export default function PayrollGuidePage() {
                   </p>
                 </div>
 
-                <div className="rounded-xl border-2 bg-white p-6 shadow-md" style={{ borderColor: '#E8EDF5' }}>
-                  <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">What Documents Should the Family Keep?</h3>
-                  <p className="mb-6 text-[15px] text-muted-foreground">A complete direct-hire payroll file should generally include the following:</p>
-
-                  <div className="grid gap-6 md:grid-cols-3">
-                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
-                      <div className="mb-3 flex items-center gap-2">
-                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                          <FileText className="size-4 text-white" />
-                        </div>
-                        <h4 className="font-semibold text-navy">Employee Setup</h4>
-                      </div>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Signed employment agreement</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Federal and Ontario TD1 forms</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>SIN and employee setup information</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Approved wage and pay frequency</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Relevant employment correspondence</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
-                      <div className="mb-3 flex items-center gap-2">
-                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                          <Calculator className="size-4 text-white" />
-                        </div>
-                        <h4 className="font-semibold text-navy">Payroll Records</h4>
-                      </div>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Signed timesheets</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Payroll calculation</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Pay statement</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Proof of net-pay payment</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>CRA remittance calculation</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Proof of CRA payment</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>WSIB statement and proof (if applicable)</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
-                      <div className="mb-3 flex items-center gap-2">
-                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
-                          <FileSpreadsheet className="size-4 text-white" />
-                        </div>
-                        <h4 className="font-semibold text-navy">FMHC Reporting</h4>
-                      </div>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>FMHC bank statement</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Schedule G&H entries</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Category allocations (if applicable)</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>FMHC/personal funding allocations</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
-                          <span>Support for corrections and reimbursements</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
@@ -1298,7 +1069,7 @@ export default function PayrollGuidePage() {
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
                   <CheckCircle className="size-5 text-white" />
                 </div>
-                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Payroll Without the Guesswork</h2>
+                <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Where Tabber Fits In</h2>
               </div>
               <div className="space-y-4 text-[15px] leading-[1.8] text-muted-foreground">
                 <p>
