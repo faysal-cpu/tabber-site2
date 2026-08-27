@@ -186,7 +186,7 @@ export default function PayrollGuidePage() {
               alt="FMHC Direct-Hire Payroll Guide"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center 45%' }}
+              style={{ objectPosition: 'center 65%' }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
@@ -323,7 +323,7 @@ export default function PayrollGuidePage() {
           <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
 
           {/* What Direct Hire Actually Means */}
-          <section id="what-direct-hire-means" className="scroll-mt-20 bg-white py-10 md:py-14">
+          <section id="what-direct-hire-means" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>

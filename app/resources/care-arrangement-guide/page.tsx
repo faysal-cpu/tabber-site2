@@ -302,6 +302,11 @@ export default function CareArrangementGuidePage() {
                   <p className="text-[15px] leading-[1.7] text-navy/85">
                     You become the employer of record. You register a CRA payroll account, run payroll each pay period, withhold and remit source deductions, register with WSIB if hours warrant, and file T4s at year-end. Your bookkeeper handles the mechanics; the legal responsibility sits with you as the contract holder.
                   </p>
+                  <div className="mt-4 rounded-lg border-l-4 bg-blue-50 p-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                    <p className="text-sm" style={{ color: '#2B4C7E' }}>
+                      <strong>Ready to set up direct-hire payroll?</strong> Our <a href="/resources/fmhc-direct-hire-payroll-guide" className="font-semibold hover:underline">FMHC Direct-Hire Payroll Guide</a> covers CRA remittances, WSIB requirements, and staying within Schedule B funding.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

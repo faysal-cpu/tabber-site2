@@ -378,7 +378,7 @@ export default function FmhcResourcesPage() {
                 Family-Managed Home Care (FMHC), also known as Self-Directed Care (SDC), is a program administered by Ontario Health atHome. Rather than receiving personal support services through a contracted agency, approved families receive direct funding to hire and manage their own care workers.
               </p>
               <p>
-                That shift in control is meaningful - it means care can be arranged around the client's actual schedule, preferences, and needs. But it also means the family takes on real administrative and employer-level responsibilities that don't exist in the traditional home care model. Managing payroll, tracking expenses against a funding budget, submitting monthly reports, and maintaining records for seven years are all part of the job.
+                That shift in control is meaningful - it means care can be arranged around the client's actual schedule, preferences, and needs. But it also means the family takes on real administrative and employer-level responsibilities that don't exist in the traditional home care model. Managing payroll, tracking expenses against a funding budget, submitting monthly reports, and maintaining records for seven years are all part of the job. For families hiring directly, our <a href="/resources/fmhc-direct-hire-payroll-guide" className="font-semibold hover:underline" style={{ color: '#2B4C7E' }}>FMHC Payroll Guide</a> provides step-by-step guidance on CRA accounts, remittances, WSIB, and staying within Schedule B funding.
               </p>
             </div>
           </div>
