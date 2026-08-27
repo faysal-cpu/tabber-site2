@@ -186,7 +186,7 @@ export default function PayrollGuidePage() {
               alt="FMHC Direct-Hire Payroll Guide"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center' }}
+              style={{ objectPosition: 'center 30%' }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
@@ -197,8 +197,10 @@ export default function PayrollGuidePage() {
                 <Briefcase className="size-4" />
                 <span className="text-sm font-semibold">Practical Payroll Guide</span>
               </div>
-              <h1 className="font-serif text-[28px] font-bold leading-[1.2] text-navy md:text-[34px] mb-4">
-                FMHC Direct-Hire Payroll: CRA Remittances, WSIB and Employer Responsibilities
+              <h1 className="font-serif text-[28px] leading-[1.2] text-navy md:text-[34px] mb-4">
+                <span className="font-bold">FMHC Direct-Hire Payroll:</span>
+                <br className="hidden md:block" />
+                <span className="font-normal"> CRA Remittances, WSIB and Employer Responsibilities</span>
               </h1>
               <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
                 Hiring a caregiver directly through Family-Managed Home Care gives your family greater control — but also makes you an employer. Here's what that means.
@@ -701,13 +703,12 @@ export default function PayrollGuidePage() {
                   </p>
                 </div>
 
-                <div className="rounded-xl border-2 border-orange-400 bg-orange-50 p-6">
+                <div className="rounded-xl border-l-4 bg-blue-50 p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-0.5 size-6 shrink-0 text-orange-600" />
+                    <AlertCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
                     <div>
-                      <h3 className="mb-2 font-serif text-[18px] font-semibold text-orange-900">Important</h3>
-                      <p className="text-sm text-orange-900">
-                        Late or missing remittances can result in penalties and interest. CRA's employer guide also addresses consequences for failures to deduct or remit payroll amounts.
+                      <p className="text-sm font-medium" style={{ color: '#2B4C7E' }}>
+                        <strong>Important:</strong> Late or missing remittances can result in penalties and interest. CRA's employer guide also addresses consequences for failures to deduct or remit payroll amounts.
                       </p>
                     </div>
                   </div>
@@ -767,15 +768,14 @@ export default function PayrollGuidePage() {
                   </ul>
                 </div>
 
-                <div className="rounded-xl border-2 border-orange-400 bg-orange-50 p-6">
+                <div className="rounded-xl border-l-4 bg-blue-50 p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-0.5 size-6 shrink-0 text-orange-600" />
+                    <AlertCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
                     <div>
-                      <p className="text-sm font-semibold text-orange-900 mb-2">Important</p>
-                      <p className="text-sm text-orange-900">
-                        The WSIB policy says <strong>more than 24 hours per week</strong>, not "24 hours or more."
+                      <p className="text-sm font-medium mb-2" style={{ color: '#2B4C7E' }}>
+                        <strong>Important:</strong> The WSIB policy says <strong>more than 24 hours per week</strong>, not "24 hours or more."
                       </p>
-                      <p className="text-sm text-orange-900 mt-2">
+                      <p className="text-sm" style={{ color: '#2B4C7E' }}>
                         If the employee works FMHC-funded and personally funded hours for the same household, consider the employee's complete schedule when reviewing the threshold. The funding source does not create a separate employer.
                       </p>
                     </div>
@@ -925,38 +925,112 @@ export default function PayrollGuidePage() {
                   </p>
                 </div>
 
-                <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
-                  <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">What Documents Should the Family Keep?</h3>
-                  <p className="mb-3">A complete direct-hire payroll file should generally include the following:</p>
+                <div className="rounded-xl border-2 bg-white p-6 shadow-md" style={{ borderColor: '#E8EDF5' }}>
+                  <h3 className="mb-4 font-serif text-[20px] font-semibold text-navy">What Documents Should the Family Keep?</h3>
+                  <p className="mb-6 text-[15px] text-muted-foreground">A complete direct-hire payroll file should generally include the following:</p>
 
-                  <h4 className="font-semibold text-navy mb-2">Employee Setup Records</h4>
-                  <ul className="ml-6 space-y-1 list-disc text-sm mb-3">
-                    <li>signed employment agreement;</li>
-                    <li>Federal and Ontario TD1 forms;</li>
-                    <li>SIN and employee setup information;</li>
-                    <li>approved wage and pay frequency; and</li>
-                    <li>relevant employment correspondence.</li>
-                  </ul>
+                  <div className="grid gap-6 md:grid-cols-3">
+                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
+                      <div className="mb-3 flex items-center gap-2">
+                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                          <FileText className="size-4 text-white" />
+                        </div>
+                        <h4 className="font-semibold text-navy">Employee Setup</h4>
+                      </div>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Signed employment agreement</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Federal and Ontario TD1 forms</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>SIN and employee setup information</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Approved wage and pay frequency</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Relevant employment correspondence</span>
+                        </li>
+                      </ul>
+                    </div>
 
-                  <h4 className="font-semibold text-navy mb-2">Payroll Records</h4>
-                  <ul className="ml-6 space-y-1 list-disc text-sm mb-3">
-                    <li>signed timesheets;</li>
-                    <li>payroll calculation;</li>
-                    <li>pay statement;</li>
-                    <li>proof of the employee's net-pay payment;</li>
-                    <li>CRA remittance calculation;</li>
-                    <li>proof of CRA payment; and</li>
-                    <li>WSIB statement and proof of payment, where applicable.</li>
-                  </ul>
+                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
+                      <div className="mb-3 flex items-center gap-2">
+                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                          <Calculator className="size-4 text-white" />
+                        </div>
+                        <h4 className="font-semibold text-navy">Payroll Records</h4>
+                      </div>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Signed timesheets</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Payroll calculation</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Pay statement</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Proof of net-pay payment</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>CRA remittance calculation</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Proof of CRA payment</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>WSIB statement and proof (if applicable)</span>
+                        </li>
+                      </ul>
+                    </div>
 
-                  <h4 className="font-semibold text-navy mb-2">FMHC Reporting Records</h4>
-                  <ul className="ml-6 space-y-1 list-disc text-sm">
-                    <li>FMHC bank statement;</li>
-                    <li>Schedule G&H entries;</li>
-                    <li>allocation between approved care categories where applicable;</li>
-                    <li>allocation between FMHC and personal funding where applicable; and</li>
-                    <li>support for any corrections, reimbursements, or personal top-ups.</li>
-                  </ul>
+                    <div className="rounded-xl border-2 bg-gray-50 p-5" style={{ borderColor: '#E8EDF5' }}>
+                      <div className="mb-3 flex items-center gap-2">
+                        <div className="flex size-8 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
+                          <FileSpreadsheet className="size-4 text-white" />
+                        </div>
+                        <h4 className="font-semibold text-navy">FMHC Reporting</h4>
+                      </div>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>FMHC bank statement</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Schedule G&H entries</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Category allocations (if applicable)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>FMHC/personal funding allocations</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1.5 size-1 shrink-0 rounded-full bg-navy"></span>
+                          <span>Support for corrections and reimbursements</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -971,7 +1045,14 @@ export default function PayrollGuidePage() {
                 </div>
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">Common FMHC Payroll Mistakes</h2>
               </div>
-              <div className="space-y-3">
+
+              <div className="mb-6 rounded-xl border-2 bg-white p-6 shadow-sm" style={{ borderColor: '#E8EDF5' }}>
+                <p className="text-[15px] leading-[1.8] text-muted-foreground">
+                  Most payroll issues don't come from misunderstanding the rules—they come from small operational misses. Here are the situations we see most often and how to avoid them.
+                </p>
+              </div>
+
+              <div className="space-y-6">
                 {[
                   {
                     title: "Treating the Schedule B Rate as the Employee's Wage",
@@ -1009,13 +1090,15 @@ export default function PayrollGuidePage() {
                     fix: "Retain the timesheet, pay statement, and proof of every related payment."
                   },
                 ].map((mistake, i) => (
-                  <div key={i} className="rounded-xl border-l-4 bg-card p-5" style={{ borderLeftColor: '#DC2626' }}>
-                    <h3 className="mb-2 flex items-center gap-2 font-serif text-[17px] font-semibold text-navy">
-                      <AlertTriangle className="size-5 text-red-600" />
+                  <div key={i} className="rounded-xl bg-white p-6 shadow-sm border-l-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                    <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">
                       {mistake.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-2">{mistake.desc}</p>
-                    <p className="text-sm font-semibold text-navy">Better approach: {mistake.fix}</p>
+                    <p className="text-sm leading-[1.7] text-muted-foreground mb-3">{mistake.desc}</p>
+                    <div className="flex items-start gap-2 rounded-lg bg-gray-50 p-3">
+                      <CheckCircle className="size-4 shrink-0 mt-0.5" style={{ color: '#2B4C7E' }} />
+                      <p className="text-sm font-medium text-navy">{mistake.fix}</p>
+                    </div>
                   </div>
                 ))}
               </div>
