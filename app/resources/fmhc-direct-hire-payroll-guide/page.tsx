@@ -186,7 +186,7 @@ export default function PayrollGuidePage() {
               alt="FMHC Direct-Hire Payroll Guide"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center 30%' }}
+              style={{ objectPosition: 'center 45%' }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />
@@ -267,7 +267,7 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
+          <WaveDivider fillColor="#E8EDF5" backgroundColor="#FFFFFF" />
 
           {/* Introduction */}
           <section id="intro" className="scroll-mt-20 bg-white py-10 md:py-14">
