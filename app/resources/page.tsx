@@ -27,6 +27,15 @@ const fmhcResources = [
     featured: true,
   },
   {
+    icon: FileCheck,
+    title: "FMHC Direct-Hire Payroll Guide",
+    description: "Complete guide to caregiver payroll, CRA remittances, vacation pay, WSIB, T4s, and employer responsibilities for direct-hire arrangements.",
+    type: "Full Guide",
+    link: "/resources/fmhc-direct-hire-payroll-guide",
+    isDownload: false,
+    featured: true,
+  },
+  {
     icon: CalcIcon,
     title: "FMHC Direct Hire Cost Calculator",
     description: "Calculate the true hourly cost of hiring a direct employee — wages plus employer CPP, EI, and WSIB. Confirm your offer fits within Schedule B.",
