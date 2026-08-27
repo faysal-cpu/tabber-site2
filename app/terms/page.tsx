@@ -44,7 +44,12 @@ const sections = [
       "These terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein.",
   },
   {
-    title: "8. Contact",
+    title: "8. Intellectual Property",
+    content:
+      "All content published on this website, including articles, guides, educational resources, graphics, visual layouts, page designs, original text, downloadable materials, logos, branding elements, and other website content, is the property of Tabber unless otherwise stated. Visitors may view, download, and print content for their own personal, non-commercial use. No portion of this website may be reproduced, republished, distributed, modified, incorporated into another website, or used for commercial purposes without prior written permission from Tabber. References to legislation, government programs, tax requirements, payroll obligations, or other factual information remain the property of their respective sources. However, the selection, arrangement, presentation, and original expression of information on this website may be protected by applicable intellectual property laws. Requests to reproduce or republish content may be directed to hello@tabber.ca.",
+  },
+  {
+    title: "9. Contact",
     content:
       "For questions about these terms, contact us at hello@tabber.ca.",
   },
@@ -57,7 +62,7 @@ export default function TermsPage() {
       <main className="flex-1">
         <section className="bg-card py-12 md:py-16">
           <div className="mx-auto max-w-[800px] px-6">
-            <p className="mb-3 text-sm text-muted-foreground">Last updated: July 2026</p>
+            <p className="mb-3 text-sm text-muted-foreground">Last updated: August 2026</p>
             <h1 className="font-serif text-[30px] font-bold text-navy md:text-[36px]">
               Terms of Service
             </h1>

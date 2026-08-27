@@ -1478,6 +1478,18 @@ export default function PayrollGuidePage() {
                   Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome, the Canada Revenue Agency, the Workplace Safety and Insurance Board, or the Ontario Ministry of Labour. Program, payroll, employment standards, tax, and WSIB requirements can change and may vary based on the family's agreement and actual working relationship. This page provides general information only and does not constitute legal, tax, employment, payroll, medical, insurance, or eligibility advice. Families should follow their signed FMHC agreement, confirm program requirements with their Ontario Health atHome Care Coordinator, confirm payroll requirements with CRA, and obtain legal or WSIB guidance where appropriate.
                 </p>
               </div>
+
+              <div className="mt-8 border-t border-border/30 pt-8">
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground">
+                  © 2026 Tabber. All rights reserved.
+                </p>
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground mt-2">
+                  This content may not be reproduced, republished, or distributed without written permission from Tabber.
+                </p>
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground mt-2">
+                  Last updated: August 2026.
+                </p>
+              </div>
             </div>
           </section>
 

@@ -762,6 +762,18 @@ export default function CareArrangementGuidePage() {
               <p className="text-center text-xs leading-[1.6] text-muted-foreground italic">
                 Tabber is an independent bookkeeping provider and is not affiliated with Ontario Health atHome. Program requirements can change and may vary by agreement. This page provides general information only and is not legal, tax, payroll, medical, or eligibility advice. Families should follow their own signed agreement and confirm current requirements with their Ontario Health atHome care coordinator. For legal, employment, payroll, tax, or SDM questions, consult an appropriate qualified professional.
               </p>
+
+              <div className="mt-8 border-t border-border/30 pt-8">
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground">
+                  © 2026 Tabber. All rights reserved.
+                </p>
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground mt-2">
+                  This content may not be reproduced, republished, or distributed without written permission from Tabber.
+                </p>
+                <p className="text-center text-xs leading-[1.6] text-muted-foreground mt-2">
+                  Last updated: August 2026.
+                </p>
+              </div>
             </div>
           </section>
         </main>
