@@ -267,7 +267,7 @@ export default function PayrollGuidePage() {
           <WaveDivider fillColor="#E8EDF5" backgroundColor="#F9FAFB" />
 
           {/* Introduction */}
-          <section id="intro" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="intro" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -317,8 +317,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* FMHC Payroll Is Different */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6">
                 <h2 className="font-serif text-[26px] font-bold text-navy md:text-[32px]">FMHC Payroll Is Different From Ordinary Payroll</h2>
@@ -374,8 +376,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* What Direct Hire Actually Means */}
-          <section id="what-direct-hire-means" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="what-direct-hire-means" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -425,8 +429,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* Before the First Payroll */}
-          <section id="before-first-payroll" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="before-first-payroll" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -536,8 +542,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* Running Payroll */}
-          <section id="running-payroll" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="running-payroll" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -740,8 +748,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* Understanding WSIB */}
-          <section id="wsib" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="wsib" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -806,8 +816,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* Staying Within FMHC Funding */}
-          <section id="staying-within-funding" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="staying-within-funding" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -897,8 +909,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* Ongoing Requirements */}
-          <section id="ongoing-requirements" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="ongoing-requirements" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -1036,8 +1050,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* Common Mistakes */}
-          <section id="mistakes" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="mistakes" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -1105,8 +1121,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* FAQ */}
-          <section id="faq" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="faq" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -1165,8 +1183,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* Contact Form Section */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[800px] px-6">
               <div className="mb-6">
                 <div className="mb-6 flex items-center gap-3">
@@ -1275,8 +1295,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+
           {/* Where Tabber Fits In */}
-          <section id="where-tabber-fits" className="scroll-mt-20 bg-gray-50 py-10 md:py-14 border-t border-border/30">
+          <section id="where-tabber-fits" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
@@ -1402,8 +1424,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
+
           {/* External Links & Disclaimer */}
-          <section className="scroll-mt-20 bg-gray-50 py-10 md:py-12 border-t border-border/30">
+          <section className="scroll-mt-20 bg-white py-10 md:py-12">
             <div className="mx-auto max-w-[1100px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
