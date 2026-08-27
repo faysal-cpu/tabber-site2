@@ -1068,52 +1068,46 @@ export default function PayrollGuidePage() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
                   {
                     title: "Treating the Schedule B Rate as the Employee's Wage",
-                    desc: "The Schedule B rate must support more than base wages. Offering the full funded rate as wages can leave no room for employer CPP, EI, vacation pay, public holiday pay, or WSIB.",
                     fix: "Use the FMHC Direct Hire Cost Calculator before making the offer."
                   },
                   {
                     title: "Paying the Employee Before Opening a Payroll Account",
-                    desc: "Paying by e-transfer does not remove the employer's CRA obligations.",
                     fix: "Complete the employer and employee setup before the first payroll."
                   },
                   {
                     title: "Assuming Every CRA Remittance Is Due Monthly",
-                    desc: "The due date depends on the employer's assigned remitter type. Eligible new small employers may qualify for quarterly remittances, while regular remitters generally follow a monthly schedule.",
                     fix: "Confirm the remitter type through the family's CRA payroll account."
                   },
                   {
                     title: "Applying the WSIB Threshold Incorrectly",
-                    desc: "The domestic worker policy uses more than 24 hours per week with one employer, not 24 hours or more.",
                     fix: "Monitor the worker's complete weekly schedule, including personally funded hours worked for the same household."
                   },
                   {
                     title: "Mixing Vacation, Sick Leave, and Public Holiday Pay",
-                    desc: "Vacation pay, public holiday pay, and job-protected leaves are separate employment standards concepts.",
                     fix: "Address each entitlement separately in the employment agreement and payroll process."
                   },
                   {
                     title: "Reporting the Full Payroll Cost as FMHC-Funded",
-                    desc: "When the employee works personally funded hours, only the eligible FMHC portion should be reported in Schedule G&H.",
                     fix: "Calculate the complete payroll and document a consistent allocation between FMHC and personal funding."
                   },
                   {
                     title: "Keeping Incomplete Payment Support",
-                    desc: "A timesheet proves the approved hours. It does not prove that the employee, CRA, or WSIB was paid.",
                     fix: "Retain the timesheet, pay statement, and proof of every related payment."
                   },
                 ].map((mistake, i) => (
-                  <div key={i} className="rounded-xl bg-white p-6 shadow-sm border-l-4" style={{ borderLeftColor: '#2B4C7E' }}>
-                    <h3 className="mb-3 font-serif text-[18px] font-semibold text-navy">
-                      {mistake.title}
-                    </h3>
-                    <p className="text-sm leading-[1.7] text-muted-foreground mb-3">{mistake.desc}</p>
-                    <div className="flex items-start gap-2 rounded-lg bg-gray-50 p-3">
-                      <CheckCircle className="size-4 shrink-0 mt-0.5" style={{ color: '#2B4C7E' }} />
-                      <p className="text-sm font-medium text-navy">{mistake.fix}</p>
+                  <div key={i} className="rounded-lg bg-white p-4 shadow-sm border-l-4 flex items-start gap-4" style={{ borderLeftColor: '#2B4C7E' }}>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-navy text-[15px] mb-2">
+                        {mistake.title}
+                      </h3>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="size-4 shrink-0 mt-0.5" style={{ color: '#2B4C7E' }} />
+                        <p className="text-sm text-muted-foreground">{mistake.fix}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
