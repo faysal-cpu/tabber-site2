@@ -19,6 +19,17 @@ export const metadata: Metadata = {
     'CRA payroll account for caregiver',
     'FMHC Schedule B caregiver wage',
     'Ontario domestic worker WSIB',
+    'Family Managed Home Care employer responsibilities',
+    'Ontario caregiver CPP EI deductions',
+    'T4 slip for caregiver',
+    'FMHC payroll bookkeeping',
+    'caregiver vacation pay Ontario',
+    'direct hire vs agency FMHC',
+    'Ontario Health atHome payroll',
+    'caregiver employer obligations Ontario',
+    'WSIB domestic worker policy',
+    'CRA remittance schedule caregiver',
+    'FMHC funding limits payroll',
   ],
 
   authors: [{ name: 'Faysal El Masri, CPA' }, { name: 'Tabber' }],
@@ -43,6 +54,10 @@ export const metadata: Metadata = {
       },
     ],
     locale: 'en_CA',
+    publishedTime: '2026-08-26T09:00:00-05:00',
+    modifiedTime: '2026-08-26T09:00:00-05:00',
+    authors: ['Faysal El Masri, CPA'],
+    tags: ['FMHC', 'Payroll', 'CRA', 'WSIB', 'Ontario', 'Caregiver', 'Direct Hire', 'Employment'],
   },
 
   twitter: {

@@ -118,18 +118,26 @@ export default function PayrollGuidePage() {
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "Article",
+                "@type": ["Article", "TechArticle"],
                 "@id": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#article",
                 "headline": "FMHC Direct-Hire Payroll: CRA Remittances, WSIB and Employer Responsibilities",
+                "alternativeHeadline": "Complete Guide to Caregiver Payroll for Ontario FMHC Families",
                 "description": "Hiring a caregiver directly through FMHC? Learn how caregiver payroll, CRA remittances, vacation pay, WSIB, T4s, and Schedule B budgeting work in Ontario.",
-                "image": "https://tabber.ca/images/fmhc-payroll-guide.png",
-                "datePublished": "2026-08-26",
-                "dateModified": "2026-08-26",
+                "image": {
+                  "@type": "ImageObject",
+                  "url": "https://tabber.ca/images/fmhc-payroll-guide.png",
+                  "width": 1512,
+                  "height": 1040
+                },
+                "datePublished": "2026-08-26T09:00:00-05:00",
+                "dateModified": "2026-08-26T09:00:00-05:00",
                 "author": {
                   "@type": "Person",
+                  "@id": "https://tabber.ca/about#faysal",
                   "name": "Faysal El Masri",
-                  "jobTitle": "CPA",
-                  "url": "https://tabber.ca/about"
+                  "jobTitle": "Chartered Professional Accountant (CPA)",
+                  "url": "https://tabber.ca/about",
+                  "sameAs": ["https://www.linkedin.com/in/faysalelmasri"]
                 },
                 "publisher": {
                   "@type": "Organization",
@@ -138,14 +146,214 @@ export default function PayrollGuidePage() {
                   "url": "https://tabber.ca",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://tabber.ca/tabber-logo-full.svg"
+                    "url": "https://tabber.ca/tabber-logo-full.svg",
+                    "width": 600,
+                    "height": 60
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+1-647-360-3593",
+                    "contactType": "customer service",
+                    "areaServed": "CA-ON",
+                    "availableLanguage": "English"
                   }
                 },
                 "mainEntityOfPage": {
                   "@type": "WebPage",
                   "@id": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide"
                 },
-                "keywords": "FMHC payroll, FMHC CRA remittances, FMHC WSIB, caregiver payroll Ontario, direct hire payroll"
+                "keywords": "FMHC payroll, FMHC CRA remittances, FMHC WSIB, caregiver payroll Ontario, direct hire payroll, Family Managed Home Care payroll, Ontario caregiver employer responsibilities, CRA payroll account, T4 slip caregiver, Schedule B funding Ontario",
+                "about": [
+                  {
+                    "@type": "Thing",
+                    "name": "Payroll",
+                    "sameAs": "https://en.wikipedia.org/wiki/Payroll"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "Employment",
+                    "sameAs": "https://en.wikipedia.org/wiki/Employment"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "Canada Revenue Agency"
+                  }
+                ],
+                "mentions": [
+                  {
+                    "@type": "Organization",
+                    "name": "Canada Revenue Agency (CRA)"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "Workplace Safety and Insurance Board (WSIB)"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "Ontario Health atHome"
+                  }
+                ],
+                "inLanguage": "en-CA",
+                "isAccessibleForFree": true,
+                "articleSection": ["Payroll", "Employment", "Healthcare", "Financial Management"],
+                "wordCount": 4500,
+                "educationalUse": "instruction",
+                "proficiencyLevel": "Beginner to Intermediate"
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Can an FMHC employee be paid once per month?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The pay frequency should be clearly documented and must comply with the employment agreement and applicable Ontario employment standards. Monthly, semi-monthly, biweekly, and weekly schedules create different payroll periods and workflows. Choose a schedule the family can operate consistently."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does an employee need WSIB if the employee works exactly 24 hours per week?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Under WSIB's domestic worker policy, mandatory coverage applies when the worker is employed more than 24 hours per week by one employer. A worker at exactly 24 hours is not mandatorily covered under that policy, although optional insurance may be available."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What if the employee works 20 FMHC hours and 6 personally funded hours each week?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "If the same household employs the worker for all 26 hours, the entire 26-hour schedule should be considered when reviewing the more-than-24-hours WSIB threshold. The funding sources are different, but the worker still has one household employer."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does working for several families trigger WSIB?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "WSIB's domestic worker policy says a worker who works more than 24 hours in total for multiple employers, but 24 hours or less for each individual employer, is not covered under the mandatory plan on that basis."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can a family obtain optional WSIB coverage below the threshold?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "WSIB's domestic worker policy says domestic workers who are not covered under the mandatory plan may apply for optional insurance."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is vacation pay included in the wage?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "That depends on how the employment agreement is structured and administered. Ontario requires vacation pay to be provided, and the treatment should be clearly documented in the employment agreement and on the employee's pay statements."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does the family file the employee's personal income tax return?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. The family deducts and remits payroll income tax based on the employee's payroll information and TD1 forms. The employee remains responsible for filing a personal income tax return."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can payroll and bookkeeping support be paid from FMHC funding?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Bookkeeping expenses are addressed within each family's FMHC agreement and eligible-expense allocation. Families should review their Schedule I and individual funding terms. Tabber's FMHC services are structured to fit within the approved bookkeeping allowance where sufficient funding is available."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#howto",
+                "name": "How to Set Up Direct-Hire Payroll for FMHC",
+                "description": "Step-by-step guide to establishing payroll for a caregiver hired directly through Ontario's Family-Managed Home Care program",
+                "image": "https://tabber.ca/images/fmhc-payroll-guide.png",
+                "totalTime": "PT2H",
+                "estimatedCost": {
+                  "@type": "MonetaryAmount",
+                  "currency": "CAD",
+                  "value": "0"
+                },
+                "tool": [
+                  {
+                    "@type": "HowToTool",
+                    "name": "CRA My Business Account"
+                  },
+                  {
+                    "@type": "HowToTool",
+                    "name": "Employee TD1 Forms"
+                  },
+                  {
+                    "@type": "HowToTool",
+                    "name": "WSIB Account (if required)"
+                  }
+                ],
+                "step": [
+                  {
+                    "@type": "HowToStep",
+                    "position": 1,
+                    "name": "Register a CRA Payroll Account",
+                    "text": "Open a payroll program account with the Canada Revenue Agency under the family's name as the employer",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#before-first-payroll"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 2,
+                    "name": "Collect Employee Information",
+                    "text": "Obtain the caregiver's Social Insurance Number and completed Federal and Ontario TD1 forms",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#before-first-payroll"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 3,
+                    "name": "Determine WSIB Requirements",
+                    "text": "Review whether WSIB coverage is required based on hours worked (mandatory if more than 24 hours per week)",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#wsib"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 4,
+                    "name": "Calculate Payroll",
+                    "text": "Calculate gross pay, statutory deductions (CPP, EI, income tax), employer contributions, vacation pay, and public holiday entitlements",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#running-payroll"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 5,
+                    "name": "Verify Schedule B Compliance",
+                    "text": "Ensure total employment cost (wages + employer CPP + employer EI + WSIB premiums) stays within FMHC Schedule B funding limits",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#staying-within-funding"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 6,
+                    "name": "Issue Pay Statement",
+                    "text": "Provide the employee with a pay statement showing gross pay, deductions, and net pay each pay period",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#running-payroll"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 7,
+                    "name": "Remit to CRA",
+                    "text": "Remit source deductions and employer contributions to CRA by the remittance due date (typically monthly or quarterly)",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#ongoing-requirements"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 8,
+                    "name": "File Year-End T4 Slips",
+                    "text": "Prepare and file T4 slips for the employee and T4 Summary with CRA by the last day of February",
+                    "url": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide#ongoing-requirements"
+                  }
+                ]
               },
               {
                 "@type": "BreadcrumbList",
@@ -170,6 +378,43 @@ export default function PayrollGuidePage() {
                     "item": "https://tabber.ca/resources/fmhc-direct-hire-payroll-guide"
                   }
                 ]
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://tabber.ca/#organization",
+                "name": "Tabber",
+                "url": "https://tabber.ca",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://tabber.ca/tabber-logo-full.svg",
+                  "width": 600,
+                  "height": 60
+                },
+                "description": "Specialized bookkeeping, payroll, and financial reporting for Ontario Family-Managed Home Care (FMHC) families",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Toronto",
+                  "addressRegion": "ON",
+                  "addressCountry": "CA"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-647-360-3593",
+                  "contactType": "customer service",
+                  "areaServed": "CA-ON",
+                  "availableLanguage": "English"
+                },
+                "sameAs": [
+                  "https://www.linkedin.com/company/tabber-ca"
+                ],
+                "areaServed": {
+                  "@type": "State",
+                  "name": "Ontario",
+                  "containedIn": {
+                    "@type": "Country",
+                    "name": "Canada"
+                  }
+                }
               }
             ]
           })
