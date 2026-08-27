@@ -68,10 +68,40 @@ export default function PayrollGuidePage() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       })
+
+      // Track form submission in Google Analytics
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submit', {
+          event_category: 'Contact',
+          event_label: 'Payroll Guide Inquiry Form',
+          value: 1
+        })
+      }
+
       setFormSubmitted(true)
     } catch (error) {
       console.error("Form submission error:", error)
       alert("There was an error submitting the form. Please try again.")
+    }
+  }
+
+  const trackButtonClick = (buttonName: string, destination: string) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'click', {
+        event_category: 'CTA',
+        event_label: buttonName,
+        event_value: destination
+      })
+    }
+  }
+
+  const trackExternalLink = (linkName: string, url: string) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'outbound_link', {
+        event_category: 'External Link',
+        event_label: linkName,
+        event_value: url
+      })
     }
   }
 
@@ -268,7 +298,12 @@ export default function PayrollGuidePage() {
                   <p className="text-sm text-muted-foreground mb-3">
                     If you are still deciding between an agency, independent contractor, and direct-hire arrangement, start with our FMHC Care Arrangement Guide.
                   </p>
-                  <Link href="/resources/care-arrangement-guide" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
+                  <Link
+                    href="/resources/care-arrangement-guide"
+                    onClick={() => trackButtonClick('Care Arrangement Guide', '/resources/care-arrangement-guide')}
+                    className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+                    style={{ color: '#2B4C7E' }}
+                  >
                     <BookOpen className="size-4" />
                     View Care Arrangement Guide
                   </Link>
@@ -359,14 +394,14 @@ export default function PayrollGuidePage() {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {[
-                    "the caregiver is paid accurately and on time;",
-                    "payroll deductions and employer contributions are calculated;",
-                    "amounts owing to CRA are remitted;",
+                    "The caregiver is paid accurately and on time;",
+                    "Payroll deductions and employer contributions are calculated;",
+                    "Amounts owing to CRA are remitted;",
                     "Ontario employment standards are followed;",
                     "WSIB obligations are reviewed;",
-                    "payroll and employment records are retained;",
-                    "year-end filings are completed; and",
-                    "the total employment cost remains within the FMHC funding limits.",
+                    "Payroll and employment records are retained;",
+                    "Year-end filings are completed; and",
+                    "The total employment cost remains within the FMHC funding limits.",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-white p-4 shadow-sm">
                       <CheckCircle className="mt-0.5 size-5 shrink-0" style={{ color: '#2B4C7E' }} />
@@ -849,7 +884,12 @@ export default function PayrollGuidePage() {
                   <p className="text-sm text-muted-foreground mb-3">
                     Tabber can review the family's Schedule B, expected caregiver hours, vacation treatment, WSIB position, and proposed pay frequency before the wage is finalized.
                   </p>
-                  <Link href="/resources/direct-hire-calculator" className="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style={{ color: '#2B4C7E' }}>
+                  <Link
+                    href="/resources/direct-hire-calculator"
+                    onClick={() => trackButtonClick('Direct Hire Calculator', '/resources/direct-hire-calculator')}
+                    className="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+                    style={{ color: '#2B4C7E' }}
+                  >
                     <Calculator className="size-4" />
                     FMHC Direct Hire Cost Calculator
                   </Link>
@@ -1253,7 +1293,12 @@ export default function PayrollGuidePage() {
                   className="rounded-lg px-8 py-3 text-[15px] font-semibold text-white shadow-md hover:shadow-lg"
                   style={{ backgroundColor: '#2B4C7E' }}
                 >
-                  <Link href="/resources/direct-hire-calculator">FMHC Direct Hire Calculator</Link>
+                  <Link
+                    href="/resources/direct-hire-calculator"
+                    onClick={() => trackButtonClick('CTA - Direct Hire Calculator', '/resources/direct-hire-calculator')}
+                  >
+                    FMHC Direct Hire Calculator
+                  </Link>
                 </Button>
                 <Button
                   asChild
@@ -1261,7 +1306,12 @@ export default function PayrollGuidePage() {
                   className="rounded-lg px-8 py-3 text-[15px] font-semibold border-2 shadow-md hover:shadow-lg"
                   style={{ borderColor: '#2B4C7E', color: '#2B4C7E' }}
                 >
-                  <Link href="/contact">Contact Tabber</Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => trackButtonClick('CTA - Contact Tabber', '/contact')}
+                  >
+                    Contact Tabber
+                  </Link>
                 </Button>
               </div>
               <p className="mt-4 text-xs text-muted-foreground">
@@ -1295,6 +1345,7 @@ export default function PayrollGuidePage() {
                     href={resource.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackExternalLink(resource.title, resource.link)}
                     className="flex flex-col gap-3 rounded-xl border-2 border-border bg-white p-5 transition-all duration-300 hover:border-[#2B4C7E] hover:shadow-md"
                   >
                     <div className="flex size-10 items-center justify-center rounded-full" style={{ backgroundColor: '#E8EDF5' }}>
