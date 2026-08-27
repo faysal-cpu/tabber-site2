@@ -197,15 +197,17 @@ export default function PayrollGuidePage() {
                 <Briefcase className="size-4" />
                 <span className="text-sm font-semibold">Practical Payroll Guide</span>
               </div>
-              <h1 className="font-serif text-[32px] md:text-[38px] font-bold leading-[1.2] text-navy mb-3">
+              <h1 className="font-serif text-[34px] md:text-[40px] font-bold leading-[1.2] text-navy mb-5">
                 FMHC Direct-Hire Payroll
               </h1>
-              <p className="text-[18px] md:text-[20px] font-medium leading-[1.4]" style={{ color: '#2B4C7E' }}>
-                CRA Remittances, WSIB and Employer Responsibilities
-              </p>
-              <p className="text-[16px] md:text-[17px] font-medium leading-[1.6] mb-5" style={{ color: '#2B4C7E' }}>
-                Hiring a caregiver directly through Family-Managed Home Care gives your family greater control — but also makes you an employer. Here's what that means.
-              </p>
+              <div className="border-t-2 pt-5 mb-5" style={{ borderColor: '#2B4C7E' }}>
+                <p className="text-[17px] md:text-[19px] font-semibold leading-[1.3] mb-4" style={{ color: '#2B4C7E' }}>
+                  CRA Remittances, WSIB and Employer Responsibilities
+                </p>
+                <p className="text-[15px] md:text-[16px] leading-[1.6] text-navy/80">
+                  Hiring a caregiver directly through Family-Managed Home Care gives your family greater control — but also makes you an employer. Here's what that means.
+                </p>
+              </div>
               <div className="flex items-center gap-2 text-[11px] justify-center pt-4 border-t border-gray-200 text-navy/70">
                 <div className="relative size-7 overflow-hidden rounded-full flex-shrink-0">
                   <Image
@@ -387,7 +389,7 @@ export default function PayrollGuidePage() {
                   The best time to establish the payroll process is before the caregiver receives the first payment.
                 </p>
                 <p>
-                  Waiting until after wages have been paid can make it more difficult to reconstruct deductions, determine the correct remittance period, prepare a compliant pay statement, and separate FMHC from personally funded costs where both are involved.
+                  Waiting until after wages have been paid can make it more difficult to reconstruct deductions, determine the correct remittance period, and prepare compliant payroll records.
                 </p>
 
                 <div className="rounded-xl border-2 border-[#2B4C7E] bg-white p-6 shadow-md">
@@ -449,7 +451,7 @@ export default function PayrollGuidePage() {
 
                 <div className="rounded-xl border-l-4 bg-card p-6" style={{ borderLeftColor: '#2B4C7E' }}>
                   <h3 className="mb-2 font-serif text-[18px] font-semibold text-navy">Employee Information Required</h3>
-                  <p className="mb-2 text-sm">The caregiver must provide:</p>
+                  <p className="mb-2 text-sm">The caregiver must provide before the first payroll is processed:</p>
                   <ul className="ml-6 space-y-1 list-disc text-sm">
                     <li>Social Insurance Number</li>
                     <li>Completed Federal TD1 form</li>
@@ -684,7 +686,6 @@ export default function PayrollGuidePage() {
                   <p className="mb-2">Review the employee's WSIB position when:</p>
                   <ul className="ml-6 space-y-1 list-disc text-sm">
                     <li>the regular weekly schedule changes;</li>
-                    <li>another FMHC care category is added;</li>
                     <li>personally funded hours are added;</li>
                     <li>the caregiver begins covering additional shifts; or</li>
                     <li>the caregiver regularly exceeds the original schedule.</li>
@@ -1076,7 +1077,7 @@ export default function PayrollGuidePage() {
                   Most families choose direct hire because they want greater control over care, not because they want to become payroll administrators.
                 </p>
                 <p>
-                  Tabber was built specifically to support the financial, payroll, and reporting requirements of Ontario's Family-Managed Home Care program.
+                  Tabber specializes exclusively in bookkeeping, payroll, and financial reporting for Ontario Family-Managed Home Care families.
                 </p>
                 <p>
                   This is not general payroll adapted to FMHC after the fact.
