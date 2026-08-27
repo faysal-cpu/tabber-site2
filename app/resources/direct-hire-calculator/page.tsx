@@ -194,7 +194,7 @@ export default function DirectHireCalculatorPage() {
               alt="FMHC Direct Hire Cost Calculator"
               fill
               className="object-cover"
-              style={{ objectPosition: "center 65%" }}
+              style={{ objectPosition: "center" }}
               priority
             />
             <div className="absolute inset-0 bg-[#2B4C7E]/15" />

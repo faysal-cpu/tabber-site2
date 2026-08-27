@@ -373,10 +373,10 @@ export default function PayrollGuidePage() {
             </div>
           </section>
 
-          <WaveDivider fillColor="#FFFFFF" backgroundColor="#F9FAFB" />
+          <WaveDivider fillColor="#F9FAFB" backgroundColor="#FFFFFF" />
 
           {/* Before the First Payroll */}
-          <section id="before-first-payroll" className="scroll-mt-20 bg-gray-50 py-10 md:py-14">
+          <section id="before-first-payroll" className="scroll-mt-20 bg-white py-10 md:py-14">
             <div className="mx-auto max-w-[900px] px-6">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#2B4C7E' }}>
