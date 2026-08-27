@@ -7,7 +7,6 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WaveDivider } from "@/components/wave-divider"
 import { Button } from "@/components/ui/button"
-import { LeadCapturePopup } from "@/components/lead-capture-popup"
 import {
   FileText,
   Users,
@@ -1378,9 +1377,6 @@ export default function PayrollGuidePage() {
         </main>
         <SiteFooter />
       </div>
-
-      {/* Lead Capture Popup */}
-      <LeadCapturePopup />
     </>
   )
 }
