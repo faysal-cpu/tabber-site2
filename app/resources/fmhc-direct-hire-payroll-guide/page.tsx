@@ -424,6 +424,16 @@ export default function PayrollGuidePage() {
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">
+          {/* Hidden form for Netlify detection */}
+          <form name="payroll-guide-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="payroll-guide-inquiry" />
+            <input type="hidden" name="bot-field" />
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <textarea name="message"></textarea>
+          </form>
+
           {/* Hero Section */}
           <section className="relative h-[450px] md:h-[550px] flex items-center justify-center px-6">
             <Image
